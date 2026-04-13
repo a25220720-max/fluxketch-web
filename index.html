@@ -5,47 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluxketch | 현장 완결형 3D 설계 플랫폼</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Pretendard', sans-serif; }
-        .grid-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px; }
+        body { background-color: #000; color: #fff; font-family: 'Pretendard', sans-serif; }
+        .grid-overlay { background-image: radial-gradient(#333 1px, transparent 1px); background-size: 40px 40px; }
+        .gradient-text { background: linear-gradient(to right, #00ff88, #00ccff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="grid-bg min-h-screen flex flex-col items-center justify-center px-6">
+<body class="grid-overlay min-h-screen flex flex-col items-center justify-between py-20 px-6">
 
-    <div class="text-center max-w-3xl">
-        <h1 class="text-6xl font-black tracking-tighter mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            Fluxketch
-        </h1>
-        <p class="text-xl text-slate-400 mb-12 font-light">
-            마우스를 버리고, 아이패드로 퇴근하세요. <br>
-            현장에서 끝내는 초정밀 3D 실측·설계 플랫폼
+    <div class="text-center">
+        <h1 class="text-7xl font-bold tracking-tighter mb-6 gradient-text">Fluxketch</h1>
+        <p class="text-xl text-zinc-400 mb-16 font-light leading-relaxed">
+            건축, 디자인, 필기를 하나의 캔버스에서.<br>
+            마우스를 버리고, 아이패드로 퇴근하세요.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
-                <span class="text-blue-400 font-bold uppercase tracking-widest text-sm">Beta Test</span>
-                <h2 class="text-3xl font-bold mt-2">2026. 10</h2>
-                <p class="text-slate-500 mt-2">프라이빗 베타 테스터 모집</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-20">
+            <div class="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 backdrop-blur-md">
+                <span class="text-xs font-bold tracking-[0.2em] text-zinc-500 uppercase">Beta Test</span>
+                <p class="text-3xl font-bold mt-3">2026. 10</p>
+                <p class="text-sm text-zinc-500 mt-2">Private Beta Open</p>
             </div>
-            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
-                <span class="text-emerald-400 font-bold uppercase tracking-widest text-sm">Official Launch</span>
-                <h2 class="text-3xl font-bold mt-2">2026. 12</h2>
-                <p class="text-slate-500 mt-2">App Store 정식 출시</p>
+            <div class="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 backdrop-blur-md">
+                <span class="text-xs font-bold tracking-[0.2em] text-emerald-500 uppercase">Official Launch</span>
+                <p class="text-3xl font-bold mt-3">2026. 12</p>
+                <p class="text-sm text-zinc-500 mt-2">Global App Store</p>
             </div>
         </div>
 
-        <div class="space-y-4">
+        <div class="flex flex-col items-center gap-4">
             <a href="https://instagram.com/fluxketch_official" target="_blank" 
-               class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-slate-200 transition-all transform hover:scale-105">
+               class="group flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-bold transition-all hover:bg-zinc-200">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                @fluxketch_official
+                <span>@fluxketch_official</span>
             </a>
-            <p class="text-slate-600 text-sm">Follow us for development updates</p>
+            <p class="text-zinc-600 text-sm">Designed by Kim Jun-seo</p>
         </div>
     </div>
 
-    <footer class="absolute bottom-8 text-slate-700 text-xs">
-        © 2026 Fluxketch. Founded by Kim Jun-seo.
+    <footer class="text-zinc-800 text-xs">
+        © 2026 Fluxketch All Rights Reserved.
     </footer>
 
 </body>
