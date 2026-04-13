@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxketch</title>
+    <title>Fluxketch | 현장 완결형 3D 설계 플랫폼</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
+        /* 원본 사진과 동일한 완전한 블랙 배경 및 화이트 텍스트 */
         body { 
             background-color: #000000; 
             color: #ffffff; 
-            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", sans-serif; 
+            font-family: 'Pretendard', sans-serif; 
+            letter-spacing: -0.02em;
         }
         /* 글씨 색깔: 원본의 에메랄드-블루 그라데이션 복구 */
         .brand-gradient {
@@ -17,11 +20,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* 링크 클릭을 확실하게 보장하기 위한 스타일 */
+        .link-active {
+            position: relative;
+            z-index: 50;
+            cursor: pointer;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center text-center px-6">
     
-    <div class="max-w-xl w-full space-y-10">
+    <div class="max-w-xl w-full space-y-12">
         <h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter brand-gradient">
             Fluxketch
         </h1>
@@ -32,33 +42,30 @@
             <p>Apple Pencil 최적화.</p>
         </div>
 
-        <div class="pt-8 space-y-12">
+        <div class="pt-10 space-y-12">
             
             <div>
-                <h2 class="text-3xl font-bold">2026. 10</h2>
-                <p class="text-zinc-500 mt-1 text-xs tracking-widest uppercase">Private Beta Test</p>
+                <h2 class="text-4xl font-bold">2026. 10</h2>
+                <p class="text-zinc-500 mt-2 text-sm tracking-widest uppercase">Private Beta Test</p>
             </div>
 
-            <div class="flex justify-center">
+            <div class="flex justify-center py-4">
                 <a href="https://www.instagram.com/fluxketch_official/" 
                    target="_blank" 
-                   class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-6 py-2.5 rounded-full hover:bg-zinc-800 transition-all active:scale-95">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    <span class="text-sm font-semibold">@fluxketch_official</span>
+                   rel="noopener noreferrer"
+                   class="link-active group flex items-center gap-3 bg-zinc-900 border border-zinc-800 px-8 py-3 rounded-full hover:bg-zinc-800 transition-all active:scale-95">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span class="font-bold text-sm">@fluxketch_official</span>
                 </a>
             </div>
 
             <div>
-                <h2 class="text-3xl font-bold text-white">2026. 12</h2>
-                <p class="text-zinc-500 mt-1 text-xs tracking-widest uppercase">Official Launch</p>
+                <h2 class="text-4xl font-bold">2026. 12</h2>
+                <p class="text-zinc-500 mt-2 text-sm tracking-widest uppercase">Official Launch</p>
             </div>
             
         </div>
     </div>
-
-    <footer class="absolute bottom-8 text-zinc-800 text-[10px] tracking-widest">
-        © 2026 FLUXKETCH. ALL RIGHTS RESERVED.
-    </footer>
 
 </body>
 </html>
