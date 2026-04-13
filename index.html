@@ -3,66 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxketch | 현장 완결형 3D 설계 플랫폼</title>
+    <title>Fluxketch</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
         body { 
-            background-color: #020617; /* 딥 네이비 블랙 */
-            color: #f8fafc; 
-            font-family: 'Pretendard', sans-serif; 
-            letter-spacing: -0.02em;
-        }
-        .accent-color { color: #10b981; } /* 고급스러운 에메랄드 */
-        .accent-bg { background-color: #10b981; }
-        .grid-bg { 
-            background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); 
-            background-size: 30px 30px; 
+            background-color: #000; 
+            color: #fff; 
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", sans-serif; 
         }
     </style>
 </head>
-<body class="grid-bg min-h-screen flex flex-col items-center justify-between py-16 px-6">
+<body class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    
+    <div class="space-y-6">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Fluxketch</h1>
 
-    <header class="w-full max-w-4xl flex justify-between items-center">
-        <h1 class="text-2xl font-bold tracking-tighter">Fluxketch</h1>
-        <div class="text-xs text-slate-500 font-medium uppercase tracking-widest">Built by Junseo</div>
-    </header>
-
-    <main class="text-center max-w-2xl">
-        <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            마우스를 버리고,<br>
-            <span class="accent-color">아이패드</span>로 퇴근하세요.
-        </h2>
-        <p class="text-lg text-slate-400 mb-12 font-light leading-relaxed">
-            건축, 디자인, 필기를 하나의 캔버스에서.<br>
-            현장에서 끝내는 초정밀 2D/3D 설계 플랫폼
-        </p>
-
-        <div class="flex flex-col md:flex-row gap-4 justify-center mb-16">
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl w-full md:w-56 backdrop-blur-sm">
-                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Beta Test</span>
-                <p class="text-xl font-bold mt-1">2026. 10</p>
-            </div>
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl w-full md:w-56 backdrop-blur-sm">
-                <span class="text-[10px] font-bold accent-color uppercase tracking-widest">Official Launch</span>
-                <p class="text-xl font-bold mt-1">2026. 12</p>
-            </div>
+        <div class="space-y-2 text-zinc-400 text-sm md:text-base font-medium">
+            <p>현장 완결형 3D 설계 플랫폼.</p>
+            <p>도면 작성 및 3D 모델링, 공간 연출을 하나의 캔버스에서.</p>
+            <p>Apple Pencil 최적화.</p>
         </div>
 
-        <div class="flex flex-col items-center gap-4">
-            <a href="https://www.instagram.com/fluxketch_official/" target="_blank" 
-               class="group flex items-center gap-3 bg-white text-slate-950 px-8 py-3.5 rounded-full font-bold transition-all hover:bg-emerald-50 hover:scale-105 active:scale-95">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                <span>@fluxketch_official</span>
-            </a>
-            <p class="text-slate-600 text-[13px]">새로운 소식을 가장 먼저 확인하세요</p>
-        </div>
-    </main>
+        <div class="pt-16 space-y-10">
+            
+            <div>
+                <h2 class="text-3xl font-semibold">2026. 10</h2>
+                <p class="text-zinc-500 mt-2 text-sm">프라이빗 베타 테스트 오픈</p>
+            </div>
 
-    <footer class="w-full max-w-4xl border-t border-slate-900 pt-8 flex justify-between items-center text-[11px] text-slate-700 tracking-widest uppercase">
-        <div>© 2026 Fluxketch</div>
-        <div>All Rights Reserved</div>
-    </footer>
+            <div class="py-2">
+                <a href="https://www.instagram.com/fluxketch_official/" target="_blank" 
+                   class="inline-flex items-center gap-2 text-zinc-300 hover:text-white transition-colors text-sm border border-zinc-800 px-6 py-2 rounded-full">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    @fluxketch_official
+                </a>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-semibold">2026. 12</h2>
+                <p class="text-zinc-500 mt-2 text-sm">App Store 정식 출시</p>
+            </div>
+            
+        </div>
+    </div>
 
 </body>
 </html>
