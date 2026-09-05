@@ -124,13 +124,17 @@ nav.menu{display:flex;gap:22px;font-size:14px;color:var(--fg-2)}nav.menu a:hover
 .plan ul{padding-left:18px;margin:16px 0 0;color:var(--fg-2);font-size:14.5px;flex:1}
 .plan .tag{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--dim)}.plan .tag.beta{color:var(--green)}
 
-/* 베타 = 리비전 구름 */
+/* 베타 = 도면 상세 박스(얇은 초록 외곽선이 그려지고, 네 귀에 제도 표식) */
 .beta{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
 .beta p{color:var(--fg-2);margin:0 0 22px;max-width:52ch}
-.cloud{position:relative;padding:34px 30px}
-.cloud svg{position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);pointer-events:none}
-.cloud svg path{fill:none;stroke:var(--green);stroke-width:2;stroke-linejoin:round;stroke-dasharray:1600;stroke-dashoffset:1600}
-.in .cloud svg path{animation:draw 2.2s var(--ease) forwards}
+.cloud{position:relative;padding:36px 34px;border-radius:8px}
+.cloud svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cloud svg rect{fill:none;stroke:var(--green);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-dasharray:2400;stroke-dashoffset:2400;opacity:.9}
+.in .cloud svg rect{animation:draw 1.6s var(--ease) forwards}
+.cloud .corner{position:absolute;width:14px;height:14px;border:2px solid var(--green);opacity:0;transition:opacity .4s 1.2s}
+.in .cloud .corner{opacity:1}
+.cloud .tl{left:-2px;top:-2px;border-right:0;border-bottom:0}.cloud .tr{right:-2px;top:-2px;border-left:0;border-bottom:0}
+.cloud .bl{left:-2px;bottom:-2px;border-right:0;border-top:0}.cloud .br{right:-2px;bottom:-2px;border-left:0;border-top:0}
 .steps{display:grid;gap:10px}
 .steps div{border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;color:var(--fg-2);display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start}
 .steps b{color:var(--fg);display:block;margin-bottom:2px}
@@ -155,4 +159,4 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 @media (max-width:1040px){.hero .wrap{grid-template-columns:1fr 1.15fr;gap:28px}.tb .meta{display:none}.legendwrap{grid-template-columns:1fr}.plans{grid-template-columns:repeat(2,1fr)}.plan:nth-child(2){border-right:0}.plan:nth-child(-n+2){border-bottom:1px solid var(--line)}.beta{grid-template-columns:1fr}}
 @media (max-width:760px){nav.menu{display:none}.hero .wrap{grid-template-columns:1fr}.annot svg{display:none}.paper .two,.row,.row.rev{grid-template-columns:1fr}.row.rev .shot{order:0}.paper .twin{grid-template-columns:1fr}.strip figure{width:340px}.sheet{padding:64px 0}}
 @media (max-width:520px){.plans{grid-template-columns:1fr}.plan{border-right:0;border-bottom:1px solid var(--line)}.tb .cell{padding:0 10px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.strip .track{animation:none}.reveal{opacity:1;transform:none;filter:none;transition:none}.annot svg .draw,.callout .draw,.cloud svg path{stroke-dashoffset:0;animation:none}.annot svg text,.callout text{opacity:1;animation:none}.btn,.plan,.legend tr{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.strip .track{animation:none}.reveal{opacity:1;transform:none;filter:none;transition:none}.annot svg .draw,.callout .draw,.cloud svg rect{stroke-dashoffset:0;animation:none}.cloud .corner{opacity:1;transition:none}.annot svg text,.callout text{opacity:1;animation:none}.btn,.plan,.legend tr{transition:none}}
