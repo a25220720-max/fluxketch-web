@@ -136,8 +136,9 @@ nav.menu{display:flex;gap:22px;font-size:14px;color:var(--fg-2)}nav.menu a:hover
 .cloud .tl{left:-2px;top:-2px;border-right:0;border-bottom:0}.cloud .tr{right:-2px;top:-2px;border-left:0;border-bottom:0}
 .cloud .bl{left:-2px;bottom:-2px;border-right:0;border-top:0}.cloud .br{right:-2px;bottom:-2px;border-left:0;border-top:0}
 .steps{display:grid;gap:10px}
-.steps div{border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;color:var(--fg-2);display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start}
-.steps b{color:var(--fg);display:block;margin-bottom:2px}
+.steps>div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14.5px;color:var(--fg-2);display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.steps>div>div{display:block}
+.steps b{color:var(--fg);display:block;margin-bottom:3px;font-size:15px}
 .steps .n{color:var(--green);font-weight:800;font-family:"SF Mono",Menlo,monospace;font-size:13px;padding-top:2px}
 
 footer{border-top:1px solid var(--line);padding:0;color:var(--fg-3);font-size:13px}
