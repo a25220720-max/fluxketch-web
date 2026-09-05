@@ -1,71 +1,123 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxketch | 현장 완결형 3D 설계 플랫폼</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    <style>
-        /* 원본 사진과 동일한 완전한 블랙 배경 및 화이트 텍스트 */
-        body { 
-            background-color: #000000; 
-            color: #ffffff; 
-            font-family: 'Pretendard', sans-serif; 
-            letter-spacing: -0.02em;
-        }
-        /* 글씨 색깔: 원본의 에메랄드-블루 그라데이션 복구 */
-        .brand-gradient {
-            background: linear-gradient(to right, #10b981, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        /* 링크 클릭을 확실하게 보장하기 위한 스타일 */
-        .link-active {
-            position: relative;
-            z-index: 50;
-            cursor: pointer;
-            pointer-events: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluxketch — 현장에서 끝내는 iPad CAD</title>
+<meta name="description" content="DXF·DWG·PDF 도면을 iPad에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼내는 현장용 CAD 앱. 2026년 10월 비공개 베타.">
+<meta property="og:title" content="Fluxketch — 현장에서 끝내는 iPad CAD">
+<meta property="og:description" content="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/cad.jpg">
+<meta property="og:url" content="https://fluxketch.com/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-    
-    <div class="max-w-xl w-full space-y-12">
-        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter brand-gradient">
-            Fluxketch
-        </h1>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo brand" href="/">Fluxketch</a>
+  <nav class="menu"><a href="#features">기능</a><a href="#tools">도구</a><a href="#perf">성능</a><a href="#pricing">요금제</a><a href="#beta">베타 신청</a></nav>
+  <a class="lang" href="/en/">EN</a>
+</div></header>
 
-        <div class="space-y-2 text-zinc-400 text-sm md:text-base font-medium">
-            <p>현장 완결형 3D 설계 플랫폼.</p>
-            <p>도면 작성 및 3D 모델링, 공간 연출을 하나의 캔버스에서.</p>
-            <p>Apple Pencil 최적화.</p>
-        </div>
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">iPad · Apple Pencil · DXF / DWG / PDF</div>
+  <h1><span class="brand">현장에서 끝내는</span><br>iPad CAD</h1>
+  <p class="lead">도면을 열고, 그리고, 표시하고, 꺼낸다 — 전부 iPad 위에서. 사무실로 돌아가 다시 그릴 필요가 없습니다.</p>
+  <div class="cta">
+    <a class="btn primary" href="#beta">비공개 베타 신청</a>
+    <a class="btn" href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">@fluxketch_official</a>
+  </div>
+  <div class="note">2026년 10월 비공개 베타 · TestFlight · 베타 기간에는 모든 기능이 무료로 열립니다</div>
+  <div class="shot"><img src="assets/img/cad.jpg" alt="Fluxketch CAD 모드 — 실제 건축 도면 위 좌측 도구 팔레트와 우측 스냅 레일" width="2360" height="1640" loading="eager"></div>
+</div></section>
 
-        <div class="pt-10 space-y-12">
-            
-            <div>
-                <h2 class="text-4xl font-bold">2026. 10</h2>
-                <p class="text-zinc-500 mt-2 text-sm tracking-widest uppercase">Private Beta Test</p>
-            </div>
+<section id="features"><div class="wrap">
+  <h2>도면 한 장이 현장의 모든 것이 됩니다</h2>
+  <p class="sub">CAD 작도, 손글씨 마크업, 사진이 달린 핀, 노트 페이지가 한 파일에 삽니다. 모드를 오가도 자리는 그대로입니다.</p>
+  <div class="grid3">
+    <div class="card"><span class="k">열기</span><h3>DXF · DWG · PDF</h3><p>DXF는 앱 안에서 바로 파싱하고 단위를 묻습니다. DWG는 변환 서버를 거쳐 열립니다. PDF는 밑그림으로 깔고 축척(1:100 기본)을 맞춰 그 위에 그립니다 — PDF 벡터 선에도 스냅이 붙습니다.</p></div>
+    <div class="card"><span class="k">그리기</span><h3>CAD 도구 12종</h3><p>선·폴리선·원·호·사각형·문자, 이동·복사·모깎기·자르기·지우기·치수. 끝점·중간점·중심·교차 스냅과 직교, 수치 키패드로 정확하게.</p></div>
+    <div class="card"><span class="k">표시</span><h3>마크업 · 핀 · 노트</h3><p>Apple Pencil 손글씨 마크업은 도면 좌표에 붙어 확대·이동해도 제자리. 핀에 사진·메모를 꽂고, 같은 파일에 노트 페이지를 씁니다.</p></div>
+    <div class="card"><span class="k">보기</span><h3>큰 도면도 60Hz</h3><p>Metal 벡터 렌더 + 래스터 타일 피라미드. 18만 도형 도면을 열고 팬·줌하는 동안 프레임을 유지하고, 멈추면 즉시 선명해집니다.</p></div>
+    <div class="card"><span class="k">꺼내기</span><h3>축척 맞춘 PDF · DXF</h3><p>A4/A3 플롯에 1:50·1:100·1:150 축척, 창 지정, 종이 위 100mm 검증 눈금. DXF는 v1 작도 범위를 무손실로 되돌립니다(R2000).</p></div>
+    <div class="card"><span class="k">기록</span><h3>핀 리포트 PDF</h3><p>도면 위 핀을 모아 표지·목록·사진·메모가 든 보고서 한 부로. 하자·지시·질문을 도면 자리 그대로 전달합니다.</p></div>
+  </div>
+</div></section>
 
-            <div class="flex justify-center py-4">
-                <a href="https://www.instagram.com/fluxketch_official/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="link-active group flex items-center gap-3 bg-zinc-900 border border-zinc-800 px-8 py-3 rounded-full hover:bg-zinc-800 transition-all active:scale-95">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    <span class="font-bold text-sm">@fluxketch_official</span>
-                </a>
-            </div>
+<section id="tools"><div class="wrap">
+  <h2>v1 도구 12종 — 실제로 배선된 것만</h2>
+  <p class="sub">카탈로그에 이름만 있는 도구는 넣지 않았습니다. 아래 12개는 오너 기기에서 매 라운드 검증된 것입니다.</p>
+  <div class="tools">
+    <div class="tool"><b>선</b><span>L</span></div><div class="tool"><b>폴리선</b><span>PL</span></div><div class="tool"><b>원</b><span>C</span></div>
+    <div class="tool"><b>호</b><span>A</span></div><div class="tool"><b>사각형</b><span>REC</span></div><div class="tool"><b>문자</b><span>T</span></div>
+    <div class="tool"><b>이동</b><span>M</span></div><div class="tool"><b>복사</b><span>CO</span></div><div class="tool"><b>모깎기</b><span>F</span></div>
+    <div class="tool"><b>자르기</b><span>TR</span></div><div class="tool"><b>지우기</b><span>E</span></div><div class="tool"><b>치수</b><span>DIM</span></div>
+  </div>
 
-            <div>
-                <h2 class="text-4xl font-bold">2026. 12</h2>
-                <p class="text-zinc-500 mt-2 text-sm tracking-widest uppercase">Official Launch</p>
-            </div>
-            
-        </div>
-    </div>
+  <div class="feature">
+    <div class="shot"><img src="assets/img/zoom.jpg" alt="확대한 도면 — 선명한 벡터 선과 스냅 마커" loading="lazy"></div>
+    <div class="txt"><h3>스냅이 손을 잡아 줍니다</h3><p>도구를 들고 도형 위에 머물면 끝점·중간점·중심·교차 스냅점이 미리 보입니다. 직교를 켜면 가로·세로가 자로 잰 듯 맞습니다.</p>
+      <ul><li>스냅 반경 15pt, 호버 지원 기기는 닿기 전에 미리보기</li><li>지우개는 탭 한 번, 또는 선을 긋고 떼면 걸린 도형을 한 번에</li><li>치수는 두 점을 찍으면 실제 길이를 단위와 함께</li></ul></div>
+  </div>
+  <div class="feature rev">
+    <div class="shot"><img src="assets/img/markup.jpg" alt="마크업 모드 — 좌측 펜·마커·색·굵기 팔레트" loading="lazy"></div>
+    <div class="txt"><h3>마크업은 도면에 붙어 있습니다</h3><p>펜·마커·연필·지우개·올가미·자. 획은 도면 좌표에 고정되어 확대·축소·이동 중에도 도면과 갈라지지 않습니다. 굵기는 도면 단위 기준이라 축척이 바뀌어도 의미가 같습니다.</p>
+      <ul><li>핀은 언제나 마크업 위에</li><li>도면 보기(흑백 시트)로 전환해 인쇄물처럼 검토</li><li>마크업 잉크까지 그대로 플롯</li></ul></div>
+  </div>
+  <div class="feature">
+    <div class="shot"><img src="assets/img/note.jpg" alt="노트 모드 — 종이 패턴 위 손글씨 페이지와 종이 선택" loading="lazy"></div>
+    <div class="txt"><h3>같은 파일에 노트 페이지</h3><p>백지·줄·도트·모눈·제도 모눈, 밝은/크림/검은 종이. 끝까지 당기면 페이지가 하나 더 생깁니다. 회의 메모와 도면이 한 프로젝트에 함께 저장됩니다.</p>
+      <ul><li>가로·세로 모두 지원 — 세로에서는 도구가 오른쪽 열로 재배치</li><li>캔버스 잠금으로 화면을 멈추고 보여 주기만</li><li>28단계 연습판으로 첫 사용을 안내</li></ul></div>
+  </div>
+</div></section>
 
+<section id="perf"><div class="wrap">
+  <h2>실측으로 말합니다</h2>
+  <p class="sub">아래 수치는 개발 기기(iPad Air 11" M4)에서 프로브 로그로 잰 값입니다. 광고 문구가 아니라 로그입니다.</p>
+  <div class="tablewrap"><table class="spec">
+    <thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>정지·팬 프레임</td><td>60Hz 유지 (프레임 간격 중앙값 16.7ms)</td><td>인코드 0.3~0.5ms · GPU 1~3ms</td></tr>
+      <tr><td>큰 도면</td><td>181,422 도형 열림·조작</td><td>메모리 피크 ≈1.0GB · 51,307 도형 ≈0.4GB</td></tr>
+      <tr><td>멈춘 뒤 선명해지기</td><td>6,938 도형 49ms · 46,529 도형 118ms</td><td>오프메인 스냅샷 + 150ms 크로스페이드</td></tr>
+      <tr><td>마크업 잉크 표시</td><td>굽기 중앙값 5ms</td><td>팬·핀치 중 잉크가 도면과 갈라지는 프레임 45%→19%</td></tr>
+      <tr><td>편집 즉각 반영</td><td>+100ms 안에 실제 표시</td><td>지우기·레이어 눈 감기·선·치수 전부</td></tr>
+      <tr><td>플롯 축척</td><td>종이 100mm 눈금 = 283.46pt</td><td>A3 인쇄물 실측 합격</td></tr>
+      <tr><td>자동 시험</td><td>5,142 실행 / 0 실패</td><td>패키지 전체 게이트, 매 안전지대마다</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>요금제</h2>
+  <p class="sub">비공개 베타 기간에는 모든 기능이 무료로 열립니다. 아래는 정식 출시 때의 계획이며 바뀔 수 있습니다.</p>
+  <div class="plans">
+    <div class="plan"><h3>Free</h3><div class="price">₩0</div><div class="per">영구</div><ul><li>도면 열기·읽기</li><li>광고 보고 DXF 내보내기·플롯</li></ul></div>
+    <div class="plan"><h3>Lite</h3><div class="price">₩4,900</div><div class="per">월 · 연 ₩49,000</div><ul><li>작도·편집 12종</li><li>플롯 PDF · DXF 내보내기</li></ul></div>
+    <div class="plan hot"><h3>Pro</h3><div class="price">₩12,900</div><div class="per">월 · 연 ₩129,000</div><ul><li>Lite 전부</li><li>마크업 · 핀 · 노트</li><li>핀 리포트 PDF</li></ul></div>
+    <div class="plan"><span class="tag">예정</span><h3>Max</h3><div class="price">₩39,000</div><div class="per">월 · 연 ₩390,000</div><ul><li>추후 공개</li></ul></div>
+  </div>
+</div></section>
+
+<section id="beta"><div class="wrap"><div class="beta">
+  <h2>비공개 베타 신청</h2>
+  <p>2026년 10월, TestFlight로 시작합니다. 건축·인테리어·시공 현장에서 도면을 다루는 분을 먼저 모십니다.</p>
+  <div class="steps">
+    <div><b>1. 신청서 작성</b>어떤 도면을 어떻게 쓰는지 2분 정도 적어 주세요.</div>
+    <div><b>2. TestFlight 초대</b>순서대로 초대 메일을 보냅니다. iPad와 Apple Pencil이 필요합니다.</div>
+    <div><b>3. 피드백</b>앱 안 "베타 피드백"에서 바로 남길 수 있습니다. 여러분의 신고가 다음 빌드가 됩니다.</div>
+  </div>
+  <a class="btn primary" id="beta-form" data-form="" href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">신청서 열기</a>
+  <div class="note" style="margin-top:12px;color:var(--ink3);font-size:13px">신청서 링크가 준비되는 동안은 인스타그램 DM으로 받습니다.</div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 Fluxketch. All rights reserved.</div>
+  <nav><a href="/privacy.html">개인정보 처리방침</a><a href="/terms.html">이용 약관</a><a href="/licenses.html">오픈소스 라이선스</a><a href="mailto:support@fluxketch.com">support@fluxketch.com</a><a href="/en/">English</a></nav>
+</div></footer>
+<script>
+  // 신청서 링크가 채워지면(data-form) 그 주소로, 아니면 인스타그램으로.
+  (function(){var a=document.getElementById('beta-form');var f=a.getAttribute('data-form');if(f){a.href=f;a.nextElementSibling&&(a.nextElementSibling.style.display='none');}})();
+</script>
 </body>
 </html>
