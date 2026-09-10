@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모바일 CAD와 노트북 CAD의 차이 — 현장에서 무엇을 iPad에 맡길까</title>
+<meta name="description" content="iPad 같은 모바일 CAD와 노트북·PC CAD는 역할이 다릅니다. 각각 잘하는 일과 못하는 일, 현장에서 두 가지를 나누는 기준을 정리했습니다.">
+<link rel="canonical" href="https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="모바일 CAD와 노트북 CAD의 차이 — 현장에서 무엇을 iPad에 맡길까">
+<meta property="og:description" content="iPad 같은 모바일 CAD와 노트북·PC CAD는 역할이 다릅니다. 각각 잘하는 일과 못하는 일, 현장에서 두 가지를 나누는 기준을 정리했습니다.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/granada-topo-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="모바일 CAD와 노트북 CAD의 차이 — 현장에서 무엇을 iPad에 맡길까">
+<meta name="twitter:description" content="iPad 같은 모바일 CAD와 노트북·PC CAD는 역할이 다릅니다. 각각 잘하는 일과 못하는 일, 현장에서 두 가지를 나누는 기준을 정리했습니다.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/granada-topo-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/guides/mobile-cad-vs-desktop-cad/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/">
+<link rel="preload" as="image" href="/assets/img/v3/granada-topo-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"모바일 CAD와 노트북 CAD의 차이","description":"iPad 같은 모바일 CAD와 노트북·PC CAD는 역할이 다릅니다. 각각 잘하는 일과 못하는 일, 현장에서 두 가지를 나누는 기준을 정리했습니다.","inLanguage":"ko","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://fluxketch.com/assets/img/v3/granada-topo-dark.jpg","author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"mainEntityOfPage":"https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://fluxketch.com/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://fluxketch.com/guides/"},{"@type":"ListItem","position":3,"name":"모바일 CAD vs 노트북 CAD","item":"https://fluxketch.com/guides/mobile-cad-vs-desktop-cad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="주 메뉴">
+    <a href="/#features">기능</a><a href="/#field">현장 기록</a><a href="/#performance">성능</a><a href="/#drawings">실제 도면</a><a href="/#pricing">요금제</a><a href="/guides/">가이드</a><a href="/#faq">자주 묻는 질문</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/en/guides/mobile-cad-vs-desktop-cad/" hreflang="en">EN</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="ahero"><div class="wrap narrow">
+  <nav class="crumbs" aria-label="경로"><a href="/">홈</a><span>›</span><a href="/guides/">가이드</a><span>›</span><span aria-current="page">모바일 CAD vs 노트북 CAD</span></nav>
+  <h1 class="reveal">모바일 CAD와 노트북 CAD의 차이</h1>
+  <p class="lead reveal d1">노트북을 현장에 들고 나가 본 사람은 압니다. 문제는 성능이 아니라 자세입니다. 무엇을 iPad에 맡기고 무엇을 사무실에 남길지 기준을 정리했습니다.</p>
+  <p class="meta reveal d2">업데이트 2026-09-10 · 읽는 시간 약 3분</p>
+</div></section>
+<article class="article"><div class="wrap narrow">
+<h2>도구가 아니라 자세의 차이</h2>
+<p>노트북 CAD는 앉아서, 두 손으로, 마우스와 키보드로 씁니다. 모바일 CAD는 서서, 한 손으로 들고, 다른 손의 펜으로 씁니다. 그래서 같은 '편집'이라도 현장에서 필요한 편집은 <b>확인·수정·기록·출력</b>이고, 사무실의 편집은 <b>설계·정리·세트 관리</b>입니다.</p>
+<h2>비교</h2>
+<div class="tablewrap"><table><thead><tr><th>항목</th><th>노트북·PC CAD</th><th>모바일 CAD(iPad)</th></tr></thead><tbody><tr><td>자세</td><td>앉아서 두 손</td><td>서서 한 손 + 펜</td></tr><tr><td>입력</td><td>마우스·키보드·명령행</td><td>Apple Pencil·터치·키패드</td></tr><tr><td>잘하는 일</td><td>설계·대량 편집·Xref 세트·일괄 플롯</td><td>현장 확인·수정·마크업·핀·축척 출력</td></tr><tr><td>오프라인</td><td>가능</td><td>DXF·PDF 가능(DWG는 첫 변환만 온라인)</td></tr><tr><td>사진·메모</td><td>별도 앱</td><td>핀에 달려 위치가 기록</td></tr><tr><td>3D</td><td>가능</td><td>Fluxketch는 2D 전용</td></tr><tr><td>부팅·준비</td><td>분 단위</td><td>초 단위</td></tr><tr><td>결과 전달</td><td>DWG·PDF</td><td>DXF·플롯 PDF·리포트</td></tr></tbody></table></div>
+<h2>iPad에 맡길 일</h2>
+<ul><li><b>현장 확인.</b> 실척 자로 1:50 그대로 보고, 두 점을 찍어 길이를 잽니다.</li><li><b>작은 수정.</b> 벽선 하나, 치수 하나, 문자 하나. 스냅과 키패드가 있으면 그 자리에서 끝납니다.</li><li><b>기록.</b> 사진 핀·마크업·노트가 도면 좌표에 붙어 위치가 곧 기록입니다.</li><li><b>출력.</b> 축척 맞춘 플롯 PDF와 리포트를 회의 자리에서 바로 보냅니다.</li></ul>
+<h2>사무실에 남길 일</h2>
+<ul><li>3D 모델링과 렌더링.</li><li>외부 참조(Xref)가 얽힌 대형 세트 정리, 수십 장 일괄 플롯.</li><li>DWG 저장. 모바일에서 DXF로 받은 파일을 사무실 CAD가 DWG로 저장합니다.</li><li>치수 스타일·도면 템플릿 같은 표준 관리.</li></ul>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/granada-topo-dark.jpg" alt="그라나다 지형도 — 시가지와 산악 등고선 전체를 iPad CAD 모드에 올린 화면" loading="lazy"></div></div><figcaption>성능은 더 이상 이유가 아닙니다: 등고선 전체를 올린 지형도가 iPad에서 손을 따라옵니다.</figcaption></figure>
+<h2>&#x27;성능이 부족하다&#x27;는 이제 이유가 아니다</h2>
+<p>M 시리즈 iPad는 18만 도형 도면에서 팬·줌을 60Hz로 따라오고, 레이어 188개를 그대로 다룹니다. 메모리 관문이 기기 가용량을 보고 열 수 있는지 먼저 판단하므로 '열다가 죽는' 일이 아니라 '열 수 없는 이유를 말하는' 일이 됩니다. 남는 차이는 자세와 입력 방식뿐입니다.</p>
+<h2>두 가지를 잇는 것: 왕복</h2>
+<p>사무실에서 DWG·DXF로 내보내고, 현장 iPad에서 열어 손대고, DXF와 플롯 PDF·리포트로 돌려보냅니다. 레이어·색·굵기·선종류가 왕복에서 유지되면 다시 그릴 일이 없습니다. 형식 선택은 <a href="/guides/dwg-vs-dxf/">DWG와 DXF의 차이</a>, 여는 방법은 <a href="/guides/open-dwg-on-ipad/">아이패드에서 DWG 여는 방법</a>에 있습니다.</p>
+<div class="cta-soft"><p>Fluxketch는 위 표의 &#x27;모바일 CAD(iPad)&#x27; 열을 맡는 앱입니다. 현장 확인·수정·기록·출력이 필요하면 베타에서 시험해 보세요.</p><a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a></div>
+</div></article>
+<section class="soft"><div class="wrap narrow">
+  <h2 class="h3">함께 보기</h2>
+  <div class="related">
+    <a href="/guides/open-dwg-on-ipad/"><span class="k">가이드</span><span class="t">아이패드에서 DWG 여는 방법</span><span class="s">iPad에서 DWG 파일을 여는 세 가지 방법과 레이어·선종류가 사라지는 이유, 그리고 레이어를 유지한 채 열고 수정하는 순서를 정리했습니다.</span></a>
+    <a href="/guides/edit-cad-drawings-on-ipad/"><span class="k">가이드</span><span class="t">아이패드 CAD로 도면 수정하기</span><span class="s">iPad CAD 앱에서 실제 도면을 수정하는 순서: 선택, 이동·복사·자르기, 스냅과 수치 입력, 레이어 속성 변경, DXF 내보내기까지 현장 기준으로 정리했습니다.</span></a>
+    <a href="/guides/dwg-vs-dxf/"><span class="k">가이드</span><span class="t">DWG와 DXF 차이</span><span class="s">DWG와 DXF는 같은 도면의 두 형식입니다. 구조·크기·호환성 차이와 iPad·다른 CAD로 넘길 때 어느 쪽을 골라야 하는지 표로 정리했습니다.</span></a>
+
+  </div>
+</div></section>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>다음 현장부터 Fluxketch로.</h2><p class="lead">TestFlight 비공개 베타에 참여하시면 베타 기간 동안 모든 기능을 무료로 쓰고, 개발팀에 바로 피드백할 수 있습니다.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">이메일로 문의</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">현장에서 끝내는 iPad CAD.</p></div>
+    <div><h4>제품</h4><ul><li><a href="/#features">기능</a></li><li><a href="/#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a></li></ul></div>
+    <div><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 CAD 앱</a></li><li><a href="/mobile-cad/">모바일 CAD 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></div>
+    <div><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com">문의 flux0720@fluxketch.com</a></li><li><a href="/en/guides/mobile-cad-vs-desktop-cad/">English</a></li></ul></div>
+    <div><h4>법적 고지</h4><ul><li><a href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+{{_top}}
+<section class="phero"><div class="wrap">
+  <div class="copy">
+    <div class="eyebrow reveal">{{eyebrow}}</div>
+    <h1 class="reveal d1">{{h1}}</h1>
+    <p class="lead reveal d2">{{lead}}</p>
+    <div class="cta reveal d3">
+      <a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a>
+      <a class="btn ghost" href="#answers">{{p_answers_btn}}</a>
+    </div>
+    <div class="platform reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>{{platform}}</div>
+  </div>
+  <div class="stage reveal d2"><div class="device {{orient}}"><div class="screen"><img src="/assets/img/v3/{{img}}.jpg" alt="{{alt}}" loading="eager" fetchpriority="high"></div></div></div>
+</div></section>
+
+<section id="answers" class="soft"><div class="wrap">
+  <div class="eyebrow reveal">{{qa_eyebrow}}</div>
+  <h2 class="reveal d1">{{qa_h2}}</h2>
+  <div class="qa">
+{{qa_items}}
+  </div>
+</div></section>
+
+<section class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">{{steps_eyebrow}}</div>
+  <h2 class="reveal d1">{{steps_h2}}</h2>
+  <div class="row">
+    <ol class="steps reveal d2">
+{{step_items}}
+    </ol>
+    <div class="reveal d3"><div class="device {{orient2}}"><div class="screen"><img src="/assets/img/v3/{{img2}}.jpg" alt="{{alt2}}" loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">{{rel_h2}}</h2>
+  <div class="related reveal d1">
+{{rel_items}}
+  </div>
+</div></section>
+
+{{_bottom}}

@@ -21,7 +21,7 @@ KO = dict(
  lang="ko", path="/", home="/", alt_href="/en/", alt_lang="en", alt_label="EN", alt_full="English",
  title="Fluxketch — 현장에서 끝내는 iPad CAD", desc="DXF·DWG·PDF 도면을 iPad에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼내는 현장용 CAD. 비공개 베타 진행 중.",
  og_desc="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.",
- nav_label="주 메뉴", nav_features="기능", nav_field="현장 기록", nav_perf="성능", nav_drawings="실제 도면", nav_pricing="요금제", nav_faq="자주 묻는 질문",
+ og_locale="ko_KR", nav_guides="가이드", p_answers_btn="궁금한 것 보기", qa_eyebrow="질문과 답", steps_eyebrow="순서", rel_h2="함께 보기", crumbs_label="경로", crumb_home="홈", g_h1="현장에서 CAD를 쓰는 사람을 위한 가이드", g_lead="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.", read_min="읽는 시간 약 %d분", updated="업데이트", guide_k="가이드", nav_label="주 메뉴", nav_features="기능", nav_field="현장 기록", nav_perf="성능", nav_drawings="실제 도면", nav_pricing="요금제", nav_faq="자주 묻는 질문",
  cta_short="베타 신청", cta_primary="비공개 베타 신청", cta_secondary="기능 둘러보기", menu_open="메뉴 열기",
  h1="도면에서 현장까지,<br>iPad 하나로.", h1_sub="Fluxketch는 현장 사람을 위한 CAD입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.",
  platform="iPad · Apple Pencil · TestFlight 비공개 베타", hero_alt="Fluxketch 도면 보기 — 호텔 지하 1층 주차장 평면도, 왼쪽 도구 팔레트, 오른쪽 스냅 레일",
@@ -75,7 +75,7 @@ EN.update(
  lang="en", path="/en/", home="/en/", alt_href="/", alt_lang="ko", alt_label="KO", alt_full="한국어",
  title="Fluxketch — Field CAD for iPad", desc="Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Private beta.",
  og_desc="Open, draw, mark up, export. All on iPad.",
- nav_label="Main menu", nav_features="Features", nav_field="Field notes", nav_perf="Performance", nav_drawings="Real drawings", nav_pricing="Pricing", nav_faq="FAQ",
+ og_locale="en_US", nav_guides="Guides", p_answers_btn="See the answers", qa_eyebrow="Questions and answers", steps_eyebrow="How it works", rel_h2="See also", crumbs_label="Breadcrumb", crumb_home="Home", g_h1="Guides for people who use CAD on site", g_lead="Practical writing on what the field runs into every day — DWG, DXF, scale, markup. Most of it applies whichever app you use.", read_min="About %d min read", updated="Updated", guide_k="Guide", nav_label="Main menu", nav_features="Features", nav_field="Field notes", nav_perf="Performance", nav_drawings="Real drawings", nav_pricing="Pricing", nav_faq="FAQ",
  cta_short="Join beta", cta_primary="Join the private beta", cta_secondary="Explore features", menu_open="Open menu",
  h1="From the drawing<br>to the site, on one iPad.", h1_sub="Fluxketch is CAD for people who carry drawings. Open DXF, DWG and PDF as they are, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF.",
  platform="iPad · Apple Pencil · TestFlight private beta", hero_alt="Fluxketch sheet view — hotel basement parking plan with tool palette and snap rail",
@@ -124,20 +124,187 @@ EN.update(
       ("How do I join the beta?","Use 'Join the private beta' above and we'll send a TestFlight invite. Report problems from the app's 'Report a bug now' card or by email to flux0720@fluxketch.com, ideally with the file.")],
  ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_privacy="Privacy", ft_terms="Terms", ft_licenses="Open-source licenses", ft_fine="Beta-period notices will be replaced by formal documents.",
 )
-def render(d):
+
+import json, re
+from content_pages import PAGES
+from content_guides import GUIDES, DATE
+
+SITE = "https://fluxketch.com"
+TOP = open(os.path.join(ROOT, "tools", "_top.html"), encoding="utf-8").read()
+BOTTOM = open(os.path.join(ROOT, "tools", "_bottom.html"), encoding="utf-8").read()
+BOTTOM = re.sub(r'<section id="faq".*?</section>\n\n', "", BOTTOM, flags=re.S)  # 홈 FAQ는 홈에만
+
+def fill(tpl, d):
+    out = tpl
+    for k, v in d.items():
+        if isinstance(v, (str, int)): out = out.replace("{{" + k + "}}", str(v))
+    return out
+
+def sub(base, lang):
+    """홈 사전(KO/EN)에서 하위 페이지용 사전을 만든다."""
+    d = dict(base); d["form"] = FORM
+    for k, v in ICO.items(): d["ico_" + k] = v
+    return d
+
+def ld(obj): return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+
+ORG = {"@type":"Organization","name":"Fluxketch","url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}
+def app_ld(lang):
+    ko = lang == "ko"
+    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch",
+      "operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
+      "description": KO["desc"] if ko else EN["desc"], "url": SITE + ("/" if ko else "/en/"),
+      "inLanguage":["ko","en"], "screenshot": SITE+"/assets/img/v3/hotel-parking-sheet.jpg",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","description":"비공개 베타 기간 무료" if ko else "Free during the private beta"},
+      "author": ORG, "publisher": ORG}
+def faq_ld(pairs):
+    return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":re.sub("<[^>]+>","",a)}} for q,a in pairs]}
+def crumbs_ld(items):
+    return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":SITE+u} for i,(n,u) in enumerate(items)]}
+
+def path_for(lang, slug, guide=False):
+    p = ("/" if lang == "ko" else "/en/") + ("guides/" if guide else "") + slug + "/"
+    return p
+
+def related_cards(lang, exclude=None, guides=False):
+    cards = []
+    for pg in PAGES:
+        if pg["slug"] == exclude: continue
+        c = pg[lang]
+        cards.append(f'    <a href="{path_for(lang, pg["slug"])}"><span class="k">{html.escape(c["k"])}</span><span class="t">{html.escape(c["short"])}</span><span class="s">{html.escape(c["h1"])}</span></a>\n')
+    if guides:
+        base = KO if lang == "ko" else EN
+        cards.append(f'    <a href="{path_for(lang, "", True)[:-1]}"><span class="k">{html.escape(base["nav_guides"])}</span><span class="t">{html.escape(base["g_h1"])}</span><span class="s">{html.escape(base["g_lead"])}</span></a>\n')
+    return "".join(cards)
+
+def guide_cards(lang, exclude=None, limit=None):
+    base = KO if lang == "ko" else EN
+    cards = []
+    for g in GUIDES:
+        if g["slug"] == exclude: continue
+        c = g[lang]
+        cards.append(f'    <a href="{path_for(lang, g["slug"], True)}"><span class="k">{html.escape(base["guide_k"])}</span><span class="t">{html.escape(c["short"])}</span><span class="s">{html.escape(c["desc"])}</span></a>\n')
+    return "".join(cards[:limit] if limit else cards)
+
+def footer_use_links(lang):
+    return "".join(f'<li><a href="{path_for(lang, pg["slug"])}">{html.escape(pg[lang]["short"])}</a></li>' for pg in PAGES)
+
+URLS = []  # (ko_path, en_path, lastmod, images)
+def write(path, content):
+    full = os.path.join(ROOT, path.lstrip("/"), "index.html") if path.endswith("/") else os.path.join(ROOT, path.lstrip("/"))
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    assert "{{" not in content, (path, re.findall(r"{{[a-z_0-9]+}}", content)[:5])
+    with open(full, "w", encoding="utf-8") as f: f.write(content)
+
+def render_page(pg, lang):
+    base = KO if lang == "ko" else EN
+    c = pg[lang]; d = sub(base, lang)
+    d.update(c); d["path"] = path_for(lang, pg["slug"]); d["home"] = "/" if lang == "ko" else "/en/"
+    other = "en" if lang == "ko" else "ko"
+    d["alt_href"] = path_for(other, pg["slug"])
+    d["og_desc"] = c["desc"]; d["img"] = pg["img"]; d["img2"] = pg["img2"]; d["orient"] = pg["orient"]; d["orient2"] = pg["orient2"]
+    d["qa_items"] = "".join(f'    <article><h3>{html.escape(q)}</h3><p>{html.escape(a)}</p></article>\n' for q, a in c["qa"])
+    d["step_items"] = "".join(f'      <li><h3>{html.escape(t)}</h3><p>{html.escape(p)}</p></li>\n' for t, p in c["steps"])
+    d["rel_items"] = related_cards(lang, exclude=pg["slug"], guides=True)
+    d["ft_use_links"] = footer_use_links(lang)
+    d["jsonld"] = ld([{"@context":"https://schema.org","@type":"WebPage","name":c["title"],"description":c["desc"],"url":SITE+d["path"],"inLanguage":lang,"isPartOf":{"@type":"WebSite","name":"Fluxketch","url":SITE+"/"},"about":app_ld(lang)}, faq_ld(c["qa"]), crumbs_ld([(base["crumb_home"], d["home"]), (c["short"], d["path"])])])
+    tpl = open(os.path.join(ROOT, "tools", "page.html"), encoding="utf-8").read().replace("{{_top}}", TOP).replace("{{_bottom}}", BOTTOM)
+    tpl = tpl.replace('<link rel="alternate" hreflang="ko" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="ko" href="{SITE}{path_for("ko", pg["slug"])}">')
+    tpl = tpl.replace('<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">', f'<link rel="alternate" hreflang="en" href="{SITE}{path_for("en", pg["slug"])}">')
+    tpl = tpl.replace('<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="x-default" href="{SITE}{path_for("ko", pg["slug"])}">')
+    tpl = tpl.replace("/assets/img/v3/hotel-parking-sheet.jpg", f"/assets/img/v3/{pg['img']}.jpg")
+    write(d["path"], fill(tpl, d))
+
+def body_html(blocks):
+    out = []
+    for blk in blocks:
+        t = blk[0]
+        if t == "h2": out.append(f"<h2>{html.escape(blk[1])}</h2>")
+        elif t == "p": out.append(f"<p>{blk[1]}</p>")
+        elif t in ("ul", "ol"): out.append(f"<{t}>" + "".join(f"<li>{x}</li>" for x in blk[1]) + f"</{t}>")
+        elif t == "note": out.append(f'<div class="note"><p>{blk[1]}</p></div>')
+        elif t == "fig": out.append(f'<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/{blk[1]}.jpg" alt="{html.escape(blk[2])}" loading="lazy"></div></div><figcaption>{html.escape(blk[3])}</figcaption></figure>')
+        elif t == "table":
+            out.append('<div class="tablewrap"><table><thead><tr>' + "".join(f"<th>{html.escape(h)}</th>" for h in blk[1]) + "</tr></thead><tbody>" + "".join("<tr>" + "".join(f"<td>{html.escape(c)}</td>" for c in r) + "</tr>" for r in blk[2]) + "</tbody></table></div>")
+    return "\n".join(out)
+
+def words(blocks):
+    txt = re.sub("<[^>]+>", "", " ".join(str(x) for b in blocks for x in (b[1:] if b[0] != "table" else [])))
+    return len(txt)
+
+def render_guide(g, lang):
+    base = KO if lang == "ko" else EN
+    c = g[lang]; d = sub(base, lang)
+    d.update({k: v for k, v in c.items() if k != "body"})
+    d["path"] = path_for(lang, g["slug"], True); d["home"] = "/" if lang == "ko" else "/en/"
+    other = "en" if lang == "ko" else "ko"; d["alt_href"] = path_for(other, g["slug"], True)
+    d["og_desc"] = c["desc"]
+    n = words(c["body"]); mins = max(3, round(n / (500 if lang == "ko" else 1100)))
+    d["meta_line"] = f'{base["updated"]} {DATE} · {base["read_min"] % mins}'
+    cta = f'<div class="cta-soft"><p>{html.escape(c["cta"])}</p><a class="btn primary small" href="{FORM}" target="_blank" rel="noopener noreferrer">{html.escape(base["cta_primary"])}</a></div>'
+    d["body"] = body_html(c["body"]) + "\n" + cta
+    d["rel_items"] = guide_cards(lang, exclude=g["slug"], limit=3) + related_cards(lang)[:0]
+    d["ft_use_links"] = footer_use_links(lang)
+    d["jsonld"] = ld([{"@context":"https://schema.org","@type":"Article","headline":c["h1"],"description":c["desc"],"inLanguage":lang,"datePublished":DATE,"dateModified":DATE,"image":SITE+f"/assets/img/v3/{g['img']}.jpg","author":ORG,"publisher":ORG,"mainEntityOfPage":SITE+d["path"]}, crumbs_ld([(base["crumb_home"], d["home"]), (base["nav_guides"], d["home"]+"guides/"), (c["short"], d["path"])])])
+    tpl = open(os.path.join(ROOT, "tools", "article.html"), encoding="utf-8").read().replace("{{_top}}", TOP).replace("{{_bottom}}", BOTTOM)
+    tpl = tpl.replace('<link rel="alternate" hreflang="ko" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="ko" href="{SITE}{path_for("ko", g["slug"], True)}">')
+    tpl = tpl.replace('<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">', f'<link rel="alternate" hreflang="en" href="{SITE}{path_for("en", g["slug"], True)}">')
+    tpl = tpl.replace('<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="x-default" href="{SITE}{path_for("ko", g["slug"], True)}">')
+    tpl = tpl.replace("/assets/img/v3/hotel-parking-sheet.jpg", f"/assets/img/v3/{g['img']}.jpg")
+    tpl = tpl.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="article">')
+    write(d["path"], fill(tpl, d))
+
+def render_guides_index(lang):
+    base = KO if lang == "ko" else EN
+    d = sub(base, lang); d["home"] = "/" if lang == "ko" else "/en/"; d["path"] = d["home"] + "guides/"
+    other = "en" if lang == "ko" else "ko"; d["alt_href"] = ("/" if other == "ko" else "/en/") + "guides/"
+    d["title"] = f'{base["nav_guides"]} — Fluxketch'; d["desc"] = base["g_lead"]; d["og_desc"] = base["g_lead"]
+    items = []
+    for g in GUIDES:
+        c = g[lang]; n = words(c["body"]); mins = max(3, round(n / (500 if lang == "ko" else 1100)))
+        items.append(f'    <a href="{path_for(lang, g["slug"], True)}"><div class="thumb"><img src="/assets/img/v3/{g["img"]}-sm.jpg" alt="" loading="lazy"></div><div><span class="t">{html.escape(c["h1"])}</span><span class="s">{html.escape(c["desc"])}</span><span class="m">{base["read_min"] % mins}</span></div></a>\n')
+    d["g_items"] = "".join(items); d["rel_items"] = related_cards(lang); d["ft_use_links"] = footer_use_links(lang)
+    d["jsonld"] = ld([{"@context":"https://schema.org","@type":"CollectionPage","name":d["title"],"description":d["desc"],"url":SITE+d["path"],"inLanguage":lang}, crumbs_ld([(base["crumb_home"], d["home"]), (base["nav_guides"], d["path"])])])
+    tpl = open(os.path.join(ROOT, "tools", "guides.html"), encoding="utf-8").read().replace("{{_top}}", TOP).replace("{{_bottom}}", BOTTOM)
+    tpl = tpl.replace('href="https://fluxketch.com/">', f'href="{SITE}/guides/">').replace('href="https://fluxketch.com/en/">', f'href="{SITE}/en/guides/">')
+    write(d["path"], fill(tpl, d))
+
+def render_home(d):
     d = dict(d); d["form"] = FORM
     for k, v in ICO.items(): d["ico_" + k] = v
     d["strip_items"] = "".join(f'  <figure><div class="thumb"><img src="/assets/img/v3/{f}-sm.jpg" alt="" loading="lazy" width="900" height="{626 if "portrait" not in f else 1295}"></div><figcaption><span>{html.escape(d[c])}</span></figcaption></figure>\n' for f, c in STRIP)
     d["f_tabs"] = "".join(f'      <button class="tab" role="tab" id="tab-{i}" aria-controls="pane-{i}" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">{html.escape(d[c])}</span><span class="s"><span>{html.escape(d[c+"s"])}</span></span></button>\n' for i, (f, c) in enumerate(TABS))
     d["f_panes"] = "".join(f'      <div class="pane" role="tabpanel" id="pane-{i}" aria-labelledby="tab-{i}"><div class="device land"><div class="screen"><img src="/assets/img/v3/{f}.jpg" alt="{html.escape(d[c])}" loading="{"eager" if i == 0 else "lazy"}"></div></div></div>\n' for i, (f, c) in enumerate(TABS))
     d["faq_items"] = "".join(f'    <details{" open" if i == 0 else ""}><summary>{html.escape(q)}</summary><div class="a">{html.escape(a)}</div></details>\n' for i, (q, a) in enumerate(d["faq"]))
+    d["ft_use_links"] = footer_use_links(d["lang"])
+    d["jsonld"] = ld([app_ld(d["lang"]), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}, faq_ld(d["faq"])])
     tpl = open(os.path.join(ROOT, "tools", "template.html"), encoding="utf-8").read()
-    def sub(m):
-        k = m.group(1)
-        if k not in d: raise KeyError(k)
-        return str(d[k])
-    return re.sub(r"\{\{(\w+)\}\}", sub, tpl)
-open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(render(KO))
-os.makedirs(os.path.join(ROOT, "en"), exist_ok=True)
-open(os.path.join(ROOT, "en", "index.html"), "w", encoding="utf-8").write(render(EN))
-print("built index.html, en/index.html")
+    write(d["path"], fill(tpl, d))
+
+def sitemap():
+    pairs = [("/", "/en/", ["hotel-parking-sheet"]), ("/guides/", "/en/guides/", [])]
+    pairs += [(path_for("ko", p["slug"]), path_for("en", p["slug"]), [p["img"], p["img2"]]) for p in PAGES]
+    pairs += [(path_for("ko", g["slug"], True), path_for("en", g["slug"], True), [g["img"]]) for g in GUIDES]
+    legal = ["/privacy", "/terms", "/licenses"]
+    out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+    for ko, en, imgs in pairs:
+        for u, alt in ((ko, en), (en, ko)):
+            out.append(f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod>")
+            out.append(f'    <xhtml:link rel="alternate" hreflang="ko" href="{SITE}{ko}"/><xhtml:link rel="alternate" hreflang="en" href="{SITE}{en}"/><xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{ko}"/>')
+            for im in imgs: out.append(f"    <image:image><image:loc>{SITE}/assets/img/v3/{im}.jpg</image:loc></image:image>")
+            out.append("  </url>")
+    for u in legal: out.append(f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod></url>")
+    out.append("</urlset>")
+    open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+    open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    return len(pairs) * 2 + len(legal)
+
+if __name__ == "__main__":
+    render_home(KO); render_home(EN)
+    for pg in PAGES:
+        render_page(pg, "ko"); render_page(pg, "en")
+    for g in GUIDES:
+        render_guide(g, "ko"); render_guide(g, "en")
+    render_guides_index("ko"); render_guides_index("en")
+    n = sitemap()
+    print(f"built: home 2, landing {len(PAGES)*2}, guides {len(GUIDES)*2} + index 2, sitemap {n} urls")

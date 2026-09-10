@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAD 도면 마크업 앱 | Apple Pencil로 도면 좌표에 - Fluxketch</title>
+<meta name="description" content="Apple Pencil로 CAD 도면 위에 펜·마커·연필 마크업을 하고, 사진 핀과 노트를 도면 좌표에 붙여 리포트로 인쇄하는 iPad 앱. 획이 도면과 갈라지지 않는 Fluxketch 마크업.">
+<link rel="canonical" href="https://fluxketch.com/cad-markup/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="CAD 도면 마크업 앱 | Apple Pencil로 도면 좌표에 - Fluxketch">
+<meta property="og:description" content="Apple Pencil로 CAD 도면 위에 펜·마커·연필 마크업을 하고, 사진 핀과 노트를 도면 좌표에 붙여 리포트로 인쇄하는 iPad 앱. 획이 도면과 갈라지지 않는 Fluxketch 마크업.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/vivienda-markup-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/cad-markup/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAD 도면 마크업 앱 | Apple Pencil로 도면 좌표에 - Fluxketch">
+<meta name="twitter:description" content="Apple Pencil로 CAD 도면 위에 펜·마커·연필 마크업을 하고, 사진 핀과 노트를 도면 좌표에 붙여 리포트로 인쇄하는 iPad 앱. 획이 도면과 갈라지지 않는 Fluxketch 마크업.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/vivienda-markup-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/cad-markup/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/cad-markup/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/cad-markup/">
+<link rel="preload" as="image" href="/assets/img/v3/vivienda-markup-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"CAD 도면 마크업 앱 | Apple Pencil로 도면 좌표에 - Fluxketch","description":"Apple Pencil로 CAD 도면 위에 펜·마커·연필 마크업을 하고, 사진 핀과 노트를 도면 좌표에 붙여 리포트로 인쇄하는 iPad 앱. 획이 도면과 갈라지지 않는 Fluxketch 마크업.","url":"https://fluxketch.com/cad-markup/","inLanguage":"ko","isPartOf":{"@type":"WebSite","name":"Fluxketch","url":"https://fluxketch.com/"},"about":{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"DXF·DWG·PDF 도면을 iPad에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼내는 현장용 CAD. 비공개 베타 진행 중.","url":"https://fluxketch.com/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","description":"비공개 베타 기간 무료"},"author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"마크업 도구는 무엇이 있나요?","acceptedAnswer":{"@type":"Answer","text":"펜·마커·연필·지우개·올가미·자입니다. Apple Pencil 필압을 그대로 쓰고, 색과 굵기는 팔레트에서 고릅니다. 되돌리기·다시 실행이 마크업에도 적용됩니다."}},{"@type":"Question","name":"확대하면 획이 도면과 어긋나지 않나요?","acceptedAnswer":{"@type":"Answer","text":"어긋나지 않습니다. 획은 화면이 아니라 도면 좌표에 저장되고, 굵기도 도면 단위 기준입니다. 확대·축소·이동 중에도 획이 도면과 함께 움직이고, 그리는 동안 기존 잉크가 떨리지 않도록 입력 면을 따로 두었습니다."}},{"@type":"Question","name":"손가락과 펜슬이 섞이지 않나요?","acceptedAnswer":{"@type":"Answer","text":"화면 이동은 손가락, 그리기는 Apple Pencil입니다. 펜슬로는 화면이 밀리지 않습니다. 한 손가락 이동 모드에서도 올가미·지우개·이동은 펜슬로 계속 됩니다."}},{"@type":"Question","name":"사진은 어떻게 붙이나요?","acceptedAnswer":{"@type":"Answer","text":"핀을 찍고 사진과 메모를 답니다. 핀은 언제나 마크업 위에 그려지고 도면 좌표에 고정됩니다. 핀 로그가 목록이 되고, 리포트에는 사진·메모·위치가 함께 인쇄됩니다."}},{"@type":"Question","name":"노트는 따로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"노트 페이지(백지·줄·도트·모눈·제도 모눈)를 도면 파일 안에 추가합니다. 회의 메모나 스케치를 도면과 한 파일에 둡니다."}},{"@type":"Question","name":"마크업은 사무실 CAD에서 보이나요?","acceptedAnswer":{"@type":"Answer","text":"마크업 잉크와 핀은 플롯 PDF와 리포트에 인쇄됩니다. DXF 내보내기에는 CAD 도형이 나가고, 손글씨는 PDF로 전달하는 것이 현장 관행에 맞아 그렇게 두었습니다."}},{"@type":"Question","name":"PDF 도면에도 마크업할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. PDF를 밑그림으로 열어 두 점으로 축척을 맞추면 그 위에 마크업·핀·CAD 작도를 할 수 있습니다."}},{"@type":"Question","name":"도면 보기와 CAD 모드 어디서 하나요?","acceptedAnswer":{"@type":"Answer","text":"둘 다입니다. 흰 바탕 도면 보기에서는 인쇄물 위에 쓰듯, 어두운 CAD 모드에서는 레이어 색 그대로 위에 씁니다. 모드를 오가도 획은 제자리입니다."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://fluxketch.com/"},{"@type":"ListItem","position":2,"name":"CAD 도면 마크업","item":"https://fluxketch.com/cad-markup/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="주 메뉴">
+    <a href="/#features">기능</a><a href="/#field">현장 기록</a><a href="/#performance">성능</a><a href="/#drawings">실제 도면</a><a href="/#pricing">요금제</a><a href="/guides/">가이드</a><a href="/#faq">자주 묻는 질문</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/en/cad-markup/" hreflang="en">EN</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="phero"><div class="wrap">
+  <div class="copy">
+    <div class="eyebrow reveal">CAD 도면 마크업</div>
+    <h1 class="reveal d1">마크업이 도면에 붙어 있어야 기록입니다</h1>
+    <p class="lead reveal d2">스크린샷 위에 그린 표시는 다음 날 어디였는지 모릅니다. Fluxketch의 마크업은 도면 좌표에 고정돼 확대·이동·축척 변경 뒤에도 같은 자리에 있고, 플롯 PDF에 그대로 인쇄됩니다.</p>
+    <div class="cta reveal d3">
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a>
+      <a class="btn ghost" href="#answers">궁금한 것 보기</a>
+    </div>
+    <div class="platform reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · TestFlight 비공개 베타</div>
+  </div>
+  <div class="stage reveal d2"><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-markup-dark.jpg" alt="마크업 모드 — 아파트 평면 위 마커 표시와 색·굵기 팔레트" loading="eager" fetchpriority="high"></div></div></div>
+</div></section>
+
+<section id="answers" class="soft"><div class="wrap">
+  <div class="eyebrow reveal">질문과 답</div>
+  <h2 class="reveal d1">도면 마크업에 대해 묻는 것</h2>
+  <div class="qa">
+    <article><h3>마크업 도구는 무엇이 있나요?</h3><p>펜·마커·연필·지우개·올가미·자입니다. Apple Pencil 필압을 그대로 쓰고, 색과 굵기는 팔레트에서 고릅니다. 되돌리기·다시 실행이 마크업에도 적용됩니다.</p></article>
+    <article><h3>확대하면 획이 도면과 어긋나지 않나요?</h3><p>어긋나지 않습니다. 획은 화면이 아니라 도면 좌표에 저장되고, 굵기도 도면 단위 기준입니다. 확대·축소·이동 중에도 획이 도면과 함께 움직이고, 그리는 동안 기존 잉크가 떨리지 않도록 입력 면을 따로 두었습니다.</p></article>
+    <article><h3>손가락과 펜슬이 섞이지 않나요?</h3><p>화면 이동은 손가락, 그리기는 Apple Pencil입니다. 펜슬로는 화면이 밀리지 않습니다. 한 손가락 이동 모드에서도 올가미·지우개·이동은 펜슬로 계속 됩니다.</p></article>
+    <article><h3>사진은 어떻게 붙이나요?</h3><p>핀을 찍고 사진과 메모를 답니다. 핀은 언제나 마크업 위에 그려지고 도면 좌표에 고정됩니다. 핀 로그가 목록이 되고, 리포트에는 사진·메모·위치가 함께 인쇄됩니다.</p></article>
+    <article><h3>노트는 따로 쓸 수 있나요?</h3><p>노트 페이지(백지·줄·도트·모눈·제도 모눈)를 도면 파일 안에 추가합니다. 회의 메모나 스케치를 도면과 한 파일에 둡니다.</p></article>
+    <article><h3>마크업은 사무실 CAD에서 보이나요?</h3><p>마크업 잉크와 핀은 플롯 PDF와 리포트에 인쇄됩니다. DXF 내보내기에는 CAD 도형이 나가고, 손글씨는 PDF로 전달하는 것이 현장 관행에 맞아 그렇게 두었습니다.</p></article>
+    <article><h3>PDF 도면에도 마크업할 수 있나요?</h3><p>네. PDF를 밑그림으로 열어 두 점으로 축척을 맞추면 그 위에 마크업·핀·CAD 작도를 할 수 있습니다.</p></article>
+    <article><h3>도면 보기와 CAD 모드 어디서 하나요?</h3><p>둘 다입니다. 흰 바탕 도면 보기에서는 인쇄물 위에 쓰듯, 어두운 CAD 모드에서는 레이어 색 그대로 위에 씁니다. 모드를 오가도 획은 제자리입니다.</p></article>
+
+  </div>
+</div></section>
+
+<section class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">순서</div>
+  <h2 class="reveal d1">마크업에서 리포트까지</h2>
+  <div class="row">
+    <ol class="steps reveal d2">
+      <li><h3>마크업 모드로</h3><p>하단의 마크업 탭을 누르면 펜·마커·연필·지우개·올가미·자 팔레트가 열립니다.</p></li>
+      <li><h3>그리고 찍기</h3><p>Apple Pencil로 표시하고, 핀에 사진과 메모를 답니다.</p></li>
+      <li><h3>리포트로</h3><p>더보기 메뉴에서 리포트를 고르면 점검·지시·회의 등 7종 문서 서식으로 인쇄됩니다.</p></li>
+
+    </ol>
+    <div class="reveal d3"><div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-markup-sheet.jpg" alt="도면 보기 위의 마크업 — 호텔 기준층" loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">함께 보기</h2>
+  <div class="related reveal d1">
+    <a href="/ipad-cad/"><span class="k">아이패드 CAD</span><span class="t">아이패드 CAD 앱</span><span class="s">아이패드에서 CAD 도면을 열고 직접 수정하세요</span></a>
+    <a href="/mobile-cad/"><span class="k">모바일 CAD</span><span class="t">모바일 CAD 앱</span><span class="s">모바일 CAD는 뷰어가 아니라 편집기여야 합니다</span></a>
+    <a href="/dwg-ipad/"><span class="k">DWG 아이패드</span><span class="t">아이패드 DWG</span><span class="s">아이패드에서 DWG를 레이어 그대로 엽니다</span></a>
+    <a href="/dxf-ipad/"><span class="k">DXF 아이패드</span><span class="t">아이패드 DXF</span><span class="s">DXF는 iPad에서 오프라인으로 열고, DXF로 돌려보냅니다</span></a>
+    <a href="/cad-plot/"><span class="k">CAD 플롯</span><span class="t">축척 PDF 플롯</span><span class="s">축척이 맞는 종이가 현장의 기준입니다</span></a>
+    <a href="/guides/"><span class="k">가이드</span><span class="t">현장에서 CAD를 쓰는 사람을 위한 가이드</span><span class="s">DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.</span></a>
+
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>다음 현장부터 Fluxketch로.</h2><p class="lead">TestFlight 비공개 베타에 참여하시면 베타 기간 동안 모든 기능을 무료로 쓰고, 개발팀에 바로 피드백할 수 있습니다.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">이메일로 문의</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">현장에서 끝내는 iPad CAD.</p></div>
+    <div><h4>제품</h4><ul><li><a href="/#features">기능</a></li><li><a href="/#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a></li></ul></div>
+    <div><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 CAD 앱</a></li><li><a href="/mobile-cad/">모바일 CAD 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></div>
+    <div><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com">문의 flux0720@fluxketch.com</a></li><li><a href="/en/cad-markup/">English</a></li></ul></div>
+    <div><h4>법적 고지</h4><ul><li><a href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

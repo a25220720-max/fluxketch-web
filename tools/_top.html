@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="canonical" href="https://fluxketch.com{{path}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta property="og:url" content="https://fluxketch.com{{path}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{og_desc}}">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">
+<link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="{{home}}"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="{{nav_label}}">
+    <a href="{{home}}#features">{{nav_features}}</a><a href="{{home}}#field">{{nav_field}}</a><a href="{{home}}#performance">{{nav_perf}}</a><a href="{{home}}#drawings">{{nav_drawings}}</a><a href="{{home}}#pricing">{{nav_pricing}}</a><a href="{{home}}guides/">{{nav_guides}}</a><a href="{{home}}#faq">{{nav_faq}}</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_label}}</a>
+    <a class="btn primary small" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a>
+    <button class="burger" aria-label="{{menu_open}}" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+

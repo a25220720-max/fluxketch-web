@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open and edit DWG on iPad | Layers and linetypes intact - Fluxketch</title>
+<meta name="description" content="How to open DWG files on iPad with layers, colors, weights and linetypes intact, edit them with CAD tools, mark up with Apple Pencil and export scale PDF and DXF. Fluxketch, the DWG app for iPad.">
+<link rel="canonical" href="https://fluxketch.com/en/dwg-ipad/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Open and edit DWG on iPad | Layers and linetypes intact - Fluxketch">
+<meta property="og:description" content="How to open DWG files on iPad with layers, colors, weights and linetypes intact, edit them with CAD tools, mark up with Apple Pencil and export scale PDF and DXF. Fluxketch, the DWG app for iPad.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/layers-sheet.jpg">
+<meta property="og:url" content="https://fluxketch.com/en/dwg-ipad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open and edit DWG on iPad | Layers and linetypes intact - Fluxketch">
+<meta name="twitter:description" content="How to open DWG files on iPad with layers, colors, weights and linetypes intact, edit them with CAD tools, mark up with Apple Pencil and export scale PDF and DXF. Fluxketch, the DWG app for iPad.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/layers-sheet.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/dwg-ipad/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/dwg-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/dwg-ipad/">
+<link rel="preload" as="image" href="/assets/img/v3/layers-sheet.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Open and edit DWG on iPad | Layers and linetypes intact - Fluxketch","description":"How to open DWG files on iPad with layers, colors, weights and linetypes intact, edit them with CAD tools, mark up with Apple Pencil and export scale PDF and DXF. Fluxketch, the DWG app for iPad.","url":"https://fluxketch.com/en/dwg-ipad/","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Fluxketch","url":"https://fluxketch.com/"},"about":{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Private beta.","url":"https://fluxketch.com/en/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","description":"Free during the private beta"},"author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What survives when I open a DWG?","acceptedAnswer":{"@type":"Answer","text":"Layers (visibility, lock, color, weight, linetype), by-layer and explicit entity colors, block inserts, hatches, multilines (MLINE), 3D faces, leaders, text and dimensions. Entities drawn in an arbitrary coordinate system (OCS) are placed correctly too."}},{"@type":"Question","name":"Is anything not imported?","acceptedAnswer":{"@type":"Answer","text":"Yes. Multileaders, wipeouts and regions are not supported yet. Nothing is hidden: the import report lists what was skipped by type and count. Entities on frozen or off layers are imported but kept hidden, and the app tells you so."}},{"@type":"Question","name":"Which DWG versions are supported?","acceptedAnswer":{"@type":"Answer","text":"Conversion is based on open-source LibreDWG and reads AutoCAD R14 through 2018 formats. It runs on the Fluxketch conversion server and only the resulting DXF comes back to the iPad."}},{"@type":"Question","name":"Do I need a connection?","acceptedAnswer":{"@type":"Answer","text":"Only when a DWG is first opened. After conversion you open, draw and mark up offline. For a site without coverage, save as DXF on a PC and it's offline from the start."}},{"@type":"Question","name":"Can I save back to DWG?","acceptedAnswer":{"@type":"Answer","text":"Export is DXF for now. Every CAD — AutoCAD, BricsCAD, ZWCAD and others — opens DXF directly, so save as DWG there. Markup and pins print into the plot PDF."}},{"@type":"Question","name":"What about large files?","acceptedAnswer":{"@type":"Answer","text":"A DWG of tens of megabytes grows four to six times as DXF. Fluxketch decides by entity count and the device's free memory, not file size, and has opened drawings of 1.4 million entities. If it can't, it tells you why."}},{"@type":"Question","name":"What about truncated or damaged DWGs?","acceptedAnswer":{"@type":"Answer","text":"Files cut short by mail or chat apps are flagged by the conversion server as missing their end-of-file, and the app waits for iCloud downloads to finish before reading. Get the original again and open it."}},{"@type":"Question","name":"What if all I have is a PDF?","acceptedAnswer":{"@type":"Answer","text":"Open it as an underlay, set the scale with two points and snap to its vector lines while you draw. See the DXF on iPad page for details."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fluxketch.com/en/"},{"@type":"ListItem","position":2,"name":"DWG on iPad","item":"https://fluxketch.com/en/dwg-ipad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/dwg-ipad/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="phero"><div class="wrap">
+  <div class="copy">
+    <div class="eyebrow reveal">DWG on iPad</div>
+    <h1 class="reveal d1">Open DWG on iPad with every layer intact</h1>
+    <p class="lead reveal d2">DWG is AutoCAD's binary format, and mobile apps often drop layers or linetypes when they open it. Fluxketch converts DWG to DXF precisely and brings layers, colors, weights, linetypes, blocks and hatches across as they are.</p>
+    <div class="cta reveal d3">
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a>
+      <a class="btn ghost" href="#answers">See the answers</a>
+    </div>
+    <div class="platform reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · TestFlight private beta</div>
+  </div>
+  <div class="stage reveal d2"><div class="device land"><div class="screen"><img src="/assets/img/v3/layers-sheet.jpg" alt="Layer panel after opening a DWG — color, weight and linetype for 188 layers" loading="eager" fetchpriority="high"></div></div></div>
+</div></section>
+
+<section id="answers" class="soft"><div class="wrap">
+  <div class="eyebrow reveal">Questions and answers</div>
+  <h2 class="reveal d1">Questions about DWG on iPad</h2>
+  <div class="qa">
+    <article><h3>What survives when I open a DWG?</h3><p>Layers (visibility, lock, color, weight, linetype), by-layer and explicit entity colors, block inserts, hatches, multilines (MLINE), 3D faces, leaders, text and dimensions. Entities drawn in an arbitrary coordinate system (OCS) are placed correctly too.</p></article>
+    <article><h3>Is anything not imported?</h3><p>Yes. Multileaders, wipeouts and regions are not supported yet. Nothing is hidden: the import report lists what was skipped by type and count. Entities on frozen or off layers are imported but kept hidden, and the app tells you so.</p></article>
+    <article><h3>Which DWG versions are supported?</h3><p>Conversion is based on open-source LibreDWG and reads AutoCAD R14 through 2018 formats. It runs on the Fluxketch conversion server and only the resulting DXF comes back to the iPad.</p></article>
+    <article><h3>Do I need a connection?</h3><p>Only when a DWG is first opened. After conversion you open, draw and mark up offline. For a site without coverage, save as DXF on a PC and it&#x27;s offline from the start.</p></article>
+    <article><h3>Can I save back to DWG?</h3><p>Export is DXF for now. Every CAD — AutoCAD, BricsCAD, ZWCAD and others — opens DXF directly, so save as DWG there. Markup and pins print into the plot PDF.</p></article>
+    <article><h3>What about large files?</h3><p>A DWG of tens of megabytes grows four to six times as DXF. Fluxketch decides by entity count and the device&#x27;s free memory, not file size, and has opened drawings of 1.4 million entities. If it can&#x27;t, it tells you why.</p></article>
+    <article><h3>What about truncated or damaged DWGs?</h3><p>Files cut short by mail or chat apps are flagged by the conversion server as missing their end-of-file, and the app waits for iCloud downloads to finish before reading. Get the original again and open it.</p></article>
+    <article><h3>What if all I have is a PDF?</h3><p>Open it as an underlay, set the scale with two points and snap to its vector lines while you draw. See the DXF on iPad page for details.</p></article>
+
+  </div>
+</div></section>
+
+<section class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">How it works</div>
+  <h2 class="reveal d1">How a DWG opens</h2>
+  <div class="row">
+    <ol class="steps reveal d2">
+      <li><h3>Pick the file</h3><p>Use Import on the dashboard to choose a DWG from the Files app, iCloud or a mail attachment.</p></li>
+      <li><h3>Convert and report</h3><p>The server converts to DXF, and the import report shows layer count, entity count and anything skipped.</p></li>
+      <li><h3>Edit, mark up, export</h3><p>Fix with CAD tools, mark with Apple Pencil, then export DXF and a plot PDF.</p></li>
+
+    </ol>
+    <div class="reveal d3"><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-dark.jpg" alt="House drawing in CAD mode — electrical and MEP sheet" loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">See also</h2>
+  <div class="related reveal d1">
+    <a href="/en/ipad-cad/"><span class="k">iPad CAD</span><span class="t">CAD for iPad</span><span class="s">Open and edit CAD drawings on your iPad</span></a>
+    <a href="/en/mobile-cad/"><span class="k">Mobile CAD</span><span class="t">Mobile CAD app</span><span class="s">Mobile CAD should be an editor, not a viewer</span></a>
+    <a href="/en/dxf-ipad/"><span class="k">DXF iPad</span><span class="t">DXF on iPad</span><span class="s">DXF opens offline on iPad and goes back as DXF</span></a>
+    <a href="/en/cad-markup/"><span class="k">CAD markup</span><span class="t">CAD markup on iPad</span><span class="s">Markup is only a record if it sticks to the drawing</span></a>
+    <a href="/en/cad-plot/"><span class="k">CAD plot</span><span class="t">Scale PDF plot</span><span class="s">Paper at the right scale is the site&#x27;s reference</span></a>
+    <a href="/en/guides/"><span class="k">Guides</span><span class="t">Guides for people who use CAD on site</span><span class="s">Practical writing on what the field runs into every day — DWG, DXF, scale, markup. Most of it applies whichever app you use.</span></a>
+
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Join the TestFlight private beta to use every feature free during the beta and talk directly to the team.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/dwg-ipad/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Beta-period notices will be replaced by formal documents.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

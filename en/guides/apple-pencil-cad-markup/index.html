@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marking up CAD drawings with Apple Pencil — why strokes must stick to the drawing</title>
+<meta name="description" content="What CAD markup on iPad with Apple Pencil needs: drawing-coordinate lock, pen/marker/pencil/lasso/ruler, photo pins, notes and reports, in field order.">
+<link rel="canonical" href="https://fluxketch.com/en/guides/apple-pencil-cad-markup/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Marking up CAD drawings with Apple Pencil — why strokes must stick to the drawing">
+<meta property="og:description" content="What CAD markup on iPad with Apple Pencil needs: drawing-coordinate lock, pen/marker/pencil/lasso/ruler, photo pins, notes and reports, in field order.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/vivienda-markup-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/en/guides/apple-pencil-cad-markup/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marking up CAD drawings with Apple Pencil — why strokes must stick to the drawing">
+<meta name="twitter:description" content="What CAD markup on iPad with Apple Pencil needs: drawing-coordinate lock, pen/marker/pencil/lasso/ruler, photo pins, notes and reports, in field order.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/vivienda-markup-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/guides/apple-pencil-cad-markup/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/guides/apple-pencil-cad-markup/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/guides/apple-pencil-cad-markup/">
+<link rel="preload" as="image" href="/assets/img/v3/vivienda-markup-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Marking up CAD drawings with Apple Pencil","description":"What CAD markup on iPad with Apple Pencil needs: drawing-coordinate lock, pen/marker/pencil/lasso/ruler, photo pins, notes and reports, in field order.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://fluxketch.com/assets/img/v3/vivienda-markup-dark.jpg","author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"mainEntityOfPage":"https://fluxketch.com/en/guides/apple-pencil-cad-markup/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fluxketch.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://fluxketch.com/en/guides/"},{"@type":"ListItem","position":3,"name":"Apple Pencil markup","item":"https://fluxketch.com/en/guides/apple-pencil-cad-markup/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/guides/apple-pencil-cad-markup/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="ahero"><div class="wrap narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/guides/">Guides</a><span>›</span><span aria-current="page">Apple Pencil markup</span></nav>
+  <h1 class="reveal">Marking up CAD drawings with Apple Pencil</h1>
+  <p class="lead reveal d1">A mark on a screenshot loses its place by the next day. What site markup needs to become a record, from tools to reports, in order.</p>
+  <p class="meta reveal d2">Updated 2026-09-10 · About 3 min read</p>
+</div></section>
+<article class="article"><div class="wrap narrow">
+<h2>When markup counts as a record</h2>
+<ul><li><b>Locked to drawing coordinates.</b> Strokes stored in drawing coordinates, not screen pixels, stay put after zoom, pan or a scale change.</li><li><b>Saved with the drawing.</b> Markup inside the drawing file travels with it.</li><li><b>Included in output.</b> Ink and pins must print into plot PDFs and reports to become meeting material.</li><li><b>Photos and notes with a position.</b> A camera-roll photo doesn't know where it was. A photo on a pin makes the position the record.</li></ul>
+<h2>Tools</h2>
+<p>Pen, marker, pencil, eraser, lasso and ruler. Apple Pencil pressure feeds width directly; color and width come from the palette. Widths are in <b>drawing units</b>, so a heavy marker drawn at 1:50 means the same at 1:100. Undo and redo cover markup too.</p>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-markup-dark.jpg" alt="Markup mode — marker notes on an apartment plan with the color and width palette" loading="lazy"></div></div><figcaption>Markup mode: pen, marker, pencil, eraser, lasso and ruler on the left with the color and width palette.</figcaption></figure>
+<h2>Fingers and Pencil</h2>
+<p>Fingers pan, Apple Pencil draws. The Pencil never pushes the canvas, so you can rest your palm and draw without the drawing moving. In one-finger pan mode, lasso, eraser and move still work with the Pencil.</p>
+<h2>Steps</h2>
+<ol><li>Open the drawing and tap the <b>Markup</b> tab at the bottom. White sheet view or dark CAD mode — either works.</li><li>Mark with the pen, lasso to move or erase, and turn the ruler on for straight lines.</li><li>Drop a <b>pin</b> and attach a photo and a note. Pins always sit above markup and are locked to drawing coordinates.</li><li>Write meeting notes on a <b>note page</b> (blank, ruled, dotted, grid, drafting grid) added inside the drawing file.</li><li>Choose <b>Report</b> in the More menu for photos, notes and positions in table layouts, or <b>Plot</b> for ink and pins on a scale PDF with the drawing.</li></ol>
+<div class="note"><p>Markup doesn't touch CAD entities. To actually move a line, use the CAD tools (<a href="/en/guides/edit-cad-drawings-on-ipad/">How to edit real drawings with a CAD app on iPad</a>).</p></div>
+<h2>Marking up a PDF drawing</h2>
+<p>If all you have is a PDF, open it as an underlay and set the scale with two points. Markup, pins and CAD drafting work on top, and you can snap to the PDF's vector lines.</p>
+<h2>Handing off to the office</h2>
+<p>Markup ink and pins travel as plot PDF and report. DXF export carries CAD entities. Handwriting as PDF, geometry as DXF — what the site and the office each receive.</p>
+<div class="cta-soft"><p>Fluxketch markup is locked to drawing coordinates and prints as-is into plots and reports. If you need site records with iPad and Apple Pencil, try the beta.</p><a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a></div>
+</div></article>
+<section class="soft"><div class="wrap narrow">
+  <h2 class="h3">See also</h2>
+  <div class="related">
+    <a href="/en/guides/open-dwg-on-ipad/"><span class="k">Guide</span><span class="t">Open DWG on iPad</span><span class="s">Three ways to open DWG files on iPad, why layers and linetypes get lost, and the steps to open and edit a DWG with its layers intact.</span></a>
+    <a href="/en/guides/edit-cad-drawings-on-ipad/"><span class="k">Guide</span><span class="t">Edit drawings with iPad CAD</span><span class="s">The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.</span></a>
+    <a href="/en/guides/dwg-vs-dxf/"><span class="k">Guide</span><span class="t">DWG vs DXF</span><span class="s">DWG and DXF are two formats of the same drawing. Structure, size and compatibility differences, and which to choose when handing drawings to iPad or another CAD, in one table.</span></a>
+
+  </div>
+</div></section>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Join the TestFlight private beta to use every feature free during the beta and talk directly to the team.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/guides/apple-pencil-cad-markup/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Beta-period notices will be replaced by formal documents.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

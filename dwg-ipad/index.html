@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아이패드에서 DWG 열기·편집 | 레이어·선종류 그대로 - Fluxketch</title>
+<meta name="description" content="iPad에서 DWG 파일을 레이어·색·굵기·선종류 그대로 열고, CAD 도구로 편집하고, Apple Pencil로 마크업해 축척 PDF·DXF로 꺼내는 방법. Fluxketch 아이패드 DWG 앱.">
+<link rel="canonical" href="https://fluxketch.com/dwg-ipad/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="아이패드에서 DWG 열기·편집 | 레이어·선종류 그대로 - Fluxketch">
+<meta property="og:description" content="iPad에서 DWG 파일을 레이어·색·굵기·선종류 그대로 열고, CAD 도구로 편집하고, Apple Pencil로 마크업해 축척 PDF·DXF로 꺼내는 방법. Fluxketch 아이패드 DWG 앱.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/layers-sheet.jpg">
+<meta property="og:url" content="https://fluxketch.com/dwg-ipad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="아이패드에서 DWG 열기·편집 | 레이어·선종류 그대로 - Fluxketch">
+<meta name="twitter:description" content="iPad에서 DWG 파일을 레이어·색·굵기·선종류 그대로 열고, CAD 도구로 편집하고, Apple Pencil로 마크업해 축척 PDF·DXF로 꺼내는 방법. Fluxketch 아이패드 DWG 앱.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/layers-sheet.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/dwg-ipad/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/dwg-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/dwg-ipad/">
+<link rel="preload" as="image" href="/assets/img/v3/layers-sheet.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"아이패드에서 DWG 열기·편집 | 레이어·선종류 그대로 - Fluxketch","description":"iPad에서 DWG 파일을 레이어·색·굵기·선종류 그대로 열고, CAD 도구로 편집하고, Apple Pencil로 마크업해 축척 PDF·DXF로 꺼내는 방법. Fluxketch 아이패드 DWG 앱.","url":"https://fluxketch.com/dwg-ipad/","inLanguage":"ko","isPartOf":{"@type":"WebSite","name":"Fluxketch","url":"https://fluxketch.com/"},"about":{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"DXF·DWG·PDF 도면을 iPad에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼내는 현장용 CAD. 비공개 베타 진행 중.","url":"https://fluxketch.com/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","description":"비공개 베타 기간 무료"},"author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"DWG를 열면 무엇이 살아 있나요?","acceptedAnswer":{"@type":"Answer","text":"레이어(가시성·잠금·색·굵기·선종류), 도형 색과 자기 색, 블록 삽입, 해치, 다중선(MLINE), 3D면, 지시선, 문자와 치수를 가져옵니다. 임의 좌표계(OCS)로 그려진 도형도 위치를 바로잡아 옵니다."}},{"@type":"Question","name":"가져오지 못하는 것도 있나요?","acceptedAnswer":{"@type":"Answer","text":"있습니다. 다중 지시선(MULTILEADER)·와이프아웃·리전은 아직 지원하지 않습니다. 못 가져온 요소는 숨기지 않고 가져오기 리포트에 종류와 개수로 표시합니다. 동결·꺼진 레이어의 도형은 가져오되 화면에서 숨겨 두고, 그 사실을 알려 줍니다."}},{"@type":"Question","name":"어떤 DWG 버전을 지원하나요?","acceptedAnswer":{"@type":"Answer","text":"변환은 오픈소스 LibreDWG 기반이며 AutoCAD R14부터 2018 형식까지 읽습니다. 변환은 Fluxketch 변환 서버에서 하고 결과 DXF만 iPad로 돌아옵니다."}},{"@type":"Question","name":"인터넷이 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"DWG를 처음 열 때만 필요합니다. 변환된 뒤로는 오프라인에서 열고 그리고 마크업합니다. 인터넷이 없는 현장이라면 PC에서 DXF로 저장해 가져가면 처음부터 오프라인입니다."}},{"@type":"Question","name":"DWG로 다시 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아직은 DXF로 내보냅니다. DXF는 AutoCAD·BricsCAD·ZWCAD 등 모든 CAD가 그대로 열므로 거기서 DWG로 저장하세요. 마크업과 핀은 플롯 PDF에 함께 인쇄됩니다."}},{"@type":"Question","name":"파일이 크면요?","acceptedAnswer":{"@type":"Answer","text":"수십 MB DWG는 변환하면 DXF가 4~6배 커집니다. Fluxketch는 파일 크기가 아니라 도형 개수와 기기 가용 메모리로 열 수 있는지 판단해 140만 도형 도면까지 열었습니다. 열 수 없으면 이유를 표시합니다."}},{"@type":"Question","name":"잘린 DWG나 깨진 파일은요?","acceptedAnswer":{"@type":"Answer","text":"메일·메신저를 거치며 잘린 파일은 변환 서버가 '파일 끝이 없다'고 알려 주고, 앱은 iCloud에서 내려받기가 끝날 때까지 기다린 뒤 읽습니다. 원본을 다시 받아 열면 됩니다."}},{"@type":"Question","name":"PDF로 받은 도면은요?","acceptedAnswer":{"@type":"Answer","text":"PDF는 밑그림(언더레이)으로 열어 두 점으로 축척을 맞추고 벡터 선에 스냅해 그 위에 그립니다. 자세한 것은 아이패드 DXF 페이지에 있습니다."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://fluxketch.com/"},{"@type":"ListItem","position":2,"name":"아이패드 DWG","item":"https://fluxketch.com/dwg-ipad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="주 메뉴">
+    <a href="/#features">기능</a><a href="/#field">현장 기록</a><a href="/#performance">성능</a><a href="/#drawings">실제 도면</a><a href="/#pricing">요금제</a><a href="/guides/">가이드</a><a href="/#faq">자주 묻는 질문</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/en/dwg-ipad/" hreflang="en">EN</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="phero"><div class="wrap">
+  <div class="copy">
+    <div class="eyebrow reveal">아이패드 DWG</div>
+    <h1 class="reveal d1">아이패드에서 DWG를 레이어 그대로 엽니다</h1>
+    <p class="lead reveal d2">DWG는 AutoCAD의 이진 형식이라 모바일에서 열면 레이어나 선종류가 사라지기 일쑤입니다. Fluxketch는 DWG를 DXF로 정확히 변환해 레이어·색·굵기·선종류·블록·해치를 그대로 가져옵니다.</p>
+    <div class="cta reveal d3">
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a>
+      <a class="btn ghost" href="#answers">궁금한 것 보기</a>
+    </div>
+    <div class="platform reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · TestFlight 비공개 베타</div>
+  </div>
+  <div class="stage reveal d2"><div class="device land"><div class="screen"><img src="/assets/img/v3/layers-sheet.jpg" alt="DWG를 연 뒤의 레이어 패널 — 레이어 188개의 색·굵기·선종류" loading="eager" fetchpriority="high"></div></div></div>
+</div></section>
+
+<section id="answers" class="soft"><div class="wrap">
+  <div class="eyebrow reveal">질문과 답</div>
+  <h2 class="reveal d1">DWG를 iPad에서 열 때 궁금한 것</h2>
+  <div class="qa">
+    <article><h3>DWG를 열면 무엇이 살아 있나요?</h3><p>레이어(가시성·잠금·색·굵기·선종류), 도형 색과 자기 색, 블록 삽입, 해치, 다중선(MLINE), 3D면, 지시선, 문자와 치수를 가져옵니다. 임의 좌표계(OCS)로 그려진 도형도 위치를 바로잡아 옵니다.</p></article>
+    <article><h3>가져오지 못하는 것도 있나요?</h3><p>있습니다. 다중 지시선(MULTILEADER)·와이프아웃·리전은 아직 지원하지 않습니다. 못 가져온 요소는 숨기지 않고 가져오기 리포트에 종류와 개수로 표시합니다. 동결·꺼진 레이어의 도형은 가져오되 화면에서 숨겨 두고, 그 사실을 알려 줍니다.</p></article>
+    <article><h3>어떤 DWG 버전을 지원하나요?</h3><p>변환은 오픈소스 LibreDWG 기반이며 AutoCAD R14부터 2018 형식까지 읽습니다. 변환은 Fluxketch 변환 서버에서 하고 결과 DXF만 iPad로 돌아옵니다.</p></article>
+    <article><h3>인터넷이 필요한가요?</h3><p>DWG를 처음 열 때만 필요합니다. 변환된 뒤로는 오프라인에서 열고 그리고 마크업합니다. 인터넷이 없는 현장이라면 PC에서 DXF로 저장해 가져가면 처음부터 오프라인입니다.</p></article>
+    <article><h3>DWG로 다시 저장할 수 있나요?</h3><p>아직은 DXF로 내보냅니다. DXF는 AutoCAD·BricsCAD·ZWCAD 등 모든 CAD가 그대로 열므로 거기서 DWG로 저장하세요. 마크업과 핀은 플롯 PDF에 함께 인쇄됩니다.</p></article>
+    <article><h3>파일이 크면요?</h3><p>수십 MB DWG는 변환하면 DXF가 4~6배 커집니다. Fluxketch는 파일 크기가 아니라 도형 개수와 기기 가용 메모리로 열 수 있는지 판단해 140만 도형 도면까지 열었습니다. 열 수 없으면 이유를 표시합니다.</p></article>
+    <article><h3>잘린 DWG나 깨진 파일은요?</h3><p>메일·메신저를 거치며 잘린 파일은 변환 서버가 &#x27;파일 끝이 없다&#x27;고 알려 주고, 앱은 iCloud에서 내려받기가 끝날 때까지 기다린 뒤 읽습니다. 원본을 다시 받아 열면 됩니다.</p></article>
+    <article><h3>PDF로 받은 도면은요?</h3><p>PDF는 밑그림(언더레이)으로 열어 두 점으로 축척을 맞추고 벡터 선에 스냅해 그 위에 그립니다. 자세한 것은 아이패드 DXF 페이지에 있습니다.</p></article>
+
+  </div>
+</div></section>
+
+<section class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">순서</div>
+  <h2 class="reveal d1">DWG 여는 순서</h2>
+  <div class="row">
+    <ol class="steps reveal d2">
+      <li><h3>파일 고르기</h3><p>대시보드의 가져오기에서 파일 앱·iCloud·메일 첨부의 DWG를 고릅니다.</p></li>
+      <li><h3>변환과 리포트</h3><p>서버가 DXF로 변환하고, 가져오기 리포트가 레이어 수·도형 수·가져오지 못한 요소를 보여 줍니다.</p></li>
+      <li><h3>편집·마크업·꺼내기</h3><p>CAD 도구로 고치고 Apple Pencil로 표시한 뒤 DXF와 플롯 PDF로 내보냅니다.</p></li>
+
+    </ol>
+    <div class="reveal d3"><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-dark.jpg" alt="주택 도면 CAD 모드 — 전기·설비 시트" loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">함께 보기</h2>
+  <div class="related reveal d1">
+    <a href="/ipad-cad/"><span class="k">아이패드 CAD</span><span class="t">아이패드 CAD 앱</span><span class="s">아이패드에서 CAD 도면을 열고 직접 수정하세요</span></a>
+    <a href="/mobile-cad/"><span class="k">모바일 CAD</span><span class="t">모바일 CAD 앱</span><span class="s">모바일 CAD는 뷰어가 아니라 편집기여야 합니다</span></a>
+    <a href="/dxf-ipad/"><span class="k">DXF 아이패드</span><span class="t">아이패드 DXF</span><span class="s">DXF는 iPad에서 오프라인으로 열고, DXF로 돌려보냅니다</span></a>
+    <a href="/cad-markup/"><span class="k">CAD 마크업</span><span class="t">CAD 도면 마크업</span><span class="s">마크업이 도면에 붙어 있어야 기록입니다</span></a>
+    <a href="/cad-plot/"><span class="k">CAD 플롯</span><span class="t">축척 PDF 플롯</span><span class="s">축척이 맞는 종이가 현장의 기준입니다</span></a>
+    <a href="/guides/"><span class="k">가이드</span><span class="t">현장에서 CAD를 쓰는 사람을 위한 가이드</span><span class="s">DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.</span></a>
+
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>다음 현장부터 Fluxketch로.</h2><p class="lead">TestFlight 비공개 베타에 참여하시면 베타 기간 동안 모든 기능을 무료로 쓰고, 개발팀에 바로 피드백할 수 있습니다.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">이메일로 문의</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">현장에서 끝내는 iPad CAD.</p></div>
+    <div><h4>제품</h4><ul><li><a href="/#features">기능</a></li><li><a href="/#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a></li></ul></div>
+    <div><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 CAD 앱</a></li><li><a href="/mobile-cad/">모바일 CAD 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></div>
+    <div><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com">문의 flux0720@fluxketch.com</a></li><li><a href="/en/dwg-ipad/">English</a></li></ul></div>
+    <div><h4>법적 고지</h4><ul><li><a href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

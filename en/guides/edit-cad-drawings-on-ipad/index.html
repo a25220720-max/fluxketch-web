@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to edit real drawings with a CAD app on iPad — tools, snaps, layers, export</title>
+<meta name="description" content="The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.">
+<link rel="canonical" href="https://fluxketch.com/en/guides/edit-cad-drawings-on-ipad/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to edit real drawings with a CAD app on iPad — tools, snaps, layers, export">
+<meta property="og:description" content="The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/structural-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/en/guides/edit-cad-drawings-on-ipad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to edit real drawings with a CAD app on iPad — tools, snaps, layers, export">
+<meta name="twitter:description" content="The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/structural-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/guides/edit-cad-drawings-on-ipad/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/guides/edit-cad-drawings-on-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/guides/edit-cad-drawings-on-ipad/">
+<link rel="preload" as="image" href="/assets/img/v3/structural-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"How to edit real drawings with a CAD app on iPad","description":"The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://fluxketch.com/assets/img/v3/structural-dark.jpg","author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"mainEntityOfPage":"https://fluxketch.com/en/guides/edit-cad-drawings-on-ipad/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fluxketch.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://fluxketch.com/en/guides/"},{"@type":"ListItem","position":3,"name":"Edit drawings with iPad CAD","item":"https://fluxketch.com/en/guides/edit-cad-drawings-on-ipad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/guides/edit-cad-drawings-on-ipad/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="ahero"><div class="wrap narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/guides/">Guides</a><span>›</span><span aria-current="page">Edit drawings with iPad CAD</span></nav>
+  <h1 class="reveal">How to edit real drawings with a CAD app on iPad</h1>
+  <p class="lead reveal d1">Moving one wall line or adding one dimension is beyond a viewer. Here is what iPad CAD editing needs, in the order you'd actually do it.</p>
+  <p class="meta reveal d2">Updated 2026-09-10 · About 3 min read</p>
+</div></section>
+<article class="article"><div class="wrap narrow">
+<h2>Five things that separate an editor from a viewer</h2>
+<ul><li><b>Selection.</b> Tap or lasso entities, and locked layers must be excluded.</li><li><b>Snaps.</b> Without endpoint and ortho snaps lines don't join. The snap radius has to follow the zoom.</li><li><b>Numeric input.</b> A fingertip can't hit 3,600 mm. Lengths and angles need a keypad.</li><li><b>Layer properties.</b> Color, weight and linetype per layer, and hidden layers must leave snaps and plots too.</li><li><b>Undo and export.</b> Undo must cover CAD and markup, and the result must go back to the office as DXF.</li></ul>
+<h2>1. Open and confirm the unit</h2>
+<p>DXF confirms its unit (mm, cm, m, inch, ft) on open. Get this wrong and every dimension and scale after it is wrong. DWG follows the same steps after one conversion (<a href="/en/guides/open-dwg-on-ipad/">How to open DWG on iPad</a>).</p>
+<h2>2. Switch between sheet view and CAD mode</h2>
+<p>White <b>sheet view</b> shows black lines like a print. Dark <b>CAD mode</b> shows layer colors so you know which layer is which at a glance. Editing works in both, and strokes and pins stay put when you switch.</p>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/structural-dark.jpg" alt="Rebar detail drawing in CAD mode with the tool palette on the left and the snap rail on the right" loading="lazy"></div></div><figcaption>CAD mode: twelve tools on the left, snap and ortho rail on the right.</figcaption></figure>
+<h2>3. Select, move, trim</h2>
+<ol><li><b>Select</b>: tap an entity or lasso several. Entities on locked layers are skipped.</li><li><b>Move and copy</b>: tap a base point, then a target. With endpoint snap on, it lands exactly on another entity's end. Distances can be typed on the keypad.</li><li><b>Trim and erase</b>: pick the boundary, tap the side to remove. Erase removes only the selection.</li><li><b>Fillet</b>: pick two lines and they join with a rounded corner of the given radius.</li><li><b>Undo</b>: the undo and redo buttons at the top cover both CAD and markup.</li></ol>
+<h2>4. Draw — line, polyline, circle, arc, rectangle, text, dimension</h2>
+<p>With ortho on you draw only horizontal and vertical; endpoint snap joins existing ends. Type lengths on the keypad, and the dimension tool writes the real length with units from two points. Text follows the layer color.</p>
+<h2>5. Change layer properties</h2>
+<p>Visibility, lock, color, weight and linetype change right in the layer panel; search finds one of 188 layers. Turn a layer off and the screen, snaps and plots exclude it by the same rule. To recolor one entity, select it and give it an explicit color. If a sheet forces entity colors to the layer color, the app tells you.</p>
+<div class="note"><p><b>Big-drawing tip.</b> Pan and zoom hold 60 Hz on 180,000 entities, but keeping only the layers you need on while editing is faster for both eyes and hands.</p></div>
+<h2>6. Export</h2>
+<p><b>DXF export</b> in the More menu returns layers, colors, weights and linetypes to office CAD as they are. Plot PDFs carry the scale and a 100 mm check ruler and print markup and pins. Saving to DWG isn't supported yet; open the DXF in PC CAD and save as DWG.</p>
+<h2>What is better left off the iPad</h2>
+<ul><li>3D modeling, tidying large sets with many external references (Xrefs) and batch-plotting dozens of sheets belong on the office PC.</li><li>The iPad is where you check, fix, record and print on site. The split is covered in <a href="/en/guides/mobile-cad-vs-desktop-cad/">Mobile CAD vs laptop CAD</a>.</li></ul>
+<div class="cta-soft"><p>The steps above are Fluxketch&#x27;s. If you need real CAD editing on iPad, open your DWG or DXF as it is and try it.</p><a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a></div>
+</div></article>
+<section class="soft"><div class="wrap narrow">
+  <h2 class="h3">See also</h2>
+  <div class="related">
+    <a href="/en/guides/open-dwg-on-ipad/"><span class="k">Guide</span><span class="t">Open DWG on iPad</span><span class="s">Three ways to open DWG files on iPad, why layers and linetypes get lost, and the steps to open and edit a DWG with its layers intact.</span></a>
+    <a href="/en/guides/dwg-vs-dxf/"><span class="k">Guide</span><span class="t">DWG vs DXF</span><span class="s">DWG and DXF are two formats of the same drawing. Structure, size and compatibility differences, and which to choose when handing drawings to iPad or another CAD, in one table.</span></a>
+    <a href="/en/guides/plot-scale-pdf-ipad/"><span class="k">Guide</span><span class="t">Plot to scale PDF</span><span class="s">Steps to plot CAD drawings from iPad to 1:50 or 1:100 PDF, the scale arithmetic, and how a 100 mm check ruler catches the printer&#x27;s &#x27;fit to page&#x27;.</span></a>
+
+  </div>
+</div></section>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Join the TestFlight private beta to use every feature free during the beta and talk directly to the team.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/guides/edit-cad-drawings-on-ipad/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Beta-period notices will be replaced by formal documents.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

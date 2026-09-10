@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가이드 — Fluxketch</title>
+<meta name="description" content="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.">
+<link rel="canonical" href="https://fluxketch.com/guides/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="가이드 — Fluxketch">
+<meta property="og:description" content="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta property="og:url" content="https://fluxketch.com/guides/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="가이드 — Fluxketch">
+<meta name="twitter:description" content="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/guides/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/guides/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/guides/">
+<link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"가이드 — Fluxketch","description":"DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.","url":"https://fluxketch.com/guides/","inLanguage":"ko"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://fluxketch.com/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://fluxketch.com/guides/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="주 메뉴">
+    <a href="/#features">기능</a><a href="/#field">현장 기록</a><a href="/#performance">성능</a><a href="/#drawings">실제 도면</a><a href="/#pricing">요금제</a><a href="/guides/">가이드</a><a href="/#faq">자주 묻는 질문</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/en/guides/" hreflang="en">EN</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="ahero"><div class="wrap">
+  <div class="eyebrow reveal">가이드</div>
+  <h1 class="reveal d1">현장에서 CAD를 쓰는 사람을 위한 가이드</h1>
+  <p class="lead reveal d2">DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.</p>
+</div></section>
+<section class="tight"><div class="wrap">
+  <div class="glist">
+    <a href="/guides/open-dwg-on-ipad/"><div class="thumb"><img src="/assets/img/v3/layers-sheet-sm.jpg" alt="" loading="lazy"></div><div><span class="t">아이패드에서 DWG 파일 여는 방법</span><span class="s">iPad에서 DWG 파일을 여는 세 가지 방법과 레이어·선종류가 사라지는 이유, 그리고 레이어를 유지한 채 열고 수정하는 순서를 정리했습니다.</span><span class="m">읽는 시간 약 4분</span></div></a>
+    <a href="/guides/edit-cad-drawings-on-ipad/"><div class="thumb"><img src="/assets/img/v3/structural-dark-sm.jpg" alt="" loading="lazy"></div><div><span class="t">아이패드 CAD 앱으로 실제 도면 수정하는 방법</span><span class="s">iPad CAD 앱에서 실제 도면을 수정하는 순서: 선택, 이동·복사·자르기, 스냅과 수치 입력, 레이어 속성 변경, DXF 내보내기까지 현장 기준으로 정리했습니다.</span><span class="m">읽는 시간 약 3분</span></div></a>
+    <a href="/guides/dwg-vs-dxf/"><div class="thumb"><img src="/assets/img/v3/sections-sheet-sm.jpg" alt="" loading="lazy"></div><div><span class="t">DWG와 DXF의 차이</span><span class="s">DWG와 DXF는 같은 도면의 두 형식입니다. 구조·크기·호환성 차이와 iPad·다른 CAD로 넘길 때 어느 쪽을 골라야 하는지 표로 정리했습니다.</span><span class="m">읽는 시간 약 3분</span></div></a>
+    <a href="/guides/plot-scale-pdf-ipad/"><div class="thumb"><img src="/assets/img/v3/ruler-popover-sm.jpg" alt="" loading="lazy"></div><div><span class="t">아이패드에서 CAD 도면 축척 PDF 출력하기</span><span class="s">CAD 도면을 iPad에서 1:50·1:100 축척 PDF로 플롯하는 순서와 축척 계산, 프린터 &#x27;페이지에 맞춤&#x27;을 잡아내는 100mm 검증 눈금 사용법을 정리했습니다.</span><span class="m">읽는 시간 약 3분</span></div></a>
+    <a href="/guides/apple-pencil-cad-markup/"><div class="thumb"><img src="/assets/img/v3/vivienda-markup-dark-sm.jpg" alt="" loading="lazy"></div><div><span class="t">Apple Pencil로 CAD 도면 마크업하기</span><span class="s">iPad와 Apple Pencil로 CAD 도면에 마크업할 때 필요한 것: 도면 좌표 고정, 펜·마커·연필·올가미·자, 사진 핀, 노트, 리포트까지 현장 순서로 정리했습니다.</span><span class="m">읽는 시간 약 3분</span></div></a>
+    <a href="/guides/mobile-cad-vs-desktop-cad/"><div class="thumb"><img src="/assets/img/v3/granada-topo-dark-sm.jpg" alt="" loading="lazy"></div><div><span class="t">모바일 CAD와 노트북 CAD의 차이</span><span class="s">iPad 같은 모바일 CAD와 노트북·PC CAD는 역할이 다릅니다. 각각 잘하는 일과 못하는 일, 현장에서 두 가지를 나누는 기준을 정리했습니다.</span><span class="m">읽는 시간 약 3분</span></div></a>
+
+  </div>
+</div></section>
+<section class="soft"><div class="wrap">
+  <h2 class="h3">함께 보기</h2>
+  <div class="related">
+    <a href="/ipad-cad/"><span class="k">아이패드 CAD</span><span class="t">아이패드 CAD 앱</span><span class="s">아이패드에서 CAD 도면을 열고 직접 수정하세요</span></a>
+    <a href="/mobile-cad/"><span class="k">모바일 CAD</span><span class="t">모바일 CAD 앱</span><span class="s">모바일 CAD는 뷰어가 아니라 편집기여야 합니다</span></a>
+    <a href="/dwg-ipad/"><span class="k">DWG 아이패드</span><span class="t">아이패드 DWG</span><span class="s">아이패드에서 DWG를 레이어 그대로 엽니다</span></a>
+    <a href="/dxf-ipad/"><span class="k">DXF 아이패드</span><span class="t">아이패드 DXF</span><span class="s">DXF는 iPad에서 오프라인으로 열고, DXF로 돌려보냅니다</span></a>
+    <a href="/cad-markup/"><span class="k">CAD 마크업</span><span class="t">CAD 도면 마크업</span><span class="s">마크업이 도면에 붙어 있어야 기록입니다</span></a>
+    <a href="/cad-plot/"><span class="k">CAD 플롯</span><span class="t">축척 PDF 플롯</span><span class="s">축척이 맞는 종이가 현장의 기준입니다</span></a>
+
+  </div>
+</div></section>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>다음 현장부터 Fluxketch로.</h2><p class="lead">TestFlight 비공개 베타에 참여하시면 베타 기간 동안 모든 기능을 무료로 쓰고, 개발팀에 바로 피드백할 수 있습니다.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">비공개 베타 신청</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">이메일로 문의</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">현장에서 끝내는 iPad CAD.</p></div>
+    <div><h4>제품</h4><ul><li><a href="/#features">기능</a></li><li><a href="/#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">베타 신청</a></li></ul></div>
+    <div><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 CAD 앱</a></li><li><a href="/mobile-cad/">모바일 CAD 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></div>
+    <div><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com">문의 flux0720@fluxketch.com</a></li><li><a href="/en/guides/">English</a></li></ul></div>
+    <div><h4>법적 고지</h4><ul><li><a href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

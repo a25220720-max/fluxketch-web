@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open, edit and export DXF on iPad | Offline - Fluxketch</title>
+<meta name="description" content="Open DXF drawings on iPad offline, correct the unit, edit with CAD tools, mark up and plot to scale. Export back to DXF and round-trip with office CAD. Fluxketch.">
+<link rel="canonical" href="https://fluxketch.com/en/dxf-ipad/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Open, edit and export DXF on iPad | Offline - Fluxketch">
+<meta property="og:description" content="Open DXF drawings on iPad offline, correct the unit, edit with CAD tools, mark up and plot to scale. Export back to DXF and round-trip with office CAD. Fluxketch.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/structural-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/en/dxf-ipad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open, edit and export DXF on iPad | Offline - Fluxketch">
+<meta name="twitter:description" content="Open DXF drawings on iPad offline, correct the unit, edit with CAD tools, mark up and plot to scale. Export back to DXF and round-trip with office CAD. Fluxketch.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/structural-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/dxf-ipad/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/dxf-ipad/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/dxf-ipad/">
+<link rel="preload" as="image" href="/assets/img/v3/structural-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Open, edit and export DXF on iPad | Offline - Fluxketch","description":"Open DXF drawings on iPad offline, correct the unit, edit with CAD tools, mark up and plot to scale. Export back to DXF and round-trip with office CAD. Fluxketch.","url":"https://fluxketch.com/en/dxf-ipad/","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Fluxketch","url":"https://fluxketch.com/"},"about":{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Private beta.","url":"https://fluxketch.com/en/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","description":"Free during the private beta"},"author":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"},"publisher":{"@type":"Organization","name":"Fluxketch","url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Won't a wrong DXF unit make the drawing huge or tiny?","acceptedAnswer":{"@type":"Answer","text":"DXF asks for its unit (mm, cm, m, inch, ft) on read and corrects coordinates in that unit. Correction is centered on the drawing, so drawings far from the origin land where they should. The true-scale ruler and plots use the same unit."}},{"@type":"Question","name":"Which DXF entities are read?","acceptedAnswer":{"@type":"Answer","text":"Lines, polylines, LW polylines, circles, arcs, ellipses, splines, text, mtext, dimensions, hatches, block inserts, multilines, 3D faces, leaders and the layer table (color, weight, linetype). Multileaders, wipeouts and regions are counted in the report."}},{"@type":"Question","name":"Which DXF versions?","acceptedAnswer":{"@type":"Answer","text":"Verified with ASCII DXF saved in AutoCAD 2000 or later formats. If a file won't open, send it to flux0720@fluxketch.com and we'll look."}},{"@type":"Question","name":"What goes back when I export DXF?","acceptedAnswer":{"@type":"Answer","text":"Layers, colors, weights and linetypes. Markup ink and pins are stored inside the file as separate data in drawing coordinates and print into the plot PDF."}},{"@type":"Question","name":"Do large DXFs open?","acceptedAnswer":{"@type":"Answer","text":"The file gate is 512 MiB, but the real decision is entity count against the device's free memory. DXFs of 1.4 million entities have opened; if one can't, the app says why."}},{"@type":"Question","name":"What if I only have a PDF?","acceptedAnswer":{"@type":"Answer","text":"Open it as an underlay, set the scale with two points and snap to the PDF's vector lines while drawing CAD on top. Export what you drew as DXF."}},{"@type":"Question","name":"And DWG?","acceptedAnswer":{"@type":"Answer","text":"DWG opens through the conversion server as DXF (a connection is needed only on first open). See the DWG on iPad page."}},{"@type":"Question","name":"What happens to hidden layers?","acceptedAnswer":{"@type":"Answer","text":"Turn a layer off and the screen, snaps and plots all exclude it by the same rule. A locked layer stays visible but can't be selected or edited — the AutoCAD rule."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fluxketch.com/en/"},{"@type":"ListItem","position":2,"name":"DXF on iPad","item":"https://fluxketch.com/en/dxf-ipad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/dxf-ipad/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="phero"><div class="wrap">
+  <div class="copy">
+    <div class="eyebrow reveal">DXF on iPad</div>
+    <h1 class="reveal d1">DXF opens offline on iPad and goes back as DXF</h1>
+    <p class="lead reveal d2">DXF is an open text format, so Fluxketch reads it directly — no server, no connection. It confirms the unit, corrects coordinates, and exports what you changed back to DXF.</p>
+    <div class="cta reveal d3">
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a>
+      <a class="btn ghost" href="#answers">See the answers</a>
+    </div>
+    <div class="platform reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · TestFlight private beta</div>
+  </div>
+  <div class="stage reveal d2"><div class="device land"><div class="screen"><img src="/assets/img/v3/structural-dark.jpg" alt="Structural rebar detail DXF in CAD mode" loading="eager" fetchpriority="high"></div></div></div>
+</div></section>
+
+<section id="answers" class="soft"><div class="wrap">
+  <div class="eyebrow reveal">Questions and answers</div>
+  <h2 class="reveal d1">Questions about DXF on iPad</h2>
+  <div class="qa">
+    <article><h3>Won&#x27;t a wrong DXF unit make the drawing huge or tiny?</h3><p>DXF asks for its unit (mm, cm, m, inch, ft) on read and corrects coordinates in that unit. Correction is centered on the drawing, so drawings far from the origin land where they should. The true-scale ruler and plots use the same unit.</p></article>
+    <article><h3>Which DXF entities are read?</h3><p>Lines, polylines, LW polylines, circles, arcs, ellipses, splines, text, mtext, dimensions, hatches, block inserts, multilines, 3D faces, leaders and the layer table (color, weight, linetype). Multileaders, wipeouts and regions are counted in the report.</p></article>
+    <article><h3>Which DXF versions?</h3><p>Verified with ASCII DXF saved in AutoCAD 2000 or later formats. If a file won&#x27;t open, send it to flux0720@fluxketch.com and we&#x27;ll look.</p></article>
+    <article><h3>What goes back when I export DXF?</h3><p>Layers, colors, weights and linetypes. Markup ink and pins are stored inside the file as separate data in drawing coordinates and print into the plot PDF.</p></article>
+    <article><h3>Do large DXFs open?</h3><p>The file gate is 512 MiB, but the real decision is entity count against the device&#x27;s free memory. DXFs of 1.4 million entities have opened; if one can&#x27;t, the app says why.</p></article>
+    <article><h3>What if I only have a PDF?</h3><p>Open it as an underlay, set the scale with two points and snap to the PDF&#x27;s vector lines while drawing CAD on top. Export what you drew as DXF.</p></article>
+    <article><h3>And DWG?</h3><p>DWG opens through the conversion server as DXF (a connection is needed only on first open). See the DWG on iPad page.</p></article>
+    <article><h3>What happens to hidden layers?</h3><p>Turn a layer off and the screen, snaps and plots all exclude it by the same rule. A locked layer stays visible but can&#x27;t be selected or edited — the AutoCAD rule.</p></article>
+
+  </div>
+</div></section>
+
+<section class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">How it works</div>
+  <h2 class="reveal d1">The DXF round trip</h2>
+  <div class="row">
+    <ol class="steps reveal d2">
+      <li><h3>Open the DXF</h3><p>Pick it in the Files app and confirm the unit. No connection needed.</p></li>
+      <li><h3>Edit</h3><p>Draw with the twelve CAD tools and snaps; change color, weight and linetype in the layer panel.</p></li>
+      <li><h3>Export DXF</h3><p>DXF export in the More menu sends it back to office CAD.</p></li>
+
+    </ol>
+    <div class="reveal d3"><div class="device land"><div class="screen"><img src="/assets/img/v3/sections-sheet.jpg" alt="Sections and elevations sheet in sheet view" loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">See also</h2>
+  <div class="related reveal d1">
+    <a href="/en/ipad-cad/"><span class="k">iPad CAD</span><span class="t">CAD for iPad</span><span class="s">Open and edit CAD drawings on your iPad</span></a>
+    <a href="/en/mobile-cad/"><span class="k">Mobile CAD</span><span class="t">Mobile CAD app</span><span class="s">Mobile CAD should be an editor, not a viewer</span></a>
+    <a href="/en/dwg-ipad/"><span class="k">DWG iPad</span><span class="t">DWG on iPad</span><span class="s">Open DWG on iPad with every layer intact</span></a>
+    <a href="/en/cad-markup/"><span class="k">CAD markup</span><span class="t">CAD markup on iPad</span><span class="s">Markup is only a record if it sticks to the drawing</span></a>
+    <a href="/en/cad-plot/"><span class="k">CAD plot</span><span class="t">Scale PDF plot</span><span class="s">Paper at the right scale is the site&#x27;s reference</span></a>
+    <a href="/en/guides/"><span class="k">Guides</span><span class="t">Guides for people who use CAD on site</span><span class="s">Practical writing on what the field runs into every day — DWG, DXF, scale, markup. Most of it applies whichever app you use.</span></a>
+
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Join the TestFlight private beta to use every feature free during the beta and talk directly to the team.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/dxf-ipad/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Beta-period notices will be replaced by formal documents.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+

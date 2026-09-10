@@ -12,24 +12,34 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{title}}</title>
 <meta name="description" content="{{desc}}">
+<link rel="canonical" href="https://fluxketch.com{{path}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="{{og_locale}}">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{og_desc}}">
 <meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
 <meta property="og:url" content="https://fluxketch.com{{path}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{og_desc}}">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
 <link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
 <link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">
 <link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a class="logo" href="{{home}}"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
   <nav class="menu" aria-label="{{nav_label}}">
-    <a href="#features">{{nav_features}}</a><a href="#field">{{nav_field}}</a><a href="#performance">{{nav_perf}}</a><a href="#drawings">{{nav_drawings}}</a><a href="#pricing">{{nav_pricing}}</a><a href="#faq">{{nav_faq}}</a>
+    <a href="{{home}}#features">{{nav_features}}</a><a href="{{home}}#field">{{nav_field}}</a><a href="{{home}}#performance">{{nav_perf}}</a><a href="{{home}}#drawings">{{nav_drawings}}</a><a href="{{home}}#pricing">{{nav_pricing}}</a><a href="{{home}}guides/">{{nav_guides}}</a><a href="{{home}}#faq">{{nav_faq}}</a>
   </nav>
   <div class="right">
     <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_label}}</a>
@@ -188,13 +198,13 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 <footer><div class="wrap">
   <div class="cols">
     <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">{{ft_tag}}</p></div>
-    <div><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></div>
-    <div><h4>{{ft_use}}</h4><ul><li><a href="#field">{{ft_use1}}</a></li><li><a href="#drawings">{{ft_use2}}</a></li><li><a href="#performance">{{ft_use3}}</a></li></ul></div>
+    <div><h4>{{ft_product}}</h4><ul><li><a href="{{home}}#features">{{nav_features}}</a></li><li><a href="{{home}}#pricing">{{nav_pricing}}</a></li><li><a href="{{home}}guides/">{{nav_guides}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></div>
+    <div><h4>{{ft_use}}</h4><ul>{{ft_use_links}}</ul></div>
     <div><h4>{{ft_company}}</h4><ul><li><a href="mailto:flux0720@fluxketch.com">{{ft_contact}}</a></li><li><a href="{{alt_href}}">{{alt_full}}</a></li></ul></div>
     <div><h4>{{ft_legal}}</h4><ul><li><a href="/privacy">{{ft_privacy}}</a></li><li><a href="/terms">{{ft_terms}}</a></li><li><a href="/licenses">{{ft_licenses}}</a></li></ul></div>
   </div>
   <div class="fine"><span>© 2026 Fluxketch</span><span>{{ft_fine}}</span></div>
 </div></footer>
-<script src="/assets/app.js?v=3" defer></script>
+<script src="/assets/app.js?v=4" defer></script>
 </body>
 </html>
