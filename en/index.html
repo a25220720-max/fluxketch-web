@@ -1,203 +1,235 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fluxketch: CAD you finish on site, on iPad</title>
-<meta name="description" content="Open DXF, DWG and PDF drawings on iPad, draw and mark up with Apple Pencil, drop photo pins and notes, and export scaled PDF and DXF. Private beta October 2026.">
-<meta property="og:title" content="Fluxketch: CAD you finish on site, on iPad">
-<meta property="og:description" content="Open, draw, mark up, export. All on the iPad in your hand.">
-<meta property="og:image" content="https://fluxketch.com/assets/img/cad.jpg">
+<title>Fluxketch — Field CAD for iPad</title>
+<meta name="description" content="Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Private beta.">
+<meta property="og:title" content="Fluxketch — Field CAD for iPad">
+<meta property="og:description" content="Open, draw, mark up, export. All on iPad.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
 <meta property="og:url" content="https://fluxketch.com/en/">
-<meta name="theme-color" content="#0b0d11">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
 <link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
+<link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 </head>
 <body>
-<header class="tb"><div class="wrap">
-  <div class="cell"><a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="30" height="30">Fluxketch</a></div>
-  <div class="cell meta"><span><b>Sheet set</b>FLX-2026-B</span><span><b>Phase</b>Private beta</span><span><b>Date</b>2026.10</span><span><b>Device</b>iPad · Apple Pencil</span></div>
-  <div class="cell"><nav class="menu"><a href="#sheet">Sheet view</a><a href="#tools">Tools</a><a href="#work">Work</a><a href="#spec">Measured</a><a href="#pricing">Pricing</a><a href="#beta">Beta</a></nav></div>
-  <div class="cell"><a class="lang" href="/">한국어</a></div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="#features">Features</a><a href="#field">Field notes</a><a href="#performance">Performance</a><a href="#drawings">Real drawings</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </div></header>
 
-<section class="hero reveal"><div class="wrap">
-  <div>
-    <div class="no">A-001 · Cover</div>
-    <h1>CAD you finish<br><em>on site</em></h1>
-    <p class="lead">Open, draw, mark up, export. All on the iPad in your hand. No trip back to the office to redraw.</p>
-    <div class="cta">
+<section class="hero"><div class="wrap">
+  <div class="copy">
+    <h1 class="reveal">From the drawing<br>to the site, on one iPad.</h1>
+    <p class="lead reveal d1">Fluxketch is CAD for people who carry drawings. Open DXF, DWG and PDF as they are, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF.</p>
+    <div class="cta reveal d2">
       <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a>
-      <a class="btn" href="#sheet">See the sheet view</a>
+      <a class="btn ghost" href="#features">Explore features</a>
     </div>
-    <div class="note">October 2026 · TestFlight · every feature is free during the beta</div>
+    <div class="platform reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · TestFlight private beta</div>
   </div>
-  <div class="annot">
-    <div class="frame"><img src="/assets/img/cad.jpg" alt="Fluxketch CAD mode on a hotel floor plan" width="1800" height="1251" loading="eager"></div>
-    <svg viewBox="0 0 1000 720" preserveAspectRatio="none" aria-hidden="true">
-      <!-- 위: 폭 치수 = 프레임 -->
-      <line class="draw" x1="36" y1="18" x2="964" y2="18"/><line class="tick" x1="36" y1="10" x2="36" y2="26"/><line class="tick" x1="964" y1="10" x2="964" y2="26"/>
-      <text x="500" y="12" text-anchor="middle">181,422 entities · 60 Hz</text>
-      <!-- 왼쪽: 팔레트 높이 -->
-      <line class="draw d2" x1="18" y1="120" x2="18" y2="600"/><line class="tick" x1="10" y1="120" x2="26" y2="120"/><line class="tick" x1="10" y1="600" x2="26" y2="600"/>
-      <text x="8" y="360" transform="rotate(-90 8 360)" text-anchor="middle">12 CAD tools</text>
-      <!-- 오른쪽 아래: 지시선 -->
-      <path class="draw d3" d="M700 690 L820 690 L880 640"/><text x="700" y="710">snap 15pt · ortho</text>
-    </svg>
+  <div class="stage reveal d4">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-parking-sheet.jpg" alt="Fluxketch sheet view — hotel basement parking plan with tool palette and snap rail" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
+    <div class="dim" aria-hidden="true"><svg viewBox="0 0 1000 720" preserveAspectRatio="none">
+      <line x1="60" y1="-22" x2="940" y2="-22"/><line x1="60" y1="-32" x2="60" y2="-12"/><line x1="940" y1="-32" x2="940" y2="-12"/>
+      <text x="500" y="-30" text-anchor="middle">181,422 entities · 60 Hz</text>
+      <path d="M1012 120 L1012 600"/><line x1="1002" y1="120" x2="1022" y2="120"/><line x1="1002" y1="600" x2="1022" y2="600"/>
+      <text x="1030" y="365" transform="rotate(90 1030 365)" text-anchor="middle">12 CAD tools</text>
+    </svg></div>
   </div>
 </div></section>
 
-<div class="strip reveal"><div class="track">
-  <figure><img src="/assets/img/sheet.jpg" alt="" loading="lazy"><figcaption><span>Sheet view: black on white</span><span class="mono">A-101</span></figcaption></figure>
-  <figure><img src="/assets/img/measure.jpg" alt="" loading="lazy"><figcaption><span>Measure: 2,625 mm</span><span class="mono">A-201</span></figcaption></figure>
-  <figure><img src="/assets/img/layers.jpg" alt="" loading="lazy"><figcaption><span>188 layers · weights · linetypes</span><span class="mono">A-202</span></figcaption></figure>
-  <figure><img src="/assets/img/topo.jpg" alt="" loading="lazy"><figcaption><span>Topographic map: Granada contours</span><span class="mono">A-303</span></figcaption></figure>
-  <figure><img src="/assets/img/section.jpg" alt="" loading="lazy"><figcaption><span>Section and detail sheet: Nha Trang hotel</span><span class="mono">A-304</span></figcaption></figure>
-  <figure><img src="/assets/img/zoom.jpg" alt="" loading="lazy"><figcaption><span>Zoomed: crisp vectors</span><span class="mono">A-203</span></figcaption></figure>
-  <figure><img src="/assets/img/markup.jpg" alt="" loading="lazy"><figcaption><span>Markup palette</span><span class="mono">A-301</span></figcaption></figure>
-  <figure><img src="/assets/img/note.jpg" alt="" loading="lazy"><figcaption><span>Note pages</span><span class="mono">A-302</span></figcaption></figure>
-  <figure><img src="/assets/img/sheet.jpg" alt="" loading="lazy"><figcaption><span>Sheet view: black on white</span><span class="mono">A-101</span></figcaption></figure>
-  <figure><img src="/assets/img/measure.jpg" alt="" loading="lazy"><figcaption><span>Measure: 2,625 mm</span><span class="mono">A-201</span></figcaption></figure>
-  <figure><img src="/assets/img/layers.jpg" alt="" loading="lazy"><figcaption><span>188 layers · weights · linetypes</span><span class="mono">A-202</span></figcaption></figure>
-  <figure><img src="/assets/img/topo.jpg" alt="" loading="lazy"><figcaption><span>Topographic map: Granada contours</span><span class="mono">A-303</span></figcaption></figure>
-  <figure><img src="/assets/img/section.jpg" alt="" loading="lazy"><figcaption><span>Section and detail sheet: Nha Trang hotel</span><span class="mono">A-304</span></figcaption></figure>
-  <figure><img src="/assets/img/zoom.jpg" alt="" loading="lazy"><figcaption><span>Zoomed: crisp vectors</span><span class="mono">A-203</span></figcaption></figure>
-  <figure><img src="/assets/img/markup.jpg" alt="" loading="lazy"><figcaption><span>Markup palette</span><span class="mono">A-301</span></figcaption></figure>
-  <figure><img src="/assets/img/note.jpg" alt="" loading="lazy"><figcaption><span>Note pages</span><span class="mono">A-302</span></figcaption></figure>
+<section class="tight"><div class="wrap center">
+  <h2 class="reveal">The power of CAD. None of the pain.</h2>
+  <p class="lead reveal d1 mt-3">Take your office drawings out as they are, and bring what you touched on site straight back. No format juggling, no redrawing.</p>
+  <div class="trio">
+    <div class="item reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14"/><path d="M8 8h8M8 12h5"/></svg></div><h3>Short to learn</h3><p>Line, polyline, circle, arc, rectangle, text, move, copy, fillet, trim, erase, dimension — 12 tools with snaps, ortho and a numeric keypad. The CAD grammar you already know.</p></div>
+    <div class="item reveal d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Big drawings stay smooth</h3><p>Pan and zoom at 60 Hz on a 180,000-entity drawing. Sharp the moment you stop, and 188 layers handled as-is.</p></div>
+    <div class="item reveal d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M8 17v3h8v-3"/></svg></div><h3>Scale-true on paper</h3><p>Plot PDFs carry the scale and a 100 mm check ruler. Markup ink and pins included. Round-trip to DXF too.</p></div>
+  </div>
+</div></section>
+
+<div class="strip" aria-label="Real drawing gallery"><div class="track">
+  <figure><div class="thumb"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>5-storey house · MEP sheets</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/hotel-sheet-portrait-sm.jpg" alt="" loading="lazy" width="900" height="1295"></div><figcaption><span>Hotel typical floor · sheet view</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/layers-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>188 layers · weights &amp; linetypes</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/casino-portrait-dark-sm.jpg" alt="" loading="lazy" width="900" height="1295"></div><figcaption><span>Casino ground floor · CAD mode</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/arquitectura-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Apartment plan · sheet view</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/granada-topo-dark-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Granada terrain · full contours</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/vivienda-markup-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Markup · marker</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/callejas-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>6-floor commercial · sheets</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>5-storey house · MEP sheets</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/hotel-sheet-portrait-sm.jpg" alt="" loading="lazy" width="900" height="1295"></div><figcaption><span>Hotel typical floor · sheet view</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/layers-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>188 layers · weights &amp; linetypes</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/casino-portrait-dark-sm.jpg" alt="" loading="lazy" width="900" height="1295"></div><figcaption><span>Casino ground floor · CAD mode</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/arquitectura-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Apartment plan · sheet view</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/granada-topo-dark-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Granada terrain · full contours</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/vivienda-markup-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>Markup · marker</span></figcaption></figure>
+  <figure><div class="thumb"><img src="/assets/img/v3/callejas-sheet-sm.jpg" alt="" loading="lazy" width="900" height="626"></div><figcaption><span>6-floor commercial · sheets</span></figcaption></figure>
+
 </div></div>
 
-<section id="sheet" class="sheet paper"><div class="wrap reveal">
-  <div class="no">A-101 · Sheet view</div>
-  <div class="two">
-    <div class="shot"><img src="/assets/img/sheet.jpg" alt="Sheet view: black lines on white" loading="lazy"></div>
-    <div>
-      <div class="stamp">SHEET VIEW</div>
-      <h2>See it like the print</h2>
-      <p class="sub">One tap turns the canvas into black lines on white paper. No old colors bleed through while you pan and zoom, and hidden layers are excluded by the same rule on screen, in snapping, in reports and in plots.</p>
-      <ul><li>Drawing colors or the black-on-white sheet, one tap apart</li><li>Vectors stay crisp at any zoom</li><li>The plot PDF ships this sheet as is, with the scale and a 100 mm verification bar</li></ul>
+<section id="features" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">Features</div>
+  <h2 class="reveal d1">Every CAD tool you need. Plus the field ones.</h2>
+  <p class="lead reveal d2 mt-3">No catalog-only tools. Everything below is verified on real iPads every round.</p>
+  <div class="tabs reveal d3" data-interval="6500">
+    <div class="list" role="tablist" aria-label="Every CAD tool you need. Plus the field ones.">
+      <button class="tab" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Sheet view, like a print</span><span class="s"><span>One tap: black lines on white. Vector all the way — zoom without mush.</span></span></button>
+      <button class="tab" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Open DXF, DWG and PDF as they are</span><span class="s"><span>Layers, colors, weights, linetypes, blocks, hatches, multilines. What can&#x27;t be imported is reported by count.</span></span></button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="pane-2" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Markup that sticks to the drawing</span><span class="s"><span>Pen, marker, pencil, eraser, lasso, ruler. Strokes are locked to drawing coordinates — no drift while you zoom or pan.</span></span></button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="pane-3" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">188 layers, untouched</span><span class="s"><span>Visibility, lock, color, weight and linetype right in the palette. Hidden layers leave the screen, snaps and plots by the same rule.</span></span></button>
+      <button class="tab" role="tab" id="tab-4" aria-controls="pane-4" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">True-scale ruler and dimensions</span><span class="s"><span>Screen density is estimated per device, so 1:50 shows as 1:50, from 1:1 to 1:1,000. Two taps give a real length with units.</span></span></button>
+      <button class="tab" role="tab" id="tab-5" aria-controls="pane-5" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Export as seven document types</span><span class="s"><span>Pin log, report, sheet issue, plot PDF, DXF export, PDF underlay. From the site straight to the office.</span></span></button>
+
+    </div>
+    <div class="panes">
+      <div class="pane" role="tabpanel" id="pane-0" aria-labelledby="tab-0"><div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-parking-sheet.jpg" alt="Sheet view, like a print" loading="eager"></div></div></div>
+      <div class="pane" role="tabpanel" id="pane-1" aria-labelledby="tab-1"><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-dark.jpg" alt="Open DXF, DWG and PDF as they are" loading="lazy"></div></div></div>
+      <div class="pane" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div class="device land"><div class="screen"><img src="/assets/img/v3/vivienda-markup-dark.jpg" alt="Markup that sticks to the drawing" loading="lazy"></div></div></div>
+      <div class="pane" role="tabpanel" id="pane-3" aria-labelledby="tab-3"><div class="device land"><div class="screen"><img src="/assets/img/v3/layers-sheet.jpg" alt="188 layers, untouched" loading="lazy"></div></div></div>
+      <div class="pane" role="tabpanel" id="pane-4" aria-labelledby="tab-4"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="True-scale ruler and dimensions" loading="lazy"></div></div></div>
+      <div class="pane" role="tabpanel" id="pane-5" aria-labelledby="tab-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="Export as seven document types" loading="lazy"></div></div></div>
+
     </div>
   </div>
-  <div class="twin">
-    <div class="shot"><img src="/assets/img/sheet_zoom.jpg" alt="Sheet view zoomed: room plan detail" loading="lazy"></div>
-    <div class="shot"><img src="/assets/img/zoom2.jpg" alt="Drawing colors, same spot" loading="lazy"></div>
-  </div>
 </div></section>
 
-<section id="tools" class="sheet"><div class="wrap reveal">
-  <div class="no">A-201 · Legend</div>
-  <h2>The 12 tools in v1, only what is actually wired</h2>
-  <p class="sub">Nothing that exists only as a catalog entry. These twelve are verified on a real iPad every round. Endpoint, midpoint, center and intersection snaps (15 pt), ortho and the numeric keypad work with all of them.</p>
-  <div class="legendwrap">
-    <table class="legend"><thead><tr><th></th><th>Tool</th><th>Key</th><th>What it does</th></tr></thead><tbody>
-      <tr><td class="sym"><span>╱</span></td><td>Line</td><td class="key">L</td><td>Two points, ortho toggle</td></tr>
-      <tr><td class="sym"><span>⌒</span></td><td>Polyline</td><td class="key">PL</td><td>Chained points, open or closed</td></tr>
-      <tr><td class="sym"><span>○</span></td><td>Circle</td><td class="key">C</td><td>Center and radius</td></tr>
-      <tr><td class="sym"><span>◠</span></td><td>Arc</td><td class="key">A</td><td>Start, through, end</td></tr>
-      <tr><td class="sym"><span>▭</span></td><td>Rectangle</td><td class="key">REC</td><td>Two corners</td></tr>
-      <tr><td class="sym"><span>T</span></td><td>Text</td><td class="key">T</td><td>Tap a spot, type</td></tr>
-    </tbody></table>
-    <table class="legend"><thead><tr><th></th><th>Tool</th><th>Key</th><th>What it does</th></tr></thead><tbody>
-      <tr><td class="sym"><span>✥</span></td><td>Move</td><td class="key">M</td><td>Grab and drag, or base point to target</td></tr>
-      <tr><td class="sym"><span>⧉</span></td><td>Copy</td><td class="key">CO</td><td>Same flow as move</td></tr>
-      <tr><td class="sym"><span>◜</span></td><td>Fillet</td><td class="key">F</td><td>Pick two entities</td></tr>
-      <tr><td class="sym"><span>✂</span></td><td>Trim</td><td class="key">TR</td><td>Tap or scrub</td></tr>
-      <tr><td class="sym"><span>⌫</span></td><td>Erase</td><td class="key">E</td><td>One tap, or draw a fence and lift</td></tr>
-      <tr><td class="sym"><span>⟷</span></td><td>Dimension</td><td class="key">DIM</td><td>Two points to real length with units</td></tr>
-    </tbody></table>
-  </div>
-</div></section>
-
-<section id="work" class="sheet"><div class="wrap">
-  <div class="reveal"><div class="no">A-301 · Work</div>
-  <h2>One drawing holds the whole site</h2>
-  <p class="sub">CAD geometry, handwritten markup, photo pins and note pages live in one file. Switch modes and everything stays in place.</p></div>
-
-  <div class="row reveal">
-    <div class="shot"><img src="/assets/img/measure.jpg" alt="Measuring: 2,625 mm between two points" loading="lazy">
-      <svg class="callout" viewBox="0 0 1000 695" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M455 520 L455 470 L420 470"/><text x="300" y="474">two points, real length</text></svg></div>
-    <div class="txt"><h3>Measure, snap, fit</h3><p>The dimension tool shows the real length with units after two taps. Hover over geometry with a tool armed and the snap points preview; turn on ortho and every line is square.</p>
-      <ul><li>DXF asks for its unit and corrects coordinates as it reads (mm, cm, m, inch, ft)</li><li>PDF underlays start at 1:100; two taps set the true scale, and snapping works on PDF vector lines</li><li>Plots carry a 100 mm bar on paper, so even printer scaling is checkable</li></ul></div>
-  </div>
-  <div class="row rev reveal">
-    <div class="shot"><img src="/assets/img/layers.jpg" alt="188 layers: visibility, lock, color, weight and linetype" loading="lazy"></div>
-    <div class="txt"><h3>188 layers, intact</h3><p>Visibility, lock, color, weight and linetype live in the left palette. A hidden layer does not just leave the screen; snapping, reports and plots drop it by the same rule.</p>
-      <ul><li>Metal vector rendering plus a raster tile pyramid: 60 Hz pan and zoom on 180,000 entities</li><li>Sharpens the moment you stop (118 ms on a 46,529-entity drawing)</li><li>Erase, hide, line and dimension show within 100 ms</li></ul></div>
+<section id="field" class="soft"><div class="wrap">
+  <div class="scene reveal">
+    <div class="scene-txt"><div class="eyebrow">Field notes</div><h2>What you saw, left on the drawing.</h2><p class="lead mt-3">Photo pins, handwritten markup and note pages live in one file. Positions stay put across modes, and they collect into a single report.</p></div>
+    <figure class="scene-img"><img src="/assets/img/v3/scene-elevator.jpg" alt="A site supervisor checking a plan on iPad in the field" loading="lazy" width="1600" height="1410"></figure>
   </div>
   <div class="row reveal">
-    <div class="shot"><img src="/assets/img/markup.jpg" alt="Markup mode: pen, marker, pencil, eraser, lasso, ruler, colors and widths" loading="lazy"></div>
-    <div class="txt"><h3>Markup stays on the drawing</h3><p>Pen, marker, pencil, eraser, lasso and ruler. Strokes are fixed to drawing coordinates so they never drift from the lines beneath while you zoom or pan. Widths are defined in drawing units, so a scale change keeps their meaning.</p>
-      <ul><li>Pins (photo, memo) always sit above markup; collect them into one report PDF</li><li>Markup ink is included in plots</li><li>Note pages in the same file: blank, ruled, dotted, grid, drafting grid; pull past the end for one more</li></ul></div>
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="More menu — pin log, report, sheet issue, plot, DXF export, PDF underlay, beta feedback" loading="lazy"></div></div></div>
+    <div class="txt"><h3>From pin log to report</h3><p class="sub">Drop a pin, attach a photo and a note. The pin log is the list; the report prints in seven document formats (inspection, instruction, meeting and more).</p><ul><li>Pins always sit above markup, locked to drawing coordinates</li><li>Table layouts and regulatory reference lines in reports</li><li>Sheet issue exports just the sheets you choose</li></ul></div>
+  </div>
+  <div class="row rev reveal">
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-markup-sheet.jpg" alt="Markup mode — pen, marker, pencil, eraser, lasso, ruler with color and width palette" loading="lazy"></div></div></div>
+    <div class="txt"><h3>Handwriting that stays handwriting</h3><p class="sub">Apple Pencil pressure as-is. Strokes never split from the drawing, and widths are in drawing units, so meaning survives a scale change.</p><ul><li>Pen, marker, pencil, eraser, lasso, ruler</li><li>Undo/redo, ink plotted as-is</li><li>Note pages: blank, ruled, dotted, grid, drafting grid</li></ul></div>
   </div>
   <div class="row reveal">
-    <div class="shot"><img src="/assets/img/topo.jpg" alt="Full topographic map of Granada with city parcels and mountain contours" loading="lazy"></div>
-    <div class="txt"><h3>Topographic maps open too</h3><p>City parcels and mountain contour lines on one sheet. Hundreds of thousands of entities still open, hold the frame rate while you pan and zoom, and sharpen the moment you stop. The raster tile pyramid bakes base tiles on first open and covers from disk after that.</p>
-      <ul><li>Measured on a 181,422-entity drawing: opened and edited, peak memory ≈1.0 GB</li><li>Dense section and detail sheets stay intact (Nha Trang hotel sections)</li><li>DWG through the conversion server, DXF directly on device</li></ul></div>
-  </div>
-  <div class="row rev reveal">
-    <div class="shot"><img src="/assets/img/section.jpg" alt="Nha Trang hotel section and stair detail sheet with red sheet borders and dimensions" loading="lazy"></div>
-    <div class="txt"><h3>Sections and details, in their colors</h3><p>Layer colors, linetypes, hatches and dimension text arrive as drawn. Scan six details inside the sheet border on one screen and zoom only where you need to.</p>
-      <ul><li>ACI color, linetype and weight round-trip (R2000)</li><li>Screen-constant line weight keeps lines crisp when zoomed out</li><li>Flip to sheet view for black lines on white</li></ul></div>
-  </div>
-  <div class="row rev reveal">
-    <div class="shot" style="max-width:520px;justify-self:center"><img src="/assets/img/portrait.jpg" alt="Portrait mode with the top actions moved to a right-hand column" loading="lazy"></div>
-    <div class="txt"><h3>Landscape and portrait</h3><p>Turn the iPad and undo, save and the menu move to a right-hand column while keypad, lock, ruler, dimension and pin move to the top right. The left palette and the right snap rail stay put.</p>
-      <ul><li>Verified on five iPads from mini to 13-inch, both orientations</li><li>Canvas lock freezes the screen while you show it</li><li>A 28-step practice board and a built-in sample plan teach the first session</li></ul></div>
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="True-scale ruler popover — scale presets from 1:1 to 1:1,000 and ruler calibration" loading="lazy"></div></div></div>
+    <div class="txt"><h3>See at true scale, measure with a ruler</h3><p class="sub">Per-device screen density puts 1:50 on screen at 1:50. A 100 mm ruler on paper verifies even the printer's scaling.</p><ul><li>1:1 to 1:1,000 · calibrate against a ruler</li><li>DXF asks the unit and corrects on read (mm, cm, m, inch, ft)</li><li>PDF underlays scale with two points and snap to vectors</li></ul></div>
   </div>
 </div></section>
 
-<section id="spec" class="sheet paper"><div class="wrap reveal">
-  <div class="no">A-401 · Test record</div>
-  <h2>Measured, not claimed</h2>
-  <p class="sub">Values below are copied from probe logs on the development iPad (iPad Air 11" M4). Logs, not slogans.</p>
-  <div class="specwrap"><table class="spec">
-    <thead><tr><th>Item</th><th>Value</th><th>Conditions</th></tr></thead>
-    <tbody>
-      <tr class="hi"><td>Frame rate, rest and pan</td><td class="v">60 Hz held</td><td>median frame interval 16.7 ms, encode 0.3–0.5 ms, GPU 1–3 ms</td></tr>
-      <tr><td>Large drawing</td><td class="v">181,422 entities</td><td>opened and edited, peak memory ≈1.0 GB; 51,307 entities ≈0.4 GB</td></tr>
-      <tr><td>Sharpen after stopping</td><td class="v">49 ms / 118 ms</td><td>6,938 / 46,529 entities. Off-main snapshot + 150 ms crossfade</td></tr>
-      <tr><td>Markup ink</td><td class="v">bake 5 ms</td><td>median; frames where ink drifts from the drawing during pan/pinch 45% → 19%</td></tr>
-      <tr><td>Edit visibility</td><td class="v">≤ 100 ms</td><td>erase, layer hide, line and dimension all shown</td></tr>
-      <tr><td>Plot scale</td><td class="v">283.46 pt</td><td>100 mm bar on paper, verified on an A3 print</td></tr>
-      <tr><td>Automated tests</td><td class="v">5,142 / 0</td><td>run / failed. Full package gate at every safe point</td></tr>
-    </tbody></table></div>
-  <div class="footnote">Measured 2026-09-05 from probe logs (frame.ledger, raster.snapshot, refresh.*, ink snapshot). Results vary by device and drawing.</div>
+<section id="performance" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">Performance</div>
+  <h2 class="reveal d1">Big drawings aren't scary.</h2>
+  <p class="lead reveal d2 mt-3">A Metal vector renderer and a raster tile pyramid draw together. Put all of Granada's streets and mountain contours on one screen and it still follows your hand.</p>
+  <div class="stage reveal d3 mt-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/granada-topo-dark.jpg" alt="Granada terrain map — city and full mountain contours in CAD mode" loading="lazy"></div></div></div>
+  <div class="stats">
+    <div class="s reveal"><div class="n"><span data-count="181422">0</span></div><div class="l">entities in a verified drawing (TalkFile_18)</div></div>
+    <div class="s reveal d1"><div class="n"><span data-count="60">0</span><small>Hz</small></div><div class="l">pan and zoom on 180k entities</div></div>
+    <div class="s reveal d2"><div class="n"><span data-count="188">0</span></div><div class="l">layers handled as-is (Hotel 5 Estrellas)</div></div>
+  </div>
 </div></section>
 
-<section id="pricing" class="sheet"><div class="wrap reveal">
-  <div class="no">A-501 · Price list</div>
-  <h2>Pricing</h2>
-  <p class="sub">Everything is free during the private beta. Beta testers keep a discounted Pro price after launch.</p>
+<section><div class="wrap">
+  <div class="eyebrow reveal">Why iPad</div>
+  <h2 class="reveal d1">Close the gap between the office and the site.</h2>
+  <div class="flow reveal d2" aria-label="Workflow: office drawings → Fluxketch on iPad → paper, DXF and reports → back to the office"><svg viewBox="0 0 960 244" role="img">
+    <title>Workflow: office drawings → Fluxketch on iPad → paper, DXF and reports → back to the office</title>
+    <rect class="node" x="20" y="60" width="200" height="100" rx="18"/>
+    <text x="120" y="98" text-anchor="middle">DXF · DWG · PDF</text><text class="small" x="120" y="124" text-anchor="middle">straight from office CAD</text>
+    <rect class="node hi" x="380" y="30" width="200" height="160" rx="22"/>
+    <rect x="404" y="52" width="152" height="116" rx="10" fill="none" stroke="var(--brand)" stroke-width="1.5" opacity=".55"/>
+    <text x="480" y="102" text-anchor="middle">Fluxketch</text><text class="small" x="480" y="126" text-anchor="middle">draft · markup · pins · notes</text><text class="small" x="480" y="146" text-anchor="middle">iPad · Apple Pencil</text>
+    <rect class="node" x="740" y="60" width="200" height="100" rx="18"/>
+    <text x="840" y="98" text-anchor="middle">PDF · DXF · Report</text><text class="small" x="840" y="124" text-anchor="middle">scale-true output · meetings</text>
+    <path class="wire" d="M220 110 C 300 110 300 110 372 110"/><path class="arrow" d="M366 103 L380 110 L366 117 Z"/>
+    <path class="wire w2" d="M580 110 C 660 110 660 110 732 110"/><path class="arrow" d="M726 103 L740 110 L726 117 Z"/>
+    <path class="wire w2" d="M480 190 C 480 212 120 212 120 160"/><path class="arrow" d="M113 174 L120 160 L127 174 Z"/>
+    <text class="small" x="300" y="236" text-anchor="middle">Round-trip to DXF and keep drawing in office CAD</text>
+  </svg>
+  <ol class="flow-m" aria-hidden="true">
+    <li><b>DXF · DWG · PDF</b><span>straight from office CAD</span></li>
+    <li class="hi"><b>Fluxketch</b><span>draft · markup · pins · notes</span><span>iPad · Apple Pencil</span></li>
+    <li><b>PDF · DXF · Report</b><span>scale-true output · meetings</span></li>
+    <li class="back"><span>↺ Round-trip to DXF and keep drawing in office CAD</span></li>
+  </ol></div>
+  <div class="compare">
+    <div class="col reveal"><h3>Until now</h3><ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Ballpoint on a printout on site, redraw it in CAD back at the office</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Photos in the camera roll, notes in a pocketbook — the location lives in memory</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Review meetings run on PDF screenshots over chat</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Field apps that can't open DWG, or drop the layers</span></li></ul></div>
+    <div class="col now reveal d1"><h3>Fluxketch</h3><ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>Markup, dimensions and pins on drawing coordinates, on site</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>Photos and notes hang on pins — the position is the record</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>One report or plot PDF for the meeting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>DXF and DWG in and out with layers, weights and linetypes intact</span></li></ul></div>
+  </div>
+</div></section>
+
+<section id="drawings" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">Real drawings</div>
+  <h2 class="reveal d1">Verified on real drawings.</h2>
+  <p class="lead reveal d2 mt-3">These were opened and worked on during the beta. Screens are straight from the app, unretouched.</p>
+  <div class="cases">
+    <a class="case reveal" href="#features"><div class="img"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">House · 5 floors</div><h3>Four MEP sheets in one file</h3><p>Each sheet's color rules — by-layer and explicit — survive intact.</p></div></a>
+    <a class="case reveal d1" href="#field"><div class="img"><img src="/assets/img/v3/sections-sheet-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">Commercial · sections & elevations</div><h3>Five sections and a roof plan</h3><p>Hatches, dimensions and text stay vector — lines hold at any zoom.</p></div></a>
+    <a class="case reveal d2" href="#performance"><div class="img"><img src="/assets/img/v3/structural-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">Structural · rebar details</div><h3>Hundreds of rebar details</h3><p>Dense sheets of small details turn sharp instantly through tiles.</p></div></a>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <div class="center"><div class="eyebrow reveal">Pricing</div><h2 class="reveal d1">Everything is free during the beta.</h2><p class="lead reveal d2 mt-3">Plans after launch. Beta testers keep Pro at the beta price.</p></div>
   <div class="plans">
-    <div class="plan"><h3>Free</h3><div class="price">₩0</div><div class="per">forever</div><ul><li>Open and read drawings</li><li>Export DXF and plot after watching an ad</li></ul></div>
-    <div class="plan"><h3>Lite</h3><div class="price">₩4,900</div><div class="per">/ month · ₩49,000 / year</div><ul><li>All 12 drawing and editing tools</li><li>Plot PDF · DXF export</li></ul></div>
-    <div class="plan hot"><span class="tag beta">Beta testers only</span><h3>Pro</h3><div class="price"><span class="was">₩16,900</span>₩12,900</div><div class="per">/ month · regular ₩16,900</div><ul><li>Everything in Lite</li><li>Markup · Pins · Notes</li><li>Pin report PDF</li></ul></div>
-    <div class="plan"><span class="tag">Planned</span><h3>Max</h3><div class="price">₩39,000</div><div class="per">/ month · ₩390,000 / year</div><ul><li>To be announced</li></ul></div>
+    <div class="plan reveal"><div class="name">Free</div><div class="price">₩0</div><ul><li>Open, view and mark up drawings</li><li>Basic export</li></ul><a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Start with the beta</a></div>
+    <div class="plan reveal d1"><div class="name">Lite</div><div class="price">₩4,900<small>/mo</small></div><ul><li>12 CAD tools and dimensions</li><li>Plot PDF and DXF export</li></ul><a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Start with the beta</a></div>
+    <div class="plan hi reveal d2"><div class="tag">Beta tester price</div><div class="name">Pro</div><div class="price">₩12,900<small>/mo</small></div><div class="was">List ₩16,900/mo</div><ul><li>Everything in Lite + pins and 7 report types</li><li>Sheet issue and PDF underlay</li><li>Large-drawing performance (raster tiles)</li></ul><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a></div>
   </div>
+  <p class="sub center mt-4" style="margin-inline:auto">A Max plan is in preparation. Prices include VAT and may change at launch.</p>
 </div></section>
 
-<section id="beta" class="sheet"><div class="wrap beta reveal">
-  <div class="cloud">
-    <svg viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true"><rect class="draw" x="2" y="2" width="596" height="296" rx="6"/></svg>
-    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-    <div class="no">A-601 · Revision</div>
-    <h2>Private beta</h2>
-    <p>Starting October 2026 on TestFlight. We are inviting people who handle drawings on architecture, interior and construction sites first. Beta testers keep Pro at ₩12,900 a month after launch.</p>
-    <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Open the application form (Google Form, 2 min)</a>
-  </div>
-  <div class="steps">
-    <div><span class="n">01</span><div><b>Apply</b>Tell us which drawings you work with and how.</div></div>
-    <div><span class="n">02</span><div><b>TestFlight invite</b>Invites go out in order. You need an iPad and an Apple Pencil.</div></div>
-    <div><span class="n">03</span><div><b>Feedback in the app</b>"Beta feedback" in the dashboard, settings and menu opens the same form. Your reports become the next build.</div></div>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Join the TestFlight private beta to use every feature free during the beta and talk directly to the team.</p>
+  <div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join the private beta</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<section id="faq" class="soft"><div class="wrap">
+  <div class="center"><h2 class="reveal">Frequently asked questions</h2></div>
+  <div class="faq reveal d1">
+    <details open><summary>Is it free?</summary><div class="a">Everything is free during the beta. After launch there are Free, Lite and Pro plans, and beta testers keep Pro at the beta price (₩12,900/mo).</div></details>
+    <details><summary>Which files can it open?</summary><div class="a">DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn&#x27;t gets counted in the import report.</div></details>
+    <details><summary>Does it work offline?</summary><div class="a">DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline).</div></details>
+    <details><summary>Is there 3D or AI?</summary><div class="a">No. Fluxketch focuses on opening, drawing, marking up and exporting 2D drawings on site.</div></details>
+    <details><summary>What hardware do I need?</summary><div class="a">An iPad and an Apple Pencil. Large drawings are most comfortable on M-series iPads, and the beta is also verified on iPad 9th gen and A16 models.</div></details>
+    <details><summary>Are markups saved with the drawing?</summary><div class="a">Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and DXF export is available.</div></details>
+    <details><summary>How do I join the beta?</summary><div class="a">Use &#x27;Join the private beta&#x27; above and we&#x27;ll send a TestFlight invite. Report problems from the app&#x27;s &#x27;Report a bug now&#x27; card or by email to flux0720@fluxketch.com, ideally with the file.</div></details>
+
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <div>© 2026 Fluxketch. All rights reserved. · <a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">@fluxketch_official</a></div>
-  <nav><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/licenses.html">Open-source licenses</a><a href="mailto:support@fluxketch.com">support@fluxketch.com</a><a href="/">한국어</a></nav>
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdV-CMVpm1hdJ6i37DJ2JRsa_WfrnI2mPNDxfqHYr5mrLZGgg/viewform" target="_blank" rel="noopener noreferrer">Join beta</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="#field">Field notes</a></li><li><a href="#drawings">Real drawings</a></li><li><a href="#performance">Large drawings</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Beta-period notices will be replaced by formal documents.</span></div>
 </div></footer>
-<script src="/assets/site.js"></script>
+<script src="/assets/app.js?v=3" defer></script>
 </body>
 </html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta property="og:url" content="https://fluxketch.com{{path}}">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
+<link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=3">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="{{home}}"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="{{nav_label}}">
+    <a href="#features">{{nav_features}}</a><a href="#field">{{nav_field}}</a><a href="#performance">{{nav_perf}}</a><a href="#drawings">{{nav_drawings}}</a><a href="#pricing">{{nav_pricing}}</a><a href="#faq">{{nav_faq}}</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_label}}</a>
+    <a class="btn primary small" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a>
+    <button class="burger" aria-label="{{menu_open}}" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="copy">
+    <h1 class="reveal">{{h1}}</h1>
+    <p class="lead reveal d1">{{h1_sub}}</p>
+    <div class="cta reveal d2">
+      <a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a>
+      <a class="btn ghost" href="#features">{{cta_secondary}}</a>
+    </div>
+    <div class="platform reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>{{platform}}</div>
+  </div>
+  <div class="stage reveal d4">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-parking-sheet.jpg" alt="{{hero_alt}}" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
+    <div class="dim" aria-hidden="true"><svg viewBox="0 0 1000 720" preserveAspectRatio="none">
+      <line x1="60" y1="-22" x2="940" y2="-22"/><line x1="60" y1="-32" x2="60" y2="-12"/><line x1="940" y1="-32" x2="940" y2="-12"/>
+      <text x="500" y="-30" text-anchor="middle">{{dim_top}}</text>
+      <path d="M1012 120 L1012 600"/><line x1="1002" y1="120" x2="1022" y2="120"/><line x1="1002" y1="600" x2="1022" y2="600"/>
+      <text x="1030" y="365" transform="rotate(90 1030 365)" text-anchor="middle">{{dim_side}}</text>
+    </svg></div>
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap center">
+  <h2 class="reveal">{{v_h2}}</h2>
+  <p class="lead reveal d1 mt-3">{{v_sub}}</p>
+  <div class="trio">
+    <div class="item reveal"><div class="ico">{{ico_learn}}</div><h3>{{v1_t}}</h3><p>{{v1_p}}</p></div>
+    <div class="item reveal d1"><div class="ico">{{ico_fast}}</div><h3>{{v2_t}}</h3><p>{{v2_p}}</p></div>
+    <div class="item reveal d2"><div class="ico">{{ico_export}}</div><h3>{{v3_t}}</h3><p>{{v3_p}}</p></div>
+  </div>
+</div></section>
+
+<div class="strip" aria-label="{{strip_label}}"><div class="track">
+{{strip_items}}{{strip_items}}
+</div></div>
+
+<section id="features" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">{{f_eyebrow}}</div>
+  <h2 class="reveal d1">{{f_h2}}</h2>
+  <p class="lead reveal d2 mt-3">{{f_sub}}</p>
+  <div class="tabs reveal d3" data-interval="6500">
+    <div class="list" role="tablist" aria-label="{{f_h2}}">
+{{f_tabs}}
+    </div>
+    <div class="panes">
+{{f_panes}}
+    </div>
+  </div>
+</div></section>
+
+<section id="field" class="soft"><div class="wrap">
+  <div class="scene reveal">
+    <div class="scene-txt"><div class="eyebrow">{{fd_eyebrow}}</div><h2>{{fd_h2}}</h2><p class="lead mt-3">{{fd_sub}}</p></div>
+    <figure class="scene-img"><img src="/assets/img/v3/scene-elevator.jpg" alt="{{scene1_alt}}" loading="lazy" width="1600" height="1410"></figure>
+  </div>
+  <div class="row reveal">
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="{{fd1_alt}}" loading="lazy"></div></div></div>
+    <div class="txt"><h3>{{fd1_t}}</h3><p class="sub">{{fd1_p}}</p><ul><li>{{fd1_l1}}</li><li>{{fd1_l2}}</li><li>{{fd1_l3}}</li></ul></div>
+  </div>
+  <div class="row rev reveal">
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-markup-sheet.jpg" alt="{{fd2_alt}}" loading="lazy"></div></div></div>
+    <div class="txt"><h3>{{fd2_t}}</h3><p class="sub">{{fd2_p}}</p><ul><li>{{fd2_l1}}</li><li>{{fd2_l2}}</li><li>{{fd2_l3}}</li></ul></div>
+  </div>
+  <div class="row reveal">
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="{{fd3_alt}}" loading="lazy"></div></div></div>
+    <div class="txt"><h3>{{fd3_t}}</h3><p class="sub">{{fd3_p}}</p><ul><li>{{fd3_l1}}</li><li>{{fd3_l2}}</li><li>{{fd3_l3}}</li></ul></div>
+  </div>
+</div></section>
+
+<section id="performance" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">{{pf_eyebrow}}</div>
+  <h2 class="reveal d1">{{pf_h2}}</h2>
+  <p class="lead reveal d2 mt-3">{{pf_sub}}</p>
+  <div class="stage reveal d3 mt-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/granada-topo-dark.jpg" alt="{{pf_alt}}" loading="lazy"></div></div></div>
+  <div class="stats">
+    <div class="s reveal"><div class="n"><span data-count="181422">0</span></div><div class="l">{{st1}}</div></div>
+    <div class="s reveal d1"><div class="n"><span data-count="60">0</span><small>Hz</small></div><div class="l">{{st2}}</div></div>
+    <div class="s reveal d2"><div class="n"><span data-count="188">0</span></div><div class="l">{{st3}}</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow reveal">{{cp_eyebrow}}</div>
+  <h2 class="reveal d1">{{cp_h2}}</h2>
+  <div class="flow reveal d2" aria-label="{{flow_label}}"><svg viewBox="0 0 960 244" role="img">
+    <title>{{flow_label}}</title>
+    <rect class="node" x="20" y="60" width="200" height="100" rx="18"/>
+    <text x="120" y="98" text-anchor="middle">DXF · DWG · PDF</text><text class="small" x="120" y="124" text-anchor="middle">{{flow_in}}</text>
+    <rect class="node hi" x="380" y="30" width="200" height="160" rx="22"/>
+    <rect x="404" y="52" width="152" height="116" rx="10" fill="none" stroke="var(--brand)" stroke-width="1.5" opacity=".55"/>
+    <text x="480" y="102" text-anchor="middle">Fluxketch</text><text class="small" x="480" y="126" text-anchor="middle">{{flow_mid}}</text><text class="small" x="480" y="146" text-anchor="middle">{{flow_mid2}}</text>
+    <rect class="node" x="740" y="60" width="200" height="100" rx="18"/>
+    <text x="840" y="98" text-anchor="middle">PDF · DXF · {{flow_report}}</text><text class="small" x="840" y="124" text-anchor="middle">{{flow_out}}</text>
+    <path class="wire" d="M220 110 C 300 110 300 110 372 110"/><path class="arrow" d="M366 103 L380 110 L366 117 Z"/>
+    <path class="wire w2" d="M580 110 C 660 110 660 110 732 110"/><path class="arrow" d="M726 103 L740 110 L726 117 Z"/>
+    <path class="wire w2" d="M480 190 C 480 212 120 212 120 160"/><path class="arrow" d="M113 174 L120 160 L127 174 Z"/>
+    <text class="small" x="300" y="236" text-anchor="middle">{{flow_back}}</text>
+  </svg>
+  <ol class="flow-m" aria-hidden="true">
+    <li><b>DXF · DWG · PDF</b><span>{{flow_in}}</span></li>
+    <li class="hi"><b>Fluxketch</b><span>{{flow_mid}}</span><span>{{flow_mid2}}</span></li>
+    <li><b>PDF · DXF · {{flow_report}}</b><span>{{flow_out}}</span></li>
+    <li class="back"><span>↺ {{flow_back}}</span></li>
+  </ol></div>
+  <div class="compare">
+    <div class="col reveal"><h3>{{cp_before_t}}</h3><ul>
+      <li>{{ico_x}}<span>{{cp_b1}}</span></li><li>{{ico_x}}<span>{{cp_b2}}</span></li><li>{{ico_x}}<span>{{cp_b3}}</span></li><li>{{ico_x}}<span>{{cp_b4}}</span></li></ul></div>
+    <div class="col now reveal d1"><h3>{{cp_after_t}}</h3><ul>
+      <li>{{ico_check}}<span>{{cp_a1}}</span></li><li>{{ico_check}}<span>{{cp_a2}}</span></li><li>{{ico_check}}<span>{{cp_a3}}</span></li><li>{{ico_check}}<span>{{cp_a4}}</span></li></ul></div>
+  </div>
+</div></section>
+
+<section id="drawings" class="on-ink"><div class="wrap">
+  <div class="eyebrow reveal">{{cs_eyebrow}}</div>
+  <h2 class="reveal d1">{{cs_h2}}</h2>
+  <p class="lead reveal d2 mt-3">{{cs_sub}}</p>
+  <div class="cases">
+    <a class="case reveal" href="#features"><div class="img"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">{{cs1_k}}</div><h3>{{cs1_t}}</h3><p>{{cs1_p}}</p></div></a>
+    <a class="case reveal d1" href="#field"><div class="img"><img src="/assets/img/v3/sections-sheet-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">{{cs2_k}}</div><h3>{{cs2_t}}</h3><p>{{cs2_p}}</p></div></a>
+    <a class="case reveal d2" href="#performance"><div class="img"><img src="/assets/img/v3/structural-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">{{cs3_k}}</div><h3>{{cs3_t}}</h3><p>{{cs3_p}}</p></div></a>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <div class="center"><div class="eyebrow reveal">{{pr_eyebrow}}</div><h2 class="reveal d1">{{pr_h2}}</h2><p class="lead reveal d2 mt-3">{{pr_sub}}</p></div>
+  <div class="plans">
+    <div class="plan reveal"><div class="name">Free</div><div class="price">₩0</div><ul><li>{{pr_free_1}}</li><li>{{pr_free_2}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
+    <div class="plan reveal d1"><div class="name">Lite</div><div class="price">₩4,900<small>{{per_month}}</small></div><ul><li>{{pr_lite_1}}</li><li>{{pr_lite_2}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
+    <div class="plan hi reveal d2"><div class="tag">{{pr_tag}}</div><div class="name">Pro</div><div class="price">₩12,900<small>{{per_month}}</small></div><div class="was">{{pr_was}}</div><ul><li>{{pr_pro_1}}</li><li>{{pr_pro_2}}</li><li>{{pr_pro_3}}</li></ul><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a></div>
+  </div>
+  <p class="sub center mt-4" style="margin-inline:auto">{{pr_note}}</p>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>{{cta_h2}}</h2><p class="lead">{{cta_sub}}</p>
+  <div class="cta"><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">{{cta_mail}}</a></div>
+</div></div></section>
+
+<section id="faq" class="soft"><div class="wrap">
+  <div class="center"><h2 class="reveal">{{faq_h2}}</h2></div>
+  <div class="faq reveal d1">
+{{faq_items}}
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">{{ft_tag}}</p></div>
+    <div><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></div>
+    <div><h4>{{ft_use}}</h4><ul><li><a href="#field">{{ft_use1}}</a></li><li><a href="#drawings">{{ft_use2}}</a></li><li><a href="#performance">{{ft_use3}}</a></li></ul></div>
+    <div><h4>{{ft_company}}</h4><ul><li><a href="mailto:flux0720@fluxketch.com">{{ft_contact}}</a></li><li><a href="{{alt_href}}">{{alt_full}}</a></li></ul></div>
+    <div><h4>{{ft_legal}}</h4><ul><li><a href="/privacy">{{ft_privacy}}</a></li><li><a href="/terms">{{ft_terms}}</a></li><li><a href="/licenses">{{ft_licenses}}</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>{{ft_fine}}</span></div>
+</div></footer>
+<script src="/assets/app.js?v=3" defer></script>
+</body>
+</html>
