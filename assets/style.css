@@ -204,7 +204,8 @@ section.tight{padding:72px 0}
 .plan .name{font-weight:600;font-size:15px;color:var(--fg-2)}
 .plan .price{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
 .plan .price small{font-size:15px;font-weight:500;color:var(--fg-2);letter-spacing:0;margin-left:4px}
-.plan .was{color:var(--fg-3);text-decoration:line-through;font-size:14px}
+.plan .price.tba{font-size:28px;color:var(--fg-2);letter-spacing:-.02em}
+.plan .promo{color:var(--brand-deep);font-weight:600;font-size:14px}
 .plan ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--fg-2);font-size:15px}
 .plan .btn{margin-top:auto}
 .plan .tag{align-self:flex-start;background:var(--brand-soft);color:var(--brand-deep);font-weight:600;font-size:13px;padding:4px 10px;border-radius:999px}
