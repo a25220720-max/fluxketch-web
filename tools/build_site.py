@@ -150,10 +150,12 @@ def sub(base, lang):
 
 def ld(obj): return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
 
-ORG = {"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}
+INSTAGRAM = "https://www.instagram.com/fluxketch_official/"
+TESTFLIGHT = "https://testflight.apple.com/join/nqNr2CSt"
+ORG = {"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":[INSTAGRAM]}
 def app_ld(lang):
     ko = lang == "ko"
-    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치",
+    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":TESTFLIGHT,"sameAs":[INSTAGRAM],
       "operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
       "description": KO["desc"] if ko else EN["desc"], "url": SITE + ("/" if ko else "/en/"),
       "inLanguage":["ko","en"], "screenshot": SITE+"/assets/img/v3/hotel-parking-sheet.jpg",
