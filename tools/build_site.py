@@ -19,11 +19,11 @@ TABS = [  # (file, title-key)
 ]
 KO = dict(
  lang="ko", path="/", home="/", alt_href="/en/", alt_lang="en", alt_label="EN", alt_full="English",
- title="Fluxketch — 현장에서 끝내는 iPad CAD", desc="DXF·DWG·PDF 도면을 iPad에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼내는 현장용 CAD. 비공개 베타 진행 중.",
+ title="플럭스케치 Fluxketch — 아이패드 캐드 앱 | 현장에서 끝내는 iPad CAD", desc="플럭스케치(Fluxketch)는 아이패드용 캐드(CAD) 앱입니다. DXF·DWG·PDF 도면을 아이패드에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼냅니다. 비공개 베타 진행 중.",
  og_desc="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.",
  og_locale="ko_KR", nav_guides="가이드", p_answers_btn="궁금한 것 보기", qa_eyebrow="질문과 답", steps_eyebrow="순서", rel_h2="함께 보기", crumbs_label="경로", crumb_home="홈", g_h1="현장에서 CAD를 쓰는 사람을 위한 가이드", g_lead="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.", read_min="읽는 시간 약 %d분", updated="업데이트", guide_k="가이드", nav_label="주 메뉴", nav_features="기능", nav_field="현장 기록", nav_perf="성능", nav_drawings="실제 도면", nav_pricing="요금제", nav_faq="자주 묻는 질문",
  cta_short="베타 신청", cta_primary="비공개 베타 신청", cta_secondary="기능 둘러보기", menu_open="메뉴 열기",
- h1="도면에서 현장까지,<br>iPad 하나로.", h1_sub="Fluxketch는 현장 사람을 위한 CAD입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.",
+ h1="도면에서 현장까지,<br>iPad 하나로.", h1_sub="플럭스케치(Fluxketch)는 현장 사람을 위한 아이패드용 캐드(CAD) 앱입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.",
  platform="iPad · Apple Pencil · TestFlight 비공개 베타", hero_alt="Fluxketch 도면 보기 — 호텔 지하 1층 주차장 평면도, 왼쪽 도구 팔레트, 오른쪽 스냅 레일",
  dim_top="181,422 도형 · 60 Hz", dim_side="CAD 도구 12종",
  v_h2="CAD의 힘. 번거로움은 빼고.", v_sub="사무실 CAD의 도면을 그대로 들고 나가고, 현장에서 손댄 것이 그대로 사무실로 돌아옵니다. 파일 형식을 바꾸거나 다시 그릴 일이 없습니다.",
@@ -61,14 +61,16 @@ KO = dict(
  pr_btn_beta="베타로 시작", pr_note="요금제 구성과 가격은 정식 출시 시 공개되며 변경될 수 있습니다. 베타 기간에는 모든 기능이 무료입니다.",
  cta_h2="다음 현장부터 Fluxketch로.", cta_sub="TestFlight 비공개 베타에 참여하시면 베타 기간 동안 모든 기능을 무료로 쓰고, 개발팀에 바로 피드백할 수 있습니다.", cta_mail="이메일로 문의",
  faq_h2="자주 묻는 질문",
- faq=[("무료로 쓸 수 있나요?","베타 기간에는 모든 기능이 무료입니다. 정식 출시 뒤의 요금제와 가격은 출시 때 공개하며, 베타에 참여하신 분께는 별도 프로모션을 드립니다."),
+ faq=[("플럭스케치(Fluxketch)는 어떤 앱인가요?","플럭스케치는 아이패드용 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
+      ("아이패드에서 캐드 작업이 정말 되나요?","됩니다. 아이패드 캐드로서 12개 작도·편집 도구와 끝점·직교 스냅, 수치 키패드를 갖추고, 18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 자세한 내용은 아이패드 캐드 소개 페이지에 있습니다."),
+      ("무료로 쓸 수 있나요?","베타 기간에는 모든 기능이 무료입니다. 정식 출시 뒤의 요금제와 가격은 출시 때 공개하며, 베타에 참여하신 분께는 별도 프로모션을 드립니다."),
       ("어떤 파일을 열 수 있나요?","DXF와 DWG(서버 변환), PDF(언더레이)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
       ("인터넷 없이도 되나요?","DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
       ("3D 모델링이나 AI 기능이 있나요?","없습니다. Fluxketch는 2D 도면을 현장에서 열고, 그리고, 표시하고, 꺼내는 데 집중합니다."),
       ("어떤 기기가 필요한가요?","iPad와 Apple Pencil입니다. 큰 도면은 M 시리즈 iPad에서 가장 쾌적하지만, 베타에서는 iPad 9세대·A16 기종에서도 검증하고 있습니다."),
       ("마크업은 도면과 함께 저장되나요?","네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, DXF 내보내기도 됩니다."),
       ("베타는 어떻게 참여하나요?","위의 '비공개 베타 신청'으로 신청하시면 TestFlight 초대를 보내 드립니다. 문제는 앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요.")],
- ft_tag="현장에서 끝내는 iPad CAD.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_licenses="오픈소스 라이선스", ft_fine="베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.",
+ ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_licenses="오픈소스 라이선스", ft_fine="베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.",
 )
 EN = dict(KO)
 EN.update(
@@ -148,10 +150,10 @@ def sub(base, lang):
 
 def ld(obj): return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
 
-ORG = {"@type":"Organization","name":"Fluxketch","url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}
+ORG = {"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com"}
 def app_ld(lang):
     ko = lang == "ko"
-    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch",
+    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치",
       "operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
       "description": KO["desc"] if ko else EN["desc"], "url": SITE + ("/" if ko else "/en/"),
       "inLanguage":["ko","en"], "screenshot": SITE+"/assets/img/v3/hotel-parking-sheet.jpg",
@@ -276,7 +278,7 @@ def render_home(d):
     d["f_panes"] = "".join(f'      <div class="pane" role="tabpanel" id="pane-{i}" aria-labelledby="tab-{i}"><div class="device land"><div class="screen"><img src="/assets/img/v3/{f}.jpg" alt="{html.escape(d[c])}" loading="{"eager" if i == 0 else "lazy"}"></div></div></div>\n' for i, (f, c) in enumerate(TABS))
     d["faq_items"] = "".join(f'    <details{" open" if i == 0 else ""}><summary>{html.escape(q)}</summary><div class="a">{html.escape(a)}</div></details>\n' for i, (q, a) in enumerate(d["faq"]))
     d["ft_use_links"] = footer_use_links(d["lang"])
-    d["jsonld"] = ld([app_ld(d["lang"]), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}, faq_ld(d["faq"])])
+    d["jsonld"] = ld([app_ld(d["lang"]), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}, faq_ld(d["faq"])])
     tpl = open(os.path.join(ROOT, "tools", "template.html"), encoding="utf-8").read()
     write(d["path"], fill(tpl, d))
 
