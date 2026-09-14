@@ -230,6 +230,8 @@ footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
 footer a{color:var(--fg-2)}footer a:hover{color:var(--fg)}
 footer .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand-deep);font-size:18px}
 footer .brand img{width:28px;height:28px;border-radius:7px}
+footer .bizinfo{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--fg-3);font-size:12.5px;line-height:1.8}
+footer .bizinfo+.fine{margin-top:14px;padding-top:0;border-top:0}
 footer .fine{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--fg-3);font-size:13px}
 /* responsive */
 @media (max-width:1024px){

@@ -70,6 +70,7 @@ KO = dict(
       ("어떤 기기가 필요한가요?","iPad와 Apple Pencil입니다. 큰 도면은 M 시리즈 iPad에서 가장 쾌적하지만, 베타에서는 iPad 9세대·A16 기종에서도 검증하고 있습니다."),
       ("마크업은 도면과 함께 저장되나요?","네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, DXF 내보내기도 됩니다."),
       ("베타는 어떻게 참여하나요?","위의 '비공개 베타 신청'으로 신청하시면 TestFlight 초대를 보내 드립니다. 문제는 앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요.")],
+ ft_biz="플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 010-7179-0722 · flux0720@fluxketch.com",
  ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_licenses="오픈소스 라이선스", ft_fine="베타 기간 안내 문서는 정식 문서로 대체될 예정입니다.",
 )
 EN = dict(KO)
@@ -124,6 +125,7 @@ EN.update(
       ("What hardware do I need?","An iPad and an Apple Pencil. Large drawings are most comfortable on M-series iPads, and the beta is also verified on iPad 9th gen and A16 models."),
       ("Are markups saved with the drawing?","Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and DXF export is available."),
       ("How do I join the beta?","Use 'Join the private beta' above and we'll send a TestFlight invite. Report problems from the app's 'Report a bug now' card or by email to flux0720@fluxketch.com, ideally with the file.")],
+ ft_biz="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
  ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_privacy="Privacy", ft_terms="Terms", ft_licenses="Open-source licenses", ft_fine="Beta-period notices will be replaced by formal documents.",
 )
 
