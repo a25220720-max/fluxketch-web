@@ -112,6 +112,9 @@ section.tight{padding:72px 0}
 .strip:hover .track{animation-play-state:paused}
 .strip figure{margin:0;width:420px;flex:none}
 .strip .thumb{border-radius:18px;overflow:hidden;aspect-ratio:2360/1640;background:#111;box-shadow:var(--shadow-card)}
+.strip .thumb.store{aspect-ratio:2752/2064;background:#eef3ee;box-shadow:none;border:1px solid var(--line)}
+.strip .thumb.store img{object-fit:contain}
+.strip figure:has(.store){width:560px}
 .strip .thumb img{width:100%;height:100%;object-fit:cover}
 .strip figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:14px;color:var(--fg-2)}
 .on-ink .strip figcaption{color:var(--fg2-on-ink)}
@@ -206,6 +209,9 @@ section.tight{padding:72px 0}
 .plan .price small{font-size:15px;font-weight:500;color:var(--fg-2);letter-spacing:0;margin-left:4px}
 .plan .price.tba{font-size:28px;color:var(--fg-2);letter-spacing:-.02em}
 .plan .promo{color:var(--brand-deep);font-weight:600;font-size:14px}
+.plan .per{font-size:14px;color:var(--fg-2);margin-top:-6px}
+.promo-banner{margin:28px auto 0;max-width:760px;text-align:center;padding:14px 18px;border-radius:14px;background:var(--brand-soft);color:var(--brand-deep);font-size:15px;line-height:1.6}
+.promo-banner b{font-weight:700}
 .plan ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--fg-2);font-size:15px}
 .plan .btn{margin-top:auto}
 .plan .tag{align-self:flex-start;background:var(--brand-soft);color:var(--brand-deep);font-weight:600;font-size:13px;padding:4px 10px;border-radius:999px}

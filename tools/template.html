@@ -19,19 +19,19 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 <meta property="og:locale" content="{{og_locale}}">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{og_desc}}">
-<meta property="og:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta property="og:image" content="https://fluxketch.com/assets/img/store/ko/1.jpg">
 <meta property="og:url" content="https://fluxketch.com{{path}}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{title}}">
 <meta name="twitter:description" content="{{og_desc}}">
-<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/store/ko/1.jpg">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
 <link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
 <link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">
-<link rel="preload" as="image" href="/assets/img/v3/hotel-parking-sheet.jpg">
+<link rel="preload" as="image" href="/assets/img/v3/app-sheet.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
 <link rel="stylesheet" href="/assets/style.css?v=4">
 <script type="application/ld+json">{{jsonld}}</script>
@@ -61,7 +61,7 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
   </div>
   <div class="stage reveal d4">
     <div class="grid-bg" aria-hidden="true"></div>
-    <div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-parking-sheet.jpg" alt="{{hero_alt}}" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
+    <div class="device land"><div class="screen"><img src="/assets/img/v3/app-sheet.jpg" alt="{{hero_alt}}" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
     <div class="dim" aria-hidden="true"><svg viewBox="0 0 1000 720" preserveAspectRatio="none">
       <line x1="60" y1="-22" x2="940" y2="-22"/><line x1="60" y1="-32" x2="60" y2="-12"/><line x1="940" y1="-32" x2="940" y2="-12"/>
       <text x="500" y="-30" text-anchor="middle">{{dim_top}}</text>
@@ -109,7 +109,7 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
     <div class="txt"><h3>{{fd1_t}}</h3><p class="sub">{{fd1_p}}</p><ul><li>{{fd1_l1}}</li><li>{{fd1_l2}}</li><li>{{fd1_l3}}</li></ul></div>
   </div>
   <div class="row rev reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/hotel-markup-sheet.jpg" alt="{{fd2_alt}}" loading="lazy"></div></div></div>
+    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-markup.jpg" alt="{{fd2_alt}}" loading="lazy"></div></div></div>
     <div class="txt"><h3>{{fd2_t}}</h3><p class="sub">{{fd2_p}}</p><ul><li>{{fd2_l1}}</li><li>{{fd2_l2}}</li><li>{{fd2_l3}}</li></ul></div>
   </div>
   <div class="row reveal">
@@ -144,7 +144,7 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
     <text x="840" y="98" text-anchor="middle">PDF · DXF · {{flow_report}}</text><text class="small" x="840" y="124" text-anchor="middle">{{flow_out}}</text>
     <path class="wire" d="M220 110 C 300 110 300 110 372 110"/><path class="arrow" d="M366 103 L380 110 L366 117 Z"/>
     <path class="wire w2" d="M580 110 C 660 110 660 110 732 110"/><path class="arrow" d="M726 103 L740 110 L726 117 Z"/>
-    <path class="wire w2" d="M480 190 C 480 212 120 212 120 160"/><path class="arrow" d="M113 174 L120 160 L127 174 Z"/>
+    <path class="wire w2" d="M480 190 C 480 216 120 216 120 178"/><path class="arrow" d="M113 178 L120 164 L127 178 Z"/>
     <text class="small" x="300" y="236" text-anchor="middle">{{flow_back}}</text>
   </svg>
   <ol class="flow-m" aria-hidden="true">
@@ -174,19 +174,21 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 
 <section id="pricing"><div class="wrap">
   <div class="center"><div class="eyebrow reveal">{{pr_eyebrow}}</div><h2 class="reveal d1">{{pr_h2}}</h2><p class="lead reveal d2 mt-3">{{pr_sub}}</p></div>
+  <p class="promo-banner reveal d2">{{pr_promo_banner}}</p>
   <div class="plans">
-    <div class="plan reveal"><div class="name">Free</div><div class="price tba">{{pr_tba}}</div><ul><li>{{pr_free_1}}</li><li>{{pr_free_2}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
-    <div class="plan reveal d1"><div class="name">Lite</div><div class="price tba">{{pr_tba}}</div><ul><li>{{pr_lite_1}}</li><li>{{pr_lite_2}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
-    <div class="plan hi reveal d2"><div class="tag">{{pr_tag}}</div><div class="name">Pro</div><div class="price tba">{{pr_tba}}</div><div class="promo">{{pr_promo}}</div><ul><li>{{pr_pro_1}}</li><li>{{pr_pro_2}}</li><li>{{pr_pro_3}}</li></ul><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a></div>
+    <div class="plan reveal"><div class="name">{{pr_free_name}}</div><div class="price">{{pr_free_price}}</div><div class="per">{{pr_free_per}}</div><ul><li>{{pr_free_1}}</li><li>{{pr_free_2}}</li><li>{{pr_free_3}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
+    <div class="plan reveal d1"><div class="name">{{pr_lite_name}}</div><div class="price">{{pr_lite_price}}</div><div class="per">{{pr_lite_per}}</div><div class="promo">{{pr_lite_promo}}</div><ul><li>{{pr_lite_1}}</li><li>{{pr_lite_2}}</li><li>{{pr_lite_3}}</li></ul><a class="btn ghost" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
+    <div class="plan hi reveal d2"><div class="tag">{{pr_tag}}</div><div class="name">{{pr_pro_name}}</div><div class="price">{{pr_pro_price}}</div><div class="per">{{pr_pro_per}}</div><div class="promo">{{pr_pro_promo}}</div><ul><li>{{pr_pro_1}}</li><li>{{pr_pro_2}}</li><li>{{pr_pro_3}}</li></ul><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{pr_btn_beta}}</a></div>
   </div>
-  <p class="sub center mt-4" style="margin-inline:auto">{{pr_note}}</p>
+  <p class="sub center mt-3" style="margin-inline:auto">{{pr_trial}}</p>
+  <p class="sub center mt-3" style="margin-inline:auto">{{pr_note}}</p>
 </div></section>
 
 <section class="tight"><div class="wrap"><div class="ctaband reveal">
   <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
   <div class="glow" aria-hidden="true"></div>
   <h2>{{cta_h2}}</h2><p class="lead">{{cta_sub}}</p>
-  <div class="cta"><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">{{cta_mail}}</a></div>
+  <div class="cta"><a class="btn primary" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a><a class="btn ghost" href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">{{cta_insta}}</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">{{cta_mail}}</a></div>
 </div></div></section>
 
 <section id="faq" class="soft"><div class="wrap">
