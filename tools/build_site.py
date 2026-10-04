@@ -2,8 +2,10 @@
 # Fluxketch site v3 — ko/en 생성기. 정본 = tools/template.html + 이 파일의 사전. 실행: python3 tools/build_site.py
 import os, re, html
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-APPSTORE = "https://apps.apple.com/app/id6809299474"   # 2026-09-21 정식 출시 — 베타 폼 대체
+APPSTORE = "https://apps.apple.com/app/id6809299474"   # 2026-09-21 정식 출시 — 베타 폼 대체 (한국어 페이지)
+APPSTORE_EN = "https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8"   # 2026-10-04 영어 페이지 전용 — 캠페인 토큰 ct=seo
 FORM = APPSTORE
+def appstore(lang): return APPSTORE_EN if lang == "en" else APPSTORE
 ICO = {
  "learn": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14"/><path d="M8 8h8M8 12h5"/></svg>',
  "fast": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
@@ -160,7 +162,7 @@ def fill(tpl, d):
 
 def sub(base, lang):
     """홈 사전(KO/EN)에서 하위 페이지용 사전을 만든다."""
-    d = dict(base); d["form"] = FORM
+    d = dict(base); d["form"] = appstore(lang)
     for k, v in ICO.items(): d["ico_" + k] = v
     return d
 
@@ -171,7 +173,7 @@ TESTFLIGHT = APPSTORE   # JSON-LD installUrl = App Store
 ORG = {"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":SITE+"/","logo":SITE+"/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":[INSTAGRAM]}
 def app_ld(lang):
     ko = lang == "ko"
-    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":TESTFLIGHT,"sameAs":[INSTAGRAM],
+    return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":appstore(lang),"sameAs":[INSTAGRAM],
       "operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
       "description": KO["desc"] if ko else EN["desc"], "url": SITE + ("/" if ko else "/en/"),
       "inLanguage":["ko","en"], "screenshot": SITE+"/assets/img/v3/hotel-parking-sheet.jpg",
@@ -200,7 +202,7 @@ def guide_cards(lang, exclude=None, limit=None):
     base = KO if lang == "ko" else EN
     cards = []
     for g in GUIDES:
-        if g["slug"] == exclude: continue
+        if g["slug"] == exclude or lang not in g: continue
         c = g[lang]
         cards.append(f'    <a href="{path_for(lang, g["slug"], True)}"><span class="k">{html.escape(base["guide_k"])}</span><span class="t">{html.escape(c["short"])}</span><span class="s">{html.escape(c["desc"])}</span></a>\n')
     return "".join(cards[:limit] if limit else cards)
@@ -256,19 +258,23 @@ def render_guide(g, lang):
     c = g[lang]; d = sub(base, lang)
     d.update({k: v for k, v in c.items() if k != "body"})
     d["path"] = path_for(lang, g["slug"], True); d["home"] = "/" if lang == "ko" else "/en/"
-    other = "en" if lang == "ko" else "ko"; d["alt_href"] = path_for(other, g["slug"], True)
-    d["og_desc"] = c["desc"]
+    other = "en" if lang == "ko" else "ko"; solo = other not in g  # 짝 언어가 없는 가이드(영어 전용)
+    d["alt_href"] = ("/" if other == "ko" else "/en/") + "guides/" if solo else path_for(other, g["slug"], True)
+    d["og_desc"] = c["desc"]; gdate = g.get("date", DATE)
     n = words(c["body"]); mins = max(3, round(n / (500 if lang == "ko" else 1100)))
-    d["meta_line"] = f'{base["updated"]} {DATE} · {base["read_min"] % mins}'
-    cta = f'<div class="cta-soft"><p>{html.escape(c["cta"])}</p><a class="btn primary small" href="{FORM}" target="_blank" rel="noopener noreferrer">{html.escape(base["cta_primary"])}</a></div>'
+    d["meta_line"] = f'{base["updated"]} {gdate} · {base["read_min"] % mins}'
+    cta = f'<div class="cta-soft"><p>{html.escape(c["cta"])}</p><a class="btn primary small" href="{d["form"]}" target="_blank" rel="noopener noreferrer">{html.escape(base["cta_primary"])}</a></div>'
     d["body"] = body_html(c["body"]) + "\n" + cta
     d["rel_items"] = guide_cards(lang, exclude=g["slug"], limit=3) + related_cards(lang)[:0]
     d["ft_use_links"] = footer_use_links(lang)
-    d["jsonld"] = ld([{"@context":"https://schema.org","@type":"Article","headline":c["h1"],"description":c["desc"],"inLanguage":lang,"datePublished":DATE,"dateModified":DATE,"image":SITE+f"/assets/img/v3/{g['img']}.jpg","author":ORG,"publisher":ORG,"mainEntityOfPage":SITE+d["path"]}, crumbs_ld([(base["crumb_home"], d["home"]), (base["nav_guides"], d["home"]+"guides/"), (c["short"], d["path"])])])
+    d["jsonld"] = ld([{"@context":"https://schema.org","@type":"Article","headline":c["h1"],"description":c["desc"],"inLanguage":lang,"datePublished":gdate,"dateModified":gdate,"image":SITE+f"/assets/img/v3/{g['img']}.jpg","author":ORG,"publisher":ORG,"mainEntityOfPage":SITE+d["path"]}, crumbs_ld([(base["crumb_home"], d["home"]), (base["nav_guides"], d["home"]+"guides/"), (c["short"], d["path"])])])
     tpl = open(os.path.join(ROOT, "tools", "article.html"), encoding="utf-8").read().replace("{{_top}}", TOP).replace("{{_bottom}}", BOTTOM)
     tpl = tpl.replace('<link rel="alternate" hreflang="ko" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="ko" href="{SITE}{path_for("ko", g["slug"], True)}">')
     tpl = tpl.replace('<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">', f'<link rel="alternate" hreflang="en" href="{SITE}{path_for("en", g["slug"], True)}">')
     tpl = tpl.replace('<link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">', f'<link rel="alternate" hreflang="x-default" href="{SITE}{path_for("ko", g["slug"], True)}">')
+    if solo:  # 짝 페이지가 없으면 hreflang은 자기 언어 하나만
+        tpl = tpl.replace(f'<link rel="alternate" hreflang="{other}" href="{SITE}{path_for(other, g["slug"], True)}">\n', "")
+        tpl = tpl.replace(f'<link rel="alternate" hreflang="x-default" href="{SITE}{path_for("ko", g["slug"], True)}">\n', "")
     tpl = tpl.replace("/assets/img/v3/hotel-parking-sheet.jpg", f"/assets/img/v3/{g['img']}.jpg")
     tpl = tpl.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="article">')
     write(d["path"], fill(tpl, d))
@@ -280,6 +286,7 @@ def render_guides_index(lang):
     d["title"] = f'{base["nav_guides"]} — Fluxketch'; d["desc"] = base["g_lead"]; d["og_desc"] = base["g_lead"]
     items = []
     for g in GUIDES:
+        if lang not in g: continue  # 영어 전용 가이드는 한국어 목록에 넣지 않는다
         c = g[lang]; n = words(c["body"]); mins = max(3, round(n / (500 if lang == "ko" else 1100)))
         items.append(f'    <a href="{path_for(lang, g["slug"], True)}"><div class="thumb"><img src="/assets/img/v3/{g["img"]}-sm.jpg" alt="" loading="lazy"></div><div><span class="t">{html.escape(c["h1"])}</span><span class="s">{html.escape(c["desc"])}</span><span class="m">{base["read_min"] % mins}</span></div></a>\n')
     d["g_items"] = "".join(items); d["rel_items"] = related_cards(lang); d["ft_use_links"] = footer_use_links(lang)
@@ -289,7 +296,7 @@ def render_guides_index(lang):
     write(d["path"], fill(tpl, d))
 
 def render_home(d):
-    d = dict(d); d["form"] = FORM
+    d = dict(d); d["form"] = appstore(d["lang"])
     for k, v in ICO.items(): d["ico_" + k] = v
     d["strip_items"] = "".join(f'  <figure><div class="thumb store"><img src="/assets/img/store/{d["lang"]}/{f}.jpg" alt="{html.escape(d[c])}" loading="lazy" width="1400" height="1050"></div></figure>\n' for f, c in STRIP)
     d["f_tabs"] = "".join(f'      <button class="tab" role="tab" id="tab-{i}" aria-controls="pane-{i}" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">{html.escape(d[c])}</span><span class="s"><span>{html.escape(d[c+"s"])}</span></span></button>\n' for i, (f, c) in enumerate(TABS))
@@ -303,7 +310,8 @@ def render_home(d):
 def sitemap():
     pairs = [("/", "/en/", ["hotel-parking-sheet"]), ("/guides/", "/en/guides/", [])]
     pairs += [(path_for("ko", p["slug"]), path_for("en", p["slug"]), [p["img"], p["img2"]]) for p in PAGES]
-    pairs += [(path_for("ko", g["slug"], True), path_for("en", g["slug"], True), [g["img"]]) for g in GUIDES]
+    pairs += [(path_for("ko", g["slug"], True), path_for("en", g["slug"], True), [g["img"]]) for g in GUIDES if "ko" in g and "en" in g]
+    solos = [(path_for(l, g["slug"], True), l, g.get("date", DATE), [g["img"]]) for g in GUIDES for l in ("ko", "en") if l in g and not ("ko" in g and "en" in g)]
     legal = ["/privacy", "/terms", "/licenses"]
     out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
     for ko, en, imgs in pairs:
@@ -312,18 +320,24 @@ def sitemap():
             out.append(f'    <xhtml:link rel="alternate" hreflang="ko" href="{SITE}{ko}"/><xhtml:link rel="alternate" hreflang="en" href="{SITE}{en}"/><xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{ko}"/>')
             for im in imgs: out.append(f"    <image:image><image:loc>{SITE}/assets/img/v3/{im}.jpg</image:loc></image:image>")
             out.append("  </url>")
+    for u, l, lm, imgs in solos:  # 짝 없는 가이드: 자기 언어 hreflang만
+        out.append(f"  <url><loc>{SITE}{u}</loc><lastmod>{lm}</lastmod>")
+        out.append(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{u}"/>')
+        for im in imgs: out.append(f"    <image:image><image:loc>{SITE}/assets/img/v3/{im}.jpg</image:loc></image:image>")
+        out.append("  </url>")
     for u in legal: out.append(f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod></url>")
     out.append("</urlset>")
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")
     open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
-    return len(pairs) * 2 + len(legal)
+    return len(pairs) * 2 + len(solos) + len(legal)
 
 if __name__ == "__main__":
     render_home(KO); render_home(EN)
     for pg in PAGES:
         render_page(pg, "ko"); render_page(pg, "en")
     for g in GUIDES:
-        render_guide(g, "ko"); render_guide(g, "en")
+        for l in ("ko", "en"):
+            if l in g: render_guide(g, l)
     render_guides_index("ko"); render_guides_index("en")
     n = sitemap()
-    print(f"built: home 2, landing {len(PAGES)*2}, guides {len(GUIDES)*2} + index 2, sitemap {n} urls")
+    print(f"built: home 2, landing {len(PAGES)*2}, guides {sum(('ko' in g) + ('en' in g) for g in GUIDES)} + index 2, sitemap {n} urls")

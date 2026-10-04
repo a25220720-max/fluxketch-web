@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
+OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
+STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
+FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
+FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to keep a site snagging / punch list on iPad — pin photos to the floor plan</title>
+<meta name="description" content="A practical way to run a snagging list (punch list) on iPad: one pin per defect on the floor plan, a photo and a note on each pin, and a report PDF for the contractor.">
+<meta name="naver-site-verification" content="8c73946d7f4dbf7bac6bac72c574a83a9b58ab68">
+<link rel="canonical" href="https://fluxketch.com/en/guides/snagging-punch-list-ipad/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fluxketch">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to keep a site snagging / punch list on iPad — pin photos to the floor plan">
+<meta property="og:description" content="A practical way to run a snagging list (punch list) on iPad: one pin per defect on the floor plan, a photo and a note on each pin, and a report PDF for the contractor.">
+<meta property="og:image" content="https://fluxketch.com/assets/img/v3/snag-pin-dark.jpg">
+<meta property="og:url" content="https://fluxketch.com/en/guides/snagging-punch-list-ipad/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to keep a site snagging / punch list on iPad — pin photos to the floor plan">
+<meta name="twitter:description" content="A practical way to run a snagging list (punch list) on iPad: one pin per defect on the floor plan, a photo and a note on each pin, and a report PDF for the contractor.">
+<meta name="twitter:image" content="https://fluxketch.com/assets/img/v3/snag-pin-dark.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://fluxketch.com/en/guides/snagging-punch-list-ipad/">
+<link rel="preload" as="image" href="/assets/img/v3/snag-pin-dark.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css?v=5">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"How to keep a site snagging / punch list on iPad","description":"A practical way to run a snagging list (punch list) on iPad: one pin per defect on the floor plan, a photo and a note on each pin, and a report PDF for the contractor.","inLanguage":"en","datePublished":"2026-10-04","dateModified":"2026-10-04","image":"https://fluxketch.com/assets/img/v3/snag-pin-dark.jpg","author":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"mainEntityOfPage":"https://fluxketch.com/en/guides/snagging-punch-list-ipad/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fluxketch.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://fluxketch.com/en/guides/"},{"@type":"ListItem","position":3,"name":"Snagging / punch list on iPad","item":"https://fluxketch.com/en/guides/snagging-punch-list-ipad/"}]}]</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
+  <nav class="menu" aria-label="Main menu">
+    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
+  </nav>
+  <div class="right">
+    <a class="lang" href="/guides/" hreflang="ko">KO</a>
+    <a class="btn primary small" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+
+<section class="ahero"><div class="wrap narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/guides/">Guides</a><span>›</span><span aria-current="page">Snagging / punch list on iPad</span></nav>
+  <h1 class="reveal">How to keep a site snagging / punch list on iPad</h1>
+  <p class="lead reveal d1">A snag list is only as good as its locations. Here is how to walk a site with the floor plan on an iPad, pin each defect where it is, attach the photo and note to that pin, and hand the contractor one report PDF.</p>
+  <p class="meta reveal d2">Updated 2026-10-04 · About 4 min read</p>
+</div></section>
+<article class="article"><div class="wrap narrow">
+<h2>What the list is for</h2>
+<p>Near handover, someone walks the building and writes down everything that is defective or unfinished — in the UK a <b>snagging list</b>, in the US a <b>punch list</b>. The contractor works through it, the items are re-inspected, and the list is closed. Every item has to answer the same questions: <b>where</b> is it, <b>what</b> is wrong, <b>who</b> fixes it, and what does it look like now.</p>
+<h2>Why paper lists and camera rolls fall apart</h2>
+<ul><li><b>The location is vague.</b> "Bedroom 2, left wall" depends on which door you came in by. The trade on the next visit reads it differently.</li><li><b>Photos lose their item.</b> Sixty photos in a camera roll, a numbered list on a clipboard, and the link between the two lives in your head.</li><li><b>Everything gets typed twice.</b> Notes on site, then the same notes into a spreadsheet at the office, with errors creeping in on the way.</li><li><b>The issued list drifts.</b> Re-inspection notes end up on a printout that never makes it back into the master list.</li></ul>
+<h2>What a good snag item records</h2>
+<div class="tablewrap"><table><thead><tr><th>Field</th><th>Example</th><th>Why it matters</th></tr></thead><tbody><tr><td>Location</td><td>Pin on the plan at the east window of room 2.05</td><td>Nobody has to interpret a description of where</td></tr><tr><td>Title</td><td>2.05 — paint run on window reveal</td><td>Short enough to scan down a list</td></tr><tr><td>Description</td><td>Paint run 150 mm long, right-hand reveal, about 1.2 m above floor</td><td>The trade can fix it without calling you</td></tr><tr><td>Trade</td><td>Decorator</td><td>Lets you split the list per trade</td></tr><tr><td>Photo</td><td>One close-up, one wider shot showing the room</td><td>Evidence of the defect, and of the fix later</td></tr></tbody></table></div>
+<h2>Before the walk</h2>
+<ol><li>Get the <b>current floor plan</b> from the design team, as DWG or DXF if you can, or as a PDF. Snags pinned to a superseded layout cause arguments later.</li><li>Open it on the iPad. A PDF can go in as an <b>underlay</b> — the drawing sits underneath and you work on top of it. Details on opening CAD files are in <a href="/en/guides/open-dwg-on-ipad/">How to open DWG files on iPad</a>.</li><li>Turn off the <b>layers</b> you don't need on a walk — furniture, hatching, setting-out dimensions — so room names and walls stay readable once pins go on.</li><li>Check the plan against something you know: put a <b>dimension</b> on a wall whose length you know. If it comes out right, distances you take off the plan later will be right too.</li></ol>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/snag-pin-dark.jpg" alt="New pin sheet open over a floor plan in Fluxketch, with a name field and a description field" loading="lazy"></div></div><figcaption>A new pin on the plan: give it a short name and a description, then attach the photo.</figcaption></figure>
+<h2>On the walk: one pin per snag</h2>
+<ol><li>Stand where the defect is and drop a <b>pin</b> on that spot on the plan. The pin is the location — no "left wall" wording needed.</li><li>Give the pin a short title in a fixed pattern, for example <b>room — element — defect</b>: "2.05 — window reveal — paint run".</li><li>Write the description as an instruction the trade can act on: what is wrong, how big, how high.</li><li>Attach the <b>photo</b> to the pin. Take a close-up for the defect and a wider shot so the trade recognises the room.</li><li>Where one pin isn't enough — a whole area of floor tiling, a run of skirting — draw on the plan with <b>Apple Pencil</b>: cloud the area, add an arrow, write a short note. The markup sits on top of the drawing without changing it.</li></ol>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/snag-markup-dark.jpg" alt="Markup mode in Fluxketch — a blue revision cloud, an arrow, red circles and ticks drawn over a floor plan with Apple Pencil" loading="lazy"></div></div><figcaption>Apple Pencil markup for things a single pin can&#x27;t show: a cloud around the area, an arrow, a note.</figcaption></figure>
+<div class="note"><p><b>One defect, one pin.</b> Three problems in the same room are three pins. When the decorator fixes two of them, each fix is recorded against its own pin and the third stays visibly outstanding, instead of one combined item that is half done.</p></div>
+<h2>After the walk: issue the list</h2>
+<p>Export the pins as a <b>report PDF</b> — each pin's photo and note go into the report, so the contractor gets the location, the description and the evidence in one file. Send it the same day while the walk is fresh. If the contractor also wants the drawing itself, <b>plot</b> the plan to a PDF at true scale so it can be measured on paper; how to check the scale is in <a href="/en/guides/plot-scale-pdf-ipad/">Plotting CAD drawings to scale PDF from iPad</a>.</p>
+<figure><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="More menu in Fluxketch with Report and Plot (PDF output) on a parking-level plan" loading="lazy"></div></div><figcaption>The report and the plot are both in the More menu at the top right.</figcaption></figure>
+<h2>Re-inspection and closing out</h2>
+<ul><li>Walk the list again with the same plan. Open each pin, look at the original photo, and check the fix against it.</li><li>Update the pin's note with the result — "fixed, checked" or what is still wrong — and photograph the finished work.</li><li>Issue an updated report PDF after each round, so the contractor always has one current list rather than a pile of marked-up printouts.</li></ul>
+<h2>Habits that make the list work</h2>
+<ul><li>Agree the wording with the contractor before the first walk: what counts as a snag and what is only an observation.</li><li>Photograph before you write. The photo is the item's evidence; the note explains it.</li><li>Keep titles short and consistent so a long list can be read in one pass.</li><li>Pin on the drawing everyone is building from. If the plan changes, say so on the report.</li><li>Markup is for areas and directions; pins are for items. Mixing the two makes the list hard to count.</li></ul>
+<div class="cta-soft"><p>Fluxketch keeps pins, photos and notes on the floor plan and exports them as a report PDF. Download it from the App Store and try it on your next walk.</p><a class="btn primary small" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a></div>
+</div></article>
+<section class="soft"><div class="wrap narrow">
+  <h2 class="h3">See also</h2>
+  <div class="related">
+    <a href="/en/guides/open-dwg-on-ipad/"><span class="k">Guide</span><span class="t">Open DWG on iPad</span><span class="s">Three ways to open DWG files on iPad, why layers and linetypes get lost, and the steps to open and edit a DWG with its layers intact.</span></a>
+    <a href="/en/guides/edit-cad-drawings-on-ipad/"><span class="k">Guide</span><span class="t">Edit drawings with iPad CAD</span><span class="s">The order of editing a real drawing in an iPad CAD app: selecting, move/copy/trim, snaps and numeric input, layer properties and DXF export, from a field point of view.</span></a>
+    <a href="/en/guides/dwg-vs-dxf/"><span class="k">Guide</span><span class="t">DWG vs DXF</span><span class="s">DWG and DXF are two formats of the same drawing. Structure, size and compatibility differences, and which to choose when handing drawings to iPad or another CAD, in one table.</span></a>
+
+  </div>
+</div></section>
+<section class="tight"><div class="wrap"><div class="ctaband reveal">
+  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="glow" aria-hidden="true"></div>
+  <h2>Take Fluxketch to your next site.</h2><p class="lead">Download it from the App Store and start today. Monthly plans include a 7-day free trial, and Lite is free until October 14.</p>
+  <div class="cta"><a class="btn primary" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
+    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store</a></li></ul></div>
+    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="/guides/">한국어</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  </div>
+  <div class="bizinfo">Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com</div>
+  <div class="fine"><span>© 2026 Fluxketch</span><span>Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.</span></div>
+</div></footer>
+<script src="/assets/app.js?v=4" defer></script>
+</body>
+</html>
+
