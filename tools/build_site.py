@@ -21,7 +21,7 @@ TABS = [  # (file, title-key)
 ]
 KO = dict(
  lang="ko", path="/", home="/", alt_href="/en/", alt_lang="en", alt_label="EN", alt_full="English",
- title="플럭스케치 Fluxketch — 아이패드 캐드 앱 | 현장에서 끝내는 iPad CAD", desc="플럭스케치(Fluxketch)는 아이패드용 캐드(CAD) 앱입니다. DXF·DWG·PDF 도면을 아이패드에서 열고, Apple Pencil로 작도·마크업·핀·노트를 얹어 축척 맞춘 PDF와 DXF로 꺼냅니다. App Store에서 받으실 수 있습니다.",
+ title="아이패드 캐드 앱 플럭스케치 | 아이패드에서 DWG·DXF 도면 보고 고치기", desc="아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.",
  og_desc="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.",
  og_locale="ko_KR", nav_guides="가이드", p_answers_btn="궁금한 것 보기", qa_eyebrow="질문과 답", steps_eyebrow="순서", rel_h2="함께 보기", crumbs_label="경로", crumb_home="홈", g_h1="현장에서 CAD를 쓰는 사람을 위한 가이드", g_lead="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.", read_min="읽는 시간 약 %d분", updated="업데이트", guide_k="가이드", nav_label="주 메뉴", nav_features="기능", nav_field="현장 기록", nav_perf="성능", nav_drawings="실제 도면", nav_pricing="요금제", nav_faq="자주 묻는 질문",
  cta_short="App Store", cta_primary="App Store에서 받기", cta_secondary="기능 둘러보기", menu_open="메뉴 열기",

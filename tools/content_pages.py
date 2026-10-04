@@ -4,8 +4,8 @@
 PAGES = [
  dict(slug="ipad-cad", img="hotel-parking-sheet", img2="layers-sheet", orient="land", orient2="land",
   ko=dict(
-   title="아이패드 캐드 앱 | 아이패드용 CAD로 DWG·DXF 편집, Apple Pencil 마크업 - 플럭스케치 Fluxketch",
-   desc="아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열고 CAD 편집, 정밀 스냅, Apple Pencil 마크업, 현장 핀, 축척 플롯까지 — 현장 사람을 위한 아이패드용 캐드입니다. 비공개 베타 진행 중.",
+   title="아이패드 캐드 쓰는 법 — 아이패드용 CAD 앱으로 DWG·DXF 열기·수정·출력 | 플럭스케치",
+   desc="아이패드 캐드, 어디까지 되나: 플럭스케치는 아이패드에서 DWG·DXF 도면을 열어 레이어를 켜고 끄고, 치수를 재고, 애플 펜슬로 마크업하고, 현장 핀에 사진을 남겨 리포트 PDF와 축척 맞춘 출력까지 하는 아이패드용 캐드 앱입니다.",
    eyebrow="아이패드 캐드", k="아이패드 캐드", short="아이패드 캐드 앱",
    h1="아이패드 캐드 — 아이패드에서 CAD 도면을 열고 직접 수정하세요",
    lead="플럭스케치(Fluxketch)는 iPad와 Apple Pencil을 위해 만든 아이패드용 2D 캐드(CAD)입니다. 사무실의 DWG·DXF를 그대로 열고, 선·원·치수를 CAD 문법 그대로 그리고 고치고, 축척 맞춘 PDF와 DXF로 돌려보냅니다.",
