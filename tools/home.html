@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/home.css?v=4">
+<link rel="stylesheet" href="/assets/home.css?v=6">
 <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body>
@@ -44,6 +44,7 @@
     <a href="#features">{{nav_features}}</a>
     <a href="#pricing">{{nav_pricing}}</a>
     <a href="#office">{{hm_nav_office}}</a>
+    <a href="#faq">{{nav_faq}}</a>
     <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_label}}</a>
   </nav>
   <div class="bar-r">
@@ -54,6 +55,7 @@
         <a href="#features">{{nav_features}}</a>
         <a href="#pricing">{{nav_pricing}}</a>
         <a href="#office">{{hm_nav_office}}</a>
+        <a href="#faq">{{nav_faq}}</a>
         <a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a>
         <a href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_full}}</a>
       </nav>
@@ -111,6 +113,18 @@
     <p class="swipe" aria-hidden="true">{{hm_swipe}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
     <p class="fine">{{hm_p_note}}</p>
 
+  </div>
+</section>
+<section class="blk" id="faq">
+  <div class="wrap faqgrid">
+    <div class="head"><div><span class="eyebrow">{{hm_q_eyebrow}}</span><h2>{{hm_q_h2}}</h2><p>{{hm_q_sub}}</p></div></div>
+    <div class="faq">
+{{hm_faq}}
+    </div>
+  </div>
+</section>
+<section class="officeblk">
+  <div class="wrap">
     <div class="office" id="office">
       <div class="l">
         <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8 8h3"/><path d="M8 12h3"/><path d="M8 16h3"/></svg></div>
@@ -129,7 +143,7 @@
   </div>
   <div class="cols">
     <div><div class="brand"><img src="/assets/img/icon-64.png" alt="" width="24" height="24">Fluxketch</div><p class="tagl">{{ft_tag}}</p></div>
-    <nav aria-label="{{ft_product}}"><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="{{home}}guides/">{{nav_guides}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></nav>
+    <nav aria-label="{{ft_product}}"><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="#faq">{{nav_faq}}</a></li><li><a href="{{home}}guides/">{{nav_guides}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></nav>
     <nav aria-label="{{ft_use}}"><h4>{{ft_use}}</h4><ul>{{ft_use_links}}</ul></nav>
     <nav aria-label="{{ft_company}}"><h4>{{ft_company}}</h4><ul><li><a href="{{hm_mail}}">{{hm_ft_mail}}</a></li><li><a href="#office">{{hm_nav_office}}</a></li><li><a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_full}}</a></li></ul></nav>
     <nav aria-label="{{ft_legal}}"><h4>{{ft_legal}}</h4><ul><li><a href="/support">{{ft_support}}</a></li><li><a class="strong" href="/privacy">{{ft_privacy}}</a></li><li><a href="/terms">{{ft_terms}}</a></li><li><a href="/licenses">{{ft_licenses}}</a></li></ul></nav>

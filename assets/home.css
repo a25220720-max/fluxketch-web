@@ -124,12 +124,25 @@ h2{margin:0;font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;letter-spacing:
 .fine{margin:24px 0 0;font-size:12px;line-height:1.7;color:var(--faint)}
 
 /* 사무소 도입 */
-.office{margin-top:32px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding:28px 32px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:var(--s1);scroll-margin-top:84px}
+.officeblk{padding:0 0 96px}
+.office{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding:28px 32px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:var(--s1);scroll-margin-top:84px}
 .office .l{display:flex;gap:20px;align-items:flex-start;flex:1 1 420px;min-width:0}
 .office .ic{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(47,181,106,.12);color:var(--acc)}
 .office h3{margin:0 0 6px;font-size:19px;font-weight:600;letter-spacing:-.02em}
 .office p{margin:0;font-size:14px;line-height:1.6;color:var(--mute);word-break:keep-all}
 .office .btn{min-height:48px;padding:0 22px;font-size:15px;color:var(--ink)}
+
+/* 자주 묻는 질문 — 왼쪽 머리, 오른쪽 접힌 목록 */
+.faqgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:48px;align-items:start}
+.faqgrid .head{margin:0;position:sticky;top:96px}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:16px 0;cursor:pointer;font-size:16px;font-weight:500;color:var(--ink);word-break:keep-all}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--acc)}
+.faq summary svg{flex:none;color:var(--dim);transition:transform .2s ease}
+.faq details[open] summary svg{transform:rotate(45deg);color:var(--acc)}
+.faq details p{margin:0;padding:0 40px 20px 0;font-size:15px;line-height:1.75;color:var(--mute);word-break:keep-all}
 
 /* 하단 */
 footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
@@ -160,6 +173,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
   .cols{grid-template-columns:repeat(3,minmax(0,1fr))}
   .cols>div:first-child{grid-column:1/-1}
   .links{gap:24px}
+  .faqgrid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .faqgrid .head{position:static}
 }
 /* 좁은 패드·큰 폰(≤760): 메뉴는 접기 */
 @media (max-width:760px){
@@ -173,6 +188,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
   .dim{display:none}
   .lead br{display:none}
   section.blk{padding:72px 0}
+  .officeblk{padding:0 0 72px}
   .head{margin-bottom:28px}
   .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -197,6 +213,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
   .seg button{flex:1}
   .office{padding:22px 20px}
   .office .btn{width:100%}
+  .faq summary{font-size:15px}
+  .faq details p{padding-right:0;font-size:14px}
   .end .btn{width:100%}
   .cols{gap:28px 16px}
 }

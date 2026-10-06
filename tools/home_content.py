@@ -78,6 +78,37 @@ EN = dict(
  ft_tag_home="Field CAD for tablets.<br>Finish it on site.",
 )
 
+KO["hm_q_eyebrow"] = "A-301 · 질문"
+KO["hm_q_h2"] = "자주 묻는 질문"
+KO["hm_q_sub"] = "더 궁금한 점은 flux0720@fluxketch.com으로 보내 주세요."
+KO["faq"] = [
+ ("플럭스케치(Fluxketch)는 어떤 앱인가요?", "플럭스케치는 현장용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, 펜슬로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
+ ("무료로 쓸 수 있나요?", "도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·사진 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)입니다. 월간 요금제는 3일 무료 체험으로 시작합니다."),
+ ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 앞으로 나올 아이폰 버전도 함께 이용할 수 있습니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
+ ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
+ ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
+ ("어떤 기기가 필요한가요?", "아이패드와 펜슬입니다. 큰 도면은 M 시리즈 아이패드에서 가장 쾌적하지만, 9세대·A16 기종에서도 검증했습니다. App Store에서 '플럭스케치' 또는 'Fluxketch'로 검색해 받으실 수 있습니다."),
+ ("마크업은 도면과 함께 저장되나요?", "네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, 마크업·핀 사진을 PDF 한 장으로 공유할 수도 있습니다."),
+ ("사무소 단위로 도입할 수 있나요?", "네. 여러 대를 함께 쓰실 사무소는 flux0720@fluxketch.com으로 사무소명·인원·관심 플랜을 알려 주세요. 도입 상담과 견적을 드립니다."),
+ ("구독은 어떻게 해지하나요?", "설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있고, 무료 체험은 끝나기 24시간 전에 해지하면 요금이 청구되지 않습니다."),
+ ("문제가 있으면 어디로 알리나요?", "앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다."),
+]
+EN["hm_q_eyebrow"] = "A-301 · FAQ"
+EN["hm_q_h2"] = "Frequently asked questions"
+EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
+EN["faq"] = [
+ ("What is Fluxketch?", "Fluxketch is field CAD for tablets. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
+ ("Is it free?", "Opening and viewing drawings is free forever. Drafting, editing and DXF export are Lite ($2.99/mo, $29.99/yr); markup, photo pins, notes and reports are Markup ($4.99/mo, $49.99/yr); everything is Pro ($7.99/mo, $79.99/yr). Monthly plans start with a 3-day free trial."),
+ ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus the upcoming iPhone version. Scale-true plot PDF is in Lite, Markup and Pro."),
+ ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
+ ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
+ ("What hardware do I need?", "A tablet and a pencil. Large drawings are most comfortable on M-series models, and we also verify on 9th-gen and A16 models. Search the App Store for \"Fluxketch\" to download."),
+ ("Are markups saved with the drawing?", "Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and you can share markup and pin photos as one PDF."),
+ ("Can my whole office use it?", "Yes. Email flux0720@fluxketch.com with your company, headcount and plan of interest, and we'll help you set up and send a quote."),
+ ("How do I cancel?", "In Settings > Apple Account > Subscriptions, anytime. You keep access until the period ends, and cancelling a free trial at least 24 hours before it ends means no charge."),
+ ("Where do I report a problem?", "Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too."),
+]
+
 def _e(s): return html.escape(s)
 
 def build(c, store_url):
@@ -110,4 +141,5 @@ def build(c, store_url):
     d["hm_o_mail"] = mailto(c["o_subject"], c["o_body"])
     d["hm_mail"] = mailto(c["mail_subject"])
     d["ft_tag"] = c["ft_tag_home"]
+    d["hm_faq"] = "\n".join(f'      <details><summary>{_e(q)}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>{_e(a)}</p></details>' for q, a in c["faq"])
     return d

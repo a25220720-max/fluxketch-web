@@ -302,7 +302,7 @@ def render_home(d):
     d = dict(d); d["form"] = store
     d.update(HC.build(HC.KO if lang == "ko" else HC.EN, store))
     d["ft_use_links"] = footer_use_links(lang)
-    d["jsonld"] = ld([app_ld(lang), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}])
+    d["jsonld"] = ld([app_ld(lang), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}, faq_ld((HC.KO if lang == "ko" else HC.EN)["faq"])])
     tpl = open(os.path.join(ROOT, "tools", "home.html"), encoding="utf-8").read()
     out = fill(tpl, d)
     left = re.findall(r"\{\{[a-z0-9_]+\}\}", out)
