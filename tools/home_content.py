@@ -15,13 +15,13 @@ CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F
 DASH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg>'
 
 KO = dict(
- brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="20초면 충분합니다.", hm_v_sub="실제 앱 화면 그대로 — 열고, 고치고, 표시하고, 보내기까지.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
+ brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="실제 화면 그대로.", hm_v_sub="작도부터 수치 입력, 마크업까지 — 앱에서 바로 녹화한 화면입니다.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
  notice='<div class="notice" data-until="2026-10-14T00:00:00+09:00">베타 무료 이용은 <b>10월 13일(화)</b>까지 · 지금 Pro 월 <b>12,900원</b> (정가 16,900원)</div>',
  hm_chip="현장용 모바일 캐드 · 1.1.1", hm_dim="100% 자체 개발 CAD 엔진",
  hm_h1="현장 도면,<br><em>패드 하나로</em> 끝.",
  hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 보냅니다.",
  hm_cta2="요금제 보기",
- proof=[("약 700명", "베타 테스터"), ("약 620명", "앱스토어 이용자"), ("30곳+", "건축·인테리어 사무소"), ("140만", "개체 도면까지 열림")],
+ proof=[("700명+", "베타 테스터"), ("1,000명+", "앱스토어 이용자"), ("30곳+", "건축·인테리어 사무소"), ("140만", "개체 도면까지 열림")],
  hm_f_eyebrow="A-101 · 기능", hm_f_h2="열고, 고치고, 표시하고, 보낸다.", hm_f_sub="사무실 도면을 그대로 들고 나가, 현장에서 손댄 것을 그대로 사무실로 돌려보냅니다.",
  cards=[("01 열기", "도면을 그대로", "DWG·DXF·PDF를 레이어·색·블록·해치까지 그대로 엽니다. 140만 개체 도면도 손에서 부드럽게.", "granada-topo-dark", "그라나다 지형도 전체를 연 화면"),
         ("02 고치기", "현장에서 바로 작도", "선·원·호·치수 등 CAD 도구 12종, 끝점·직교 스냅, 수치 키패드. 아는 캐드 문법 그대로.", "app-detail-dark", "레이어 팔레트와 CAD 도구가 열린 평면도"),
@@ -47,13 +47,13 @@ KO = dict(
 )
 
 EN = dict(
- brand_sub="", og_desc="Open, fix, mark up, send. Right on site.", hm_v_eyebrow="A-102 · In action", hm_v_h2="Twenty seconds is enough.", hm_v_sub="The real app, as it is — open, fix, mark up, send.", hm_v_label="Fluxketch in action", hm_swipe="Swipe for more", hm_nav_office="For teams",
+ brand_sub="", og_desc="Open, fix, mark up, send. Right on site.", hm_v_eyebrow="A-102 · In action", hm_v_h2="The real app, as it is.", hm_v_sub="Drafting, numeric input and markup — recorded straight from the app.", hm_v_label="Fluxketch in action", hm_swipe="Swipe for more", hm_nav_office="For teams",
  notice="",
  hm_chip="Field CAD · 1.1.1", hm_dim="Our own CAD engine, built from scratch",
  hm_h1="Site drawings,<br><em>done on one tablet.</em>",
  hm_lead="Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and send scale-true PDF and DXF.",
  hm_cta2="See pricing",
- proof=[("~700", "beta testers"), ("~620", "App Store users"), ("30+", "architecture & interior offices"), ("1.4M", "entities in one drawing")],
+ proof=[("700+", "beta testers"), ("1,000+", "App Store users"), ("30+", "architecture & interior offices"), ("1.4M", "entities in one drawing")],
  hm_f_eyebrow="A-101 · Features", hm_f_h2="Open. Fix. Mark up. Send.", hm_f_sub="Take office drawings out as they are, and send what you touched on site straight back.",
  cards=[("01 Open", "Drawings as they are", "DWG, DXF and PDF with layers, colors, blocks and hatches intact. Smooth even at 1.4M entities.", "granada-topo-dark", "Full Granada topographic map opened in Fluxketch"),
         ("02 Fix", "Draft right on site", "12 CAD tools — line, circle, arc, dimension and more — with endpoint and ortho snaps and a numeric keypad.", "app-detail-dark", "Floor plan with layer palette and CAD tools"),
