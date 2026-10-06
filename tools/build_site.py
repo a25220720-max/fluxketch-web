@@ -296,16 +296,18 @@ def render_guides_index(lang):
     write(d["path"], fill(tpl, d))
 
 def render_home(d):
-    d = dict(d); d["form"] = appstore(d["lang"])
-    for k, v in ICO.items(): d["ico_" + k] = v
-    d["strip_items"] = "".join(f'  <figure><div class="thumb store"><img src="/assets/img/store/{d["lang"]}/{f}.jpg" alt="{html.escape(d[c])}" loading="lazy" width="1400" height="1050"></div></figure>\n' for f, c in STRIP)
-    d["f_tabs"] = "".join(f'      <button class="tab" role="tab" id="tab-{i}" aria-controls="pane-{i}" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">{html.escape(d[c])}</span><span class="s"><span>{html.escape(d[c+"s"])}</span></span></button>\n' for i, (f, c) in enumerate(TABS))
-    d["f_panes"] = "".join(f'      <div class="pane" role="tabpanel" id="pane-{i}" aria-labelledby="tab-{i}"><div class="device land"><div class="screen"><img src="/assets/img/v3/{f}.jpg" alt="{html.escape(d[c])}" loading="{"eager" if i == 0 else "lazy"}"></div></div></div>\n' for i, (f, c) in enumerate(TABS))
-    d["faq_items"] = "".join(f'    <details{" open" if i == 0 else ""}><summary>{html.escape(q)}</summary><div class="a">{html.escape(a)}</div></details>\n' for i, (q, a) in enumerate(d["faq"]))
-    d["ft_use_links"] = footer_use_links(d["lang"])
-    d["jsonld"] = ld([app_ld(d["lang"]), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}, faq_ld(d["faq"])])
-    tpl = open(os.path.join(ROOT, "tools", "template.html"), encoding="utf-8").read()
-    write(d["path"], fill(tpl, d))
+    """홈 v5(2026-10-06) — tools/home.html + tools/home_content.py. 옛 template.html은 보관만(사용 안 함)."""
+    import home_content as HC
+    lang = d["lang"]; store = appstore(lang)
+    d = dict(d); d["form"] = store
+    d.update(HC.build(HC.KO if lang == "ko" else HC.EN, store))
+    d["ft_use_links"] = footer_use_links(lang)
+    d["jsonld"] = ld([app_ld(lang), {"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":SITE+"/","inLanguage":["ko","en"],"publisher":ORG}])
+    tpl = open(os.path.join(ROOT, "tools", "home.html"), encoding="utf-8").read()
+    out = fill(tpl, d)
+    left = re.findall(r"\{\{[a-z0-9_]+\}\}", out)
+    if left: raise SystemExit(f"home {lang}: 안 채운 자리 {sorted(set(left))}")
+    write(d["path"], out)
 
 def sitemap():
     pairs = [("/", "/en/", ["hotel-parking-sheet"]), ("/guides/", "/en/guides/", [])]

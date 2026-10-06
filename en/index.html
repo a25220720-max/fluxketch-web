@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <!--
-THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
-OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
-STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
-FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
-FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+홈 v5 (2026-10-06, 오너 지정 기준 = masslabs-archi.com의 '한눈에' 구성): 블랙 바탕 · 화면 세 장(첫 화면·기능 4칸·요금제)으로 끝.
+정본 = tools/home.html + tools/home_content.py + assets/home.css. 손으로 index.html 고치지 말 것 → python3 tools/build_site.py
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fluxketch — Field CAD for iPad</title>
 <meta name="description" content="Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Available on the App Store.">
 <meta name="naver-site-verification" content="8c73946d7f4dbf7bac6bac72c574a83a9b58ab68">
@@ -25,227 +22,133 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 <meta name="twitter:title" content="Fluxketch — Field CAD for iPad">
 <meta name="twitter:description" content="Open, draw, mark up, export. All on iPad.">
 <meta name="twitter:image" content="https://fluxketch.com/assets/img/store/ko/1.jpg">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
 <link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
 <link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">
-<link rel="preload" as="image" href="/assets/img/v3/app-sheet.jpg">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
-<link rel="stylesheet" href="/assets/style.css?v=5">
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":"https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8","sameAs":["https://www.instagram.com/fluxketch_official/"],"operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Available on the App Store.","url":"https://fluxketch.com/en/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","author":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":"https://fluxketch.com/","inLanguage":["ko","en"],"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I get it?","acceptedAnswer":{"@type":"Answer","text":"Search the App Store for \"Fluxketch\" or use the Download button above. It is an iPad app."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Opening and viewing drawings is free forever. Drafting, editing, plot PDF and DXF export are Lite ($2.99/mo, $29.99/yr); markup, field pins, notes and reports are Pro ($7.99/mo, $79.99/yr). Right now Lite is free until the October 14 full release, and monthly plans start with a 7-day free trial."}},{"@type":"Question","name":"Which files can it open?","acceptedAnswer":{"@type":"Answer","text":"DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."}},{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."}},{"@type":"Question","name":"Is there 3D or AI?","acceptedAnswer":{"@type":"Answer","text":"No. Fluxketch focuses on opening, drawing, marking up and exporting 2D drawings on site."}},{"@type":"Question","name":"What hardware do I need?","acceptedAnswer":{"@type":"Answer","text":"An iPad and an Apple Pencil. Large drawings are most comfortable on M-series iPads, and we also verify on iPad 9th gen and A16 models."}},{"@type":"Question","name":"Are markups saved with the drawing?","acceptedAnswer":{"@type":"Answer","text":"Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and DXF export is available."}},{"@type":"Question","name":"How do I cancel?","acceptedAnswer":{"@type":"Answer","text":"In Settings > Apple Account > Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends, and cancelling a free trial at least 24 hours before it ends means no charge."}},{"@type":"Question","name":"Where do I report a problem?","acceptedAnswer":{"@type":"Answer","text":"Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too."}}]}]</script>
+<link rel="preload" as="image" href="/assets/img/v3/granada-topo-dark.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/home.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":"https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8","sameAs":["https://www.instagram.com/fluxketch_official/"],"operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Available on the App Store.","url":"https://fluxketch.com/en/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","author":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":"https://fluxketch.com/","inLanguage":["ko","en"],"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}}]</script>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/en/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
-  <nav class="menu" aria-label="Main menu">
-    <a href="/en/#features">Features</a><a href="/en/#field">Field notes</a><a href="/en/#performance">Performance</a><a href="/en/#drawings">Real drawings</a><a href="/en/#pricing">Pricing</a><a href="/en/guides/">Guides</a><a href="/en/#faq">FAQ</a>
-  </nav>
-  <div class="right">
+
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/en/" aria-label="Fluxketch"><img src="/assets/img/icon-64.png" alt="" width="28" height="28"><b>Fluxketch</b><span></span></a>
+  <nav class="links" aria-label="Main menu">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#office">For teams</a>
     <a class="lang" href="/" hreflang="ko">KO</a>
-    <a class="btn primary small" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store</a>
-    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="bar-r">
+    <a class="btn btn-main btn-sm" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M5 20h14"/></svg></a>
+    <details class="menu">
+      <summary aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></summary>
+      <nav aria-label="Main menu">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#office">For teams</a>
+        <a href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+        <a href="/" hreflang="ko">한국어</a>
+      </nav>
+    </details>
   </div>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <div class="copy">
-    <h1 class="reveal">From the drawing<br>to the site, on one iPad.</h1>
-    <p class="lead reveal d1">Fluxketch is CAD for people who carry drawings. Open DXF, DWG and PDF as they are, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF.</p>
-    <div class="cta reveal d2">
-      <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
-      <a class="btn ghost" href="#features">Explore features</a>
+<main>
+<section class="hero" id="top">
+  <img class="bgimg" src="/assets/img/v3/granada-topo-dark.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="chip"><i></i>Field CAD · 1.1.1</div>
+    <div class="h1box">
+      <div class="dim" aria-hidden="true"><span class="t"></span><span class="l"></span><span>Our own CAD engine, built from scratch</span><span class="l"></span><span class="t"></span></div>
+      <h1>Site drawings,<br><em>done on one tablet.</em></h1>
     </div>
-    <div class="platform reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · on the App Store</div>
-  </div>
-  <div class="stage reveal d4">
-    <div class="grid-bg" aria-hidden="true"></div>
-    <div class="device land"><div class="screen"><img src="/assets/img/v3/app-sheet.jpg" alt="Fluxketch sheet view — hotel basement parking plan with tool palette and snap rail" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
-    <div class="dim" aria-hidden="true"><svg viewBox="0 0 1000 720" preserveAspectRatio="none">
-      <line x1="60" y1="-22" x2="940" y2="-22"/><line x1="60" y1="-32" x2="60" y2="-12"/><line x1="940" y1="-32" x2="940" y2="-12"/>
-      <text x="500" y="-30" text-anchor="middle">181,422 entities · 60 Hz</text>
-      <path d="M1012 120 L1012 600"/><line x1="1002" y1="120" x2="1022" y2="120"/><line x1="1002" y1="600" x2="1022" y2="600"/>
-      <text x="1030" y="365" transform="rotate(90 1030 365)" text-anchor="middle">12 CAD tools</text>
-    </svg></div>
-  </div>
-</div></section>
-
-<section class="tight"><div class="wrap center">
-  <h2 class="reveal">The power of CAD. None of the pain.</h2>
-  <p class="lead reveal d1 mt-3">Take your office drawings out as they are, and bring what you touched on site straight back. No format juggling, no redrawing.</p>
-  <div class="trio">
-    <div class="item reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14"/><path d="M8 8h8M8 12h5"/></svg></div><h3>Short to learn</h3><p>Line, polyline, circle, arc, rectangle, text, move, copy, fillet, trim, erase, dimension — 12 tools with snaps, ortho and a numeric keypad. The CAD grammar you already know.</p></div>
-    <div class="item reveal d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Big drawings stay smooth</h3><p>Pan and zoom at 60 Hz on a 180,000-entity drawing. Sharp the moment you stop, and 188 layers handled as-is.</p></div>
-    <div class="item reveal d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M8 17v3h8v-3"/></svg></div><h3>Scale-true on paper</h3><p>Plot PDFs carry the scale and a 100 mm check ruler. Markup ink and pins included. Round-trip to DXF too.</p></div>
-  </div>
-</div></section>
-
-<div class="strip" aria-label="App Store screenshots"><div class="track">
-  <figure><div class="thumb store"><img src="/assets/img/store/en/1.jpg" alt="Open the drawing. Edit it here." loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/2.jpg" alt="Mark up on site with Apple Pencil" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/3.jpg" alt="Read it like paper, edit it like CAD" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/4.jpg" alt="Layers on, off, and locked" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/5.jpg" alt="One pin for defects, checks, notes" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/6.jpg" alt="Review notes stay on the drawing" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/7.jpg" alt="Plot a PDF at true scale" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/8.jpg" alt="Survey notes, right on the plan" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/1.jpg" alt="Open the drawing. Edit it here." loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/2.jpg" alt="Mark up on site with Apple Pencil" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/3.jpg" alt="Read it like paper, edit it like CAD" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/4.jpg" alt="Layers on, off, and locked" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/5.jpg" alt="One pin for defects, checks, notes" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/6.jpg" alt="Review notes stay on the drawing" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/7.jpg" alt="Plot a PDF at true scale" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/en/8.jpg" alt="Survey notes, right on the plan" loading="lazy" width="1400" height="1050"></div></figure>
-
-</div></div>
-
-<section id="features" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">Features</div>
-  <h2 class="reveal d1">Every CAD tool you need. Plus the field ones.</h2>
-  <p class="lead reveal d2 mt-3">No catalog-only tools. Everything below is verified on real iPads every round.</p>
-  <div class="tabs reveal d3" data-interval="6500">
-    <div class="list" role="tablist" aria-label="Every CAD tool you need. Plus the field ones.">
-      <button class="tab" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Sheet view, like a print</span><span class="s"><span>One tap: black lines on white. Vector all the way — zoom without mush.</span></span></button>
-      <button class="tab" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Open DXF, DWG and PDF as they are</span><span class="s"><span>Layers, colors, weights, linetypes, blocks, hatches, multilines. What can&#x27;t be imported is reported by count.</span></span></button>
-      <button class="tab" role="tab" id="tab-2" aria-controls="pane-2" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Markup that sticks to the drawing</span><span class="s"><span>Pen, marker, pencil, eraser, lasso, ruler. Strokes are locked to drawing coordinates — no drift while you zoom or pan.</span></span></button>
-      <button class="tab" role="tab" id="tab-3" aria-controls="pane-3" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">188 layers, untouched</span><span class="s"><span>Visibility, lock, color, weight and linetype right in the palette. Hidden layers leave the screen, snaps and plots by the same rule.</span></span></button>
-      <button class="tab" role="tab" id="tab-4" aria-controls="pane-4" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">True-scale ruler and dimensions</span><span class="s"><span>Screen density is estimated per device, so 1:50 shows as 1:50, from 1:1 to 1:1,000. Two taps give a real length with units.</span></span></button>
-      <button class="tab" role="tab" id="tab-5" aria-controls="pane-5" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">Export as seven document types</span><span class="s"><span>Pin log, report, sheet issue, plot PDF, DXF export, PDF underlay. From the site straight to the office.</span></span></button>
-
+    <p class="lead">Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and export scale-true PDF and DXF.</p>
+    <div class="ctas">
+      <a class="btn btn-main" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#pricing">See pricing</a>
     </div>
-    <div class="panes">
-      <div class="pane" role="tabpanel" id="pane-0" aria-labelledby="tab-0"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-sheet.jpg" alt="Sheet view, like a print" loading="eager"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-1" aria-labelledby="tab-1"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-detail-dark.jpg" alt="Open DXF, DWG and PDF as they are" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-markup.jpg" alt="Markup that sticks to the drawing" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-3" aria-labelledby="tab-3"><div class="device land"><div class="screen"><img src="/assets/img/v3/layers-sheet.jpg" alt="188 layers, untouched" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-4" aria-labelledby="tab-4"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="True-scale ruler and dimensions" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-5" aria-labelledby="tab-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-siteplan.jpg" alt="Export as seven document types" loading="lazy"></div></div></div>
+    <dl class="proof">
+      <div><dt>beta testers</dt><dd>~700</dd></div>
+      <div><dt>App Store users</dt><dd>~620</dd></div>
+      <div><dt>architecture &amp; interior offices</dt><dd>30+</dd></div>
+      <div><dt>entities in one drawing</dt><dd>1.4M</dd></div>
+    </dl>
+  </div>
+</section>
 
+<section class="blk" id="features">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">A-101 · Features</span><h2>Open. Fix. Mark up. Export.</h2></div>
+      <p>Take office drawings out as they are, and send what you touched on site straight back.</p>
+    </div>
+    <div class="feat">
+      <article class="card"><div class="shot"><img src="/assets/img/v3/granada-topo-dark-sm.jpg" alt="Full Granada topographic map opened in Fluxketch" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">01 Open</span><h3>Drawings as they are</h3><p>DWG, DXF and PDF with layers, colors, blocks and hatches intact. Smooth even at 1.4M entities.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/app-detail-dark-sm.jpg" alt="Floor plan with layer palette and CAD tools" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">02 Fix</span><h3>Draft right on site</h3><p>12 CAD tools — line, circle, arc, dimension and more — with endpoint and ortho snaps and a numeric keypad.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/app-markup-sm.jpg" alt="Handwritten markup on a section drawing" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">03 Mark up</span><h3>Markup and photo pins</h3><p>Handwriting locked to drawing coordinates with pencil pressure, pins with photos and notes, note pages.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/menu-report-sm.jpg" alt="Pin log, report and plot menu" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">04 Export</span><h3>Out at true scale</h3><p>Plot PDF, DXF export, reports and sheet issue. From site to office, right away.</p></div></article>
+    </div>
+    <p class="swipe" aria-hidden="true">Swipe for more<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
+    <div class="newline"><span class="tag">1.1.1 NEW</span><span>Schedule calendar with daily notes</span><span class="sep" aria-hidden="true">·</span><span>Move whole projects via iCloud</span><span class="sep" aria-hidden="true">·</span><span>Share markup and pin photos as one PDF</span></div>
+  </div>
+</section>
+
+<section class="blk" id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">A-201 · Pricing</span><h2>Pick only what you need.</h2><p>Monthly plans start with a <b>3-day free trial</b>.</p></div>
+      <div class="seg" role="group" aria-label="Billing period">
+        <button type="button" data-cycle="m" aria-pressed="true">Monthly</button>
+        <button type="button" data-cycle="y" aria-pressed="false">Yearly <small>2 months free</small></button>
+      </div>
+    </div>
+    <div class="plans" id="plans-wrap" data-cycle="m">
+      <div class="plan"><div class="top"><span class="nm">Free</span></div><div class="pr m"><div class="amt"><b>$0</b></div></div><div class="pr y"><div class="amt"><b>$0</b></div></div><p class="tg">Just open and view drawings.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Open and view DWG, DXF, PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Draft and edit · 12 CAD tools</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Blocks, layouts · DXF export</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Scale-true plot PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Markup, photo pins, notes</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Reports · markup PDF sharing</li></ul><a class="go m" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Get it free</a><a class="go y" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Get it free</a></div>
+      <div class="plan"><div class="top"><span class="nm">Lite</span></div><div class="pr m"><div class="amt"><b>$2.99</b><span>/ mo</span></div></div><div class="pr y"><div class="amt"><b>$29.99</b><span>/ yr</span></div></div><p class="tg">Draw and edit like at the office.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Open and view DWG, DXF, PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Draft and edit · 12 CAD tools</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Blocks, layouts · DXF export</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Scale-true plot PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Markup, photo pins, notes</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Reports · markup PDF sharing</li></ul><a class="go m" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start 3-day free trial</a><a class="go y" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start Lite</a></div>
+      <div class="plan"><div class="top"><span class="nm">Markup</span><span class="badge">New</span></div><div class="pr m"><div class="amt"><b>$4.99</b><span>/ mo</span></div></div><div class="pr y"><div class="amt"><b>$49.99</b><span>/ yr</span></div></div><p class="tg">Mark up and record on site.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Open and view DWG, DXF, PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Draft and edit · 12 CAD tools</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">Not included: </span>Blocks, layouts · DXF export</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Scale-true plot PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Markup, photo pins, notes</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Reports · markup PDF sharing</li></ul><a class="go m" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start 3-day free trial</a><a class="go y" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start Markup</a></div>
+      <div class="plan hi"><div class="top"><span class="nm">Pro</span><span class="badge">Best value</span></div><div class="pr m"><div class="amt"><b>$7.99</b><span>/ mo</span></div></div><div class="pr y"><div class="amt"><b>$79.99</b><span>/ yr</span></div></div><p class="tg">Everything. Includes the upcoming iPhone version.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Open and view DWG, DXF, PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Draft and edit · 12 CAD tools</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Blocks, layouts · DXF export</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Scale-true plot PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Markup, photo pins, notes</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">Included: </span>Reports · markup PDF sharing</li></ul><a class="go m" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start 3-day free trial</a><a class="go y" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Start Pro</a></div>
+    </div>
+    <p class="swipe" aria-hidden="true">Swipe for more<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
+    <p class="fine">Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings › Apple Account › Subscriptions. Cancel a free trial at least 24 hours before it ends and you won't be charged.</p>
+
+    <div class="office" id="office">
+      <div class="l">
+        <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8 8h3"/><path d="M8 12h3"/><path d="M8 16h3"/></svg></div>
+        <div><h3>Rolling out to a whole office?</h3><p>If your team will use several tablets, email us. We'll help you set up and quote for your headcount and use.</p></div>
+      </div>
+      <a class="btn btn-ghost" href="mailto:flux0720@fluxketch.com?subject=%5BTeam%20inquiry%5D%20&amp;body=Company%3A%0AContact%20name%20%26%20phone%3A%0ANumber%20of%20users%20%28tablets%29%3A%0APlan%20of%20interest%20%28Lite%20/%20Markup%20/%20Pro%29%3A%0AQuestion%3A%0A"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email us about teams</a>
     </div>
   </div>
-</div></section>
-
-<section id="field" class="soft"><div class="wrap">
-  <div class="scene reveal">
-    <div class="scene-txt"><div class="eyebrow">Field notes</div><h2>What you saw, left on the drawing.</h2><p class="lead mt-3">Photo pins, handwritten markup and note pages live in one file. Positions stay put across modes, and they collect into a single report.</p></div>
-    <figure class="scene-img"><img src="/assets/img/v3/scene-elevator.jpg" alt="A site supervisor checking a plan on iPad in the field" loading="lazy" width="1600" height="1410"></figure>
-  </div>
-  <div class="row reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="More menu — pin log, report, sheet issue, plot, DXF export, PDF underlay" loading="lazy"></div></div></div>
-    <div class="txt"><h3>From pin log to report</h3><p class="sub">Drop a pin, attach a photo and a note. The pin log is the list; the report prints in seven document formats (inspection, instruction, meeting and more).</p><ul><li>Pins always sit above markup, locked to drawing coordinates</li><li>Table layouts and regulatory reference lines in reports</li><li>Sheet issue exports just the sheets you choose</li></ul></div>
-  </div>
-  <div class="row rev reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-markup.jpg" alt="Markup mode — pen, marker, pencil, eraser, lasso, ruler with color and width palette" loading="lazy"></div></div></div>
-    <div class="txt"><h3>Handwriting that stays handwriting</h3><p class="sub">Apple Pencil pressure as-is. Strokes never split from the drawing, and widths are in drawing units, so meaning survives a scale change.</p><ul><li>Pen, marker, pencil, eraser, lasso, ruler</li><li>Undo/redo, ink plotted as-is</li><li>Note pages: blank, ruled, dotted, grid, drafting grid</li></ul></div>
-  </div>
-  <div class="row reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="True-scale ruler popover — scale presets from 1:1 to 1:1,000 and ruler calibration" loading="lazy"></div></div></div>
-    <div class="txt"><h3>See at true scale, measure with a ruler</h3><p class="sub">Per-device screen density puts 1:50 on screen at 1:50. A 100 mm ruler on paper verifies even the printer's scaling.</p><ul><li>1:1 to 1:1,000 · calibrate against a ruler</li><li>DXF asks the unit and corrects on read (mm, cm, m, inch, ft)</li><li>PDF underlays scale with two points and snap to vectors</li></ul></div>
-  </div>
-</div></section>
-
-<section id="performance" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">Performance</div>
-  <h2 class="reveal d1">Big drawings aren't scary.</h2>
-  <p class="lead reveal d2 mt-3">A Metal vector renderer and a raster tile pyramid draw together. Put all of Granada's streets and mountain contours on one screen and it still follows your hand.</p>
-  <div class="stage reveal d3 mt-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/granada-topo-dark.jpg" alt="Granada terrain map — city and full mountain contours in CAD mode" loading="lazy"></div></div></div>
-  <div class="stats">
-    <div class="s reveal"><div class="n"><span data-count="181422">0</span></div><div class="l">entities in a verified drawing (TalkFile_18)</div></div>
-    <div class="s reveal d1"><div class="n"><span data-count="60">0</span><small>Hz</small></div><div class="l">pan and zoom on 180k entities</div></div>
-    <div class="s reveal d2"><div class="n"><span data-count="188">0</span></div><div class="l">layers handled as-is (Hotel 5 Estrellas)</div></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow reveal">Why iPad</div>
-  <h2 class="reveal d1">Close the gap between the office and the site.</h2>
-  <div class="flow reveal d2" aria-label="Workflow: office drawings → Fluxketch on iPad → paper, DXF and reports → back to the office"><svg viewBox="0 0 960 244" role="img">
-    <title>Workflow: office drawings → Fluxketch on iPad → paper, DXF and reports → back to the office</title>
-    <rect class="node" x="20" y="60" width="200" height="100" rx="18"/>
-    <text x="120" y="98" text-anchor="middle">DXF · DWG · PDF</text><text class="small" x="120" y="124" text-anchor="middle">straight from office CAD</text>
-    <rect class="node hi" x="380" y="30" width="200" height="160" rx="22"/>
-    <rect x="404" y="52" width="152" height="116" rx="10" fill="none" stroke="var(--brand)" stroke-width="1.5" opacity=".55"/>
-    <text x="480" y="102" text-anchor="middle">Fluxketch</text><text class="small" x="480" y="126" text-anchor="middle">draft · markup · pins · notes</text><text class="small" x="480" y="146" text-anchor="middle">iPad · Apple Pencil</text>
-    <rect class="node" x="740" y="60" width="200" height="100" rx="18"/>
-    <text x="840" y="98" text-anchor="middle">PDF · DXF · Report</text><text class="small" x="840" y="124" text-anchor="middle">scale-true output · meetings</text>
-    <path class="wire" d="M220 110 C 300 110 300 110 372 110"/><path class="arrow" d="M366 103 L380 110 L366 117 Z"/>
-    <path class="wire w2" d="M580 110 C 660 110 660 110 732 110"/><path class="arrow" d="M726 103 L740 110 L726 117 Z"/>
-    <path class="wire w2" d="M480 190 C 480 216 120 216 120 178"/><path class="arrow" d="M113 178 L120 164 L127 178 Z"/>
-    <text class="small" x="300" y="236" text-anchor="middle">Round-trip to DXF and keep drawing in office CAD</text>
-  </svg>
-  <ol class="flow-m" aria-hidden="true">
-    <li><b>DXF · DWG · PDF</b><span>straight from office CAD</span></li>
-    <li class="hi"><b>Fluxketch</b><span>draft · markup · pins · notes</span><span>iPad · Apple Pencil</span></li>
-    <li><b>PDF · DXF · Report</b><span>scale-true output · meetings</span></li>
-    <li class="back"><span>↺ Round-trip to DXF and keep drawing in office CAD</span></li>
-  </ol></div>
-  <div class="compare">
-    <div class="col reveal"><h3>Until now</h3><ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Ballpoint on a printout on site, redraw it in CAD back at the office</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Photos in the camera roll, notes in a pocketbook — the location lives in memory</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Review meetings run on PDF screenshots over chat</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Field apps that can't open DWG, or drop the layers</span></li></ul></div>
-    <div class="col now reveal d1"><h3>Fluxketch</h3><ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>Markup, dimensions and pins on drawing coordinates, on site</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>Photos and notes hang on pins — the position is the record</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>One report or plot PDF for the meeting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>DXF and DWG in and out with layers, weights and linetypes intact</span></li></ul></div>
-  </div>
-</div></section>
-
-<section id="drawings" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">Real drawings</div>
-  <h2 class="reveal d1">Verified on real drawings.</h2>
-  <p class="lead reveal d2 mt-3">These were opened and worked on in the field. Screens are straight from the app, unretouched.</p>
-  <div class="cases">
-    <a class="case reveal" href="#features"><div class="img"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">House · 5 floors</div><h3>Four MEP sheets in one file</h3><p>Each sheet's color rules — by-layer and explicit — survive intact.</p></div></a>
-    <a class="case reveal d1" href="#field"><div class="img"><img src="/assets/img/v3/sections-sheet-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">Commercial · sections & elevations</div><h3>Five sections and a roof plan</h3><p>Hatches, dimensions and text stay vector — lines hold at any zoom.</p></div></a>
-    <a class="case reveal d2" href="#performance"><div class="img"><img src="/assets/img/v3/structural-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">Structural · rebar details</div><h3>Hundreds of rebar details</h3><p>Dense sheets of small details turn sharp instantly through tiles.</p></div></a>
-  </div>
-</div></section>
-
-<section id="pricing"><div class="wrap">
-  <div class="center"><div class="eyebrow reveal">Pricing</div><h2 class="reveal d1">Less than one site visit, for a month of work.</h2><p class="lead reveal d2 mt-3">An App Store subscription. Cancel anytime, and monthly plans start with a 7-day free trial.</p></div>
-  <p class="promo-banner reveal d2">Launch promotion — <b>Lite is free until the October 14 full release</b>, and annual plans give you <b>up to 2 months free</b>.</p>
-  <div class="plans">
-    <div class="plan reveal"><div class="name">Free</div><div class="price">$0</div><div class="per">free forever</div><ul><li>Open and view DWG, DXF and PDF</li><li>Toggle layers</li><li>Lite features free until October 14</li></ul><a class="btn ghost" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a></div>
-    <div class="plan reveal d1"><div class="name">Lite</div><div class="price">$2.99 / mo</div><div class="per">$29.99 / yr (up to 2 months free)</div><div class="promo">Free until the October 14 release</div><ul><li>Drafting and editing — 12 CAD tools, snaps, dimensions</li><li>Plot (PDF output) and the true-scale ruler</li><li>DXF export</li></ul><a class="btn ghost" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a></div>
-    <div class="plan hi reveal d2"><div class="tag">Most popular</div><div class="name">Pro</div><div class="price">$7.99 / mo</div><div class="per">$79.99 / yr (up to 2 months free)</div><div class="promo">Launch promotion price</div><ul><li>Everything in Lite + <b>markup</b></li><li>Field pins, notes and 7 report types</li><li>Sheet issue and PDF underlay</li></ul><a class="btn primary" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a></div>
-  </div>
-  <p class="sub center mt-3" style="margin-inline:auto">7-day free trial on monthly plans</p>
-  <p class="sub center mt-3" style="margin-inline:auto">Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings &gt; Apple Account &gt; Subscriptions.</p>
-</div></section>
-
-<section class="tight"><div class="wrap"><div class="ctaband reveal">
-  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
-  <div class="glow" aria-hidden="true"></div>
-  <h2>Take Fluxketch to your next site.</h2><p class="lead">Download it from the App Store and start today. Monthly plans include a 7-day free trial, and Lite is free until October 14.</p>
-  <div class="cta"><a class="btn primary" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a><a class="btn ghost" href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram @fluxketch_official</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">Email us</a></div>
-</div></div></section>
-
-<section id="faq" class="soft"><div class="wrap">
-  <div class="center"><h2 class="reveal">Frequently asked questions</h2></div>
-  <div class="faq reveal d1">
-    <details open><summary>Where do I get it?</summary><div class="a">Search the App Store for &quot;Fluxketch&quot; or use the Download button above. It is an iPad app.</div></details>
-    <details><summary>Is it free?</summary><div class="a">Opening and viewing drawings is free forever. Drafting, editing, plot PDF and DXF export are Lite ($2.99/mo, $29.99/yr); markup, field pins, notes and reports are Pro ($7.99/mo, $79.99/yr). Right now Lite is free until the October 14 full release, and monthly plans start with a 7-day free trial.</div></details>
-    <details><summary>Which files can it open?</summary><div class="a">DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn&#x27;t gets counted in the import report.</div></details>
-    <details><summary>Does it work offline?</summary><div class="a">DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline).</div></details>
-    <details><summary>Is there 3D or AI?</summary><div class="a">No. Fluxketch focuses on opening, drawing, marking up and exporting 2D drawings on site.</div></details>
-    <details><summary>What hardware do I need?</summary><div class="a">An iPad and an Apple Pencil. Large drawings are most comfortable on M-series iPads, and we also verify on iPad 9th gen and A16 models.</div></details>
-    <details><summary>Are markups saved with the drawing?</summary><div class="a">Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and DXF export is available.</div></details>
-    <details><summary>How do I cancel?</summary><div class="a">In Settings &gt; Apple Account &gt; Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends, and cancelling a free trial at least 24 hours before it ends means no charge.</div></details>
-    <details><summary>Where do I report a problem?</summary><div class="a">Use the app&#x27;s &#x27;Report a bug now&#x27; card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too.</div></details>
-
-  </div>
-</div></section>
+</section>
+</main>
 
 <footer><div class="wrap">
-  <div class="cols">
-    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">Field CAD for iPad.</p></div>
-    <div><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store</a></li></ul></div>
-    <div><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></div>
-    <div><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com">Contact flux0720@fluxketch.com</a></li><li><a href="/">한국어</a></li></ul></div>
-    <div><h4>Legal</h4><ul><li><a href="/support">Support</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></div>
+  <div class="end">
+    <div><b>Take Fluxketch to your next site.</b><span>Download it from the App Store and start today.</span></div>
+    <a class="btn btn-main" href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
   </div>
-  <div class="bizinfo">Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com</div>
-  <div class="fine"><span>© 2026 Fluxketch</span><span>Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.</span></div>
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="" width="24" height="24">Fluxketch</div><p class="tagl">Field CAD for tablets.<br>Finish it on site.</p></div>
+    <nav aria-label="Product"><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="https://apps.apple.com/app/apple-store/id6809299474?pt=129167956&ct=seo&mt=8" target="_blank" rel="noopener noreferrer">App Store</a></li></ul></nav>
+    <nav aria-label="Use cases"><h4>Use cases</h4><ul><li><a href="/en/ipad-cad/">CAD for iPad</a></li><li><a href="/en/mobile-cad/">Mobile CAD app</a></li><li><a href="/en/dwg-ipad/">DWG on iPad</a></li><li><a href="/en/dxf-ipad/">DXF on iPad</a></li><li><a href="/en/cad-markup/">CAD markup on iPad</a></li><li><a href="/en/cad-plot/">Scale PDF plot</a></li></ul></nav>
+    <nav aria-label="Company"><h4>Company</h4><ul><li><a href="mailto:flux0720@fluxketch.com?subject=%5BFluxketch%5D%20">Email us</a></li><li><a href="#office">For teams</a></li><li><a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="/" hreflang="ko">한국어</a></li></ul></nav>
+    <nav aria-label="Legal"><h4>Legal</h4><ul><li><a href="/support">Support</a></li><li><a class="strong" href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/licenses">Open-source licenses</a></li></ul></nav>
+  </div>
+  <div class="biz">
+    <p>Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411</p>
+    <p>5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com</p>
+    <div class="row"><span>Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.</span><span class="mono">© 2026 Fluxketch</span></div>
+  </div>
 </div></footer>
-<script src="/assets/app.js?v=4" defer></script>
+<script src="/assets/home.js?v=1" defer></script>
 </body>
 </html>

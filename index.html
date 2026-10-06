@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <!--
-THESIS: 정석 제품 랜딩(Shapr3D 기준)을 최고 완성도로 — 제품 화면(실도면)이 iPad 프레임 안에서 주인공이고, 절마다 한 가지 모션만 쓴다. 카드 격자로 페이지를 채우는 것을 거부한다.
-OWN-WORLD: 흰 스튜디오 무대와 그래파이트 무대의 교차, 초록 한 색(#2fb56a) 알약 단추, Pretendard 700 표제(−0.03em), 검정 베젤 iPad 프레임과 긴 오프셋 그림자.
-STORY: 현장 사람이 "내 도면이 이렇게 열리고, 이렇게 표시하고, 이렇게 꺼내는구나"를 실도면 화면으로 믿고 베타를 신청한다.
-FIRST VIEWPORT: 가운데 정렬 표제 두 줄 + 부제 + 초록 신청 단추/도면 보기 + 플랫폼 표기, 그 아래 iPad 랜드스케이프 프레임에 호텔 주차장 CAD 화면과 초록 치수선이 1회 그려진다.
-FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝은/어두운 무대 교차. 시드: 미실행(오너 지정 정석 경로).
+홈 v5 (2026-10-06, 오너 지정 기준 = masslabs-archi.com의 '한눈에' 구성): 블랙 바탕 · 화면 세 장(첫 화면·기능 4칸·요금제)으로 끝.
+정본 = tools/home.html + tools/home_content.py + assets/home.css. 손으로 index.html 고치지 말 것 → python3 tools/build_site.py
 -->
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>아이패드 캐드 앱 플럭스케치 | 아이패드에서 DWG·DXF 도면 보고 고치기</title>
 <meta name="description" content="아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.">
 <meta name="naver-site-verification" content="8c73946d7f4dbf7bac6bac72c574a83a9b58ab68">
@@ -25,229 +22,133 @@ FORM: 정석 제품 랜딩(오너 지정 기준 = Shapr3D). 스테이징 = 밝�
 <meta name="twitter:title" content="아이패드 캐드 앱 플럭스케치 | 아이패드에서 DWG·DXF 도면 보고 고치기">
 <meta name="twitter:description" content="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.">
 <meta name="twitter:image" content="https://fluxketch.com/assets/img/store/ko/1.jpg">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/icon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon-180.png">
 <link rel="alternate" hreflang="ko" href="https://fluxketch.com/">
 <link rel="alternate" hreflang="en" href="https://fluxketch.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://fluxketch.com/">
-<link rel="preload" as="image" href="/assets/img/v3/app-sheet.jpg">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
-<link rel="stylesheet" href="/assets/style.css?v=5">
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":"https://apps.apple.com/app/id6809299474","sameAs":["https://www.instagram.com/fluxketch_official/"],"operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.","url":"https://fluxketch.com/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","author":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":"https://fluxketch.com/","inLanguage":["ko","en"],"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"플럭스케치(Fluxketch)는 어떤 앱인가요?","acceptedAnswer":{"@type":"Answer","text":"플럭스케치는 아이패드용 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."}},{"@type":"Question","name":"아이패드에서 캐드 작업이 정말 되나요?","acceptedAnswer":{"@type":"Answer","text":"됩니다. 아이패드 캐드로서 12개 작도·편집 도구와 끝점·직교 스냅, 수치 키패드를 갖추고, 18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 자세한 내용은 아이패드 캐드 소개 페이지에 있습니다."}},{"@type":"Question","name":"어디서 받나요?","acceptedAnswer":{"@type":"Answer","text":"App Store에서 '플럭스케치' 또는 'Fluxketch'로 검색하시거나 위의 'App Store에서 받기'를 누르시면 됩니다. iPad 전용입니다."}},{"@type":"Question","name":"무료로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 플롯 PDF·DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·현장 핀·노트·리포트까지는 Pro(월 12,900원·연 129,000원)입니다. 지금은 출시 기념으로 Lite를 10월 14일까지 무료로 드리고, 월간 요금제는 7일 무료 체험으로 시작합니다."}},{"@type":"Question","name":"어떤 파일을 열 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"DXF와 DWG(서버 변환), PDF(언더레이)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."}},{"@type":"Question","name":"인터넷 없이도 되나요?","acceptedAnswer":{"@type":"Answer","text":"DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."}},{"@type":"Question","name":"3D 모델링이나 AI 기능이 있나요?","acceptedAnswer":{"@type":"Answer","text":"없습니다. Fluxketch는 2D 도면을 현장에서 열고, 그리고, 표시하고, 꺼내는 데 집중합니다."}},{"@type":"Question","name":"어떤 기기가 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"iPad와 Apple Pencil입니다. 큰 도면은 M 시리즈 iPad에서 가장 쾌적하지만, iPad 9세대·A16 기종에서도 검증했습니다."}},{"@type":"Question","name":"마크업은 도면과 함께 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, DXF 내보내기도 됩니다."}},{"@type":"Question","name":"구독은 어떻게 해지하나요?","acceptedAnswer":{"@type":"Answer","text":"iPhone·iPad의 설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있고, 무료 체험은 끝나기 24시간 전에 해지하면 요금이 청구되지 않습니다."}},{"@type":"Question","name":"문제가 있으면 어디로 알리나요?","acceptedAnswer":{"@type":"Answer","text":"앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다."}}]}]</script>
+<link rel="preload" as="image" href="/assets/img/v3/granada-topo-dark.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/home.css?v=4">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":"https://apps.apple.com/app/id6809299474","sameAs":["https://www.instagram.com/fluxketch_official/"],"operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD","description":"아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.","url":"https://fluxketch.com/","inLanguage":["ko","en"],"screenshot":"https://fluxketch.com/assets/img/v3/hotel-parking-sheet.jpg","author":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]},"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}},{"@context":"https://schema.org","@type":"WebSite","name":"Fluxketch","alternateName":"플럭스케치","url":"https://fluxketch.com/","inLanguage":["ko","en"],"publisher":{"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케치","Fluxketch 플럭스케치"],"url":"https://fluxketch.com/","logo":"https://fluxketch.com/assets/img/icon-512.png","email":"flux0720@fluxketch.com","sameAs":["https://www.instagram.com/fluxketch_official/"]}}]</script>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/"><img src="/assets/img/icon-64.png" alt="" width="32" height="32">Fluxketch</a>
-  <nav class="menu" aria-label="주 메뉴">
-    <a href="/#features">기능</a><a href="/#field">현장 기록</a><a href="/#performance">성능</a><a href="/#drawings">실제 도면</a><a href="/#pricing">요금제</a><a href="/guides/">가이드</a><a href="/#faq">자주 묻는 질문</a>
-  </nav>
-  <div class="right">
+<div class="notice" data-until="2026-10-14T00:00:00+09:00">베타 무료 이용은 <b>10월 13일(화)</b>까지 · 지금 Pro 월 <b>12,900원</b> (정가 16,900원)</div>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/" aria-label="Fluxketch"><img src="/assets/img/icon-64.png" alt="" width="28" height="28"><b>Fluxketch</b><span>플럭스케치</span></a>
+  <nav class="links" aria-label="주 메뉴">
+    <a href="#features">기능</a>
+    <a href="#pricing">요금제</a>
+    <a href="#office">사무소 도입</a>
     <a class="lang" href="/en/" hreflang="en">EN</a>
-    <a class="btn primary small" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store</a>
-    <button class="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="bar-r">
+    <a class="btn btn-main btn-sm" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M5 20h14"/></svg></a>
+    <details class="menu">
+      <summary aria-label="메뉴 열기"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></summary>
+      <nav aria-label="주 메뉴">
+        <a href="#features">기능</a>
+        <a href="#pricing">요금제</a>
+        <a href="#office">사무소 도입</a>
+        <a href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a>
+        <a href="/en/" hreflang="en">English</a>
+      </nav>
+    </details>
   </div>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <div class="copy">
-    <h1 class="reveal">도면에서 현장까지,<br>iPad 하나로.</h1>
-    <p class="lead reveal d1">플럭스케치(Fluxketch)는 현장 사람을 위한 아이패드용 캐드(CAD) 앱입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.</p>
-    <div class="cta reveal d2">
-      <a class="btn primary" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a>
-      <a class="btn ghost" href="#features">기능 둘러보기</a>
+<main>
+<section class="hero" id="top">
+  <img class="bgimg" src="/assets/img/v3/granada-topo-dark.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="chip"><i></i>현장용 모바일 캐드 · 1.1.1</div>
+    <div class="h1box">
+      <div class="dim" aria-hidden="true"><span class="t"></span><span class="l"></span><span>100% 자체 개발 CAD 엔진</span><span class="l"></span><span class="t"></span></div>
+      <h1>현장 도면,<br><em>패드 하나로</em> 끝.</h1>
     </div>
-    <div class="platform reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPad · Apple Pencil · App Store 출시</div>
-  </div>
-  <div class="stage reveal d4">
-    <div class="grid-bg" aria-hidden="true"></div>
-    <div class="device land"><div class="screen"><img src="/assets/img/v3/app-sheet.jpg" alt="Fluxketch 도면 보기 — 호텔 지하 1층 주차장 평면도, 왼쪽 도구 팔레트, 오른쪽 스냅 레일" width="1800" height="1251" loading="eager" fetchpriority="high"></div></div>
-    <div class="dim" aria-hidden="true"><svg viewBox="0 0 1000 720" preserveAspectRatio="none">
-      <line x1="60" y1="-22" x2="940" y2="-22"/><line x1="60" y1="-32" x2="60" y2="-12"/><line x1="940" y1="-32" x2="940" y2="-12"/>
-      <text x="500" y="-30" text-anchor="middle">181,422 도형 · 60 Hz</text>
-      <path d="M1012 120 L1012 600"/><line x1="1002" y1="120" x2="1022" y2="120"/><line x1="1002" y1="600" x2="1022" y2="600"/>
-      <text x="1030" y="365" transform="rotate(90 1030 365)" text-anchor="middle">CAD 도구 12종</text>
-    </svg></div>
-  </div>
-</div></section>
-
-<section class="tight"><div class="wrap center">
-  <h2 class="reveal">CAD의 힘. 번거로움은 빼고.</h2>
-  <p class="lead reveal d1 mt-3">사무실 CAD의 도면을 그대로 들고 나가고, 현장에서 손댄 것이 그대로 사무실로 돌아옵니다. 파일 형식을 바꾸거나 다시 그릴 일이 없습니다.</p>
-  <div class="trio">
-    <div class="item reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14"/><path d="M8 8h8M8 12h5"/></svg></div><h3>배우는 시간이 짧습니다</h3><p>선·폴리선·원·호·사각형·문자·이동·복사·모깎기·자르기·지우기·치수 — 12개 도구, 스냅과 직교, 수치 키패드. 이미 아는 CAD 문법 그대로입니다.</p></div>
-    <div class="item reveal d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>큰 도면도 손에서 부드럽게</h3><p>18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 멈추면 즉시 선명해지고, 레이어 188개도 그대로 다룹니다.</p></div>
-    <div class="item reveal d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M8 17v3h8v-3"/></svg></div><h3>축척 맞춰 종이로</h3><p>플롯 PDF는 축척과 100mm 검증 눈금을 달고 나갑니다. 마크업 잉크와 핀까지 그대로. DXF로도 돌려보냅니다.</p></div>
-  </div>
-</div></section>
-
-<div class="strip" aria-label="App Store 스크린샷"><div class="track">
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/1.jpg" alt="도면을 열고, 바로 고칩니다" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/2.jpg" alt="현장에서 펜슬로 바로 표시" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/3.jpg" alt="종이처럼 보고, 캐드처럼 고칩니다" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/4.jpg" alt="레이어는 켜고, 끄고, 잠그고" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/5.jpg" alt="핀 하나로 결함·확인·메모" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/6.jpg" alt="검토 의견은 도면 위에" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/7.jpg" alt="실제 축척으로 PDF 출력" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/8.jpg" alt="답사 메모도 도면 위에" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/1.jpg" alt="도면을 열고, 바로 고칩니다" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/2.jpg" alt="현장에서 펜슬로 바로 표시" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/3.jpg" alt="종이처럼 보고, 캐드처럼 고칩니다" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/4.jpg" alt="레이어는 켜고, 끄고, 잠그고" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/5.jpg" alt="핀 하나로 결함·확인·메모" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/6.jpg" alt="검토 의견은 도면 위에" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/7.jpg" alt="실제 축척으로 PDF 출력" loading="lazy" width="1400" height="1050"></div></figure>
-  <figure><div class="thumb store"><img src="/assets/img/store/ko/8.jpg" alt="답사 메모도 도면 위에" loading="lazy" width="1400" height="1050"></div></figure>
-
-</div></div>
-
-<section id="features" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">기능</div>
-  <h2 class="reveal d1">필요한 CAD 도구가 전부, 그리고 현장 도구.</h2>
-  <p class="lead reveal d2 mt-3">카탈로그에 이름만 있는 도구는 넣지 않았습니다. 아래는 실제 iPad에서 매 라운드 검증된 것들입니다.</p>
-  <div class="tabs reveal d3" data-interval="6500">
-    <div class="list" role="tablist" aria-label="필요한 CAD 도구가 전부, 그리고 현장 도구.">
-      <button class="tab" role="tab" id="tab-0" aria-controls="pane-0" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">도면 보기, 인쇄물처럼</span><span class="s"><span>한 번 누르면 검은 선·흰 바탕 시트. 확대해도 벡터라 뭉개지지 않습니다.</span></span></button>
-      <button class="tab" role="tab" id="tab-1" aria-controls="pane-1" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">DXF·DWG·PDF 그대로 열기</span><span class="s"><span>레이어·색·굵기·선종류·블록·해치·다중선까지. 없는 것은 리포트가 개수로 말합니다.</span></span></button>
-      <button class="tab" role="tab" id="tab-2" aria-controls="pane-2" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">마크업은 도면에 붙습니다</span><span class="s"><span>펜·마커·연필·지우개·올가미·자. 획은 도면 좌표에 고정돼 확대·이동 중에도 갈라지지 않습니다.</span></span></button>
-      <button class="tab" role="tab" id="tab-3" aria-controls="pane-3" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">레이어 188개도 그대로</span><span class="s"><span>가시성·잠금·색·굵기·선종류를 팔레트에서 바로. 눈 감긴 레이어는 화면·스냅·플롯이 같은 규칙으로 뺍니다.</span></span></button>
-      <button class="tab" role="tab" id="tab-4" aria-controls="pane-4" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">실척 자와 치수</span><span class="s"><span>화면 밀도를 추정해 1:1부터 1:1,000까지 실척으로. 두 점을 찍으면 실제 길이가 단위와 함께.</span></span></button>
-      <button class="tab" role="tab" id="tab-5" aria-controls="pane-5" aria-selected="false"><span class="bar" aria-hidden="true"></span><span class="t">꺼내기는 7종 문서로</span><span class="s"><span>핀 로그·리포트·시트 발행·플롯 PDF·DXF 내보내기·PDF 언더레이. 현장에서 사무실로 바로.</span></span></button>
-
+    <p class="lead">DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 꺼냅니다.</p>
+    <div class="ctas">
+      <a class="btn btn-main" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#pricing">요금제 보기</a>
     </div>
-    <div class="panes">
-      <div class="pane" role="tabpanel" id="pane-0" aria-labelledby="tab-0"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-sheet.jpg" alt="도면 보기, 인쇄물처럼" loading="eager"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-1" aria-labelledby="tab-1"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-detail-dark.jpg" alt="DXF·DWG·PDF 그대로 열기" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-2" aria-labelledby="tab-2"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-markup.jpg" alt="마크업은 도면에 붙습니다" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-3" aria-labelledby="tab-3"><div class="device land"><div class="screen"><img src="/assets/img/v3/layers-sheet.jpg" alt="레이어 188개도 그대로" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-4" aria-labelledby="tab-4"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="실척 자와 치수" loading="lazy"></div></div></div>
-      <div class="pane" role="tabpanel" id="pane-5" aria-labelledby="tab-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-siteplan.jpg" alt="꺼내기는 7종 문서로" loading="lazy"></div></div></div>
+    <dl class="proof">
+      <div><dt>베타 테스터</dt><dd>약 700명</dd></div>
+      <div><dt>앱스토어 이용자</dt><dd>약 620명</dd></div>
+      <div><dt>건축·인테리어 사무소</dt><dd>30곳+</dd></div>
+      <div><dt>개체 도면까지 열림</dt><dd>140만</dd></div>
+    </dl>
+  </div>
+</section>
 
+<section class="blk" id="features">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">A-101 · 기능</span><h2>열고, 고치고, 표시하고, 꺼낸다.</h2></div>
+      <p>사무실 도면을 그대로 들고 나가, 현장에서 손댄 것을 그대로 사무실로 돌려보냅니다.</p>
+    </div>
+    <div class="feat">
+      <article class="card"><div class="shot"><img src="/assets/img/v3/granada-topo-dark-sm.jpg" alt="그라나다 지형도 전체를 연 화면" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">01 열기</span><h3>도면을 그대로</h3><p>DWG·DXF·PDF를 레이어·색·블록·해치까지 그대로 엽니다. 140만 개체 도면도 손에서 부드럽게.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/app-detail-dark-sm.jpg" alt="레이어 팔레트와 CAD 도구가 열린 평면도" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">02 고치기</span><h3>현장에서 바로 작도</h3><p>선·원·호·치수 등 CAD 도구 12종, 끝점·직교 스냅, 수치 키패드. 아는 캐드 문법 그대로.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/app-markup-sm.jpg" alt="단면도 위 손글씨 마크업" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">03 표시하기</span><h3>마크업과 사진 핀</h3><p>펜슬 필압 그대로 도면 좌표에 붙는 손글씨, 사진과 메모가 달린 핀, 노트 페이지.</p></div></article>
+      <article class="card"><div class="shot"><img src="/assets/img/v3/menu-report-sm.jpg" alt="핀 로그·리포트·플롯 메뉴" loading="lazy" width="900" height="625"></div><div class="tx"><span class="n">04 꺼내기</span><h3>축척 맞춰 내보내기</h3><p>플롯 PDF·DXF 내보내기·리포트·시트 발행. 현장에서 사무실로 바로.</p></div></article>
+    </div>
+    <p class="swipe" aria-hidden="true">옆으로 넘겨 보기<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
+    <div class="newline"><span class="tag">1.1.1 NEW</span><span>공정 일정 달력과 날짜별 노트</span><span class="sep" aria-hidden="true">·</span><span>iCloud로 프로젝트 통째로 옮기기</span><span class="sep" aria-hidden="true">·</span><span>마크업·핀 사진을 PDF 한 장으로 공유</span></div>
+  </div>
+</section>
+
+<section class="blk" id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">A-201 · 요금제</span><h2>필요한 만큼만 고르세요.</h2><p>월간 요금제는 <b>3일 무료 체험</b>으로 시작합니다.</p></div>
+      <div class="seg" role="group" aria-label="결제 주기">
+        <button type="button" data-cycle="m" aria-pressed="true">월간</button>
+        <button type="button" data-cycle="y" aria-pressed="false">연간 <small>2개월 무료</small></button>
+      </div>
+    </div>
+    <div class="plans" id="plans-wrap" data-cycle="m">
+      <div class="plan"><div class="top"><span class="nm">Free</span></div><div class="pr m"><div class="amt"><b>₩0</b></div></div><div class="pr y"><div class="amt"><b>₩0</b></div></div><p class="tg">도면을 열어 보기만 할 때.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>도면 열기·보기 (DWG·DXF·PDF)</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>작도·편집 · CAD 도구 12종</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>블록·배치 · DXF 내보내기</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>축척 맞춘 플롯 PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>마크업·사진 핀·노트</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>리포트 · 마크업 PDF 공유</li></ul><a class="go m" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">무료로 받기</a><a class="go y" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">무료로 받기</a></div>
+      <div class="plan"><div class="top"><span class="nm">Lite</span></div><div class="pr m"><div class="amt"><b>₩4,900</b><span>/ 월</span></div></div><div class="pr y"><div class="amt"><b>₩49,000</b><span>/ 년</span></div></div><p class="tg">사무실처럼 그리고 고칠 때.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>도면 열기·보기 (DWG·DXF·PDF)</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>작도·편집 · CAD 도구 12종</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>블록·배치 · DXF 내보내기</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>축척 맞춘 플롯 PDF</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>마크업·사진 핀·노트</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>리포트 · 마크업 PDF 공유</li></ul><a class="go m" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">3일 무료로 시작</a><a class="go y" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">Lite 시작</a></div>
+      <div class="plan"><div class="top"><span class="nm">Markup</span><span class="badge">신규</span></div><div class="pr m"><div class="amt"><b>₩8,900</b><span>/ 월</span></div></div><div class="pr y"><div class="amt"><b>₩89,000</b><span>/ 년</span></div></div><p class="tg">현장에서 표시하고 기록할 때.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>도면 열기·보기 (DWG·DXF·PDF)</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>작도·편집 · CAD 도구 12종</li><li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg><span class="sr">미포함: </span>블록·배치 · DXF 내보내기</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>축척 맞춘 플롯 PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>마크업·사진 핀·노트</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>리포트 · 마크업 PDF 공유</li></ul><a class="go m" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">3일 무료로 시작</a><a class="go y" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">Markup 시작</a></div>
+      <div class="plan hi"><div class="top"><span class="nm">Pro</span><span class="badge">할인 중</span></div><div class="pr m"><span class="was">₩16,900</span><div class="amt"><b>₩12,900</b><span>/ 월</span></div></div><div class="pr y"><span class="was">₩169,000</span><div class="amt"><b>₩129,000</b><span>/ 년</span></div></div><p class="tg">전부 다. 앞으로 나올 아이폰 버전 포함.</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>도면 열기·보기 (DWG·DXF·PDF)</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>작도·편집 · CAD 도구 12종</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>블록·배치 · DXF 내보내기</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>축척 맞춘 플롯 PDF</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>마크업·사진 핀·노트</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="sr">포함: </span>리포트 · 마크업 PDF 공유</li></ul><a class="go m" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">3일 무료로 시작</a><a class="go y" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">Pro 시작</a></div>
+    </div>
+    <p class="swipe" aria-hidden="true">옆으로 넘겨 보기<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
+    <p class="fine">가격은 대한민국 App Store 기준(부가세 포함)입니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되며, 설정 › Apple 계정 › 구독에서 언제든 해지할 수 있습니다. 무료 체험은 끝나기 24시간 전에 해지하면 요금이 청구되지 않습니다.</p>
+
+    <div class="office" id="office">
+      <div class="l">
+        <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8 8h3"/><path d="M8 12h3"/><path d="M8 16h3"/></svg></div>
+        <div><h3>사무소·팀 단위로 도입하시나요?</h3><p>여러 대를 함께 쓰실 사무소는 메일로 알려 주세요. 인원과 쓰임에 맞춰 도입 상담과 견적을 드립니다.</p></div>
+      </div>
+      <a class="btn btn-ghost" href="mailto:flux0720@fluxketch.com?subject=%5B%EC%82%AC%EB%AC%B4%EC%86%8C%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98%5D%20&amp;body=%EC%82%AC%EB%AC%B4%EC%86%8C%EB%AA%85%3A%0A%EB%8B%B4%EB%8B%B9%EC%9E%90%C2%B7%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EC%82%AC%EC%9A%A9%20%EC%9D%B8%EC%9B%90%28%ED%83%9C%EB%B8%94%EB%A6%BF%20%EB%8C%80%EC%88%98%29%3A%0A%EA%B4%80%EC%8B%AC%20%ED%94%8C%EB%9E%9C%28Lite%20/%20Markup%20/%20Pro%29%3A%0A%EB%AC%B8%EC%9D%98%20%EB%82%B4%EC%9A%A9%3A%0A"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>도입 문의 메일 보내기</a>
     </div>
   </div>
-</div></section>
-
-<section id="field" class="soft"><div class="wrap">
-  <div class="scene reveal">
-    <div class="scene-txt"><div class="eyebrow">현장 기록</div><h2>본 것을 도면 위에 남깁니다.</h2><p class="lead mt-3">사진이 달린 핀, 손글씨 마크업, 노트 페이지가 한 파일에 삽니다. 모드를 오가도 자리는 그대로이고, 모아서 한 부의 리포트가 됩니다.</p></div>
-    <figure class="scene-img"><img src="/assets/img/v3/scene-elevator.jpg" alt="현장에서 iPad로 도면을 확인하는 감리자" loading="lazy" width="1600" height="1410"></figure>
-  </div>
-  <div class="row reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/menu-report.jpg" alt="더보기 메뉴 — 핀 로그, 리포트, 시트 발행, 플롯, DXF 내보내기, PDF 불러오기" loading="lazy"></div></div></div>
-    <div class="txt"><h3>핀 로그에서 리포트까지</h3><p class="sub">핀을 찍고 사진과 메모를 답니다. 핀 로그가 곧 목록이고, 리포트는 문서 7종(점검·지시·회의 등) 서식으로 인쇄됩니다.</p><ul><li>핀은 언제나 마크업 위에 — 도면 좌표에 고정</li><li>리포트 표 서식과 법령 근거 항목 인쇄</li><li>시트 발행으로 특정 시트만 PDF로</li></ul></div>
-  </div>
-  <div class="row rev reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/app-markup.jpg" alt="마크업 모드 — 펜·마커·연필·지우개·올가미·자, 색과 굵기 팔레트" loading="lazy"></div></div></div>
-    <div class="txt"><h3>손글씨는 손글씨답게</h3><p class="sub">Apple Pencil 필압 그대로. 획이 도면과 갈라지지 않고, 굵기는 도면 단위 기준이라 축척이 바뀌어도 의미가 같습니다.</p><ul><li>펜·마커·연필·지우개·올가미·자</li><li>되돌리기·다시 실행, 잉크까지 그대로 플롯</li><li>노트 페이지: 백지·줄·도트·모눈·제도 모눈</li></ul></div>
-  </div>
-  <div class="row reveal">
-    <div class="media"><div class="device land"><div class="screen"><img src="/assets/img/v3/ruler-popover.jpg" alt="실척 자 팝오버 — 1:1부터 1:1,000 축척 선택과 자로 맞추기" loading="lazy"></div></div></div>
-    <div class="txt"><h3>실척으로 보고, 자로 잽니다</h3><p class="sub">기종별 화면 밀도를 추정해 1:50이면 1:50으로 보여 줍니다. 종이 위 100mm 눈금으로 프린터 배율까지 검증합니다.</p><ul><li>1:1 ~ 1:1,000 축척 · 자로 맞추기(보정)</li><li>DXF는 단위를 묻고 읽는 순간 보정(mm·cm·m·inch·ft)</li><li>PDF 밑그림은 두 점으로 축척을 맞추고 벡터에 스냅</li></ul></div>
-  </div>
-</div></section>
-
-<section id="performance" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">성능</div>
-  <h2 class="reveal d1">큰 도면이 무섭지 않습니다.</h2>
-  <p class="lead reveal d2 mt-3">Metal 벡터 렌더와 래스터 타일 피라미드가 함께 그립니다. 그라나다 시가지와 산악 등고선 전체를 한 화면에 올려도 손을 따라옵니다.</p>
-  <div class="stage reveal d3 mt-5"><div class="device land"><div class="screen"><img src="/assets/img/v3/granada-topo-dark.jpg" alt="그라나다 지형도 — 시가지와 산악 등고선 전체, CAD 모드" loading="lazy"></div></div></div>
-  <div class="stats">
-    <div class="s reveal"><div class="n"><span data-count="181422">0</span></div><div class="l">도형을 열어 검증한 도면(TalkFile_18)</div></div>
-    <div class="s reveal d1"><div class="n"><span data-count="60">0</span><small>Hz</small></div><div class="l">18만 도형에서 팬·줌</div></div>
-    <div class="s reveal d2"><div class="n"><span data-count="188">0</span></div><div class="l">레이어를 그대로 다루는 도면(호텔 5 ESTRELLAS)</div></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow reveal">왜 iPad인가</div>
-  <h2 class="reveal d1">사무실과 현장 사이의 거리를 없앱니다.</h2>
-  <div class="flow reveal d2" aria-label="작업 흐름: 사무실 도면 → Fluxketch(iPad) → 종이·DXF·리포트 → 사무실로 되돌림"><svg viewBox="0 0 960 244" role="img">
-    <title>작업 흐름: 사무실 도면 → Fluxketch(iPad) → 종이·DXF·리포트 → 사무실로 되돌림</title>
-    <rect class="node" x="20" y="60" width="200" height="100" rx="18"/>
-    <text x="120" y="98" text-anchor="middle">DXF · DWG · PDF</text><text class="small" x="120" y="124" text-anchor="middle">사무실 CAD에서 그대로</text>
-    <rect class="node hi" x="380" y="30" width="200" height="160" rx="22"/>
-    <rect x="404" y="52" width="152" height="116" rx="10" fill="none" stroke="var(--brand)" stroke-width="1.5" opacity=".55"/>
-    <text x="480" y="102" text-anchor="middle">Fluxketch</text><text class="small" x="480" y="126" text-anchor="middle">작도 · 마크업 · 핀 · 노트</text><text class="small" x="480" y="146" text-anchor="middle">iPad · Apple Pencil</text>
-    <rect class="node" x="740" y="60" width="200" height="100" rx="18"/>
-    <text x="840" y="98" text-anchor="middle">PDF · DXF · 리포트</text><text class="small" x="840" y="124" text-anchor="middle">축척 맞춘 출력 · 회의</text>
-    <path class="wire" d="M220 110 C 300 110 300 110 372 110"/><path class="arrow" d="M366 103 L380 110 L366 117 Z"/>
-    <path class="wire w2" d="M580 110 C 660 110 660 110 732 110"/><path class="arrow" d="M726 103 L740 110 L726 117 Z"/>
-    <path class="wire w2" d="M480 190 C 480 216 120 216 120 178"/><path class="arrow" d="M113 178 L120 164 L127 178 Z"/>
-    <text class="small" x="300" y="236" text-anchor="middle">DXF로 되돌려 사무실 CAD에서 이어 그리기</text>
-  </svg>
-  <ol class="flow-m" aria-hidden="true">
-    <li><b>DXF · DWG · PDF</b><span>사무실 CAD에서 그대로</span></li>
-    <li class="hi"><b>Fluxketch</b><span>작도 · 마크업 · 핀 · 노트</span><span>iPad · Apple Pencil</span></li>
-    <li><b>PDF · DXF · 리포트</b><span>축척 맞춘 출력 · 회의</span></li>
-    <li class="back"><span>↺ DXF로 되돌려 사무실 CAD에서 이어 그리기</span></li>
-  </ol></div>
-  <div class="compare">
-    <div class="col reveal"><h3>지금까지</h3><ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>현장에선 출력물에 볼펜, 사무실에 돌아와 다시 CAD로 옮겨 그리기</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>사진은 카메라 롤에, 메모는 수첩에 — 어느 위치였는지는 기억에</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>확인 회의는 PDF 스크린샷을 메신저로</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#8a919e" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>현장용 앱은 DWG를 못 열거나 레이어를 잃음</span></li></ul></div>
-    <div class="col now reveal d1"><h3>Fluxketch</h3><ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>현장에서 바로 도면 좌표에 마크업·치수·핀</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>사진과 메모가 핀에 달려 위치가 곧 기록</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>리포트·플롯 PDF 한 부로 회의</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="#248f54" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>DXF·DWG를 레이어·굵기·선종류 그대로 열고 돌려보냄</span></li></ul></div>
-  </div>
-</div></section>
-
-<section id="drawings" class="on-ink"><div class="wrap">
-  <div class="eyebrow reveal">실제 도면</div>
-  <h2 class="reveal d1">실제 도면으로 검증합니다.</h2>
-  <p class="lead reveal d2 mt-3">아래는 실제로 열고 손댄 도면들입니다. 화면은 앱 그대로이며 보정하지 않았습니다.</p>
-  <div class="cases">
-    <a class="case reveal" href="#features"><div class="img"><img src="/assets/img/v3/vivienda-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">주택 · 5개 층</div><h3>전기·설비 4개 시트를 한 파일에</h3><p>시트마다 다른 색 규칙(레이어 색·자기 색)이 그대로 살아 있습니다.</p></div></a>
-    <a class="case reveal d1" href="#field"><div class="img"><img src="/assets/img/v3/sections-sheet-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">상업 건물 · 단면·입면</div><h3>단면 5장과 지붕 평면</h3><p>해치·치수·문자까지 벡터로, 확대해도 선이 살아 있습니다.</p></div></a>
-    <a class="case reveal d2" href="#performance"><div class="img"><img src="/assets/img/v3/structural-dark-sm.jpg" alt="" loading="lazy"></div><div class="body"><div class="k">구조 · 배근 상세</div><h3>배근 상세 수백 개</h3><p>작은 상세가 빽빽한 도면도 타일로 즉시 선명하게.</p></div></a>
-  </div>
-</div></section>
-
-<section id="pricing"><div class="wrap">
-  <div class="center"><div class="eyebrow reveal">요금제</div><h2 class="reveal d1">현장 한 번 값으로 한 달을 씁니다.</h2><p class="lead reveal d2 mt-3">App Store 구독입니다. 언제든 해지할 수 있고, 월간 요금제는 7일 무료 체험으로 시작합니다.</p></div>
-  <p class="promo-banner reveal d2">출시 기념 프로모션 — <b>Lite는 10월 14일 정식 출시까지 무료</b>, 연간 요금제는 <b>2개월분 무료</b>(12개월을 10개월 값으로).</p>
-  <div class="plans">
-    <div class="plan reveal"><div class="name">Free</div><div class="price">₩0</div><div class="per">계속 무료</div><ul><li>도면 열기·보기(DWG·DXF·PDF)</li><li>레이어 켜고 끄기</li><li>10월 14일까지 Lite 기능 무료</li></ul><a class="btn ghost" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a></div>
-    <div class="plan reveal d1"><div class="name">Lite</div><div class="price">월 ₩4,900</div><div class="per">연 ₩49,000 (2개월분 무료)</div><div class="promo">10월 14일 정식 출시까지 무료</div><ul><li>작도·편집 — CAD 도구 12종·스냅·치수</li><li>플롯(PDF 출력)·실척 자</li><li>DXF 내보내기</li></ul><a class="btn ghost" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a></div>
-    <div class="plan hi reveal d2"><div class="tag">가장 많이 고르는 요금제</div><div class="name">Pro</div><div class="price">월 ₩12,900</div><div class="per">연 ₩129,000 (2개월분 무료)</div><div class="promo">출시 기념 프로모션 가격</div><ul><li>Lite의 모든 기능 + <b>마크업</b></li><li>현장 핀·노트·리포트 7종 문서</li><li>시트 발행·PDF 언더레이</li></ul><a class="btn primary" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a></div>
-  </div>
-  <p class="sub center mt-3" style="margin-inline:auto">월간 요금제 7일 무료 체험</p>
-  <p class="sub center mt-3" style="margin-inline:auto">가격은 대한민국 App Store 기준(부가세 포함)이며 국가별로 다를 수 있습니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되고, 해지는 iPhone·iPad 설정 &gt; Apple 계정 &gt; 구독에서 언제든 할 수 있습니다.</p>
-</div></section>
-
-<section class="tight"><div class="wrap"><div class="ctaband reveal">
-  <img class="bg" src="/assets/img/v3/scene-site.jpg" alt="" loading="lazy" aria-hidden="true">
-  <div class="glow" aria-hidden="true"></div>
-  <h2>다음 현장부터 Fluxketch로.</h2><p class="lead">App Store에서 받아 바로 쓰실 수 있습니다. 월간 요금제는 7일 무료 체험, Lite는 10월 14일까지 무료입니다.</p>
-  <div class="cta"><a class="btn primary" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a><a class="btn ghost" href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">인스타그램 @fluxketch_official</a><a class="btn ghost" href="mailto:flux0720@fluxketch.com">이메일로 문의</a></div>
-</div></div></section>
-
-<section id="faq" class="soft"><div class="wrap">
-  <div class="center"><h2 class="reveal">자주 묻는 질문</h2></div>
-  <div class="faq reveal d1">
-    <details open><summary>플럭스케치(Fluxketch)는 어떤 앱인가요?</summary><div class="a">플럭스케치는 아이패드용 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다.</div></details>
-    <details><summary>아이패드에서 캐드 작업이 정말 되나요?</summary><div class="a">됩니다. 아이패드 캐드로서 12개 작도·편집 도구와 끝점·직교 스냅, 수치 키패드를 갖추고, 18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 자세한 내용은 아이패드 캐드 소개 페이지에 있습니다.</div></details>
-    <details><summary>어디서 받나요?</summary><div class="a">App Store에서 &#x27;플럭스케치&#x27; 또는 &#x27;Fluxketch&#x27;로 검색하시거나 위의 &#x27;App Store에서 받기&#x27;를 누르시면 됩니다. iPad 전용입니다.</div></details>
-    <details><summary>무료로 쓸 수 있나요?</summary><div class="a">도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 플롯 PDF·DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·현장 핀·노트·리포트까지는 Pro(월 12,900원·연 129,000원)입니다. 지금은 출시 기념으로 Lite를 10월 14일까지 무료로 드리고, 월간 요금제는 7일 무료 체험으로 시작합니다.</div></details>
-    <details><summary>어떤 파일을 열 수 있나요?</summary><div class="a">DXF와 DWG(서버 변환), PDF(언더레이)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다.</div></details>
-    <details><summary>인터넷 없이도 되나요?</summary><div class="a">DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능).</div></details>
-    <details><summary>3D 모델링이나 AI 기능이 있나요?</summary><div class="a">없습니다. Fluxketch는 2D 도면을 현장에서 열고, 그리고, 표시하고, 꺼내는 데 집중합니다.</div></details>
-    <details><summary>어떤 기기가 필요한가요?</summary><div class="a">iPad와 Apple Pencil입니다. 큰 도면은 M 시리즈 iPad에서 가장 쾌적하지만, iPad 9세대·A16 기종에서도 검증했습니다.</div></details>
-    <details><summary>마크업은 도면과 함께 저장되나요?</summary><div class="a">네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, DXF 내보내기도 됩니다.</div></details>
-    <details><summary>구독은 어떻게 해지하나요?</summary><div class="a">iPhone·iPad의 설정 &gt; Apple 계정 &gt; 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있고, 무료 체험은 끝나기 24시간 전에 해지하면 요금이 청구되지 않습니다.</div></details>
-    <details><summary>문제가 있으면 어디로 알리나요?</summary><div class="a">앱 첫 화면의 &#x27;오류 즉시 문의&#x27; 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다.</div></details>
-
-  </div>
-</div></section>
+</section>
+</main>
 
 <footer><div class="wrap">
-  <div class="cols">
-    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="">Fluxketch</div><p class="sub mt-2" style="font-size:14px">플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.</p></div>
-    <div><h4>제품</h4><ul><li><a href="/#features">기능</a></li><li><a href="/#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store</a></li></ul></div>
-    <div><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 캐드 앱</a></li><li><a href="/mobile-cad/">모바일 캐드 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></div>
-    <div><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com">문의 flux0720@fluxketch.com</a></li><li><a href="/en/">English</a></li></ul></div>
-    <div><h4>법적 고지</h4><ul><li><a href="/support">고객 지원</a></li><li><a href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></div>
+  <div class="end">
+    <div><b>다음 현장부터, 플럭스케치로.</b><span>App Store에서 받아 바로 쓰실 수 있습니다.</span></div>
+    <a class="btn btn-main" href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store에서 받기</a>
   </div>
-  <div class="bizinfo">플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호 · 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 010-7179-0722 · flux0720@fluxketch.com</div>
-  <div class="fine"><span>© 2026 Fluxketch</span><span>Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.</span></div>
+  <div class="cols">
+    <div><div class="brand"><img src="/assets/img/icon-64.png" alt="" width="24" height="24">Fluxketch</div><p class="tagl">플럭스케치 — 현장용 모바일 캐드.<br>현장에서 끝냅니다.</p></div>
+    <nav aria-label="제품"><h4>제품</h4><ul><li><a href="#features">기능</a></li><li><a href="#pricing">요금제</a></li><li><a href="/guides/">가이드</a></li><li><a href="https://apps.apple.com/app/id6809299474" target="_blank" rel="noopener noreferrer">App Store</a></li></ul></nav>
+    <nav aria-label="쓰임"><h4>쓰임</h4><ul><li><a href="/ipad-cad/">아이패드 캐드 앱</a></li><li><a href="/mobile-cad/">모바일 캐드 앱</a></li><li><a href="/dwg-ipad/">아이패드 DWG</a></li><li><a href="/dxf-ipad/">아이패드 DXF</a></li><li><a href="/cad-markup/">CAD 도면 마크업</a></li><li><a href="/cad-plot/">축척 PDF 플롯</a></li></ul></nav>
+    <nav aria-label="회사"><h4>회사</h4><ul><li><a href="mailto:flux0720@fluxketch.com?subject=%5B%ED%94%8C%EB%9F%AD%EC%8A%A4%EC%BC%80%EC%B9%98%20%EB%AC%B8%EC%9D%98%5D%20">문의 메일</a></li><li><a href="#office">사무소 도입</a></li><li><a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="/en/" hreflang="en">English</a></li></ul></nav>
+    <nav aria-label="법적 고지"><h4>법적 고지</h4><ul><li><a href="/support">고객 지원</a></li><li><a class="strong" href="/privacy">개인정보 처리방침</a></li><li><a href="/terms">이용약관</a></li><li><a href="/licenses">오픈소스 라이선스</a></li></ul></nav>
+  </div>
+  <div class="biz">
+    <p>상호 플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호</p>
+    <p>주소 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 전화 010-7179-0722 · 이메일 flux0720@fluxketch.com</p>
+    <div class="row"><span>Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.</span><span class="mono">© 2026 Fluxketch</span></div>
+  </div>
 </div></footer>
-<script src="/assets/app.js?v=4" defer></script>
+<script src="/assets/home.js?v=1" defer></script>
 </body>
 </html>
