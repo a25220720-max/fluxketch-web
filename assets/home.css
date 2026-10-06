@@ -92,6 +92,10 @@ h2{margin:0;font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;letter-spacing:
 .newline .tag{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--on-acc);background:var(--acc);padding:4px 8px;border-radius:6px}
 .newline .sep{color:#4A4F57}
 
+/* 작동 영상 */
+.vbox{max-width:1000px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#E9F3EC;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.vbox video{display:block;width:100%;height:auto;aspect-ratio:4/3}
+
 /* 3. 요금제 */
 #pricing{background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(47,181,106,.08),rgba(10,11,13,0) 70%)}
 .seg{display:inline-flex;padding:4px;border:1px solid var(--line2);border-radius:999px;background:var(--s1)}
@@ -213,6 +217,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
   .seg button{flex:1}
   .office{padding:22px 20px}
   .office .btn{width:100%}
+  .vbox{border-radius:14px;margin:0 calc(-1 * var(--pad) + 8px)}
   .faq summary{font-size:15px}
   .faq details p{padding-right:0;font-size:14px}
   .end .btn{width:100%}

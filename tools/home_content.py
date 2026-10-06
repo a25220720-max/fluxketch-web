@@ -15,24 +15,24 @@ CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F
 DASH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg>'
 
 KO = dict(
- brand_sub="플럭스케치", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
+ brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="20초면 충분합니다.", hm_v_sub="실제 앱 화면 그대로 — 열고, 고치고, 표시하고, 보내기까지.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
  notice='<div class="notice" data-until="2026-10-14T00:00:00+09:00">베타 무료 이용은 <b>10월 13일(화)</b>까지 · 지금 Pro 월 <b>12,900원</b> (정가 16,900원)</div>',
  hm_chip="현장용 모바일 캐드 · 1.1.1", hm_dim="100% 자체 개발 CAD 엔진",
  hm_h1="현장 도면,<br><em>패드 하나로</em> 끝.",
- hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 꺼냅니다.",
+ hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 보냅니다.",
  hm_cta2="요금제 보기",
  proof=[("약 700명", "베타 테스터"), ("약 620명", "앱스토어 이용자"), ("30곳+", "건축·인테리어 사무소"), ("140만", "개체 도면까지 열림")],
- hm_f_eyebrow="A-101 · 기능", hm_f_h2="열고, 고치고, 표시하고, 꺼낸다.", hm_f_sub="사무실 도면을 그대로 들고 나가, 현장에서 손댄 것을 그대로 사무실로 돌려보냅니다.",
+ hm_f_eyebrow="A-101 · 기능", hm_f_h2="열고, 고치고, 표시하고, 보낸다.", hm_f_sub="사무실 도면을 그대로 들고 나가, 현장에서 손댄 것을 그대로 사무실로 돌려보냅니다.",
  cards=[("01 열기", "도면을 그대로", "DWG·DXF·PDF를 레이어·색·블록·해치까지 그대로 엽니다. 140만 개체 도면도 손에서 부드럽게.", "granada-topo-dark", "그라나다 지형도 전체를 연 화면"),
         ("02 고치기", "현장에서 바로 작도", "선·원·호·치수 등 CAD 도구 12종, 끝점·직교 스냅, 수치 키패드. 아는 캐드 문법 그대로.", "app-detail-dark", "레이어 팔레트와 CAD 도구가 열린 평면도"),
         ("03 표시하기", "마크업과 사진 핀", "펜슬 필압 그대로 도면 좌표에 붙는 손글씨, 사진과 메모가 달린 핀, 노트 페이지.", "app-markup", "단면도 위 손글씨 마크업"),
-        ("04 꺼내기", "축척 맞춰 내보내기", "플롯 PDF·DXF 내보내기·리포트·시트 발행. 현장에서 사무실로 바로.", "menu-report", "핀 로그·리포트·플롯 메뉴")],
+        ("04 보내기", "축척 맞춰 보내기", "플롯 PDF·DXF 내보내기·리포트·시트 발행. 현장에서 사무실로 바로.", "menu-report", "핀 로그·리포트·플롯 메뉴")],
  hm_new_tag="1.1.1 NEW", news=["공정 일정 달력과 날짜별 노트", "iCloud로 프로젝트 통째로 옮기기", "마크업·핀 사진을 PDF 한 장으로 공유"],
  hm_p_eyebrow="A-201 · 요금제", hm_p_h2="필요한 만큼만 고르세요.", hm_p_sub="월간 요금제는 <b>3일 무료 체험</b>으로 시작합니다.",
  hm_cycle_label="결제 주기", hm_monthly="월간", hm_yearly="연간", hm_yearly_save="2개월 무료",
  rows=["도면 열기·보기 (DWG·DXF·PDF)", "작도·편집 · CAD 도구 12종", "블록·배치 · DXF 내보내기", "축척 맞춘 플롯 PDF", "마크업·사진 핀·노트", "리포트 · 마크업 PDF 공유"],
  per_m="/ 월", per_y="/ 년", included="포함", not_included="미포함",
- plans=[dict(k="free", name="Free", m="₩0", y="₩0", free=True, tag="도면을 열어 보기만 할 때.", cta_m="무료로 받기", cta_y="무료로 받기"),
+ plans=[dict(k="free", name="Free", m="₩0", y="₩0", free=True, tag="도면 3개까지 무료로 불러와 볼 때.", row0="도면 불러오기 3회 무료", cta_m="무료로 받기", cta_y="무료로 받기"),
         dict(k="lite", name="Lite", m="₩4,900", y="₩49,000", tag="사무실처럼 그리고 고칠 때.", cta_m="3일 무료로 시작", cta_y="Lite 시작"),
         dict(k="markup", name="Markup", badge="신규", m="₩8,900", y="₩89,000", tag="현장에서 표시하고 기록할 때.", cta_m="3일 무료로 시작", cta_y="Markup 시작"),
         dict(k="pro", name="Pro", badge="할인 중", hi=True, m="₩12,900", y="₩129,000", was_m="₩16,900", was_y="₩169,000", tag="전부 다. 앞으로 나올 아이폰 버전 포함.", cta_m="3일 무료로 시작", cta_y="Pro 시작")],
@@ -47,24 +47,24 @@ KO = dict(
 )
 
 EN = dict(
- brand_sub="", hm_swipe="Swipe for more", hm_nav_office="For teams",
+ brand_sub="", og_desc="Open, fix, mark up, send. Right on site.", hm_v_eyebrow="A-102 · In action", hm_v_h2="Twenty seconds is enough.", hm_v_sub="The real app, as it is — open, fix, mark up, send.", hm_v_label="Fluxketch in action", hm_swipe="Swipe for more", hm_nav_office="For teams",
  notice="",
  hm_chip="Field CAD · 1.1.1", hm_dim="Our own CAD engine, built from scratch",
  hm_h1="Site drawings,<br><em>done on one tablet.</em>",
- hm_lead="Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and export scale-true PDF and DXF.",
+ hm_lead="Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and send scale-true PDF and DXF.",
  hm_cta2="See pricing",
  proof=[("~700", "beta testers"), ("~620", "App Store users"), ("30+", "architecture & interior offices"), ("1.4M", "entities in one drawing")],
- hm_f_eyebrow="A-101 · Features", hm_f_h2="Open. Fix. Mark up. Export.", hm_f_sub="Take office drawings out as they are, and send what you touched on site straight back.",
+ hm_f_eyebrow="A-101 · Features", hm_f_h2="Open. Fix. Mark up. Send.", hm_f_sub="Take office drawings out as they are, and send what you touched on site straight back.",
  cards=[("01 Open", "Drawings as they are", "DWG, DXF and PDF with layers, colors, blocks and hatches intact. Smooth even at 1.4M entities.", "granada-topo-dark", "Full Granada topographic map opened in Fluxketch"),
         ("02 Fix", "Draft right on site", "12 CAD tools — line, circle, arc, dimension and more — with endpoint and ortho snaps and a numeric keypad.", "app-detail-dark", "Floor plan with layer palette and CAD tools"),
         ("03 Mark up", "Markup and photo pins", "Handwriting locked to drawing coordinates with pencil pressure, pins with photos and notes, note pages.", "app-markup", "Handwritten markup on a section drawing"),
-        ("04 Export", "Out at true scale", "Plot PDF, DXF export, reports and sheet issue. From site to office, right away.", "menu-report", "Pin log, report and plot menu")],
+        ("04 Send", "Send at true scale", "Plot PDF, DXF export, reports and sheet issue. From site to office, right away.", "menu-report", "Pin log, report and plot menu")],
  hm_new_tag="1.1.1 NEW", news=["Schedule calendar with daily notes", "Move whole projects via iCloud", "Share markup and pin photos as one PDF"],
  hm_p_eyebrow="A-201 · Pricing", hm_p_h2="Pick only what you need.", hm_p_sub="Monthly plans start with a <b>3-day free trial</b>.",
  hm_cycle_label="Billing period", hm_monthly="Monthly", hm_yearly="Yearly", hm_yearly_save="2 months free",
  rows=["Open and view DWG, DXF, PDF", "Draft and edit · 12 CAD tools", "Blocks, layouts · DXF export", "Scale-true plot PDF", "Markup, photo pins, notes", "Reports · markup PDF sharing"],
  per_m="/ mo", per_y="/ yr", included="Included", not_included="Not included",
- plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Just open and view drawings.", cta_m="Get it free", cta_y="Get it free"),
+ plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Import up to 3 drawings free.", row0="3 free drawing imports", cta_m="Get it free", cta_y="Get it free"),
         dict(k="lite", name="Lite", m="$2.99", y="$29.99", tag="Draw and edit like at the office.", cta_m="Start 3-day free trial", cta_y="Start Lite"),
         dict(k="markup", name="Markup", badge="New", m="$4.99", y="$49.99", tag="Mark up and record on site.", cta_m="Start 3-day free trial", cta_y="Start Markup"),
         dict(k="pro", name="Pro", badge="Best value", hi=True, m="$7.99", y="$79.99", tag="Everything. Includes the upcoming iPhone version.", cta_m="Start 3-day free trial", cta_y="Start Pro")],
@@ -83,7 +83,7 @@ KO["hm_q_h2"] = "자주 묻는 질문"
 KO["hm_q_sub"] = "더 궁금한 점은 flux0720@fluxketch.com으로 보내 주세요."
 KO["faq"] = [
  ("플럭스케치(Fluxketch)는 어떤 앱인가요?", "플럭스케치는 현장용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, 펜슬로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
- ("무료로 쓸 수 있나요?", "도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·사진 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)입니다. 월간 요금제는 3일 무료 체험으로 시작합니다."),
+ ("무료로 쓸 수 있나요?", "Free는 도면 불러오기 3회까지 무료입니다. 작도·편집과 DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·사진 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)입니다. 월간 요금제는 3일 무료 체험으로 시작합니다."),
  ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 앞으로 나올 아이폰 버전도 함께 이용할 수 있습니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
  ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
  ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
@@ -98,7 +98,7 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Opening and viewing drawings is free forever. Drafting, editing and DXF export are Lite ($2.99/mo, $29.99/yr); markup, photo pins, notes and reports are Markup ($4.99/mo, $49.99/yr); everything is Pro ($7.99/mo, $79.99/yr). Monthly plans start with a 3-day free trial."),
+ ("Is it free?", "Free includes 3 drawing imports. Drafting, editing and DXF export are Lite ($2.99/mo, $29.99/yr); markup, photo pins, notes and reports are Markup ($4.99/mo, $49.99/yr); everything is Pro ($7.99/mo, $79.99/yr). Monthly plans start with a 3-day free trial."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus the upcoming iPhone version. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
@@ -132,7 +132,7 @@ def build(c, store_url):
         rows = "".join(
             (f'<li>{CHECK}<span class="sr">{_e(c["included"])}: </span>{_e(r)}</li>' if HAS[p["k"]][i]
              else f'<li class="off">{DASH}<span class="sr">{_e(c["not_included"])}: </span>{_e(r)}</li>')
-            for i, r in enumerate(c["rows"]))
+            for i, r in enumerate([p.get("row0", c["rows"][0])] + c["rows"][1:]))
         cta = (f'<a class="go m" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
                f'<a class="go y" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
         plans.append(f'      <div class="plan{" hi" if hi else ""}"><div class="top"><span class="nm">{_e(p["name"])}</span>{badge}</div>'

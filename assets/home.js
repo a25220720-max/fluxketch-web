@@ -19,4 +19,12 @@
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.open = false; }); });
     document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
   }
+
+  // 작동 영상: 화면에 들어오면 재생, 벗어나면 멈춤(데이터 절약 — preload none)
+  var v = document.querySelector('.vbox video');
+  if (v && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
+    }, { threshold: 0.35 }).observe(v);
+  }
 })();

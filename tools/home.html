@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/home.css?v=6">
+<link rel="stylesheet" href="/assets/home.css?v=7">
 <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body>
@@ -98,6 +98,18 @@
   </div>
 </section>
 
+<section class="blk" id="video">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">{{hm_v_eyebrow}}</span><h2>{{hm_v_h2}}</h2></div>
+      <p>{{hm_v_sub}}</p>
+    </div>
+    <div class="vbox">
+      <video src="/assets/video/preview-{{lang}}.mp4" poster="/assets/video/preview-{{lang}}.jpg" muted loop playsinline controls preload="none" width="1280" height="960" aria-label="{{hm_v_label}}"></video>
+    </div>
+  </div>
+</section>
+
 <section class="blk" id="pricing">
   <div class="wrap">
     <div class="head">
@@ -154,6 +166,6 @@
     <div class="row"><span>{{ft_fine}}</span><span class="mono">© 2026 Fluxketch</span></div>
   </div>
 </div></footer>
-<script src="/assets/home.js?v=1" defer></script>
+<script src="/assets/home.js?v=2" defer></script>
 </body>
 </html>
