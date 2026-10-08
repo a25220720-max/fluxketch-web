@@ -66,7 +66,7 @@ EN = dict(
  per_m="/ mo", per_y="/ yr", billed_y="billed {} yearly", alt_m="or {} billed monthly", included="Included", not_included="Not included",
  plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Import up to 3 drawings free.", row0="3 free drawing imports", cta_m="Get it free", cta_y="Get it free"),
         dict(k="lite", name="Lite", m="$2.99", y="$29.99", tag="Draw and edit like at the office.", cta_m="Start 3-day free trial", cta_y="Start Lite"),
-        dict(k="markup", name="Markup", badge="New", m="$5.99", y="$59.99", tag="Mark up and record on site.", cta_m="Start 3-day free trial", cta_y="Start Markup"),
+        dict(k="markup", name="Markup", badge="New", m="$4.99", y="$49.99", tag="Mark up and record on site.", cta_m="Start 3-day free trial", cta_y="Start Markup"),
         dict(k="pro", name="Pro", badge="Best value", hi=True, m="$7.99", y="$79.99", tag="Everything. iPhone support coming soon.", cta_m="Start 3-day free trial", cta_y="Start Pro")],
  hm_p_note="Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings › Apple Account › Subscriptions. Cancel a free trial at least 24 hours before it ends and you won't be charged.",
  hm_o_h="Rolling out to a whole office?", hm_o_p="If your team will use several tablets, email us. We'll help you set up and quote for your headcount and use.", hm_o_btn="Email us about teams",
@@ -98,7 +98,7 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Free includes 3 drawing imports. Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($5.00/mo billed yearly at $59.99, or $5.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). Monthly plans start with a 3-day free trial."),
+ ("Is it free?", "Free includes 3 drawing imports. Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). Monthly plans start with a 3-day free trial."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, with iPhone support coming soon. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
