@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/home.css?v=8">
+<link rel="stylesheet" href="/assets/home.css?v=9">
 <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body>
@@ -115,11 +115,11 @@
     <div class="head">
       <div><span class="eyebrow">{{hm_p_eyebrow}}</span><h2>{{hm_p_h2}}</h2><p>{{hm_p_sub}}</p></div>
       <div class="seg" role="group" aria-label="{{hm_cycle_label}}">
-        <button type="button" data-cycle="m" aria-pressed="true">{{hm_monthly}}</button>
-        <button type="button" data-cycle="y" aria-pressed="false">{{hm_yearly}} <small>{{hm_yearly_save}}</small></button>
+        <button type="button" data-cycle="y" aria-pressed="true">{{hm_yearly}} <small>{{hm_yearly_save}}</small></button>
+        <button type="button" data-cycle="m" aria-pressed="false">{{hm_monthly}}</button>
       </div>
     </div>
-    <div class="plans" id="plans-wrap" data-cycle="m">
+    <div class="plans" id="plans-wrap" data-cycle="y">
 {{hm_plans}}
     </div>
     <p class="swipe" aria-hidden="true">{{hm_swipe}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>

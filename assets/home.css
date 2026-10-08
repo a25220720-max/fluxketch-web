@@ -114,6 +114,10 @@ h2{margin:0;font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;letter-spacing:
 .plan .amt{display:flex;align-items:baseline;gap:4px}
 .plan .amt b{font-size:32px;font-weight:700;letter-spacing:-.03em}
 .plan .amt span{font-size:13px;color:var(--dim)}
+.plan .amt{flex-wrap:wrap;row-gap:2px}
+.plan .amt .yr{font-style:normal;font-size:13px;color:var(--mute)}
+.plan .amt .yr s{color:#7A808A}
+.plan .pr .alt{font-size:12px;color:var(--dim)}
 .plan .tg{margin:0;font-size:13px;line-height:1.55;color:var(--mute);min-height:40px;word-break:keep-all}
 .plan ul{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .plan li{display:flex;align-items:center;gap:10px;font-size:13px;line-height:1.4;color:var(--ink2)}

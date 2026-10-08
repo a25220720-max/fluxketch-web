@@ -31,7 +31,7 @@ KO = dict(
  hm_p_eyebrow="A-201 · 요금제", hm_p_h2="필요한 만큼만 고르세요.", hm_p_sub="월간 요금제는 <b>3일 무료 체험</b>으로 시작합니다.",
  hm_cycle_label="결제 주기", hm_monthly="월간", hm_yearly="연간", hm_yearly_save="2개월 무료",
  rows=["도면 열기·보기 (DWG·DXF·PDF)", "작도·편집 · CAD 도구 12종", "블록·배치 · DXF 내보내기", "축척 맞춘 플롯 PDF", "마크업·사진 핀·노트", "리포트 · 마크업 PDF 공유"],
- per_m="/ 월", per_y="/ 년", included="포함", not_included="미포함",
+ per_m="/ 월", per_y="/ 년", billed_y="연 {} 결제", alt_m="월간 결제 시 월 {}", included="포함", not_included="미포함",
  plans=[dict(k="free", name="Free", m="₩0", y="₩0", free=True, tag="도면 3개까지 무료로 불러와 볼 때.", row0="도면 불러오기 3회 무료", cta_m="무료로 받기", cta_y="무료로 받기"),
         dict(k="lite", name="Lite", m="₩4,900", y="₩49,000", tag="사무실처럼 그리고 고칠 때.", cta_m="3일 무료로 시작", cta_y="Lite 시작"),
         dict(k="markup", name="Markup", badge="신규", m="₩8,900", y="₩89,000", tag="현장에서 표시하고 기록할 때.", cta_m="3일 무료로 시작", cta_y="Markup 시작"),
@@ -63,10 +63,10 @@ EN = dict(
  hm_p_eyebrow="A-201 · Pricing", hm_p_h2="Pick only what you need.", hm_p_sub="Monthly plans start with a <b>3-day free trial</b>.",
  hm_cycle_label="Billing period", hm_monthly="Monthly", hm_yearly="Yearly", hm_yearly_save="2 months free",
  rows=["Open and view DWG, DXF, PDF", "Draft and edit · 12 CAD tools", "Blocks, layouts · DXF export", "Scale-true plot PDF", "Markup, photo pins, notes", "Reports · markup PDF sharing"],
- per_m="/ mo", per_y="/ yr", included="Included", not_included="Not included",
+ per_m="/ mo", per_y="/ yr", billed_y="billed {} yearly", alt_m="or {} billed monthly", included="Included", not_included="Not included",
  plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Import up to 3 drawings free.", row0="3 free drawing imports", cta_m="Get it free", cta_y="Get it free"),
         dict(k="lite", name="Lite", m="$2.99", y="$29.99", tag="Draw and edit like at the office.", cta_m="Start 3-day free trial", cta_y="Start Lite"),
-        dict(k="markup", name="Markup", badge="New", m="$4.99", y="$49.99", tag="Mark up and record on site.", cta_m="Start 3-day free trial", cta_y="Start Markup"),
+        dict(k="markup", name="Markup", badge="New", m="$5.99", y="$59.99", tag="Mark up and record on site.", cta_m="Start 3-day free trial", cta_y="Start Markup"),
         dict(k="pro", name="Pro", badge="Best value", hi=True, m="$7.99", y="$79.99", tag="Everything. Includes the upcoming iPhone version.", cta_m="Start 3-day free trial", cta_y="Start Pro")],
  hm_p_note="Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings › Apple Account › Subscriptions. Cancel a free trial at least 24 hours before it ends and you won't be charged.",
  hm_o_h="Rolling out to a whole office?", hm_o_p="If your team will use several tablets, email us. We'll help you set up and quote for your headcount and use.", hm_o_btn="Email us about teams",
@@ -83,7 +83,7 @@ KO["hm_q_h2"] = "자주 묻는 질문"
 KO["hm_q_sub"] = "더 궁금한 점은 flux0720@fluxketch.com으로 보내 주세요."
 KO["faq"] = [
  ("플럭스케치(Fluxketch)는 어떤 앱인가요?", "플럭스케치는 현장용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, 펜슬로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
- ("무료로 쓸 수 있나요?", "Free는 도면 불러오기 3회까지 무료입니다. 작도·편집과 DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·사진 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)입니다. 월간 요금제는 3일 무료 체험으로 시작합니다."),
+ ("무료로 쓸 수 있나요?", "Free는 도면 불러오기 3회까지 무료입니다. 작도·편집과 DXF 내보내기는 Lite(연간 결제 시 월 4,083원·연 49,000원, 월간 결제 시 월 4,900원), 마크업·사진 핀·노트·리포트는 Markup(연간 결제 시 월 7,417원·연 89,000원, 월간 결제 시 월 8,900원), 전부 다 쓰려면 Pro(연간 결제 시 월 10,750원·연 129,000원, 월간 결제 시 월 12,900원)입니다. 월간 요금제는 3일 무료 체험으로 시작합니다."),
  ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 앞으로 나올 아이폰 버전도 함께 이용할 수 있습니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
  ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
  ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
@@ -98,7 +98,7 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Free includes 3 drawing imports. Drafting, editing and DXF export are Lite ($2.99/mo, $29.99/yr); markup, photo pins, notes and reports are Markup ($4.99/mo, $49.99/yr); everything is Pro ($7.99/mo, $79.99/yr). Monthly plans start with a 3-day free trial."),
+ ("Is it free?", "Free includes 3 drawing imports. Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($5.00/mo billed yearly at $59.99, or $5.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). Monthly plans start with a 3-day free trial."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus the upcoming iPhone version. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
@@ -110,6 +110,14 @@ EN["faq"] = [
 ]
 
 def _e(s): return html.escape(s)
+
+def per_month(yearly):
+    """연 금액 문자열(₩49,000 / $29.99) → 월 환산(÷12). 원화 = 정수, 달러 = 소수 둘째 자리(사사오입)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    sym, num = yearly[0], Decimal(yearly[1:].replace(",", ""))
+    if sym == "₩":
+        return f"₩{int((num / 12).quantize(Decimal('1'), ROUND_HALF_UP)):,}"
+    return f"{sym}{(num / 12).quantize(Decimal('0.01'), ROUND_HALF_UP):,}"
 
 def build(c, store_url):
     """홈 사전 c → 템플릿 키 dict."""
@@ -126,6 +134,12 @@ def build(c, store_url):
         badge = f'<span class="badge">{_e(p["badge"])}</span>' if p.get("badge") else ""
         def amt(cyc):
             was = p.get("was_" + cyc)
+            if cyc == "y" and not p.get("free"):
+                # 연간 = 기본 표시: 크게 = 연 금액 ÷ 12(월 환산), 옆에 작게 = 연 합산, 아래 = 월간 결제 금액
+                billed = (f'<s>{_e(was)}</s> ' if was else "") + _e(p["y"])
+                return (f'<div class="pr y"><div class="amt"><b>{_e(per_month(p["y"]))}</b><span>{_e(c["per_m"])}</span>'
+                        f'<em class="yr">{c["billed_y"].format(billed)}</em></div>'
+                        f'<span class="alt">{_e(c["alt_m"].format(p["m"]))}</span></div>')
             per = "" if p.get("free") else f'<span>{_e(c["per_" + cyc])}</span>'
             return (f'<div class="pr {cyc}">' + (f'<span class="was">{_e(was)}</span>' if was else "")
                     + f'<div class="amt"><b>{_e(p[cyc])}</b>{per}</div></div>')
