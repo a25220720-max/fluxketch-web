@@ -57,30 +57,30 @@ KO = dict(
  cs1_k="주택 · 5개 층", cs1_t="전기·설비 4개 시트를 한 파일에", cs1_p="시트마다 다른 색 규칙(레이어 색·자기 색)이 그대로 살아 있습니다.",
  cs2_k="상업 건물 · 단면·입면", cs2_t="단면 5장과 지붕 평면", cs2_p="해치·치수·문자까지 벡터로, 확대해도 선이 살아 있습니다.",
  cs3_k="구조 · 배근 상세", cs3_t="배근 상세 수백 개", cs3_p="작은 상세가 빽빽한 도면도 타일로 즉시 선명하게.",
- pr_eyebrow="요금제", pr_h2="현장 한 번 값으로 한 달을 씁니다.", pr_sub="App Store 구독입니다. 언제든 해지할 수 있고, 월간 요금제는 7일 무료 체험으로 시작합니다.",
+ pr_eyebrow="요금제", pr_h2="현장 한 번 값으로 한 달을 씁니다.", pr_sub="App Store 구독입니다. 언제든 해지할 수 있습니다.",
  pr_promo_banner="출시 기념 프로모션 — <b>Lite는 10월 14일 정식 출시까지 무료</b>, 연간 요금제는 <b>2개월분 무료</b>(12개월을 10개월 값으로).",
  pr_free_name="Free", pr_free_price="₩0", pr_free_per="계속 무료", pr_free_1="도면 열기·보기(DWG·DXF·PDF)", pr_free_2="레이어 켜고 끄기", pr_free_3="10월 14일까지 Lite 기능 무료",
  pr_lite_name="Lite", pr_lite_price="월 ₩4,900", pr_lite_per="연 ₩49,000 (2개월분 무료)", pr_lite_promo="10월 14일 정식 출시까지 무료",
  pr_lite_1="작도·편집 — CAD 도구 12종·스냅·치수", pr_lite_2="플롯(PDF 출력)·실척 자", pr_lite_3="DXF 내보내기",
  pr_pro_name="Pro", pr_pro_price="월 ₩12,900", pr_pro_per="연 ₩129,000 (2개월분 무료)", pr_pro_promo="출시 기념 프로모션 가격",
  pr_tag="가장 많이 고르는 요금제", pr_pro_1="Lite의 모든 기능 + <b>마크업</b>", pr_pro_2="현장 핀·노트·리포트 7종 문서", pr_pro_3="시트 발행·PDF 언더레이",
- pr_trial="월간 요금제 7일 무료 체험",
+ pr_trial="",
  pr_btn_beta="App Store에서 받기", pr_note="가격은 대한민국 App Store 기준(부가세 포함)이며 국가별로 다를 수 있습니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되고, 해지는 iPhone·iPad 설정 &gt; Apple 계정 &gt; 구독에서 언제든 할 수 있습니다.",
- cta_h2="다음 현장부터 Fluxketch로.", cta_sub="App Store에서 받아 바로 쓰실 수 있습니다. 월간 요금제는 7일 무료 체험, Lite는 10월 14일까지 무료입니다.", cta_mail="이메일로 문의", cta_insta="인스타그램 @fluxketch_official",
+ cta_h2="다음 현장부터 Fluxketch로.", cta_sub="App Store에서 받아 바로 쓰실 수 있습니다.", cta_mail="이메일로 문의", cta_insta="인스타그램 @fluxketch_official",
  faq_h2="자주 묻는 질문",
  faq=[("플럭스케치(Fluxketch)는 어떤 앱인가요?","플럭스케치는 아이패드용 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
       ("아이패드에서 캐드 작업이 정말 되나요?","됩니다. 아이패드 캐드로서 12개 작도·편집 도구와 끝점·직교 스냅, 수치 키패드를 갖추고, 18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 자세한 내용은 아이패드 캐드 소개 페이지에 있습니다."),
       ("어디서 받나요?","App Store에서 '플럭스케치' 또는 'Fluxketch'로 검색하시거나 위의 'App Store에서 받기'를 누르시면 됩니다. iPad 전용입니다."),
-      ("무료로 쓸 수 있나요?","도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 플롯 PDF·DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·현장 핀·노트·리포트까지는 Pro(월 12,900원·연 129,000원)입니다. 지금은 출시 기념으로 Lite를 10월 14일까지 무료로 드리고, 월간 요금제는 7일 무료 체험으로 시작합니다."),
+      ("무료로 쓸 수 있나요?","도면을 열고 보는 것은 Free로 계속 무료입니다. 작도·편집과 플롯 PDF·DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·현장 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)입니다."),
       ("어떤 파일을 열 수 있나요?","DXF와 DWG(서버 변환), PDF(언더레이)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
       ("인터넷 없이도 되나요?","DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
       ("3D 모델링이나 AI 기능이 있나요?","없습니다. Fluxketch는 2D 도면을 현장에서 열고, 그리고, 표시하고, 꺼내는 데 집중합니다."),
       ("어떤 기기가 필요한가요?","iPad와 Apple Pencil입니다. 큰 도면은 M 시리즈 iPad에서 가장 쾌적하지만, iPad 9세대·A16 기종에서도 검증했습니다."),
       ("마크업은 도면과 함께 저장되나요?","네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, DXF 내보내기도 됩니다."),
-      ("구독은 어떻게 해지하나요?","iPhone·iPad의 설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있고, 무료 체험은 끝나기 24시간 전에 해지하면 요금이 청구되지 않습니다."),
+      ("구독은 어떻게 해지하나요?","iPhone·iPad의 설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있습니다."),
       ("문제가 있으면 어디로 알리나요?","앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다.")],
  ft_biz="플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호 · 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 010-7179-0722 · flux0720@fluxketch.com",
- ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
+ ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_terms_href="/terms", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
 )
 EN = dict(KO)
 EN.update(
@@ -121,28 +121,28 @@ EN.update(
  cs1_k="House · 5 floors", cs1_t="Four MEP sheets in one file", cs1_p="Each sheet's color rules — by-layer and explicit — survive intact.",
  cs2_k="Commercial · sections & elevations", cs2_t="Five sections and a roof plan", cs2_p="Hatches, dimensions and text stay vector — lines hold at any zoom.",
  cs3_k="Structural · rebar details", cs3_t="Hundreds of rebar details", cs3_p="Dense sheets of small details turn sharp instantly through tiles.",
- pr_eyebrow="Pricing", pr_h2="Less than one site visit, for a month of work.", pr_sub="An App Store subscription. Cancel anytime, and monthly plans start with a 7-day free trial.",
+ pr_eyebrow="Pricing", pr_h2="Less than one site visit, for a month of work.", pr_sub="An App Store subscription. Cancel anytime.",
  pr_promo_banner="Launch promotion — <b>Lite is free until the October 14 full release</b>, and annual plans give you <b>up to 2 months free</b>.",
  pr_free_name="Free", pr_free_price="$0", pr_free_per="free forever", pr_free_1="Open and view DWG, DXF and PDF", pr_free_2="Toggle layers", pr_free_3="Lite features free until October 14",
  pr_lite_name="Lite", pr_lite_price="$2.99 / mo", pr_lite_per="$29.99 / yr (up to 2 months free)", pr_lite_promo="Free until the October 14 release",
  pr_lite_1="Drafting and editing — 12 CAD tools, snaps, dimensions", pr_lite_2="Plot (PDF output) and the true-scale ruler", pr_lite_3="DXF export",
  pr_pro_name="Pro", pr_pro_price="$7.99 / mo", pr_pro_per="$79.99 / yr (up to 2 months free)", pr_pro_promo="Launch promotion price",
  pr_tag="Most popular", pr_pro_1="Everything in Lite + <b>markup</b>", pr_pro_2="Field pins, notes and 7 report types", pr_pro_3="Sheet issue and PDF underlay",
- pr_trial="7-day free trial on monthly plans",
+ pr_trial="",
  pr_btn_beta="Download on the App Store", pr_note="Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings &gt; Apple Account &gt; Subscriptions.",
- cta_h2="Take Fluxketch to your next site.", cta_sub="Download it from the App Store and start today. Monthly plans include a 7-day free trial, and Lite is free until October 14.", cta_mail="Email us", cta_insta="Instagram @fluxketch_official",
+ cta_h2="Take Fluxketch to your next site.", cta_sub="Download it from the App Store and start today.", cta_mail="Email us", cta_insta="Instagram @fluxketch_official",
  faq_h2="Frequently asked questions",
  faq=[("Where do I get it?","Search the App Store for \"Fluxketch\" or use the Download button above. It is an iPad app."),
-      ("Is it free?","Opening and viewing drawings is free forever. Drafting, editing, plot PDF and DXF export are Lite ($2.99/mo, $29.99/yr); markup, field pins, notes and reports are Pro ($7.99/mo, $79.99/yr). Right now Lite is free until the October 14 full release, and monthly plans start with a 7-day free trial."),
+      ("Is it free?","Opening and viewing drawings is free forever. Drafting, editing, plot PDF and DXF export are Lite ($2.99/mo, $29.99/yr); markup, field pins, notes and reports are Markup ($4.99/mo, $49.99/yr); everything is Pro ($7.99/mo, $79.99/yr)."),
       ("Which files can it open?","DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
       ("Does it work offline?","DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
       ("Is there 3D or AI?","No. Fluxketch focuses on opening, drawing, marking up and exporting 2D drawings on site."),
       ("What hardware do I need?","An iPad and an Apple Pencil. Large drawings are most comfortable on M-series iPads, and we also verify on iPad 9th gen and A16 models."),
       ("Are markups saved with the drawing?","Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and DXF export is available."),
-      ("How do I cancel?","In Settings > Apple Account > Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends, and cancelling a free trial at least 24 hours before it ends means no charge."),
+      ("How do I cancel?","In Settings > Apple Account > Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends."),
       ("Where do I report a problem?","Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too.")],
  ft_biz="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
- ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
+ ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_terms_href="/en/terms", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
 )
 
 import json, re
@@ -314,7 +314,7 @@ def sitemap():
     pairs += [(path_for("ko", p["slug"]), path_for("en", p["slug"]), [p["img"], p["img2"]]) for p in PAGES]
     pairs += [(path_for("ko", g["slug"], True), path_for("en", g["slug"], True), [g["img"]]) for g in GUIDES if "ko" in g and "en" in g]
     solos = [(path_for(l, g["slug"], True), l, g.get("date", DATE), [g["img"]]) for g in GUIDES for l in ("ko", "en") if l in g and not ("ko" in g and "en" in g)]
-    legal = ["/privacy", "/terms", "/licenses"]
+    legal = ["/privacy", "/terms", "/en/terms", "/licenses"]
     out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
     for ko, en, imgs in pairs:
         for u, alt in ((ko, en), (en, ko)):
