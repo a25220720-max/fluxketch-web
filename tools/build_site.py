@@ -80,7 +80,7 @@ KO = dict(
       ("구독은 어떻게 해지하나요?","iPhone·iPad의 설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있습니다."),
       ("문제가 있으면 어디로 알리나요?","앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다.")],
  ft_biz="플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호 · 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 010-7179-0722 · flux0720@fluxketch.com",
- ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_terms_href="/terms", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
+ ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_terms_href="/terms", ft_privacy_href="/privacy", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
 )
 EN = dict(KO)
 EN.update(
@@ -142,7 +142,7 @@ EN.update(
       ("How do I cancel?","In Settings > Apple Account > Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends."),
       ("Where do I report a problem?","Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too.")],
  ft_biz="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
- ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_terms_href="/en/terms", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
+ ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_terms_href="/en/terms", ft_privacy_href="/en/privacy", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
 )
 
 import json, re
@@ -314,7 +314,7 @@ def sitemap():
     pairs += [(path_for("ko", p["slug"]), path_for("en", p["slug"]), [p["img"], p["img2"]]) for p in PAGES]
     pairs += [(path_for("ko", g["slug"], True), path_for("en", g["slug"], True), [g["img"]]) for g in GUIDES if "ko" in g and "en" in g]
     solos = [(path_for(l, g["slug"], True), l, g.get("date", DATE), [g["img"]]) for g in GUIDES for l in ("ko", "en") if l in g and not ("ko" in g and "en" in g)]
-    legal = ["/privacy", "/terms", "/en/terms", "/licenses"]
+    legal = ["/privacy", "/en/privacy", "/terms", "/en/terms", "/licenses"]
     out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
     for ko, en, imgs in pairs:
         for u, alt in ((ko, en), (en, ko)):
