@@ -102,7 +102,12 @@ h2{margin:0;font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;letter-spacing:
 .seg button{min-height:40px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--sub);font:inherit;font-size:14px;font-weight:500;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:600}
 .seg small{font-size:12px;opacity:.8}
-.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.plans{display:flex;flex-direction:column;gap:44px}
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pgrid.ph{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pgh{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:0 0 14px}
+.pgh h3{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em}
+.pgh p{margin:0;font-size:14px;color:var(--mute);word-break:keep-all}
 .plan{position:relative;display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:16px;background:var(--s1);border:1px solid rgba(255,255,255,.09);transition:border-color .2s ease}
 .plan:hover{border-color:rgba(47,181,106,.55)}
 .plan.hi{background:var(--s1-hi);border-color:rgba(47,181,106,.6)}
@@ -173,7 +178,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
 
 /* 패드 가로(≤1180): 요금제 2×2 */
 @media (max-width:1180px){
-  .plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pgrid,.pgrid.ph{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 /* 패드 세로(≤1024) */
 @media (max-width:1024px){
@@ -210,9 +215,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:64px 0 40px}
   .ctas .btn{width:100%}
   .proof dd{font-size:24px}
   /* 폰: 기능·요금제는 옆으로 넘기는 카드(다음 카드가 살짝 보임) — 세로 길이 절반 이하 */
-  .feat,.plans{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--pad));padding:0 var(--pad) 8px;scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .feat::-webkit-scrollbar,.plans::-webkit-scrollbar{display:none}
-  .feat>.card,.plans>.plan{flex:0 0 84%;scroll-snap-align:start}
+  .feat,.pgrid,.pgrid.ph{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--pad));padding:0 var(--pad) 8px;scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .feat::-webkit-scrollbar,.pgrid::-webkit-scrollbar{display:none}
+  .feat>.card,.pgrid>.plan{flex:0 0 84%;scroll-snap-align:start}
   .swipe{display:flex}
   .newline{flex-direction:column;align-items:flex-start;gap:8px}
   .newline .sep{display:none}

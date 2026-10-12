@@ -9,7 +9,9 @@ def mailto(subject, body=""):
     return u + (f"&amp;body={quote(body)}" if body else "")
 
 # 요금제별 기능 — 순서 = ROWS 순서. 1 = 포함
-HAS = {"free": [1, 0, 0, 0, 0, 0], "lite": [1, 1, 1, 1, 0, 0], "markup": [1, 0, 0, 1, 1, 1], "pro": [1, 1, 1, 1, 1, 1]}
+HAS = {"free": [1, 0, 0, 0, 0, 0], "lite": [1, 1, 1, 1, 0, 0], "markup": [1, 0, 0, 1, 1, 1], "pro": [1, 1, 1, 1, 1, 1],
+       # 10/12 아이폰 줄: 무료(30일 5번 동안 전기능 → 그 뒤 보기만) · 아이폰 플랜 · 패드 Pro(아이폰 포함)
+       "phonefree": [1, 0, 0, 0, 0, 0], "iphone": [1, 1, 1, 1, 1, 1], "padpro": [1, 1, 1, 1, 1, 1]}
 
 CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 DASH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg>'
@@ -18,7 +20,7 @@ KO = dict(
  brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="실제 화면 그대로.", hm_v_sub="작도부터 수치 입력, 마크업까지 — 앱에서 바로 녹화한 화면입니다.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
  notice='<div class="notice" data-until="2026-11-12T00:00:00+09:00"><b>1.2.0 출시</b> · 이제 아이폰에서도 플럭스케치 — 패드 Pro 구독이면 아이폰은 추가 요금 없이</div>',
  hm_chip="현장용 모바일 캐드 · 1.2.0", hm_dim="100% 자체 개발 CAD 엔진",
- hm_h1="현장 도면,<br><em>패드 하나로</em> 끝.",
+ hm_h1="현장 도면,<br><em>모바일 하나로</em> 끝.",
  hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 보냅니다.",
  hm_cta2="요금제 보기",
  proof=[("700명+", "베타 테스터"), ("1,000명+", "앱스토어 이용자"), ("30곳+", "건축·인테리어 사무소"), ("140만", "개체 도면까지 열림")],
@@ -36,6 +38,11 @@ KO = dict(
         dict(k="lite", name="Lite", m="₩4,900", y="₩49,000", tag="사무실처럼 그리고 고칠 때.", cta_m="Lite 시작", cta_y="Lite 시작"),
         dict(k="markup", name="Markup", badge="신규", m="₩8,900", y="₩89,000", tag="현장에서 표시하고 기록할 때.", cta_m="Markup 시작", cta_y="Markup 시작"),
         dict(k="pro", name="Pro", badge="할인 중", hi=True, m="₩12,900", y="₩129,000", was_m="₩16,900", was_y="₩169,000", tag="전부 다. 아이폰에서도 추가 요금 없이.", cta_m="Pro 시작", cta_y="Pro 시작")],
+ pg_phone_h="아이폰", pg_phone_sub="현장에서 손가락으로 — 보기·치수·핀·마크업·플롯", pg_pad_h="아이패드", pg_pad_sub="작도·편집까지 — 애플 펜슬로 사무실처럼",
+ phone_rows=["도면 열기·보기 · 레이어", "치수 재기 · 선 그리기", "핀 만들기 · 사진", "마크업 (손가락으로)", "플롯 PDF · DXF 내보내기", "노트 · 리포트 · iCloud 올리기"],
+ phone_plans=[dict(k="phonefree", name="Free", m="₩0", y="₩0", free=True, tag="30일 동안 도면 5개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 30일에 5번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
+        dict(k="iphone", name="아이폰 플랜", badge="아이폰", hi=True, m="₩3,900", y="₩39,000", tag="아이폰에서 쓰는 유료 기능 전부.", cta_m="아이폰 플랜 시작", cta_y="아이폰 플랜 시작"),
+        dict(k="padpro", name="패드 Pro", badge="아이폰 포함", m="₩12,900", y="₩129,000", tag="패드 Pro를 구독 중이면 같은 Apple 계정의 아이폰은 추가 요금 없이 전부.", cta_m="Pro 시작", cta_y="Pro 시작")],
  hm_p_note="가격은 대한민국 App Store 기준(부가세 포함)입니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되며, 설정 › Apple 계정 › 구독에서 언제든 해지할 수 있습니다.",
  hm_o_h="사무소·팀 단위로 도입하시나요?", hm_o_p="여러 대를 함께 쓰실 사무소는 메일로 알려 주세요. 인원과 쓰임에 맞춰 도입 상담과 견적을 드립니다.", hm_o_btn="도입 문의 메일 보내기",
  o_subject="[사무소 도입 문의] ", o_body="사무소명:\n담당자·연락처:\n사용 인원(태블릿 대수):\n관심 플랜(Lite / Markup / Pro):\n문의 내용:\n",
@@ -50,7 +57,7 @@ EN = dict(
  brand_sub="", og_desc="Open, fix, mark up, send. Right on site.", hm_v_eyebrow="A-102 · In action", hm_v_h2="The real app, as it is.", hm_v_sub="Drafting, numeric input and markup — recorded straight from the app.", hm_v_label="Fluxketch in action", hm_swipe="Swipe for more", hm_nav_office="For teams",
  notice="",
  hm_chip="Field CAD · 1.2.0", hm_dim="Our own CAD engine, built from scratch",
- hm_h1="Site drawings,<br><em>done on one tablet.</em>",
+ hm_h1="Site drawings,<br><em>done on mobile.</em>",
  hm_lead="Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and send scale-true PDF and DXF.",
  hm_cta2="See pricing",
  proof=[("700+", "beta testers"), ("1,000+", "App Store users"), ("30+", "architecture & interior offices"), ("1.4M", "entities in one drawing")],
@@ -68,6 +75,11 @@ EN = dict(
         dict(k="lite", name="Lite", m="$2.99", y="$29.99", tag="Draw and edit like at the office.", cta_m="Start Lite", cta_y="Start Lite"),
         dict(k="markup", name="Markup", badge="New", m="$4.99", y="$49.99", tag="Mark up and record on site.", cta_m="Start Markup", cta_y="Start Markup"),
         dict(k="pro", name="Pro", badge="Best value", hi=True, m="$7.99", y="$79.99", tag="Everything. iPhone included at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
+ pg_phone_h="iPhone", pg_phone_sub="On site with your finger — view, measure, pin, mark up, plot", pg_pad_h="iPad", pg_pad_sub="Drafting and editing too — with Apple Pencil, like at the office",
+ phone_rows=["Open and view drawings · layers", "Measure · draw lines", "Create pins · photos", "Markup (with your finger)", "Plot PDF · DXF export", "Notes · reports · iCloud upload"],
+ phone_plans=[dict(k="phonefree", name="Free", m="$0", y="$0", free=True, tag="Try every feature with 5 imports in 30 days.", row0="5 DWG/DXF imports in 30 days · every feature", cta_m="Get it free", cta_y="Get it free"),
+        dict(k="iphone", name="iPhone plan", badge="iPhone", hi=True, m="$1.99", y="$22.99", tag="Every paid feature on iPhone.", cta_m="Start iPhone plan", cta_y="Start iPhone plan"),
+        dict(k="padpro", name="iPad Pro plan", badge="iPhone included", m="$7.99", y="$79.99", tag="With Pro on your iPad, every feature on iPhone with the same Apple Account at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
  hm_p_note="Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings › Apple Account › Subscriptions.",
  hm_o_h="Rolling out to a whole office?", hm_o_p="If your team will use several tablets, email us. We'll help you set up and quote for your headcount and use.", hm_o_btn="Email us about teams",
  o_subject="[Team inquiry] ", o_body="Company:\nContact name & phone:\nNumber of users (tablets):\nPlan of interest (Lite / Markup / Pro):\nQuestion:\n",
@@ -75,7 +87,7 @@ EN = dict(
  hm_end_h="Take Fluxketch to your next site.", hm_end_p="Download it from the App Store and start today.",
  hm_biz1="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411",
  hm_biz2="5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
- ft_tag_home="Field CAD for tablets.<br>Finish it on site.",
+ ft_tag_home="Field CAD for tablets and phones.<br>Finish it on site.",
 )
 
 KO["hm_q_eyebrow"] = "A-301 · 질문"
@@ -97,7 +109,7 @@ EN["hm_q_eyebrow"] = "A-301 · FAQ"
 EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
- ("What is Fluxketch?", "Fluxketch is field CAD for tablets. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
+ ("What is Fluxketch?", "Fluxketch is field CAD for tablets and phones. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
  ("Is it free?", "Every feature is free for your first 5 DWG/DXF imports within 30 days (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus every feature on iPhone with the same Apple Account at no extra cost. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
@@ -128,30 +140,37 @@ def build(c, store_url):
         f'<div class="tx"><span class="n">{_e(n)}</span><h3>{_e(t)}</h3><p>{_e(b)}</p></div></article>'
         for n, t, b, img, alt in c["cards"])
     d["hm_new"] = '<span class="sep" aria-hidden="true">·</span>'.join(f"<span>{_e(x)}</span>" for x in c["news"])
-    plans = []
-    for p in c["plans"]:
-        hi = p.get("hi")
-        badge = f'<span class="badge">{_e(p["badge"])}</span>' if p.get("badge") else ""
-        def amt(cyc):
-            was = p.get("was_" + cyc)
-            if cyc == "y" and not p.get("free"):
-                # 연간 = 기본 표시: 크게 = 연 금액 ÷ 12(월 환산), 옆에 작게 = 연 합산, 아래 = 월간 결제 금액
-                billed = (f'<s>{_e(was)}</s> ' if was else "") + _e(p["y"])
-                return (f'<div class="pr y"><div class="amt"><b>{_e(per_month(p["y"]))}</b><span>{_e(c["per_m"])}</span>'
-                        f'<em class="yr">{c["billed_y"].format(billed)}</em></div>'
-                        f'<span class="alt">{_e(c["alt_m"].format(p["m"]))}</span></div>')
-            per = "" if p.get("free") else f'<span>{_e(c["per_" + cyc])}</span>'
-            return (f'<div class="pr {cyc}">' + (f'<span class="was">{_e(was)}</span>' if was else "")
-                    + f'<div class="amt"><b>{_e(p[cyc])}</b>{per}</div></div>')
-        rows = "".join(
-            (f'<li>{CHECK}<span class="sr">{_e(c["included"])}: </span>{_e(r)}</li>' if HAS[p["k"]][i]
-             else f'<li class="off">{DASH}<span class="sr">{_e(c["not_included"])}: </span>{_e(r)}</li>')
-            for i, r in enumerate([p.get("row0", c["rows"][0])] + c["rows"][1:]))
-        cta = (f'<a class="go m" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
-               f'<a class="go y" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
-        plans.append(f'      <div class="plan{" hi" if hi else ""}"><div class="top"><span class="nm">{_e(p["name"])}</span>{badge}</div>'
-                     f'{amt("m")}{amt("y")}<p class="tg">{_e(p["tag"])}</p><ul>{rows}</ul>{cta}</div>')
-    d["hm_plans"] = "\n".join(plans)
+    def render(plist, rows_all):
+        out = []
+        for p in plist:
+            hi = p.get("hi")
+            badge = f'<span class="badge">{_e(p["badge"])}</span>' if p.get("badge") else ""
+            def amt(cyc):
+                was = p.get("was_" + cyc)
+                if cyc == "y" and not p.get("free"):
+                    # 연간 = 기본 표시: 크게 = 연 금액 ÷ 12(월 환산), 옆에 작게 = 연 합산, 아래 = 월간 결제 금액
+                    billed = (f'<s>{_e(was)}</s> ' if was else "") + _e(p["y"])
+                    return (f'<div class="pr y"><div class="amt"><b>{_e(per_month(p["y"]))}</b><span>{_e(c["per_m"])}</span>'
+                            f'<em class="yr">{c["billed_y"].format(billed)}</em></div>'
+                            f'<span class="alt">{_e(c["alt_m"].format(p["m"]))}</span></div>')
+                per = "" if p.get("free") else f'<span>{_e(c["per_" + cyc])}</span>'
+                return (f'<div class="pr {cyc}">' + (f'<span class="was">{_e(was)}</span>' if was else "")
+                        + f'<div class="amt"><b>{_e(p[cyc])}</b>{per}</div></div>')
+            rows = "".join(
+                (f'<li>{CHECK}<span class="sr">{_e(c["included"])}: </span>{_e(r)}</li>' if HAS[p["k"]][i]
+                 else f'<li class="off">{DASH}<span class="sr">{_e(c["not_included"])}: </span>{_e(r)}</li>')
+                for i, r in enumerate([p.get("row0", rows_all[0])] + rows_all[1:]))
+            cta = (f'<a class="go m" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
+                   f'<a class="go y" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
+            out.append(f'        <div class="plan{" hi" if hi else ""}"><div class="top"><span class="nm">{_e(p["name"])}</span>{badge}</div>'
+                       f'{amt("m")}{amt("y")}<p class="tg">{_e(p["tag"])}</p><ul>{rows}</ul>{cta}</div>')
+        return "\n".join(out)
+    # ★[10/12 오너 "위쪽은 아이폰 아래쪽은 아이패드"] 요금제 = 두 줄(아이폰 3칸 → 아이패드 4칸), 월간/연간 전환은 함께.
+    def group(h, sub, cls, inner):
+        return (f'      <div class="pgroup"><div class="pgh"><h3>{_e(h)}</h3><p>{_e(sub)}</p></div>\n'
+                f'      <div class="pgrid{cls}">\n{inner}\n      </div></div>')
+    d["hm_plans"] = (group(c["pg_phone_h"], c["pg_phone_sub"], " ph", render(c["phone_plans"], c["phone_rows"])) + "\n"
+                     + group(c["pg_pad_h"], c["pg_pad_sub"], "", render(c["plans"], c["rows"])))
     d["hm_o_mail"] = mailto(c["o_subject"], c["o_body"])
     d["hm_mail"] = mailto(c["mail_subject"])
     d["ft_tag"] = c["ft_tag_home"]

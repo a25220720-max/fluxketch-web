@@ -21,11 +21,11 @@ TABS = [  # (file, title-key)
 ]
 KO = dict(
  lang="ko", path="/", home="/", alt_href="/en/", alt_lang="en", alt_label="EN", alt_full="English",
- title="아이패드 캐드 앱 플럭스케치 | 아이패드에서 DWG·DXF 도면 보고 고치기", desc="아이패드 캐드 앱 플럭스케치(Fluxketch). 아이패드에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.",
- og_desc="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 iPad 위에서.",
+ title="모바일 캐드 앱 플럭스케치 | 아이패드·아이폰에서 DWG·DXF 도면 보고 고치기", desc="모바일 캐드 앱 플럭스케치(Fluxketch). 아이패드와 아이폰에서 DWG·DXF 도면을 열어 보고 고치고, 애플 펜슬로 마크업하고, 도면 위 핀에 사진·메모를 남겨 리포트 PDF로 내보내고, 실제 축척으로 출력합니다.",
+ og_desc="도면을 열고, 그리고, 표시하고, 꺼낸다. 전부 모바일에서.",
  og_locale="ko_KR", nav_guides="가이드", p_answers_btn="궁금한 것 보기", qa_eyebrow="질문과 답", steps_eyebrow="순서", rel_h2="함께 보기", crumbs_label="경로", crumb_home="홈", g_h1="현장에서 CAD를 쓰는 사람을 위한 가이드", g_lead="DWG·DXF·축척·마크업처럼 현장에서 매일 부딪히는 것을 정보 위주로 씁니다. 대부분은 어떤 앱을 쓰든 그대로 적용됩니다.", read_min="읽는 시간 약 %d분", updated="업데이트", guide_k="가이드", nav_label="주 메뉴", nav_features="기능", nav_field="현장 기록", nav_perf="성능", nav_drawings="실제 도면", nav_pricing="요금제", nav_faq="자주 묻는 질문",
  cta_short="App Store", cta_primary="App Store에서 받기", cta_secondary="기능 둘러보기", menu_open="메뉴 열기",
- h1="도면에서 현장까지,<br>iPad 하나로.", h1_sub="플럭스케치(Fluxketch)는 현장 사람을 위한 아이패드용 캐드(CAD) 앱입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.",
+ h1="도면에서 현장까지,<br>모바일 하나로.", h1_sub="플럭스케치(Fluxketch)는 현장 사람을 위한 아이패드·아이폰용 모바일 캐드(CAD) 앱입니다. DXF·DWG·PDF를 그대로 열어 Apple Pencil로 작도하고, 마크업과 사진 핀을 도면 좌표에 붙이고, 축척 맞춘 PDF와 DXF로 꺼냅니다.",
  platform="iPad · Apple Pencil · App Store 출시", hero_alt="Fluxketch 도면 보기 — 호텔 지하 1층 주차장 평면도, 왼쪽 도구 팔레트, 오른쪽 스냅 레일",
  dim_top="181,422 도형 · 60 Hz", dim_side="CAD 도구 12종",
  v_h2="CAD의 힘. 번거로움은 빼고.", v_sub="사무실 CAD의 도면을 그대로 들고 나가고, 현장에서 손댄 것이 그대로 사무실로 돌아옵니다. 파일 형식을 바꾸거나 다시 그릴 일이 없습니다.",
@@ -68,7 +68,7 @@ KO = dict(
  pr_btn_beta="App Store에서 받기", pr_note="가격은 대한민국 App Store 기준(부가세 포함)이며 국가별로 다를 수 있습니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되고, 해지는 iPhone·iPad 설정 &gt; Apple 계정 &gt; 구독에서 언제든 할 수 있습니다.",
  cta_h2="다음 현장부터 Fluxketch로.", cta_sub="App Store에서 받아 바로 쓰실 수 있습니다.", cta_mail="이메일로 문의", cta_insta="인스타그램 @fluxketch_official",
  faq_h2="자주 묻는 질문",
- faq=[("플럭스케치(Fluxketch)는 어떤 앱인가요?","플럭스케치는 아이패드용 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
+ faq=[("플럭스케치(Fluxketch)는 어떤 앱인가요?","플럭스케치는 아이패드·아이폰용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 모바일에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, Apple Pencil로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
       ("아이패드에서 캐드 작업이 정말 되나요?","됩니다. 아이패드 캐드로서 12개 작도·편집 도구와 끝점·직교 스냅, 수치 키패드를 갖추고, 18만 도형 도면에서도 팬·줌이 60Hz로 따라옵니다. 자세한 내용은 아이패드 캐드 소개 페이지에 있습니다."),
       ("어디서 받나요?","App Store에서 '플럭스케치' 또는 'Fluxketch'로 검색하시거나 위의 'App Store에서 받기'를 누르시면 됩니다. iPad와 iPhone에서 씁니다."),
       ("무료로 쓸 수 있나요?","처음 DWG·DXF를 가져온 날부터 30일 동안 5번까지 모든 기능이 무료입니다. 그 뒤 작도·편집과 플롯 PDF·DXF 내보내기는 Lite(월 4,900원·연 49,000원), 마크업·현장 핀·노트·리포트는 Markup(월 8,900원·연 89,000원), 전부 다 쓰려면 Pro(월 12,900원·연 129,000원)이고, Pro면 아이폰에서도 모든 기능을 씁니다. 아이폰만 쓰신다면 아이폰 플랜(월 3,900원·연 39,000원)이 있습니다."),
@@ -80,16 +80,16 @@ KO = dict(
       ("구독은 어떻게 해지하나요?","iPhone·iPad의 설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있습니다."),
       ("문제가 있으면 어디로 알리나요?","앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다.")],
  ft_biz="플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호 · 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 010-7179-0722 · flux0720@fluxketch.com",
- ft_tag="플럭스케치 — 아이패드용 캐드(iPad CAD). 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_terms_href="/terms", ft_privacy_href="/privacy", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
+ ft_tag="플럭스케치 — 아이패드·아이폰용 모바일 캐드. 현장에서 끝냅니다.", ft_product="제품", ft_use="쓰임", ft_use1="현장 기록", ft_use2="실제 도면", ft_use3="대형 도면", ft_company="회사", ft_contact="문의 flux0720@fluxketch.com", ft_legal="법적 고지", ft_support="고객 지원", ft_privacy="개인정보 처리방침", ft_terms="이용약관", ft_terms_href="/terms", ft_privacy_href="/privacy", ft_licenses="오픈소스 라이선스", ft_fine="Apple, App Store, iPad, Apple Pencil은 Apple Inc.의 상표입니다.",
 )
 EN = dict(KO)
 EN.update(
  lang="en", path="/en/", home="/en/", alt_href="/", alt_lang="ko", alt_label="KO", alt_full="한국어",
- title="Fluxketch — Field CAD for iPad", desc="Open DXF, DWG and PDF drawings on iPad, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Available on the App Store.",
- og_desc="Open, draw, mark up, export. All on iPad.",
+ title="Fluxketch — Field CAD for iPad and iPhone", desc="Open DXF, DWG and PDF drawings on iPad and iPhone, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF. Available on the App Store.",
+ og_desc="Open, draw, mark up, export. All on mobile.",
  og_locale="en_US", nav_guides="Guides", p_answers_btn="See the answers", qa_eyebrow="Questions and answers", steps_eyebrow="How it works", rel_h2="See also", crumbs_label="Breadcrumb", crumb_home="Home", g_h1="Guides for people who use CAD on site", g_lead="Practical writing on what the field runs into every day — DWG, DXF, scale, markup. Most of it applies whichever app you use.", read_min="About %d min read", updated="Updated", guide_k="Guide", nav_label="Main menu", nav_features="Features", nav_field="Field notes", nav_perf="Performance", nav_drawings="Real drawings", nav_pricing="Pricing", nav_faq="FAQ",
  cta_short="App Store", cta_primary="Download on the App Store", cta_secondary="Explore features", menu_open="Open menu",
- h1="From the drawing<br>to the site, on one iPad.", h1_sub="Fluxketch is CAD for people who carry drawings. Open DXF, DWG and PDF as they are, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF.",
+ h1="From the drawing<br>to the site, on mobile.", h1_sub="Fluxketch is CAD for people who carry drawings. Open DXF, DWG and PDF as they are, draft with Apple Pencil, pin markups and photos to drawing coordinates, and export scale-true PDF and DXF.",
  platform="iPad · Apple Pencil · on the App Store", hero_alt="Fluxketch sheet view — hotel basement parking plan with tool palette and snap rail",
  dim_top="181,422 entities · 60 Hz", dim_side="12 CAD tools",
  v_h2="The power of CAD. None of the pain.", v_sub="Take your office drawings out as they are, and bring what you touched on site straight back. No format juggling, no redrawing.",
@@ -142,7 +142,7 @@ EN.update(
       ("How do I cancel?","In Settings > Apple Account > Subscriptions on your iPhone or iPad, anytime. You keep access until the period ends."),
       ("Where do I report a problem?","Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too.")],
  ft_biz="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411 · 5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
- ft_tag="Field CAD for iPad.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_terms_href="/en/terms", ft_privacy_href="/en/privacy", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
+ ft_tag="Field CAD for iPad and iPhone.", ft_product="Product", ft_use="Use cases", ft_use1="Field notes", ft_use2="Real drawings", ft_use3="Large drawings", ft_company="Company", ft_contact="Contact flux0720@fluxketch.com", ft_legal="Legal", ft_support="Support", ft_privacy="Privacy", ft_terms="Terms", ft_terms_href="/en/terms", ft_privacy_href="/en/privacy", ft_licenses="Open-source licenses", ft_fine="Apple, App Store, iPad and Apple Pencil are trademarks of Apple Inc.",
 )
 
 import json, re
