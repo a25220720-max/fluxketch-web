@@ -41,7 +41,7 @@ GUIDES = [
           "DWG를 직접 열 때는 레이어·선종류 유지 여부와 '못 가져온 요소를 알려 주는가'를 확인하세요.",
           "단위를 묻는 앱을 쓰세요. 축척은 여기서 결정됩니다."]),
    ],
-   cta="iPad에서 실제 CAD 도면 편집이 필요한 경우 Fluxketch에서 DWG·DXF를 레이어 그대로 열어볼 수 있습니다. 베타 기간에는 모든 기능이 무료입니다.",
+   cta="iPad에서 실제 CAD 도면 편집이 필요한 경우 Fluxketch에서 DWG·DXF를 레이어 그대로 열어볼 수 있습니다. 처음 30일 동안 DWG·DXF 5번까지 모든 기능을 무료로 써 볼 수 있습니다.",
   ),
   en=dict(
    title="How to open DWG files on iPad — view and edit CAD drawings on the spot",
@@ -80,7 +80,7 @@ GUIDES = [
           "When opening DWG directly, check that layers and linetypes survive and that skipped elements are reported.",
           "Use an app that asks for the unit. Scale is decided there."]),
    ],
-   cta="If you need real CAD editing on iPad, Fluxketch opens DWG and DXF with layers intact. Everything is free during the beta.",
+   cta="If you need real CAD editing on iPad, Fluxketch opens DWG and DXF with layers intact. Every feature is free for your first 5 DWG/DXF imports in 30 days.",
   )),
  dict(slug="edit-cad-drawings-on-ipad", img="structural-dark",
   ko=dict(
@@ -265,7 +265,7 @@ GUIDES = [
     ("h2","화면에서 실척으로 보기"),
     ("p","종이 없이도 실척으로 볼 수 있습니다. 실척 자는 기종별 화면 밀도를 추정해 1:50이면 1:50으로 보여 주고, '자로 맞추기'로 실제 자와 대조해 보정합니다. 화면에서 두 점을 찍으면 실제 길이가 단위와 함께 나옵니다."),
    ],
-   cta="Fluxketch의 플롯 PDF는 축척과 100mm 검증 눈금을 달고 나갑니다. iPad에서 축척 맞춘 출력이 필요하면 베타에서 시험해 보세요.",
+   cta="Fluxketch의 플롯 PDF는 축척과 100mm 검증 눈금을 달고 나갑니다. iPad에서 축척 맞춘 출력이 필요하면 App Store에서 받아 무료로 써 보세요.",
   ),
   en=dict(
    title="Plotting CAD drawings to scale PDF from iPad — making sure 1:100 really is 1:100",
@@ -299,7 +299,7 @@ GUIDES = [
     ("h2","True scale on screen"),
     ("p","You can see true scale without paper. The true-scale ruler estimates each device's screen density so 1:50 shows as 1:50, and calibration checks it against a real ruler. Tap two points on screen and the real length appears with units."),
    ],
-   cta="Fluxketch plot PDFs carry the scale and a 100 mm check ruler. If you need scale-true output from iPad, try it in the beta.",
+   cta="Fluxketch plot PDFs carry the scale and a 100 mm check ruler. If you need scale-true output from iPad, download it from the App Store and try it free.",
   )),
  dict(slug="apple-pencil-cad-markup", img="vivienda-markup-dark",
   ko=dict(
@@ -330,7 +330,7 @@ GUIDES = [
     ("h2","사무실로 넘길 때"),
     ("p","마크업 잉크와 핀은 플롯 PDF와 리포트로 넘깁니다. DXF 내보내기에는 CAD 도형이 나갑니다. 손글씨는 PDF로, 도형은 DXF로 — 현장과 사무실이 각각 받는 것입니다."),
    ],
-   cta="Fluxketch의 마크업은 도면 좌표에 고정되고 플롯·리포트에 그대로 인쇄됩니다. iPad와 Apple Pencil로 현장 기록이 필요하면 베타에서 시험해 보세요.",
+   cta="Fluxketch의 마크업은 도면 좌표에 고정되고 플롯·리포트에 그대로 인쇄됩니다. iPad와 Apple Pencil로 현장 기록이 필요하면 App Store에서 받아 무료로 써 보세요.",
   ),
   en=dict(
    title="Marking up CAD drawings with Apple Pencil — why strokes must stick to the drawing",
@@ -360,7 +360,7 @@ GUIDES = [
     ("h2","Handing off to the office"),
     ("p","Markup ink and pins travel as plot PDF and report. DXF export carries CAD entities. Handwriting as PDF, geometry as DXF — what the site and the office each receive."),
    ],
-   cta="Fluxketch markup is locked to drawing coordinates and prints as-is into plots and reports. If you need site records with iPad and Apple Pencil, try the beta.",
+   cta="Fluxketch markup is locked to drawing coordinates and prints as-is into plots and reports. If you need site records with iPad and Apple Pencil, download it from the App Store and try it free.",
   )),
  dict(slug="mobile-cad-vs-desktop-cad", img="granada-topo-dark",
   ko=dict(
@@ -398,7 +398,7 @@ GUIDES = [
     ("h2","두 가지를 잇는 것: 왕복"),
     ("p","사무실에서 DWG·DXF로 내보내고, 현장 iPad에서 열어 손대고, DXF와 플롯 PDF·리포트로 돌려보냅니다. 레이어·색·굵기·선종류가 왕복에서 유지되면 다시 그릴 일이 없습니다. 형식 선택은 <a href=\"/guides/dwg-vs-dxf/\">DWG와 DXF의 차이</a>, 여는 방법은 <a href=\"/guides/open-dwg-on-ipad/\">아이패드에서 DWG 여는 방법</a>에 있습니다."),
    ],
-   cta="Fluxketch는 위 표의 '모바일 CAD(iPad)' 열을 맡는 앱입니다. 현장 확인·수정·기록·출력이 필요하면 베타에서 시험해 보세요.",
+   cta="Fluxketch는 위 표의 '모바일 CAD(iPad)' 열을 맡는 앱입니다. 현장 확인·수정·기록·출력이 필요하면 App Store에서 받아 무료로 써 보세요.",
   ),
   en=dict(
    title="Mobile CAD vs laptop CAD — what to hand to the iPad on site",
@@ -435,7 +435,7 @@ GUIDES = [
     ("h2","What connects the two: the round trip"),
     ("p","Export DWG or DXF from the office, open and work on the iPad on site, and send back DXF plus a plot PDF and report. When layers, colors, weights and linetypes survive the round trip, nothing gets redrawn. Choosing the format: <a href=\"/en/guides/dwg-vs-dxf/\">DWG vs DXF</a>; opening: <a href=\"/en/guides/open-dwg-on-ipad/\">How to open DWG on iPad</a>."),
    ],
-   cta="Fluxketch is the app for the 'Mobile CAD (iPad)' column above. If you need site checks, fixes, records and output, try the beta.",
+   cta="Fluxketch is the app for the 'Mobile CAD (iPad)' column above. If you need site checks, fixes, records and output, download it from the App Store and try it free.",
   )),
 
  # 2026-10-04 영어 전용 가이드(TASK-20261004-09) — 한국어 짝 없음: 생성기가 ko 키가 없으면 영어만 만들고 hreflang도 en 하나만 낸다.
