@@ -10,7 +10,7 @@ def mailto(subject, body=""):
 
 # 요금제별 기능 — 순서 = ROWS 순서. 1 = 포함
 HAS = {"free": [1, 0, 0, 0, 0, 0], "lite": [1, 1, 1, 1, 0, 0], "markup": [1, 0, 0, 1, 1, 1], "pro": [1, 1, 1, 1, 1, 1],
-       # 10/12 아이폰 줄: 무료(30일 5번 동안 전기능 → 그 뒤 보기만) · 아이폰 플랜 · 패드 Pro(아이폰 포함)
+       # 10/12 아이폰 줄: 무료(30일 5번 동안 전기능 → 그 뒤 보기만) · 10/30 처음 5번만 · 아이폰 플랜 · 패드 Pro(아이폰 포함)
        "phonefree": [1, 0, 0, 0, 0, 0], "iphone": [1, 1, 1, 1, 1, 1], "padpro": [1, 1, 1, 1, 1, 1]}
 
 CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
@@ -34,13 +34,13 @@ KO = dict(
  hm_cycle_label="결제 주기", hm_monthly="월간", hm_yearly="연간", hm_yearly_save="2개월 무료",
  rows=["도면 열기·보기 (DWG·DXF·PDF)", "작도·편집 · CAD 도구 12종", "블록·배치 · DXF 내보내기", "축척 맞춘 플롯 PDF", "마크업·사진 핀·노트", "리포트 · 마크업 PDF 공유"],
  per_m="/ 월", per_y="/ 년", billed_y="연 {} 결제", alt_m="월간 결제 시 월 {}", included="포함", not_included="미포함",
- plans=[dict(k="free", name="Free", m="₩0", y="₩0", free=True, tag="30일 동안 도면 5개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 30일에 5번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
+ plans=[dict(k="free", name="Free", m="₩0", y="₩0", free=True, tag="처음 도면 5개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 처음 5번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
         dict(k="lite", name="Lite", m="₩4,900", y="₩49,000", tag="사무실처럼 그리고 고칠 때.", cta_m="Lite 시작", cta_y="Lite 시작"),
         dict(k="markup", name="Markup", badge="신규", m="₩8,900", y="₩89,000", tag="현장에서 표시하고 기록할 때.", cta_m="Markup 시작", cta_y="Markup 시작"),
         dict(k="pro", name="Pro", badge="할인 중", hi=True, m="₩12,900", y="₩129,000", was_m="₩16,900", was_y="₩169,000", tag="전부 다. 아이폰에서도 추가 요금 없이.", cta_m="Pro 시작", cta_y="Pro 시작")],
  pg_phone_h="아이폰", pg_phone_sub="현장에서 손가락으로 — 보기·치수·핀·마크업·플롯", pg_pad_h="아이패드", pg_pad_sub="작도·편집까지 — 애플 펜슬로 사무실처럼",
  phone_rows=["도면 열기·보기 · 레이어", "치수 재기 · 선 그리기", "핀 만들기 · 사진", "마크업 (손가락으로)", "플롯 PDF · DXF 내보내기", "노트 · 리포트 · iCloud 올리기"],
- phone_plans=[dict(k="phonefree", name="Free", m="₩0", y="₩0", free=True, tag="30일 동안 도면 5개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 30일에 5번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
+ phone_plans=[dict(k="phonefree", name="Free", m="₩0", y="₩0", free=True, tag="처음 도면 5개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 처음 5번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
         dict(k="iphone", name="아이폰 플랜", badge="아이폰", hi=True, m="₩3,900", y="₩39,000", tag="아이폰에서 쓰는 유료 기능 전부.", cta_m="아이폰 플랜 시작", cta_y="아이폰 플랜 시작"),
         dict(k="padpro", name="패드 Pro", badge="아이폰 포함", m="₩12,900", y="₩129,000", tag="패드 Pro를 구독 중이면 같은 Apple 계정의 아이폰은 추가 요금 없이 전부.", cta_m="Pro 시작", cta_y="Pro 시작")],
  hm_p_note="가격은 대한민국 App Store 기준(부가세 포함)입니다. 구독은 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신되며, 설정 › Apple 계정 › 구독에서 언제든 해지할 수 있습니다.",
@@ -71,13 +71,13 @@ EN = dict(
  hm_cycle_label="Billing period", hm_monthly="Monthly", hm_yearly="Yearly", hm_yearly_save="2 months free",
  rows=["Open and view DWG, DXF, PDF", "Draft and edit · 12 CAD tools", "Blocks, layouts · DXF export", "Scale-true plot PDF", "Markup, photo pins, notes", "Reports · markup PDF sharing"],
  per_m="/ mo", per_y="/ yr", billed_y="billed {} yearly", alt_m="or {} billed monthly", included="Included", not_included="Not included",
- plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Try every feature with 5 imports in 30 days.", row0="5 DWG/DXF imports in 30 days · every feature", cta_m="Get it free", cta_y="Get it free"),
+ plans=[dict(k="free", name="Free", m="$0", y="$0", free=True, tag="Try every feature with your first 5 imports.", row0="First 5 DWG/DXF imports · every feature", cta_m="Get it free", cta_y="Get it free"),
         dict(k="lite", name="Lite", m="$2.99", y="$29.99", tag="Draw and edit like at the office.", cta_m="Start Lite", cta_y="Start Lite"),
         dict(k="markup", name="Markup", badge="New", m="$4.99", y="$49.99", tag="Mark up and record on site.", cta_m="Start Markup", cta_y="Start Markup"),
         dict(k="pro", name="Pro", badge="Best value", hi=True, m="$7.99", y="$79.99", tag="Everything. iPhone included at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
  pg_phone_h="iPhone", pg_phone_sub="On site with your finger — view, measure, pin, mark up, plot", pg_pad_h="iPad", pg_pad_sub="Drafting and editing too — with Apple Pencil, like at the office",
  phone_rows=["Open and view drawings · layers", "Measure · draw lines", "Create pins · photos", "Markup (with your finger)", "Plot PDF · DXF export", "Notes · reports · iCloud upload"],
- phone_plans=[dict(k="phonefree", name="Free", m="$0", y="$0", free=True, tag="Try every feature with 5 imports in 30 days.", row0="5 DWG/DXF imports in 30 days · every feature", cta_m="Get it free", cta_y="Get it free"),
+ phone_plans=[dict(k="phonefree", name="Free", m="$0", y="$0", free=True, tag="Try every feature with your first 5 imports.", row0="First 5 DWG/DXF imports · every feature", cta_m="Get it free", cta_y="Get it free"),
         dict(k="iphone", name="iPhone plan", badge="iPhone", hi=True, m="$1.99", y="$22.99", tag="Every paid feature on iPhone.", cta_m="Start iPhone plan", cta_y="Start iPhone plan"),
         dict(k="padpro", name="iPad Pro plan", badge="iPhone included", m="$7.99", y="$79.99", tag="With Pro on your iPad, every feature on iPhone with the same Apple Account at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
  hm_p_note="Prices shown are for the U.S. App Store; your local price is set by Apple and may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and you can cancel anytime in Settings › Apple Account › Subscriptions.",
@@ -95,7 +95,7 @@ KO["hm_q_h2"] = "자주 묻는 질문"
 KO["hm_q_sub"] = "더 궁금한 점은 flux0720@fluxketch.com으로 보내 주세요."
 KO["faq"] = [
  ("플럭스케치(Fluxketch)는 어떤 앱인가요?", "플럭스케치는 현장용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, 펜슬로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
- ("무료로 쓸 수 있나요?", "처음 DWG·DXF를 가져온 날부터 30일 동안 5번까지 모든 기능이 무료입니다(PDF는 횟수 없음). 작도·편집과 DXF 내보내기는 Lite(연간 결제 시 월 4,083원·연 49,000원, 월간 결제 시 월 4,900원), 마크업·사진 핀·노트·리포트는 Markup(연간 결제 시 월 7,417원·연 89,000원, 월간 결제 시 월 8,900원), 전부 다 쓰려면 Pro(연간 결제 시 월 10,750원·연 129,000원, 월간 결제 시 월 12,900원)입니다. 아이폰만 쓰신다면 아이폰 플랜(월 3,900원·연 39,000원)이 있습니다."),
+ ("무료로 쓸 수 있나요?", "처음 DWG·DXF 5번을 가져오는 동안 모든 기능이 무료입니다(PDF는 횟수 없음). 작도·편집과 DXF 내보내기는 Lite(연간 결제 시 월 4,083원·연 49,000원, 월간 결제 시 월 4,900원), 마크업·사진 핀·노트·리포트는 Markup(연간 결제 시 월 7,417원·연 89,000원, 월간 결제 시 월 8,900원), 전부 다 쓰려면 Pro(연간 결제 시 월 10,750원·연 129,000원, 월간 결제 시 월 12,900원)입니다. 아이폰만 쓰신다면 아이폰 플랜(월 3,900원·연 39,000원)이 있습니다."),
  ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 같은 Apple 계정의 아이폰에서도 모든 기능을 추가 요금 없이 씁니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
  ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
  ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
@@ -110,7 +110,7 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets and phones. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Every feature is free for your first 5 DWG/DXF imports within 30 days (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan."),
+ ("Is it free?", "Every feature is free for your first 5 DWG/DXF imports (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus every feature on iPhone with the same Apple Account at no extra cost. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
