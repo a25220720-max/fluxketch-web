@@ -41,7 +41,7 @@ GUIDES = [
           "DWG를 직접 열 때는 레이어·선종류 유지 여부와 '못 가져온 요소를 알려 주는가'를 확인하세요.",
           "단위를 묻는 앱을 쓰세요. 축척은 여기서 결정됩니다."]),
    ],
-   cta="iPad에서 실제 CAD 도면 편집이 필요한 경우 Fluxketch에서 DWG·DXF를 레이어 그대로 열어볼 수 있습니다. 처음 DWG·DXF 5번까지 모든 기능을 무료로 써 볼 수 있습니다.",
+   cta="iPad에서 실제 CAD 도면 편집이 필요한 경우 Fluxketch에서 DWG·DXF를 레이어 그대로 열어볼 수 있습니다. 처음 DWG·DXF 3번까지 모든 기능을 무료로 써 볼 수 있습니다.",
   ),
   en=dict(
    title="How to open DWG files on iPad — view and edit CAD drawings on the spot",
@@ -80,7 +80,7 @@ GUIDES = [
           "When opening DWG directly, check that layers and linetypes survive and that skipped elements are reported.",
           "Use an app that asks for the unit. Scale is decided there."]),
    ],
-   cta="If you need real CAD editing on iPad, Fluxketch opens DWG and DXF with layers intact. Every feature is free for your first 5 DWG/DXF imports.",
+   cta="If you need real CAD editing on iPad, Fluxketch opens DWG and DXF with layers intact. Every feature is free for your first 3 DWG/DXF imports.",
   )),
  dict(slug="edit-cad-drawings-on-ipad", img="structural-dark",
   ko=dict(
