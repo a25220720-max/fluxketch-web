@@ -1,13 +1,22 @@
 // Fluxketch 홈 v5 — 월간/연간 전환 · 공지 띠 자동 종료 · 접는 메뉴 닫기
 (function () {
   var plans = document.getElementById('plans-wrap');
-  var seg = document.querySelectorAll('.seg button');
+  var seg = document.querySelectorAll('.seg.cyc button');
   seg.forEach(function (b) {
     b.addEventListener('click', function () {
       if (plans) plans.setAttribute('data-cycle', b.getAttribute('data-cycle'));
       seg.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
     });
   });
+
+  // 기기 전환(아이폰·아이패드 ↔ 갤럭시) — 안드로이드로 들어오면 갤럭시가 먼저
+  var os = document.querySelectorAll('.seg.os button');
+  function pickOS(k) {
+    if (plans) plans.setAttribute('data-os-sel', k);
+    os.forEach(function (o) { o.setAttribute('aria-pressed', o.getAttribute('data-os') === k ? 'true' : 'false'); });
+  }
+  os.forEach(function (b) { b.addEventListener('click', function () { pickOS(b.getAttribute('data-os')); }); });
+  if (/Android/i.test(navigator.userAgent) || location.hash === '#galaxy') pickOS('galaxy');
 
   // 공지 띠: data-until(ISO 시각)이 지나면 저절로 숨긴다 — 10/14 수동 작업 없음
   var notice = document.querySelector('.notice[data-until]');

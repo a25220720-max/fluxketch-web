@@ -3,6 +3,7 @@ import html
 from urllib.parse import quote
 
 MAIL = "flux0720@fluxketch.com"
+PLAY = "https://play.google.com/store/apps/details?id=com.fluxketch.android"   # 2026-11-08 갤럭시(플레이) 출시
 
 def mailto(subject, body=""):
     u = f"mailto:{MAIL}?subject={quote(subject)}"
@@ -11,14 +12,17 @@ def mailto(subject, body=""):
 # 요금제별 기능 — 순서 = ROWS 순서. 1 = 포함
 HAS = {"free": [1, 0, 0, 0, 0, 0], "lite": [1, 1, 1, 1, 0, 0], "markup": [1, 0, 0, 1, 1, 1], "pro": [1, 1, 1, 1, 1, 1],
        # 10/12 아이폰 줄: 무료(30일 5번 동안 전기능 → 그 뒤 보기만) · 10/30 처음 5번만 · 11/2 처음 3번(모두 초기화) · 아이폰 플랜 · 패드 Pro(아이폰 포함)
-       "phonefree": [1, 0, 0, 0, 0, 0], "iphone": [1, 1, 1, 1, 1, 1], "padpro": [1, 1, 1, 1, 1, 1]}
+       "phonefree": [1, 0, 0, 0, 0, 0], "iphone": [1, 1, 1, 1, 1, 1], "padpro": [1, 1, 1, 1, 1, 1],
+       # 11/8 갤럭시(Google Play) — 탭 = 패드와 같은 Lite·Markup·Pro, 폰 = 폰 플랜 또는 같은 Google 계정의 탭 Pro
+       "gphonefree": [1, 0, 0, 0, 0, 0], "gphone": [1, 1, 1, 1, 1, 1], "gtabpro": [1, 1, 1, 1, 1, 1],
+       "gfree": [1, 0, 0, 0, 0, 0], "glite": [1, 1, 1, 1, 0, 0], "gmarkup": [1, 0, 0, 1, 1, 1], "gpro": [1, 1, 1, 1, 1, 1]}
 
 CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2FB56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 DASH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3F46" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg>'
 
 KO = dict(
  brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="실제 화면 그대로.", hm_v_sub="작도부터 수치 입력, 마크업까지 — 앱에서 바로 녹화한 화면입니다.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
- notice='<div class="notice" data-until="2026-11-12T00:00:00+09:00"><b>1.2.0 출시</b> · 이제 아이폰에서도 플럭스케치 — 패드 Pro 구독이면 아이폰은 추가 요금 없이</div>',
+ notice='<div class="notice" data-until="2026-12-08T00:00:00+09:00"><b>갤럭시 출시</b> · 이제 Google Play에서도 플럭스케치 — 갤럭시 탭·폰</div>',
  hm_chip="현장용 모바일 캐드 · 1.2.0", hm_dim="100% 자체 개발 CAD 엔진",
  hm_h1="현장 도면,<br><em>모바일 하나로</em> 끝.",
  hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 보냅니다.",
@@ -30,7 +34,7 @@ KO = dict(
         ("03 표시하기", "마크업과 사진 핀", "펜슬 필압 그대로 도면 좌표에 붙는 손글씨, 사진과 메모가 달린 핀, 노트 페이지.", "app-markup", "단면도 위 손글씨 마크업"),
         ("04 보내기", "축척 맞춰 보내기", "플롯 PDF·DXF 내보내기·리포트·시트 발행. 현장에서 사무실로 바로.", "menu-report", "핀 로그·리포트·플롯 메뉴")],
  hm_new_tag="1.2.0 NEW", news=["아이폰 지원 — 현장에서 도면·치수·핀·마크업", "AutoCAD에서 그대로 열리는 DXF 내보내기", "큰 도면도 더 부드럽게 · 최대 100MB DWG"],
- hm_p_eyebrow="A-201 · 요금제", hm_p_h2="필요한 만큼만 고르세요.", hm_p_sub="언제든 해지할 수 있는 App Store 구독입니다.",
+ hm_p_eyebrow="A-201 · 요금제", hm_p_h2="필요한 만큼만 고르세요.", hm_p_sub="언제든 해지할 수 있는 App Store·Google Play 구독입니다.",
  hm_cycle_label="결제 주기", hm_monthly="월간", hm_yearly="연간", hm_yearly_save="2개월 무료",
  rows=["도면 열기·보기 (DWG·DXF·PDF)", "작도·편집 · CAD 도구 12종", "블록·배치 · DXF 내보내기", "축척 맞춘 플롯 PDF", "마크업·사진 핀·노트", "리포트 · 마크업 PDF 공유"],
  per_m="/ 월", per_y="/ 년", billed_y="연 {} 결제", alt_m="월간 결제 시 월 {}", included="포함", not_included="미포함",
@@ -47,7 +51,7 @@ KO = dict(
  hm_o_h="영구 구매 · 사무소 도입 문의", hm_o_p="영구 구매를 원하시거나 여러 대를 함께 쓰실 사무소는 메일로 알려 주세요. 인원과 쓰임에 맞춰 상담과 견적을 드립니다.", hm_o_btn="영구 구매·도입 문의 메일 보내기",
  o_subject="[영구 구매 · 사무소 도입 문의] ", o_body="사무소명:\n담당자·연락처:\n사용 인원(태블릿 대수):\n관심 플랜(영구 구매 / Lite / Markup / Pro):\n문의 내용:\n",
  mail_subject="[플럭스케치 문의] ", hm_ft_mail="문의 메일",
- hm_end_h="다음 현장부터, 플럭스케치로.", hm_end_p="App Store에서 받아 바로 쓰실 수 있습니다.",
+ hm_end_h="다음 현장부터, 플럭스케치로.", hm_end_p="App Store와 Google Play에서 받아 바로 쓰실 수 있습니다.",
  hm_biz1="상호 플럭스케치(Fluxketch) · 대표 김준서 · 사업자등록번호 102-14-97190 · 통신판매업 신고번호 제2026-서울강남-05411호",
  hm_biz2="주소 서울특별시 강남구 언주로134길 18, 5층 S35호(논현동, 신승빌딩) · 전화 010-7179-0722 · 이메일 flux0720@fluxketch.com",
  ft_tag_home="플럭스케치 — 현장용 모바일 캐드.<br>현장에서 끝냅니다.",
@@ -67,7 +71,7 @@ EN = dict(
         ("03 Mark up", "Markup and photo pins", "Handwriting locked to drawing coordinates with pencil pressure, pins with photos and notes, note pages.", "app-markup", "Handwritten markup on a section drawing"),
         ("04 Send", "Send at true scale", "Plot PDF, DXF export, reports and sheet issue. From site to office, right away.", "menu-report", "Pin log, report and plot menu")],
  hm_new_tag="1.2.0 NEW", news=["Now on iPhone — drawings, measure, pins and markup on site", "DXF export that opens in AutoCAD", "Smoother large drawings · DWG up to 100 MB"],
- hm_p_eyebrow="A-201 · Pricing", hm_p_h2="Pick only what you need.", hm_p_sub="An App Store subscription you can cancel anytime.",
+ hm_p_eyebrow="A-201 · Pricing", hm_p_h2="Pick only what you need.", hm_p_sub="An App Store or Google Play subscription you can cancel anytime.",
  hm_cycle_label="Billing period", hm_monthly="Monthly", hm_yearly="Yearly", hm_yearly_save="2 months free",
  rows=["Open and view DWG, DXF, PDF", "Draft and edit · 12 CAD tools", "Blocks, layouts · DXF export", "Scale-true plot PDF", "Markup, photo pins, notes", "Reports · markup PDF sharing"],
  per_m="/ mo", per_y="/ yr", billed_y="billed {} yearly", alt_m="or {} billed monthly", included="Included", not_included="Not included",
@@ -84,10 +88,37 @@ EN = dict(
  hm_o_h="Rolling out to a whole office?", hm_o_p="If your team will use several tablets, email us. We'll help you set up and quote for your headcount and use.", hm_o_btn="Email us about teams",
  o_subject="[Team inquiry] ", o_body="Company:\nContact name & phone:\nNumber of users (tablets):\nPlan of interest (Lite / Markup / Pro):\nQuestion:\n",
  mail_subject="[Fluxketch] ", hm_ft_mail="Email us",
- hm_end_h="Take Fluxketch to your next site.", hm_end_p="Download it from the App Store and start today.",
+ hm_end_h="Take Fluxketch to your next site.", hm_end_p="Download it from the App Store or Google Play and start today.",
  hm_biz1="Fluxketch · Owner Junseo Kim · Business Registration No. 102-14-97190 · Mail-Order Business Registration No. 2026-Seoul Gangnam-05411",
  hm_biz2="5F S35, 18 Eonju-ro 134-gil, Gangnam-gu, Seoul, Republic of Korea · +82 10-7179-0722 · flux0720@fluxketch.com",
  ft_tag_home="Field CAD for tablets and phones.<br>Finish it on site.",
+)
+
+KO.update(
+ cta_play="Google Play에서 받기", hm_os_label="기기", os_apple="아이폰·아이패드", os_galaxy="갤럭시",
+ g_phone_h="갤럭시 폰", g_phone_sub="현장에서 손가락으로 — 보기·치수·핀·마크업·플롯", g_tab_h="갤럭시 탭", g_tab_sub="작도·편집까지 — S펜으로 사무실처럼",
+ g_phone_rows=["도면 열기·보기 · 레이어", "치수 재기 · 선 그리기", "핀 만들기 · 사진", "마크업 (손가락으로)", "플롯 PDF · DXF 내보내기", "노트 · 리포트"],
+ g_phone_plans=[dict(k="gphonefree", name="Free", m="₩0", y="₩0", free=True, tag="처음 도면 3개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 처음 3번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
+        dict(k="gphone", name="폰 플랜", badge="갤럭시 폰", hi=True, m="₩3,900", y="₩39,000", tag="갤럭시 폰에서 쓰는 유료 기능 전부.", cta_m="폰 플랜 시작", cta_y="폰 플랜 시작"),
+        dict(k="gtabpro", name="탭 Pro", badge="폰 포함", m="₩12,900", y="₩129,000", tag="갤럭시 탭에서 Pro를 구독 중이면 같은 Google 계정의 갤럭시 폰은 추가 요금 없이 전부.", cta_m="Pro 시작", cta_y="Pro 시작")],
+ g_plans=[dict(k="gfree", name="Free", m="₩0", y="₩0", free=True, tag="처음 도면 3개까지 모든 기능을 써 볼 때.", row0="DWG·DXF 처음 3번 · 그동안 모든 기능", cta_m="무료로 받기", cta_y="무료로 받기"),
+        dict(k="glite", name="Lite", m="₩4,900", y="₩49,000", tag="사무실처럼 그리고 고칠 때.", cta_m="Lite 시작", cta_y="Lite 시작"),
+        dict(k="gmarkup", name="Markup", badge="신규", m="₩8,900", y="₩89,000", tag="현장에서 표시하고 기록할 때.", cta_m="Markup 시작", cta_y="Markup 시작"),
+        dict(k="gpro", name="Pro", badge="할인 중", hi=True, m="₩12,900", y="₩129,000", was_m="₩16,900", was_y="₩169,000", tag="전부 다. 갤럭시 폰에서도 추가 요금 없이.", cta_m="Pro 시작", cta_y="Pro 시작")],
+ g_note="가격은 대한민국 Google Play 기준입니다. 구독은 해지하기 전까지 자동 갱신되며, Play 스토어 › 프로필 › 결제 및 정기 결제 › 정기 결제에서 언제든 해지할 수 있습니다. App Store와 Google Play의 구독은 서로 옮겨지지 않습니다.",
+)
+EN.update(
+ cta_play="Get it on Google Play", hm_os_label="Device", os_apple="iPhone & iPad", os_galaxy="Galaxy",
+ g_phone_h="Galaxy phone", g_phone_sub="On site with your finger — view, measure, pin, mark up, plot", g_tab_h="Galaxy Tab", g_tab_sub="Drafting and editing too — with the S Pen, like at the office",
+ g_phone_rows=["Open & view drawings · layers", "Measure · draw lines", "Pins · photos", "Markup (with your finger)", "Plot PDF · DXF export", "Notes · reports"],
+ g_phone_plans=[dict(k="gphonefree", name="Free", m="$0", y="$0", free=True, tag="Try every feature with your first 3 imports.", row0="First 3 DWG/DXF imports · every feature", cta_m="Get it free", cta_y="Get it free"),
+        dict(k="gphone", name="Phone plan", badge="Galaxy phone", hi=True, m="$2.99", y="$28.99", tag="Every paid feature on your Galaxy phone.", cta_m="Start phone plan", cta_y="Start phone plan"),
+        dict(k="gtabpro", name="Tab Pro plan", badge="Phone included", m="$9.99", y="$99.99", tag="With Pro on your Galaxy Tab, every feature on your Galaxy phone with the same Google Account at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
+ g_plans=[dict(k="gfree", name="Free", m="$0", y="$0", free=True, tag="Try every feature with your first 3 imports.", row0="First 3 DWG/DXF imports · every feature", cta_m="Get it free", cta_y="Get it free"),
+        dict(k="glite", name="Lite", m="$3.69", y="$36.99", tag="Draw and edit like at the office.", cta_m="Start Lite", cta_y="Start Lite"),
+        dict(k="gmarkup", name="Markup", badge="New", m="$6.49", y="$64.99", tag="Mark up and record on site.", cta_m="Start Markup", cta_y="Start Markup"),
+        dict(k="gpro", name="Pro", badge="Best value", hi=True, m="$9.99", y="$99.99", tag="Everything. Galaxy phone included at no extra cost.", cta_m="Start Pro", cta_y="Start Pro")],
+ g_note="Prices shown are for the U.S. Google Play Store; your local price is set by Google and may differ. Subscriptions renew automatically until cancelled, and you can cancel anytime in Play Store › Profile › Payments & subscriptions › Subscriptions. App Store and Google Play subscriptions don't transfer to each other.",
 )
 
 KO["hm_q_eyebrow"] = "A-301 · 질문"
@@ -99,10 +130,10 @@ KO["faq"] = [
  ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 같은 Apple 계정의 아이폰에서도 모든 기능을 추가 요금 없이 씁니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
  ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
  ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
- ("어떤 기기가 필요한가요?", "아이패드(펜슬 권장)와 아이폰에서 씁니다. 큰 도면은 M 시리즈 아이패드에서 가장 쾌적하지만, 9세대·A16 기종에서도 검증했습니다. 아이폰에서는 손가락으로 도면 보기·치수·핀·마크업·플롯을 합니다. App Store에서 '플럭스케치' 또는 'Fluxketch'로 검색해 받으실 수 있습니다."),
+ ("어떤 기기가 필요한가요?", "아이패드(펜슬 권장)·아이폰과 갤럭시 탭(S펜 권장)·갤럭시 폰에서 씁니다. 큰 도면은 M 시리즈 아이패드에서 가장 쾌적하지만, 9세대·A16 기종에서도 검증했습니다. 폰에서는 손가락으로 도면 보기·치수·핀·마크업·플롯을 합니다. App Store 또는 Google Play에서 '플럭스케치' 또는 'Fluxketch'로 검색해 받으실 수 있습니다."),
  ("마크업은 도면과 함께 저장되나요?", "네. 마크업·핀·노트는 도면 파일 안에 도면 좌표로 저장됩니다. 플롯 PDF에 잉크와 핀이 그대로 나가고, 마크업·핀 사진을 PDF 한 장으로 공유할 수도 있습니다."),
  ("사무소 단위로 도입할 수 있나요?", "네. 여러 대를 함께 쓰실 사무소는 flux0720@fluxketch.com으로 사무소명·인원·관심 플랜을 알려 주세요. 도입 상담과 견적을 드립니다."),
- ("구독은 어떻게 해지하나요?", "설정 > Apple 계정 > 구독에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있습니다."),
+ ("구독은 어떻게 해지하나요?", "아이폰·아이패드는 설정 > Apple 계정 > 구독, 갤럭시는 Play 스토어 > 프로필 > 결제 및 정기 결제 > 정기 결제에서 언제든 해지할 수 있습니다. 기간이 끝날 때까지는 그대로 쓰실 수 있습니다."),
  ("문제가 있으면 어디로 알리나요?", "앱 첫 화면의 '오류 즉시 문의' 또는 flux0720@fluxketch.com으로 파일과 함께 보내 주세요. 인스타그램 @fluxketch_official으로도 받습니다."),
 ]
 EN["hm_q_eyebrow"] = "A-301 · FAQ"
@@ -110,14 +141,14 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets and phones. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Every feature is free for your first 3 DWG/DXF imports (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan."),
+ ("Is it free?", "Every feature is free for your first 3 DWG/DXF imports (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan. Google Play prices differ slightly — see Pricing."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus every feature on iPhone with the same Apple Account at no extra cost. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
- ("What hardware do I need?", "A tablet (a pencil is recommended) or an iPhone. Large drawings are most comfortable on M-series models, and we also verify on 9th-gen and A16 models. On iPhone you view, measure, pin, mark up and plot with your finger. Search the App Store for \"Fluxketch\" to download."),
+ ("What hardware do I need?", "An iPad (Apple Pencil recommended), an iPhone, a Galaxy Tab (S Pen recommended) or a Galaxy phone. Large drawings are most comfortable on M-series iPads, and we also verify on 9th-gen and A16 models. On a phone you view, measure, pin, mark up and plot with your finger. Search the App Store or Google Play for \"Fluxketch\" to download."),
  ("Are markups saved with the drawing?", "Yes. Markup, pins and notes are stored inside the drawing file in drawing coordinates. Plot PDFs carry the ink and pins, and you can share markup and pin photos as one PDF."),
  ("Can my whole office use it?", "Yes. Email flux0720@fluxketch.com with your company, headcount and plan of interest, and we'll help you set up and send a quote."),
- ("How do I cancel?", "In Settings > Apple Account > Subscriptions, anytime. You keep access until the period ends."),
+ ("How do I cancel?", "On iPhone and iPad, in Settings > Apple Account > Subscriptions; on Galaxy, in Play Store > Profile > Payments & subscriptions > Subscriptions — anytime. You keep access until the period ends."),
  ("Where do I report a problem?", "Use the app's 'Report a bug now' card or email flux0720@fluxketch.com with the file. Instagram @fluxketch_official works too."),
 ]
 
@@ -131,7 +162,7 @@ def per_month(yearly):
         return f"₩{int((num / 12).quantize(Decimal('1'), ROUND_HALF_UP)):,}"
     return f"{sym}{(num / 12).quantize(Decimal('0.01'), ROUND_HALF_UP):,}"
 
-def build(c, store_url):
+def build(c, store_url, play_url=PLAY):
     """홈 사전 c → 템플릿 키 dict."""
     d = {k: v for k, v in c.items() if isinstance(v, str)}
     d["hm_proof"] = "\n".join(f'      <div><dt>{_e(t)}</dt><dd>{_e(n)}</dd></div>' for n, t in c["proof"])
@@ -140,7 +171,7 @@ def build(c, store_url):
         f'<div class="tx"><span class="n">{_e(n)}</span><h3>{_e(t)}</h3><p>{_e(b)}</p></div></article>'
         for n, t, b, img, alt in c["cards"])
     d["hm_new"] = '<span class="sep" aria-hidden="true">·</span>'.join(f"<span>{_e(x)}</span>" for x in c["news"])
-    def render(plist, rows_all):
+    def render(plist, rows_all, url):
         out = []
         for p in plist:
             hi = p.get("hi")
@@ -160,8 +191,8 @@ def build(c, store_url):
                 (f'<li>{CHECK}<span class="sr">{_e(c["included"])}: </span>{_e(r)}</li>' if HAS[p["k"]][i]
                  else f'<li class="off">{DASH}<span class="sr">{_e(c["not_included"])}: </span>{_e(r)}</li>')
                 for i, r in enumerate([p.get("row0", rows_all[0])] + rows_all[1:]))
-            cta = (f'<a class="go m" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
-                   f'<a class="go y" href="{store_url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
+            cta = (f'<a class="go m" href="{url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
+                   f'<a class="go y" href="{url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
             out.append(f'        <div class="plan{" hi" if hi else ""}"><div class="top"><span class="nm">{_e(p["name"])}</span>{badge}</div>'
                        f'{amt("m")}{amt("y")}<p class="tg">{_e(p["tag"])}</p><ul>{rows}</ul>{cta}</div>')
         return "\n".join(out)
@@ -169,8 +200,14 @@ def build(c, store_url):
     def group(h, sub, cls, inner):
         return (f'      <div class="pgroup"><div class="pgh"><h3>{_e(h)}</h3><p>{_e(sub)}</p></div>\n'
                 f'      <div class="pgrid{cls}">\n{inner}\n      </div></div>')
-    d["hm_plans"] = (group(c["pg_phone_h"], c["pg_phone_sub"], " ph", render(c["phone_plans"], c["phone_rows"])) + "\n"
-                     + group(c["pg_pad_h"], c["pg_pad_sub"], "", render(c["plans"], c["rows"])))
+    # ★[11/8 오너 "갤럭시 탭도 만들든 전환할 수 있게"] 기기 전환(아이폰·아이패드 ↔ 갤럭시) — 각 묶음 = 폰 3칸 + 태블릿 4칸
+    apple = (group(c["pg_phone_h"], c["pg_phone_sub"], " ph", render(c["phone_plans"], c["phone_rows"], store_url)) + "\n"
+             + group(c["pg_pad_h"], c["pg_pad_sub"], "", render(c["plans"], c["rows"], store_url)))
+    galaxy = (group(c["g_phone_h"], c["g_phone_sub"], " ph", render(c["g_phone_plans"], c["g_phone_rows"], play_url)) + "\n"
+              + group(c["g_tab_h"], c["g_tab_sub"], "", render(c["g_plans"], c["rows"], play_url)))
+    d["hm_plans"] = (f'      <div class="osgrp" data-os="apple">\n{apple}\n      <p class="fine">{_e(c["hm_p_note"])}</p></div>\n'
+                     f'      <div class="osgrp" data-os="galaxy">\n{galaxy}\n      <p class="fine">{_e(c["g_note"])}</p></div>')
+    d["play"] = play_url
     d["hm_o_mail"] = mailto(c["o_subject"], c["o_body"])
     d["hm_mail"] = mailto(c["mail_subject"])
     d["ft_tag"] = c["ft_tag_home"]

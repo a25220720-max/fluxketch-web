@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/home.css?v=10">
+<link rel="stylesheet" href="/assets/home.css?v=11">
 <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body>
@@ -48,7 +48,8 @@
     <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_label}}</a>
   </nav>
   <div class="bar-r">
-    <a class="btn btn-main btn-sm" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M5 20h14"/></svg></a>
+    <a class="btn btn-main btn-sm" href="{{form}}" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3-1.5z"/></svg>{{cta_short}}</a>
+    <a class="btn btn-play btn-sm" href="{{play}}" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8a1 1 0 0 0-.5.9v16.6a1 1 0 0 0 .5.9l9.3-9.2z"/><path d="M16.9 8.4 6.3 2.3l8.6 8.5z"/><path d="m16.9 15.6-2-2-8.6 8.4z"/><path d="m17.9 9 2.6 1.5a1.7 1.7 0 0 1 0 3L17.9 15l-2.3-3z"/></svg>Google Play</a>
     <details class="menu">
       <summary aria-label="{{menu_open}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></summary>
       <nav aria-label="{{nav_label}}">
@@ -57,6 +58,7 @@
         <a href="#office">{{hm_nav_office}}</a>
         <a href="#faq">{{nav_faq}}</a>
         <a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a>
+        <a href="{{play}}" target="_blank" rel="noopener noreferrer">{{cta_play}}</a>
         <a href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_full}}</a>
       </nav>
     </details>
@@ -75,7 +77,8 @@
     </div>
     <p class="lead">{{hm_lead}}</p>
     <div class="ctas">
-      <a class="btn btn-main" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-main" href="{{form}}" target="_blank" rel="noopener noreferrer"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3-1.5z"/></svg>{{cta_primary}}</a>
+      <a class="btn btn-play" href="{{play}}" target="_blank" rel="noopener noreferrer"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8a1 1 0 0 0-.5.9v16.6a1 1 0 0 0 .5.9l9.3-9.2z"/><path d="M16.9 8.4 6.3 2.3l8.6 8.5z"/><path d="m16.9 17.6-2-2-8.6 8.4z"/><path d="m17.9 9 2.6 1.5a1.7 1.7 0 0 1 0 3L17.9 17l-2.3-3z"/></svg>{{cta_play}}</a>
       <a class="btn btn-ghost" href="#pricing">{{hm_cta2}}</a>
     </div>
     <dl class="proof">
@@ -114,16 +117,21 @@
   <div class="wrap">
     <div class="head">
       <div><span class="eyebrow">{{hm_p_eyebrow}}</span><h2>{{hm_p_h2}}</h2><p>{{hm_p_sub}}</p></div>
-      <div class="seg" role="group" aria-label="{{hm_cycle_label}}">
+      <div class="segs">
+      <div class="seg os" role="group" aria-label="{{hm_os_label}}">
+        <button type="button" data-os="apple" aria-pressed="true">{{os_apple}}</button>
+        <button type="button" data-os="galaxy" aria-pressed="false">{{os_galaxy}}</button>
+      </div>
+      <div class="seg cyc" role="group" aria-label="{{hm_cycle_label}}">
         <button type="button" data-cycle="y" aria-pressed="true">{{hm_yearly}} <small>{{hm_yearly_save}}</small></button>
         <button type="button" data-cycle="m" aria-pressed="false">{{hm_monthly}}</button>
       </div>
+      </div>
     </div>
-    <div class="plans" id="plans-wrap" data-cycle="y">
+    <div class="plans" id="plans-wrap" data-cycle="y" data-os-sel="apple">
 {{hm_plans}}
     </div>
     <p class="swipe" aria-hidden="true">{{hm_swipe}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></p>
-    <p class="fine">{{hm_p_note}}</p>
 
   </div>
 </section>
@@ -151,11 +159,11 @@
 <footer><div class="wrap">
   <div class="end">
     <div><b>{{hm_end_h}}</b><span>{{hm_end_p}}</span></div>
-    <a class="btn btn-main" href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_primary}}</a>
+    <div class="endbtns"><a class="btn btn-main" href="{{form}}" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3-1.5z"/></svg>{{cta_primary}}</a><a class="btn btn-play" href="{{play}}" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8a1 1 0 0 0-.5.9v16.6a1 1 0 0 0 .5.9l9.3-9.2z"/><path d="M16.9 8.4 6.3 2.3l8.6 8.5z"/><path d="m16.9 15.6-2-2-8.6 8.4z"/><path d="m17.9 9 2.6 1.5a1.7 1.7 0 0 1 0 3L17.9 15l-2.3-3z"/></svg>{{cta_play}}</a></div>
   </div>
   <div class="cols">
     <div><div class="brand"><img src="/assets/img/icon-64.png" alt="" width="24" height="24">Fluxketch</div><p class="tagl">{{ft_tag}}</p></div>
-    <nav aria-label="{{ft_product}}"><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="#faq">{{nav_faq}}</a></li><li><a href="{{home}}guides/">{{nav_guides}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li></ul></nav>
+    <nav aria-label="{{ft_product}}"><h4>{{ft_product}}</h4><ul><li><a href="#features">{{nav_features}}</a></li><li><a href="#pricing">{{nav_pricing}}</a></li><li><a href="#faq">{{nav_faq}}</a></li><li><a href="{{home}}guides/">{{nav_guides}}</a></li><li><a href="{{form}}" target="_blank" rel="noopener noreferrer">{{cta_short}}</a></li><li><a href="{{play}}" target="_blank" rel="noopener noreferrer">Google Play</a></li></ul></nav>
     <nav aria-label="{{ft_use}}"><h4>{{ft_use}}</h4><ul>{{ft_use_links}}</ul></nav>
     <nav aria-label="{{ft_company}}"><h4>{{ft_company}}</h4><ul><li><a href="{{hm_mail}}">{{hm_ft_mail}}</a></li><li><a href="#office">{{hm_nav_office}}</a></li><li><a href="https://www.instagram.com/fluxketch_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="{{alt_href}}" hreflang="{{alt_lang}}">{{alt_full}}</a></li></ul></nav>
     <nav aria-label="{{ft_legal}}"><h4>{{ft_legal}}</h4><ul><li><a href="/support">{{ft_support}}</a></li><li><a class="strong" href="{{ft_privacy_href}}">{{ft_privacy}}</a></li><li><a href="{{ft_terms_href}}">{{ft_terms}}</a></li><li><a href="/licenses">{{ft_licenses}}</a></li></ul></nav>
@@ -166,6 +174,6 @@
     <div class="row"><span>{{ft_fine}}</span><span class="mono">© 2026 Fluxketch</span></div>
   </div>
 </div></footer>
-<script src="/assets/home.js?v=2" defer></script>
+<script src="/assets/home.js?v=3" defer></script>
 </body>
 </html>

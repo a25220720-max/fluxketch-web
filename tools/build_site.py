@@ -174,7 +174,7 @@ ORG = {"@type":"Organization","name":"Fluxketch","alternateName":["플럭스케�
 def app_ld(lang):
     ko = lang == "ko"
     return {"@context":"https://schema.org","@type":"MobileApplication","name":"Fluxketch","alternateName":"플럭스케치","installUrl":appstore(lang),"sameAs":[INSTAGRAM],
-      "operatingSystem":"iPadOS","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
+      "operatingSystem":"iPadOS, iOS, Android","applicationCategory":"DesignApplication","applicationSubCategory":"CAD",
       "description": KO["desc"] if ko else EN["desc"], "url": SITE + ("/" if ko else "/en/"),
       "inLanguage":["ko","en"], "screenshot": SITE+"/assets/img/v3/hotel-parking-sheet.jpg",
             "author": ORG, "publisher": ORG}
