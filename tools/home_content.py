@@ -23,7 +23,7 @@ DASH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A3
 KO = dict(
  brand_sub="플럭스케치", og_desc="도면을 열고, 고치고, 표시하고, 보낸다. 현장에서 바로.", hm_v_eyebrow="A-102 · 작동 영상", hm_v_h2="실제 화면 그대로.", hm_v_sub="작도부터 수치 입력, 마크업까지 — 앱에서 바로 녹화한 화면입니다.", hm_v_label="플럭스케치 작동 영상", hm_swipe="옆으로 넘겨 보기", hm_nav_office="사무소 도입",
  notice='<div class="notice" data-until="2026-12-08T00:00:00+09:00"><b>갤럭시 출시</b> · 이제 Google Play에서도 플럭스케치 — 갤럭시 탭·폰</div>',
- hm_chip="현장용 모바일 캐드 · 1.2.0", hm_dim="100% 자체 개발 CAD 엔진",
+ hm_chip="현장용 모바일 캐드 · 1.3", hm_dim="100% 자체 개발 CAD 엔진",
  hm_h1="현장 도면,<br><em>모바일 하나로</em> 끝.",
  hm_lead="DWG·DXF·PDF를 그대로 열고, 그 자리에서 고치고, 표시하고,<br>축척 맞춰 PDF·DXF로 보냅니다.",
  hm_cta2="요금제 보기",
@@ -60,7 +60,7 @@ KO = dict(
 EN = dict(
  brand_sub="", og_desc="Open, fix, mark up, send. Right on site.", hm_v_eyebrow="A-102 · In action", hm_v_h2="The real app, as it is.", hm_v_sub="Drafting, numeric input and markup — recorded straight from the app.", hm_v_label="Fluxketch in action", hm_swipe="Swipe for more", hm_nav_office="For teams",
  notice="",
- hm_chip="Field CAD · 1.2.0", hm_dim="Our own CAD engine, built from scratch",
+ hm_chip="Field CAD · 1.3", hm_dim="Our own CAD engine, built from scratch",
  hm_h1="Site drawings,<br><em>done on mobile.</em>",
  hm_lead="Open DWG, DXF and PDF as they are, fix them on the spot, mark them up,<br>and send scale-true PDF and DXF.",
  hm_cta2="See pricing",
