@@ -126,7 +126,7 @@ KO["hm_q_h2"] = "자주 묻는 질문"
 KO["hm_q_sub"] = "더 궁금한 점은 flux0720@fluxketch.com으로 보내 주세요."
 KO["faq"] = [
  ("플럭스케치(Fluxketch)는 어떤 앱인가요?", "플럭스케치는 현장용 모바일 캐드(CAD) 앱입니다. 사무실의 DWG·DXF 도면을 아이패드에서 그대로 열어 선·원·치수를 CAD 문법으로 그리고 고치고, 펜슬로 마크업하고, 축척 맞춘 PDF와 DXF로 돌려보냅니다. 뷰어가 아니라 편집기입니다."),
- ("무료로 쓸 수 있나요?", "처음 DWG·DXF 3번을 가져오는 동안 모든 기능이 무료입니다(PDF는 횟수 없음). 작도·편집과 DXF 내보내기는 Lite(연간 결제 시 월 4,083원·연 49,000원, 월간 결제 시 월 4,900원), 마크업·사진 핀·노트·리포트는 Markup(연간 결제 시 월 7,417원·연 89,000원, 월간 결제 시 월 8,900원), 전부 다 쓰려면 Pro(연간 결제 시 월 10,750원·연 129,000원, 월간 결제 시 월 12,900원)입니다. 아이폰만 쓰신다면 아이폰 플랜(월 3,900원·연 39,000원)이 있습니다."),
+ ("무료로 쓸 수 있나요?", "처음 DWG·DXF 3번을 가져오는 동안 모든 기능이 무료입니다(PDF는 횟수 없음). 작도·편집과 DXF 내보내기는 Lite(월 4,900원), 마크업·사진 핀·노트·리포트는 Markup(월 8,900원), 전부 다 쓰려면 Pro(월 12,900원)입니다. 아이폰만 쓰신다면 아이폰 플랜(월 3,900원)이 있습니다."),
  ("Lite·Markup·Pro는 어떻게 다른가요?", "Lite는 사무실처럼 그리고 고치는 작도·편집용, Markup은 현장에서 표시하고 기록하는 마크업·핀·노트·리포트용입니다. Pro는 둘을 한 도면에서 모두 쓰고, 같은 Apple 계정의 아이폰에서도 모든 기능을 추가 요금 없이 씁니다. 축척 맞춘 플롯 PDF는 Lite·Markup·Pro 모두 됩니다."),
  ("어떤 파일을 열 수 있나요?", "DXF와 DWG(서버 변환), PDF(밑그림)를 엽니다. 레이어·색·굵기·선종류·블록·해치·다중선·3D면·지시선을 가져오고, 가져오지 못한 요소는 리포트에 개수로 표시됩니다."),
  ("인터넷 없이도 되나요?", "DXF·PDF는 완전히 오프라인으로 동작합니다. DWG만 변환 서버가 필요해 인터넷이 필요합니다(PC에서 DXF로 저장하면 오프라인 가능)."),
@@ -141,7 +141,7 @@ EN["hm_q_h2"] = "Frequently asked questions"
 EN["hm_q_sub"] = "Anything else? Email flux0720@fluxketch.com."
 EN["faq"] = [
  ("What is Fluxketch?", "Fluxketch is field CAD for tablets and phones. Open office DWG and DXF drawings as they are, draw and fix them with real CAD tools, mark them up with a pencil, and send back scale-true PDF and DXF. It is an editor, not a viewer."),
- ("Is it free?", "Every feature is free for your first 3 DWG/DXF imports (PDFs don't count). Drafting, editing and DXF export are Lite ($2.50/mo billed yearly at $29.99, or $2.99 billed monthly); markup, photo pins, notes and reports are Markup ($4.17/mo billed yearly at $49.99, or $4.99 billed monthly); everything is Pro ($6.67/mo billed yearly at $79.99, or $7.99 billed monthly). If you only use iPhone, there is the iPhone plan. Google Play prices differ slightly — see Pricing."),
+ ("Is it free?", "Every feature is free for your first 3 DWG/DXF imports (PDFs don't count). Drafting, editing and DXF export are Lite ($2.99/mo); markup, photo pins, notes and reports are Markup ($4.99/mo); everything is Pro ($7.99/mo). If you only use iPhone, there is the iPhone plan. Google Play prices differ slightly — see Pricing."),
  ("How do Lite, Markup and Pro differ?", "Lite is for drafting and editing like at the office. Markup is for marking up and recording on site — markup, pins, notes and reports. Pro gives you both on the same drawing, plus every feature on iPhone with the same Apple Account at no extra cost. Scale-true plot PDF is in Lite, Markup and Pro."),
  ("Which files can it open?", "DXF, DWG (server conversion) and PDF (underlay). Layers, colors, weights, linetypes, blocks, hatches, multilines, 3D faces and leaders are imported; anything that isn't gets counted in the import report."),
  ("Does it work offline?", "DXF and PDF work fully offline. Only DWG needs the conversion server, so it needs a connection (save as DXF on a PC to work offline)."),
@@ -191,10 +191,10 @@ def build(c, store_url, play_url=PLAY):
                 (f'<li>{CHECK}<span class="sr">{_e(c["included"])}: </span>{_e(r)}</li>' if HAS[p["k"]][i]
                  else f'<li class="off">{DASH}<span class="sr">{_e(c["not_included"])}: </span>{_e(r)}</li>')
                 for i, r in enumerate([p.get("row0", rows_all[0])] + rows_all[1:]))
-            cta = (f'<a class="go m" href="{url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
-                   f'<a class="go y" href="{url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_y"])}</a>')
+            # ★[11/14 오너] 연간 구독 판매 중단(App Store·Google Play) → 요금제는 월간만 보인다(연간 금액·전환 단추 없음).
+            cta = f'<a class="go m" href="{url}" target="_blank" rel="noopener noreferrer">{_e(p["cta_m"])}</a>'
             out.append(f'        <div class="plan{" hi" if hi else ""}"><div class="top"><span class="nm">{_e(p["name"])}</span>{badge}</div>'
-                       f'{amt("m")}{amt("y")}<p class="tg">{_e(p["tag"])}</p><ul>{rows}</ul>{cta}</div>')
+                       f'{amt("m")}<p class="tg">{_e(p["tag"])}</p><ul>{rows}</ul>{cta}</div>')
         return "\n".join(out)
     # ★[10/12 오너 "위쪽은 아이폰 아래쪽은 아이패드"] 요금제 = 두 줄(아이폰 3칸 → 아이패드 4칸), 월간/연간 전환은 함께.
     def group(h, sub, cls, inner):
